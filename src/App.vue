@@ -211,6 +211,7 @@ export default {
 table {
     white-space: nowrap;
     text-align:center;
+    word-break: keep-all;
 }
 table td {
     border: 1px solid rgba(0,0,0,.06);
@@ -221,5 +222,36 @@ table th {
     font-weight: 700;
     font-size:1rem !important;
     text-align: center !important;
+}
+.half-bg--payple {
+    position:relative;
+    display:inline;
+}
+.half-bg--payple:before {
+    content:'';
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:60%;
+    background: rgba(120, 82, 232, 0.4);
+    z-index: 0;
+    border-radius:4px;
+}
+.white-space-normal {
+    white-space: normal;
+}
+.word-break-keep-all {
+    word-break: keep-all;
+}
+pre {
+    margin:0 !important;
+    padding:0 !important;
+}
+code {
+    width:100%;
+    margin:0;
+    padding:0 1rem;
+    font-weight: 400 !important;
 }
 </style>

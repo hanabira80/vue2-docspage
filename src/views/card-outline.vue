@@ -6,13 +6,14 @@
             </template>
         </v-breadcrumbs>
 
-        <h1 class="mt-2 mb-8">카드결제 개요</h1>
-        <p class="mb-12">
-            페이플 카드결제 서비스는 간편결제, 정기결제와 같은 새로운 비즈니스모델과 서비스를 지원하기 위해 다양한 결제방식을 제공합니다.
-        </p>
+        <h1 class="mt-4 mb-4">카드결제 개요</h1>
+        <blockquote class="mb-12 blockquote">
+            페이플 카드결제 서비스는 간편결제, 정기결제와 같은<br/>
+            새로운 비즈니스모델과 서비스를 지원하기 위해 다양한 결제방식을 제공합니다.
+        </blockquote>
 
-        <article class="mb-12">
-            <h2>결제서비스 흐름도</h2>
+        <article class="mb-8">
+            <h2>조감도</h2>
 
             <v-divider class="my-6"></v-divider>
 

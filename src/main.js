@@ -12,6 +12,8 @@ import "@babel/polyfill";
 // import "prismjs/plugins/autolinker/prism-autolinker.css";
 // import Prism from "vue-prism-component";
 // Vue.component("prism", Prism);
+// import 'prism-es6/components/prism-markup-templating';
+// import 'prism-es6/components/prism-php';
 Vue.config.productionTip = false;
 
 new Vue({

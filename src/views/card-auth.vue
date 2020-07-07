@@ -6,636 +6,126 @@
             </template>
         </v-breadcrumbs>
 
-        <h1 class="mt-2 mb-8">환경설정</h1>
+        <h1 class="mt-4 mb-12">환경설정 개요</h1>
 
-        <article class="mb-12">
-            <h2>공통 정의사항 </h2>
-            <v-divider class="my-6"></v-divider>
-            <p>
-                UTF-8 인코딩<br/>
-                SSL 보안 통신 필수<br/>
-                JSON(JavaScript Object Notation) 메시지 포맷<br/>
-            </p>
+        <article class="mb-8">
+            <h2 class="">공통 정의사항</h2>
+            <blockquote class="blockquote body-1">
+                <ul>
+                    <li>UTF-8 인코딩</li>
+                    <li>SSL 보안 통신 필수</li>
+                    <li>JSON(JavaScript Object Notation) 메시지 포맷</li>
+                    <li>jQuery CDN uncompressed, minified 사용 가능</li>
+                </ul>
+            </blockquote>
         </article>
 
-        <article class="mb-12">
-            <h2>개요</h2>
-            <v-divider class="my-6"></v-divider>
+        <article class="mb-8">
+            <h2 class="">가맹점 인증</h2>
+            <blockquote class="blockquote body-1">
+                모든 연동작업은 가맹점 인증 요청을 통해 페이플 서버접근권한을 획득한 후에야 수행할 수 있습니다.<br />
+                전체적인 가맹점 인증 프로세스에 대해서 소개해드립니다.
+            </blockquote>
 
-            <p>
-                첫 결제 시 가맹점 인증 요청을 위해서는 가맹점 계약을 통한 인증이 필요하며, 계약 완료 후 페이플에서 가맹점에 별도의 키를 발급합니다. 계약 전에는
-                테스트 계정을 통해 개발진행이 가능합니다.
-            </p>
-
-            <v-alert border="left" colored-border color="deep-purple accent-4" elevation="2" class="mb-8">
-                <h3>주의</h3>
-
-                <p class="pl-2">가맹점인증 서버와 결제 서버가 동일해야 origin 오류 없이 진행하실 수 있습니다.</p>
-                <p class="pl-2">테스트 URL에서는 실제로 결제가 되지 않으며 본인인증 100원 결제 후 30분 뒤 자동으로 취소됩니다.</p>
-                <p class="pl-2">
-                    테스트 계정으로 결제 후 부분취소 시 &lsquo;부분취소 불가한 가맹점입니다&rsquo; 응답메시지가 오는 것은 정상 리턴이며 부분취소는 실제 결제
-                    서비스에서만 사용하실 수 있습니다.
-                </p>
-                <p class="pl-2">모든 요청 URL 에서는 최소금액 100원부터 결제가 가능하며 운영 URL 에서는 실제 결제가 이루어지니 주의바랍니다.</p>
-                <p class="pl-2">일반결제의 경우 다날의 결제창을 연동하는 것으로 카드를 등록만 하는 것은 불가능합니다.</p>
-            </v-alert>
-
-            <v-alert border="left" colored-border color="deep-purple accent-4" elevation="2" class="mb-8">
-                <h3>특징</h3>
-
-                <p class="pl-2">카드 정기결제는 최초 결제시에 AUTHREG 방식을 사용해 결제없이 카드를 등록할 수 있습니다.</p>
-            </v-alert>
-
-            <v-alert border="left" colored-border color="deep-purple accent-4" elevation="2" class="">
-                <h3>설명</h3>
-
-                <p class="pl-2">가맹점 인증요청시 별도의 auth 파일 생성 후 cst_id와 custKey변수를 JSON 형태로 넣고 불러옵니다.</p>
-            </v-alert>
-        </article>
-
-        <article class="mb-12">
-            <h2>가맹점인증 요청변수</h2>
-            <v-divider class="my-6"></v-divider>
-
-            <v-card class="mb-8">
-                <v-simple-table height="auto">
-                    <template v-slot:default>
-                        <thead>
-                            <tr>
-                                <td>
-                                    요청변수
-                                </td>
-                                <td>
-                                    테스트계정
-                                </td>
-                                <td>
-                                    운영계정
-                                </td>
-                                <td>
-                                    타입
-                                </td>
-                                <td>
-                                    길이
-                                </td>
-                                <td>
-                                    필수
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    cst_id
-                                </td>
-                                <td>
-                                    test
-                                </td>
-                                <td>
-                                    가맹점 운영 ID
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    8
-                                </td>
-                                <td>
-                                    Y
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    custKey
-                                </td>
-                                <td>
-                                    abcd1234567890
-                                </td>
-                                <td>
-                                    가맹점 Key
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    255
-                                </td>
-                                <td>
-                                    Y
-                                </td>
-                            </tr>
-                        </tbody>
-                    </template></v-simple-table
-                >
+            <h3 class="title pl-4 mt-8">
+                가맹점 인증 방식 분류
+            </h3>
+            <v-card max-width="1000" raised class="pa-2 ma-4 mb-8">
+                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
             </v-card>
 
-            <v-alert border="top" colored-border type="error" elevation="2">
-                계약 후 발급됩니다.
-            </v-alert>
-        </article>  
-
-        <article class="mb-12">
-            <h2>/php/auth.php 가맹점 인증요청</h2>
-            <v-divider class="my-6"></v-divider>
-            <p>가맹점 인증요청시 별도의 auth 파일 생성 후 cst_id와 custKey변수를 JSON 형태로 넣고 불러옵니다.</p>
-            <vue-code-highlight>
-                {{ code_1 }}
-            </vue-code-highlight>
-        </article>
-
-        <article class="mb-12">
-            <h2>/php/auth.php 가맹점 응답</h2>
-            <v-divider class="my-6"></v-divider>
-            <vue-code-highlight class="mb-8">
-                {{ code_2 }}
-            </vue-code-highlight>
-
-            <v-alert border="top" colored-border type="info" elevation="2">
-                AWS(아마존 웹서비스)에서 AUTH0004 오류 발생 시 가맹점 서버 <a href="https://www.naver.com/">도메인의 REFERER</a> 추가가 필요할 수 있습니다.
-                카페24, 가비아 등 서버 호스팅 이용 시 호스팅 사에 페이플 URL(테스트, 운영) 방화벽 오픈을 요청해야 사용하실 수 있습니다.
-            </v-alert>
-        </article>
-
-        <article class="mb-12">
-            <h2>개발소스 예제</h2>
-            <v-divider class="my-6"></v-divider>
-            <p>*obj.payple_auth_file = ‘/pg/auth/파일이름’; 에 설정 할 가맹점 인증 요청 파일을 생성합니다.</p>
-            <vue-code-highlight language="html">
-                {{ code_3 }}
-            </vue-code-highlight>
-        </article>
-
-        <article class="mb-12">
-            <h2>카드등록(가맹점인증) 요청(REQUEST)</h2>
-            <v-divider class="my-6"></v-divider>
-            <vue-code-highlight language="java">
-                {{ code_4 }}
-            </vue-code-highlight>
-        </article>
-
-        <article class="mb-12">
-            <h2>요청변수</h2>
-            <v-divider class="my-6"></v-divider>
-            <v-card>
-                <v-simple-table>
-                    <template v-slot:default>
-                        <thead>
-                            <tr>
-                                <td>
-                                    요청변수
-                                </td>
-                                <td>
-                                    타입
-                                </td>
-                                <td>
-                                    길이
-                                </td>
-                                <td>
-                                    필수
-                                </td>
-                                <td>
-                                    값
-                                </td>
-                                <td>
-                                    설명
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    PCD_CPAY_VER
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    O
-                                </td>
-                                <td>
-                                    1.0.1
-                                </td>
-                                <td>
-                                    결제 창 버전
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAY_TYPE
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    O
-                                </td>
-                                <td>
-                                    card
-                                </td>
-                                <td>
-                                    결제수단
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAY_WORK
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    O
-                                </td>
-                                <td>
-                                    AUTH
-                                </td>
-                                <td>
-                                    결제요청 방식 - AUTH: 카드등록만 진행(정기결제만 해당)<br />
-                                    - CERT: 가맹점 최종승인 후 결제 진행<br />
-                                    - PAY: 가맹점 최종승인없이 결제 진행
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAYER_AUTHTYPE
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    pwd
-                                </td>
-                                <td>
-                                    간편결제 인증방식 - PCD_SIMPLE_FLAG: 'Y' 일 때 필수
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_CARD_VER
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    2
-                                </td>
-                                <td>
-                                    O
-                                </td>
-                                <td>
-                                    02
-                                </td>
-                                <td>
-                                    - 01: 정기결제<br />
-                                    - 02: 일반결제
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_RST_URL
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    O
-                                </td>
-                                <td>
-                                    https://aaa.com/sub/fv1&hellip;.
-                                </td>
-                                <td>
-                                    결제(요청)결과 RETURN URL - 결제결과를 콜백함수가 아닌 URL로 수신할 경우만 해당<br />
-                                    - 모바일에서 팝업방식은 상대경로, 다이렉트 방식은 절대경로로 설정
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAYER_NO
-                                </td>
-                                <td>
-                                    Number
-                                </td>
-                                <td>
-                                    255
-                                </td>
-                                <td>
-                                    O
-                                </td>
-                                <td>
-                                    2324
-                                </td>
-                                <td>
-                                    사용자 필드, 결과에 그대로 리턴
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAYER_NAME
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    80
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    홍길동
-                                </td>
-                                <td>
-                                    결제고객 이름
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAYER_HP
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    255
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    01023457896
-                                </td>
-                                <td>
-                                    고객 휴대폰번호를 전송하시면 고객의 승인문자 민원을 방지하기 위한 알림톡이 발송됩니다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAYER_EMAIL
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    255
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    <a href="mailto:dev@payple.kr">dev@payple.kr</a>
-                                </td>
-                                <td>
-                                    결과 발송 Email
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAY_GOODS
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    2048
-                                </td>
-                                <td>
-                                    O
-                                </td>
-                                <td>
-                                    상품1
-                                </td>
-                                <td>
-                                    - 이모티콘을 제외한 상품명을 입력해주세요.<br />
-                                    - 이모티콘으로 인해 일부 카드사에서 오류가 발생할 수 있습니다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAY_TOTAL
-                                </td>
-                                <td>
-                                    Number
-                                </td>
-                                <td>
-                                    20
-                                </td>
-                                <td>
-                                    O
-                                </td>
-                                <td>
-                                    100
-                                </td>
-                                <td>
-                                    카드등록 요청금액 (최소 100원)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAY_ISTAX
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    1
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    Y
-                                </td>
-                                <td>
-                                    과세설정(Default: Y, 비과세: N)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAY_TAXTOTAL
-                                </td>
-                                <td>
-                                    Number
-                                </td>
-                                <td>
-                                    20
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    10
-                                </td>
-                                <td>
-                                    복합과세 주문건(과세+면세)에 필요한 항목이며 가맹점에서 전송한 값을 부가세로 설정합니다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAY_OID
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    255
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    test099942200156938
-                                </td>
-                                <td>
-                                    주문번호
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_REGULER_FLAG
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    1
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    Y
-                                </td>
-                                <td>
-                                    정기결제 여부 (정기: Y, 그 외: N)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAY_YEAR
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    4
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    2019
-                                </td>
-                                <td>
-                                    결제 구분 년도 (PCD_REGULER_FLAG: 'Y' 일 때 필수)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_PAY_MONTH
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    2
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    09
-                                </td>
-                                <td>
-                                    결제 구분 월 (PCD_REGULER_FLAG: 'Y' 일 때 필수)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    PCD_SIMPLE_FLAG
-                                </td>
-                                <td>
-                                    String
-                                </td>
-                                <td>
-                                    1
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    Y
-                                </td>
-                                <td>
-                                    간편결제 여부(간편결제: Y, 단건결제: N)
-                                </td>
-                            </tr>
-                        </tbody>
-                    </template></v-simple-table
-                >
+            <h3 class="title pl-4 mt-8">
+                <div class="half-bg--payple">결제창 호출</div>
+                과
+                <div class="half-bg--payple">REST API</div>
+                인증프로세스의 차이점
+            </h3>
+            <v-card max-width="1000" raised class="pa-2 ma-4 mb-8">
+                <div class="overline pa-2">가맹점 인증요청 프로세스(결제창 호출)</div>
+                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
             </v-card>
-        </article>
+            <v-card max-width="1000" raised class="pa-2 ma-4 mb-8">
+                <div class="overline pa-2">가맹점 인증요청 프로세스(REST API)</div>
+                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+            </v-card>
 
-        <article class="mb-12">
-            <h2>카드등록(가맹점인증) 응답(RESPONSE)</h2>
-            <v-divider class="my-6"></v-divider>
-            <vue-code-highlight language="java">
-                {{ code_5 }}
-            </vue-code-highlight>
-        </article>
+            <h3 class="title pl-4 mt-8">
+                테스트 & 운영 계정
+            </h3>
+            <blockquote class="blockquote body-2">
+                페이플에서는 연동테스트를 하실 수 있는 테스트 서버와 실제 운영 서버를 별도로 운영하고 있습니다.<br />
+                가맹점은 테스트 환경에서 테스트 계정으로 테스트를 수행할 수 있으며<br />
+                계약 이후에 발급 받게 되는 가맹점 ID(cst_id)와 가맹점 운영 Key(custKey)로 운영환경에서 실제 연동을 준비할 수 있습니다.
+            </blockquote>
+            <v-card class="temp_table ma-4">
+                <v-simple-table class="table-hover-disable">
+                    <tbody>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                구분
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                테스트
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                운영
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                URL
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                https://testcpay.payple.kr
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                https://cpay.payple.kr
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                cst_id
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                test
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                계약 후 발급
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                custKey
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                abcd1234567890
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                계약 후 발급
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                비고
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-left white-space-normal">
+                                - 테스트 계정에서는 카드번호, 유효기간 검증만 진행되며, 도메인 검증을 하지 않습니다.<br />
 
-        <v-card>
-                <v-simple-table height="auto">
-                    <template v-slot:default>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    구분
-                                </td>
-                                <td>
-                                    요청 URL
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    테스트
-                                </td>
-                                <td>
-                                    <v-btn small color="info" href="https://testcpay.payple.kr/php/auth.php" dark>
-                                        https://testcpay.payple.kr/php/auth.php
-                                    </v-btn>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    운영
-                                </td>
-                                <td>
-                                    <v-btn small color="info" href="https://cpay.payple.kr/php/auth.php" dark>
-                                        https://cpay.payple.kr/php/auth.php
-                                    </v-btn>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </template>
+                                - 테스트시 결제된 건들은 별도로 취소처리하지 않더라도 24시간 내에 자동취소됩니다.
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-left white-space-normal">
+                                - 실제 승인이 진행되며 카드번호, 유효기간, 비밀번호, 생년월일 검증이 진행됩니다.<br />
+
+                                - 페이플에서는 도메인 검증으로 가맹점 인증을 하고 있기 때문에 REFERER가 정상적으로 넘어오지 않을 경우 AUTH0004 에러가 발생하게
+                                됩니다.<br />
+
+                                - 카페24, 가비아 등 서버호스팅 이용 시 호스팅사에 페이플 URL(테스트, 운영) 방화벽 오픈을 요청하셔야 할 수 있습니다.
+                            </td>
+                        </tr>
+                    </tbody>
                 </v-simple-table>
             </v-card>
+        </article>
     </div>
 </template>
 
@@ -645,7 +135,7 @@ import { component as VueCodeHighlight } from "vue-code-highlight";
 
 export default {
     components: {
-        VueCodeHighlight
+        VueCodeHighlight,
     },
     data() {
         return {
@@ -780,12 +270,12 @@ Cache-Control: no-cache
                 {
                     text: "홈",
                     disabled: false,
-                    to: "/"
+                    to: "/",
                 },
                 {
                     text: "카드결제",
                     disabled: false,
-                    to: "/card/outline"
+                    to: "/card/outline",
                 },
                 {
                     text: "최초결제",
@@ -794,9 +284,9 @@ Cache-Control: no-cache
                 {
                     text: "가맹점 인증 요청 개요",
                     disabled: true,
-                }
-            ]
+                },
+            ],
         };
-    }
+    },
 };
 </script>
