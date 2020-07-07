@@ -6,9 +6,9 @@
             </template>
         </v-breadcrumbs>
 
-        <h1 class="mb-12">결제결과 조회</h1>
+        <h1 class="mb-12">등록계좌 해지</h1>
         <blockquote class="mb-12 blockquote body-1">
-            기타 사유로 결제결과를 수신받지 못하는 경우 결제결과 조회 API를 통해 결과값을 조회할 수 있습니다.
+            등록계좌 해지API를 통해 해지요청 및 해지요청결과 수신을 받으실 수 있습니다.
         </blockquote>
         <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
             요청을 위한 선행단계로 <v-tooltip v-model="toolTipShow" top>
@@ -25,7 +25,7 @@
 
         <article class="mb-12">
             <h2 class="">
-                결제결과 조회
+                등록계좌 해지
             </h2>
 
             <h3 class="pl-4">
@@ -143,107 +143,7 @@
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">
-                                PCD_PAYCHK_FLAG
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                String
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                1
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                O
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                Y
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결과조회 여부(Y|N)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_TYPE
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                String
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                20
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                O
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                card
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결제수단
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_REGULER_FLAG
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                String
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                1
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                -
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                Y
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                월 중복결제 방지 (사용: Y, 그 외: N)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_YEAR
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                String
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                4
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                -
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                2020
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결제 구분 년도 (PCD_REGULER_FLAG: 'Y' 일 때 필수)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_MONTH
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                String
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                2
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                -
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                03
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결제 구분 월 (PCD_REGULER_FLAG: 'Y' 일 때 필수)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_OID
+                                PCD_PAYER_ID
                             </td>
                             <td colspan="1" rowspan="1">
                                 String
@@ -255,40 +155,30 @@
                                 O
                             </td>
                             <td colspan="1" rowspan="1">
-                                test099942200156938
+                                NS9qNTg...
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>
+                                계좌등록 후 리턴 받은 결제 빌링키
                             </td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">
-                                PCD_PAY_DATE
+                                PCD_PAYER_NO
                             </td>
                             <td colspan="1" rowspan="1">
-                                String
+                                Number
                             </td>
                             <td colspan="1" rowspan="1">
-                                8
+                                255
                             </td>
                             <td colspan="1" rowspan="1">
-                                O
+                                -
                             </td>
                             <td colspan="1" rowspan="1">
-                                20200320
+                                1234
                             </td>
                             <td colspan="1" rowspan="1">
-                                결제요청일자(YYYYMMDD)
+                                가맹점에서 사용하는 회원번호
                             </td>
                         </tr>
                     </tbody>
@@ -317,7 +207,7 @@
                                 응답변수
                             </td>
                             <td colspan="1" rowspan="1">
-                                예시
+                                값
                             </td>
                             <td colspan="1" rowspan="1">
                                 설명
@@ -331,7 +221,7 @@
                                 success
                             </td>
                             <td colspan="1" rowspan="1">
-                                결제요청 결과 (success/error)
+                                계좌해지 결과 (success|error)
                             </td>
                         </tr>
                         <tr>
@@ -339,10 +229,10 @@
                                 PCD_PAY_CODE
                             </td>
                             <td colspan="1" rowspan="1">
-                                PCHK000
+                                TSDL0000
                             </td>
                             <td colspan="1" rowspan="1">
-                                결제결과 코드
+                                계좌해지 성공 코드
                             </td>
                         </tr>
                         <tr>
@@ -350,31 +240,28 @@
                                 PCD_PAY_MSG
                             </td>
                             <td colspan="1" rowspan="1">
-                                결제완료
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결제요청 결과 메시지 (결제완료|실패 등)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_OID
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                test201804000001
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
+                                현금영수증 <v-tooltip v-model="toolTipShow" top>
             <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
             </template>
             <template v-slot:default>
                 <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
+                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
                 </span>
             </template>
-        </v-tooltip>
+        </v-tooltip> 성공
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                계좌해지 결과 메시지 (현금영수증 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
+                </span>
+            </template>
+        </v-tooltip> 성공|실패)
                             </td>
                         </tr>
                         <tr>
@@ -382,10 +269,32 @@
                                 PCD_PAY_TYPE
                             </td>
                             <td colspan="1" rowspan="1">
-                                card
+                                transfer
                             </td>
                             <td colspan="1" rowspan="1">
-                                결제수단
+                                ‘transfer’ – 고정 값
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                PCD_PAY_WORK
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                PUSERDEL
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                계좌해지 요청방식
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                PCD_PAYER_ID
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                d0to...
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                계좌등록 후 리턴 받은 결제 빌링키
                             </td>
                         </tr>
                         <tr>
@@ -397,193 +306,6 @@
                             </td>
                             <td colspan="1" rowspan="1">
                                 가맹점에서 사용하는 회원번호
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAYER_ID
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                NS9qNTgzU2…
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                카드등록 후 리턴받은 빌링키
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAYER_EMAIL
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                dev@payple.kr
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                해당 이메일 주소로 결제 안내메일이 발송됩니다.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_YEAR
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                2020
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결제 구분 년도 (PCD_REGULER_FLAG 사용시 응답)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_MONTH
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                03
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결제 구분 월 (PCD_REGULER_FLAG 사용시 응답)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_GOODS
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                상품1
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                상품명
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_TOTAL
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                100
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결제금액
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_ISTAX
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                Y
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                과세설정 (Default: Y 이며,  과세:Y, 복합과세:Y, 비과세: N)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_TAXTOTAL
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                10
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                복합과세(과세+면세) 주문건에 필요한 금액이며 가맹점에서 전송한 값을 부가세로 설정합니다.과세 또는 비과세의 경우 사용하지
-                                않습니다.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_CARDNAME
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                BC카드
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                카드사명
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_CARDNUM
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                1111- ****-**** -2222
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                카드번호
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_CARDTRADENUM
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                2020031413203326920
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                거래 키
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_CARDAUTHNO
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                98123445
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>번호
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_CARDRECEIPT
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                https://www.danal..
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                매출전표 출력 링크
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAY_TIME
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                2020-03-20...
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결제완료 시간
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_REGULER_FLAG
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                N
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                월 중복결제 방지 (사용: Y, 그 외: N)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="1">
-                                PCD_PAYER_NAME
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                홍길동
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결제고객 이름
                             </td>
                         </tr>
                     </tbody>
@@ -711,6 +433,7 @@ export default {
                 },
             ],
             code_1_1: `
+#계좌 해지요청
 POST <v-tooltip v-model="toolTipShow" top>
             <template v-slot:activator="{ on }">
                 <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
@@ -734,7 +457,7 @@ Host: <v-tooltip v-model="toolTipShow" top>
 Content-Type: application/json
 Cache-Control: no-cache
 {
-   "PCD_CST_ID": "<v-tooltip v-model="toolTipShow" top>
+  "PCD_CST_ID": "<v-tooltip v-model="toolTipShow" top>
             <template v-slot:activator="{ on }">
                 <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
             </template>
@@ -744,7 +467,7 @@ Cache-Control: no-cache
                 </span>
             </template>
         </v-tooltip> 후 리턴받은 cst_id"
-   "PCD_CUST_KEY": "<v-tooltip v-model="toolTipShow" top>
+  "PCD_CUST_KEY": "<v-tooltip v-model="toolTipShow" top>
             <template v-slot:activator="{ on }">
                 <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
             </template>
@@ -754,7 +477,7 @@ Cache-Control: no-cache
                 </span>
             </template>
         </v-tooltip> 후 리턴받은 custKey"
-   "PCD_AUTH_KEY": "<v-tooltip v-model="toolTipShow" top>
+  "PCD_AUTH_KEY": "<v-tooltip v-model="toolTipShow" top>
             <template v-slot:activator="{ on }">
                 <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
             </template>
@@ -764,35 +487,19 @@ Cache-Control: no-cache
                 </span>
             </template>
         </v-tooltip> 후 리턴받은 AuthKey",
-   "PCD_PAYCHK_FLAG": "Y",
-   "PCD_PAY_TYPE": "card",
-   "PCD_PAY_OID": "test201804000001",
-   "PCD_PAY_DATE": “20200320”
+  "PCD_PAYER_ID": "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",				
+  "PCD_PAYER_NO": "1234"
 }
 `,
             code_2_1: `
 {
-   "PCD_PAY_RST" => "success",
-   "PCD_PAY_MSG" => "결제완료",
-   "PCD_PAY_OID" => "test201804000001",
-   "PCD_PAY_TYPE" => "card",
-   "PCD_PAYER_NO" => "1234",
-   "PCD_PAYER_ID" => "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",
-   "PCD_PAYER_EMAIL" => "dev@payple.kr",
-   "PCD_PAY_YEAR" => "2020",
-   "PCD_PAY_MONTH" => "03",
-   "PCD_PAY_GOODS" => "상품1",
-   "PCD_PAY_TOTAL" => "100",
-   "PCD_PAY_ISTAX" => "Y",
-   "PCD_PAY_TAXTOTAL" => "10",
-   "PCD_CARDNAME" => "BC카드",
-   "PCD_CARDNUM" => "1111- ****-**** -2222",
-   "PCD_CARDTRADENUM" => "202003141320332692022400",
-   “PCD_PAY_CARDAUTHNO” => “98123445”,
-   “PCD_PAY_CARDRECEIPT” => “https://...”,
-   “PCD_PAY_TIME” =>  “2020-03-20…”,
-   “PCD_REGULER_FLAG” => “N”,
-   “PCD_PAYER_NAME” => “홍길동”
+  "PCD_PAY_RST" => "success",
+  “PCD_PAY_CODE” => “PUER0000”,
+  "PCD_PAY_MSG" => "계좌해지 완료",
+  "PCD_PAY_TYPE" => "transfer",
+  "PCD_PAY_WORK" => "PUSERDEL",
+  "PCD_PAYER_ID" => "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",
+  "PCD_PAYER_NO" => "1234"
 }
 `,
         };

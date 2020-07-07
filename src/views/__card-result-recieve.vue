@@ -25,7 +25,7 @@
 
         <article class="mb-12">
             <h2 class="">
-                결제결과 조회
+                등록카드 해지
             </h2>
 
             <h3 class="pl-4">

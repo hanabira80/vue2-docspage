@@ -81,34 +81,41 @@ export default {
                 children: [
                     {
                         id: 1 - 0,
-                        name: "카드결제-개요",
+                        name: "카드결제 개요",
                         to: "/card/outline",
                     },
                     {
                         id: 1 - 1,
-                        name: "최초결제",
+                        name: "환경설정",
                         children: [
-                            { id: 1 - 1 - 1, name: "가맹점 인증 요청 개요", to: "/card/auth" },
-                            { id: 1 - 1 - 2, name: "결제 창 호출", to: "/card/call" },
+                            { id: 1 - 1 - 1, name: "환경설정 개요", to: "/card/install/outline" },
+                            { id: 1 - 1 - 2, name: "상황별 인증 요청 방식", to: "/card/install/auth" },
                         ],
                     },
                     {
                         id: 1 - 2,
-                        name: "재결제",
+                        name: "빌링키방식",
                         children: [
-                            { id: 1 - 2 - 0, name: "재결제-개요", to: "/card/repeat" },
-                            { id: 1 - 2 - 1, name: "간편결제", to: "/card/simple" },
-                            { id: 1 - 2 - 2, name: "일반결제", to: "/card/normal" },
-                            { id: 1 - 2 - 3, name: "정기결제", to: "/card/regular" },
-                            { id: 1 - 2 - 4, name: "링크결제", to: "/card/link" },
+                            { id: 1 - 2 - 0, name: "빌링키방식 개요", to: "/card/pay/outline" },
+                            { id: 1 - 2 - 1, name: "비밀번호 간편결제", to: "/card/pay/simple-pin" },
+                            { id: 1 - 2 - 2, name: "일회성 간편결제", to: "/card/pay/simple-once" },
+                            { id: 1 - 2 - 3, name: "정기결제", to: "/card/pay/regular" },
                         ],
                     },
-                    { id: 1 - 3, name: "승인취소", to: "/card/cancel" },
-                    { id: 1 - 4, name: "등록카드 해지", to: "/card/reg-cancel" },
-                    { id: 1 - 5, name: "등록카드 조회", to: "/card/reg-search" },
-                    { id: 1 - 6, name: "결제결과 수신", to: "/card/result-recieve" },
-                    { id: 1 - 7, name: "결제결과 조회", to: "/card/result-search" },
-                    { id: 1 - 8, name: "응답오류 처리안내", to: "/card/error-code" },
+                    {
+                        id: 1 - 3,
+                        name: "기타방식",
+                        children: [
+                            { id: 1 - 3 - 0, name: "URL링크결제", to: "/card/pay/link" },
+                            { id: 1 - 3 - 1, name: "앱카드결제", to: "/card/pay/app-card" },
+                        ],
+                    },
+                    { id: 1 - 5, name: "승인취소", to: "/card/pay/cancel" },
+                    { id: 1 - 6, name: "등록카드 해지", to: "/card/regist/cancel" },
+                    { id: 1 - 7, name: "등록카드 조회", to: "/card/regist/search" },
+                    { id: 1 - 8, name: "결제결과 조회", to: "/card/result/search" },
+                    { id: 1 - 9, name: "정책", to: "/card/policy" },
+                    { id: 1 - 10, name: "응답코드", to: "/card/code/response" },
                 ],
             },
             {
@@ -117,43 +124,69 @@ export default {
                 children: [
                     {
                         id: 2 - 0,
-                        name: "계좌결제-개요",
+                        name: "계좌결제 개요",
                         to: "/bank/outline",
                     },
                     {
                         id: 2 - 1,
-                        name: "최초결제",
+                        name: "환경설정",
                         children: [
-                            { id: 2 - 1 - 1, name: "가맹점 인증 요청", to: "/bank/auth" },
-                            { id: 2 - 1 - 2, name: "결제 창 호출", to: "/bank/call" },
+                            { id: 2 - 1 - 1, name: "환경설정 개요", to: "/bank/install/outline" },
+                            { id: 2 - 1 - 2, name: "상황별 인증 요청 방식", to: "/bank/install/auth" },
                         ],
                     },
                     {
                         id: 2 - 2,
-                        name: "재결제",
+                        name: "빌링키방식",
                         children: [
-                            { id: 2 - 2 - 0, name: "재결제-개요", to: "/bank/repeat" },
-                            { id: 2 - 2 - 1, name: "간편결제", to: "/bank/simple" },
-                            { id: 2 - 2 - 2, name: "일반결제", to: "/bank/normal" },
-                            { id: 2 - 2 - 3, name: "정기결제", to: "/bank/regular" },
-                            { id: 2 - 2 - 4, name: "링크결제", to: "/bank/link" },
+                            { id: 2 - 2 - 0, name: "빌링키방식 개요", to: "/bank/pay/outline" },
+                            { id: 2 - 2 - 1, name: "비밀번호 간편결제", to: "/bank/pay/simple-pin" },
+                            { id: 2 - 2 - 2, name: "일회성 간편결제", to: "/bank/pay/simple-once" },
+                            { id: 2 - 2 - 3, name: "정기결제", to: "/bank/pay/regular" },
                         ],
                     },
                     {
                         id: 2 - 3,
-                        name: "현금영수증",
+                        name: "기타방식",
                         children: [
-                            { id: 2 - 3 - 1, name: "현금영수증 발행요청", to: "/bank/recipt-request" },
-                            { id: 2 - 3 - 2, name: "현금영수증 취소요청", to: "/bank/recipt-cancel" },
+                            { id: 2 - 3 - 0, name: "URL링크결제", to: "/bank/pay/link" },
                         ],
                     },
-                    // { id: 2 - 4, name: "승인취소", to: "/bank/cancel" },
-                    { id: 2 - 5, name: "등록계좌 해지", to: "/bank/reg-cancel" },
-                    { id: 2 - 6, name: "등록계좌 조회", to: "/bank/reg-search" },
-                    { id: 2 - 7, name: "결제결과 수신", to: "/bank/result-recieve" },
-                    { id: 2 - 8, name: "결제결과 조회", to: "/bank/result-search" },
-                    { id: 2 - 9, name: "응답오류 처리안내", to: "/bank/error-code" },
+                    {
+                        id: 2 - 4,
+                        name: "현금영수증",
+                        children: [
+                            { id: 2 - 4 - 1, name: "현금영수증 발행요청", to: "/bank/recipt/request" },
+                            { id: 2 - 4 - 2, name: "현금영수증 취소요청", to: "/bank/recipt/cancel" },
+                        ],
+                    },
+                    { id: 2 - 5, name: "계좌이체 환불", to: "/bank/pay/cancel" },
+                    { id: 2 - 6, name: "등록계좌 해지", to: "/bank/regist/cancel" },
+                    { id: 2 - 7, name: "등록계좌 조회", to: "/bank/regist/search" },
+                    { id: 2 - 8, name: "결제결과 수신", to: "/bank/result/recieve" },
+                    { id: 2 - 9, name: "결제결과 조회", to: "/bank/result/search" },
+                    { id: 2 - 10, name: "정책", to: "/bank/policy" },
                 ],
+            },
+            {
+                id: 4,
+                name: "웹훅(Webhook) URL 설정",
+                to: "/webhook",
+            },
+            {
+                id: 5,
+                name: "샘플코드",
+                to: "/sample-code",
+            },
+            {
+                id: 6,
+                name: "문서 버전 관리",
+                to: "/docs-ver",
+            },
+            {
+                id: 7,
+                name: "FAQ",
+                to: "/faq",
             },
         ],
     }),
@@ -223,6 +256,10 @@ table th {
     font-size:1rem !important;
     text-align: center !important;
 }
+.limit table {
+    white-space: normal;
+    width:100%;
+}
 .half-bg--payple {
     position:relative;
     display:inline;
@@ -235,6 +272,21 @@ table th {
     bottom:0;
     top:60%;
     background: rgba(120, 82, 232, 0.4);
+    z-index: 0;
+    border-radius:4px;
+}
+.half-bg--tooltip {
+    position:relative;
+    display:inline;
+}
+.half-bg--tooltip:before {
+    content:'';
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:60%;
+    background:rgba(41, 98, 255, 0.4);
     z-index: 0;
     border-radius:4px;
 }
@@ -253,5 +305,12 @@ code {
     margin:0;
     padding:0 1rem;
     font-weight: 400 !important;
+}
+.tree-gutter {
+    display: inline-block;
+    width:20px;
+}
+.cursor-pointer {
+    cursor: pointer;
 }
 </style>

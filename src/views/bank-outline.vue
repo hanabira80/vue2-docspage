@@ -1,101 +1,1045 @@
 <template>
-    <div class="px-6 py-4">
+    <div :class="{ 'px-2 py-4': $vuetify.breakpoint.xs, 'px-6 py-6': $vuetify.breakpoint.smAndUp }">
         <v-breadcrumbs :items="subNavi" large class="px-0">
             <template v-slot:divider>
                 <v-icon>mdi-chevron-right</v-icon>
             </template>
         </v-breadcrumbs>
 
-        <h1 class="mt-2 mb-8">계좌결제 개요</h1>
-        <p class="mb-12">
-            페이플 계좌결제는 최초 1회 계좌등록 후 결제 가능한 서비스입니다.<br />
-            ARS인증 혹은 SMS인증만으로 계좌등록과 결제가 완료되기 때문에 별도 앱 설치, 보안카드, 공인인증서 등이 필요 없습니다.<br />
-            실시간계좌이체를 대체하는 단건결제, 정기결제, 링크결제 서비스를 제공하고 있습니다.
-        </p>
+        <h1 class="mb-4">계좌결제 개요</h1>
+        <blockquote class="mb-12 blockquote body-1">
+            페이플 카드결제 서비스는 간편결제, 정기결제와 같은<br />
+            새로운 비즈니스모델과 서비스를 지원하기 위해 다양한 결제방식을 제공합니다.
+        </blockquote>
 
         <article class="mb-12">
-            <v-alert border="left" colored-border color="deep-purple accent-4" elevation="2" class="mb-8">
-                <h3 class="mb-4">특징</h3>
-                <p class="pl-2">
-                    <b>회원가입 없이 결제가능</b><br />
-                    별도의 회원가입 절차 없이 결제가 가능합니다.
-                </p>
-                <p class="pl-2">
-                    <b>빠른개발</b><br />
-                    페이플에서 제공하는 javascript 라이브러리와 샘플코드를 통해 손쉬운 개발이 가능합니다.
-                </p>
-                <p class="pl-2">
-                    <b>비밀번호를 등록 후 간편결제 가능</b><br />
-                    첫 결제 시 비밀번호를 등록하면 재결제를 할 때 비밀번호 입력만으로 결제가 가능합니다.
-                </p>
-            </v-alert>
+            <h2>조감도</h2>
 
-            <v-alert border="left" colored-border color="deep-purple accent-4" elevation="2" class="mb-8">
-                <h3 class="mb-4">서비스 종류</h3>
-                <p class="pl-2">
-                    <b>단건결제</b><br />
-                    단 건으로 결제하는 것을 말합니다. 결제 시마다 새롭게 계좌정보 입력과 본인인증을 거칩니다.
-                </p>
-                <p class="pl-2">
-                    <b>정기결제</b><br />
-                    정기결제 서비스를 사용하는 경우 결제 연도와 월이 중복되지 않게 도와주는 결제 서비스입니다.<br />
-                    예) A고객이 2020년 2월에 결제한 내역이 존재할 경우 2020년 2월에 중복으로 결제할 수 없습니다.
-                </p>
-                <p class="pl-2">
-                    <b>간편결제</b><br />
-                    단건결제와 정기결제를 통해 최초 1회 계좌등록 후 재결제시에는 비밀번호만으로 결제 가능한 서비스입니다.
-                </p>
-                <p class="pl-2">
-                    <b>링크결제</b><br />
-                    가맹점에서 생성한 링크를 통해 결제할 수 있는 서비스입니다. 고객은 친숙한 문자나 메신저에서 링크주소를 통해 바로 결제할 수 있습니다.
-                </p>
-            </v-alert>
+            <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
+                <!-- <div class="overline pa-2">첫결제 (빌링키 발급 전)</div> -->
+                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+            </v-card>
+
+            <v-row class="mb-12">
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <v-card-text>
+                            <p class="title text--primary">
+                                비밀번호 자동결제
+                            </p>
+                            <div class="text--primary">
+                                <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>시, 6자리 비밀번호를 설정하고 재결제시 비밀번호 인증을 받아 부정사용을 방지하는 결제방식입니다.
+                            </div>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2"><v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip> - <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">최초결제</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    최초로 결제를하는 과정입니다.<br/><br/>
+
+                    일반적으로 최초결제시에 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 결제가 동시에 이루어지지만,<br/>
+                    정기결제와 같은 특수한 환경에서는 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>만 먼저하고 최초결제는 추후 이루어지기도 합니다.<br/><br/>
+
+                    <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>이 없는 결제방식에서는 최초결제,재결제시 결제프로세스가 동일합니다.
+                </span>
+            </template>
+        </v-tooltip></div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2">비밀번호 인증 - 재결제</div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+            </v-row>
+            <!-- <v-divider class="my-8"></v-divider> -->
+
+            <v-row class="mb-8">
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <v-card-text>
+                            <p class="title text--primary">
+                                일회성 간편결제
+                            </p>
+                            <div class="text--primary">
+                                <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">최초결제</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    최초로 결제를하는 과정입니다.<br/><br/>
+
+                    일반적으로 최초결제시에 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 결제가 동시에 이루어지지만,<br/>
+                    정기결제와 같은 특수한 환경에서는 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>만 먼저하고 최초결제는 추후 이루어지기도 합니다.<br/><br/>
+
+                    <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>이 없는 결제방식에서는 최초결제,재결제시 결제프로세스가 동일합니다.
+                </span>
+            </template>
+        </v-tooltip>시에 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 결제가 동시에 이루어지나 재결제시에 등록된빌키를 사용하지 않는 결제방식입니다. 매번 계좌 정보를
+                                입력하여 결제를 하게 됩니다.
+                            </div>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2"><v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip> - <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">최초결제</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    최초로 결제를하는 과정입니다.<br/><br/>
+
+                    일반적으로 최초결제시에 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 결제가 동시에 이루어지지만,<br/>
+                    정기결제와 같은 특수한 환경에서는 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>만 먼저하고 최초결제는 추후 이루어지기도 합니다.<br/><br/>
+
+                    <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>이 없는 결제방식에서는 최초결제,재결제시 결제프로세스가 동일합니다.
+                </span>
+            </template>
+        </v-tooltip></div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2"><v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip> - 재결제</div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+            </v-row>
+            <!-- <v-divider class="my-8"></v-divider> -->
+
+            <v-row class="mb-8">
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <v-card-text>
+                            <p class="title text--primary">
+                                정기 결제
+                            </p>
+                            <div class="text--primary">
+                                <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip> 후, 다양한 결제주기에 맞춰 정기결제를 할 수 있는 서비스입니다.
+                            </div>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2"><v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip></div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2">재결제</div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+            </v-row>
+            <!-- <v-divider class="my-8"></v-divider> -->
+
+            <v-row class="mb-8">
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <v-card-text>
+                            <p class="title text--primary">
+                                월 1회 정기결제
+                            </p>
+                            <div class="text--primary">
+                                월1회만 결제를 낼 수 있도록 페이플에서 계좌당 월1회를 초과되는 결제시도를 차단하여, 중복결제를 방지합니다.
+                            </div>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2"><v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip></div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2">재결제</div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+            </v-row>
+            <!-- <v-divider class="my-8"></v-divider> -->
+
+            <v-row class="mb-8">
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <v-card-text>
+                            <p class="title text--primary">
+                                URL링크결제
+                            </p>
+                            <div class="text--primary">
+                                페이플에서 제공하는 관리자사이트에서 결제링크를 생성해 결제를 받는 방식입니다. 따라서 개발연동과정이 필요가 없습니다.
+                            </div>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2">링크생성</div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2">링크 접속 후 결제</div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+            </v-row>
+            <!-- <v-divider class="my-8"></v-divider> -->
+
+            <v-row class="mb-8">
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <v-card-text>
+                            <p class="title text--primary">
+                                <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">앱카드</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드사가 제공하는 앱카드,ISP 등의 인증방식으로 결제되는 방식입니다.
+                </span>
+            </template>
+        </v-tooltip>결제
+                            </p>
+                            <div class="text--primary">
+                                카드사에서 제공하는 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">앱카드</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드사가 제공하는 앱카드,ISP 등의 인증방식으로 결제되는 방식입니다.
+                </span>
+            </template>
+        </v-tooltip>로 결제하는 방식입니다. <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip> 단계가 없어, 결제할 때마다 같은 프로세스로 결제합니다.
+                            </div>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2"><v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">최초결제</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    최초로 결제를하는 과정입니다.<br/><br/>
+
+                    일반적으로 최초결제시에 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 결제가 동시에 이루어지지만,<br/>
+                    정기결제와 같은 특수한 환경에서는 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>만 먼저하고 최초결제는 추후 이루어지기도 합니다.<br/><br/>
+
+                    <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>이 없는 결제방식에서는 최초결제,재결제시 결제프로세스가 동일합니다.
+                </span>
+            </template>
+        </v-tooltip></div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+                <v-col col="12" sm="4">
+                    <v-card raised col="12" sm="4">
+                        <div class="overline pa-2">재결제</div>
+                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                    </v-card>
+                </v-col>
+            </v-row>
+            <!-- <v-divider class="my-8"></v-divider> -->
+
+            <v-card class="temp_table ma-4 mb-12">
+                <v-simple-table class="table-hover-disable">
+                    <tbody>
+                        <tr>
+                            <td colspan="1" rowspan="2"></td>
+                            <td colspan="2" rowspan="1">
+                                간편결제
+                            </td>
+                            <td colspan="1" rowspan="2">
+                                정기결제
+                            </td>
+                            <td colspan="2" rowspan="1">
+                                기타
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                비밀번호 간편결제
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                일회성 간편결제
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                URL링크결제
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">앱카드</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드사가 제공하는 앱카드,ISP 등의 인증방식으로 결제되는 방식입니다.
+                </span>
+            </template>
+        </v-tooltip> 결제
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                O
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                △ (<v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>은 되지만, 발급된 빌링키를 사용하지 않음)
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                O
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                △ (<v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>은 되지만, 발급된 빌링키를 사용하지 않음)
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                X
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                빌링키등록 방식
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                계좌등록
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                계좌등록
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                계좌등록
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                X
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                X
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">최초결제</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    최초로 결제를하는 과정입니다.<br/><br/>
+
+                    일반적으로 최초결제시에 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 결제가 동시에 이루어지지만,<br/>
+                    정기결제와 같은 특수한 환경에서는 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>만 먼저하고 최초결제는 추후 이루어지기도 합니다.<br/><br/>
+
+                    <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>이 없는 결제방식에서는 최초결제,재결제시 결제프로세스가 동일합니다.
+                </span>
+            </template>
+        </v-tooltip> 방식
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                결제창 호출 (javascript)
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                결제창 호출 (javascript)
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                1.<v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 동시에 결제까지 진행시, 결제창 호출(javascript)   2. <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>은 사전에 되어 있고, <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">최초결제</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    최초로 결제를하는 과정입니다.<br/><br/>
+
+                    일반적으로 최초결제시에 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 결제가 동시에 이루어지지만,<br/>
+                    정기결제와 같은 특수한 환경에서는 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>만 먼저하고 최초결제는 추후 이루어지기도 합니다.<br/><br/>
+
+                    <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>이 없는 결제방식에서는 최초결제,재결제시 결제프로세스가 동일합니다.
+                </span>
+            </template>
+        </v-tooltip>만 진행시에는 REST
+                                API 사용
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                링크주소로 고객이 직접 접속하여 결제
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                결제창 호출 (javascript)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                재결제 방식
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">최초결제</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    최초로 결제를하는 과정입니다.<br/><br/>
+
+                    일반적으로 최초결제시에 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 결제가 동시에 이루어지지만,<br/>
+                    정기결제와 같은 특수한 환경에서는 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>만 먼저하고 최초결제는 추후 이루어지기도 합니다.<br/><br/>
+
+                    <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>이 없는 결제방식에서는 최초결제,재결제시 결제프로세스가 동일합니다.
+                </span>
+            </template>
+        </v-tooltip>와 동일
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">최초결제</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    최초로 결제를하는 과정입니다.<br/><br/>
+
+                    일반적으로 최초결제시에 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 결제가 동시에 이루어지지만,<br/>
+                    정기결제와 같은 특수한 환경에서는 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>만 먼저하고 최초결제는 추후 이루어지기도 합니다.<br/><br/>
+
+                    <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>이 없는 결제방식에서는 최초결제,재결제시 결제프로세스가 동일합니다.
+                </span>
+            </template>
+        </v-tooltip>와 동일
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                REST API
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">최초결제</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    최초로 결제를하는 과정입니다.<br/><br/>
+
+                    일반적으로 최초결제시에 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 결제가 동시에 이루어지지만,<br/>
+                    정기결제와 같은 특수한 환경에서는 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>만 먼저하고 최초결제는 추후 이루어지기도 합니다.<br/><br/>
+
+                    <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>이 없는 결제방식에서는 최초결제,재결제시 결제프로세스가 동일합니다.
+                </span>
+            </template>
+        </v-tooltip>와 동일
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">최초결제</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    최초로 결제를하는 과정입니다.<br/><br/>
+
+                    일반적으로 최초결제시에 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>과 결제가 동시에 이루어지지만,<br/>
+                    정기결제와 같은 특수한 환경에서는 <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>만 먼저하고 최초결제는 추후 이루어지기도 합니다.<br/><br/>
+
+                    <v-tooltip v-model="toolTipShow" top>
+            <template v-slot:activator="{ on }">
+                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
+            </template>
+            <template v-slot:default>
+                <span>
+                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
+                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
+                </span>
+            </template>
+        </v-tooltip>이 없는 결제방식에서는 최초결제,재결제시 결제프로세스가 동일합니다.
+                </span>
+            </template>
+        </v-tooltip>와 동일
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                월 중복결제 방지기능
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                O
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                O
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                O
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                X
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                X
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                비밀번호 설정기능
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                O
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                X
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                X
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                X
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                X
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                연동개발 필요
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                O
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                O
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                O
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                X
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                O
+                            </td>
+                        </tr>
+                    </tbody>
+                </v-simple-table>
+            </v-card>
         </article>
 
-        <article class="mb-12">
-            <h2>결제서비스 흐름도</h2>
-            <v-divider class="my-6"></v-divider>
-            <v-img :src="require('../../src/assets/test 1-1-1.png')" cover class="grey darken-4"></v-img>
-        </article>
+        <v-row class="mb-12 pt-12">
+            <v-col col="12" sm="4">
+                <v-card>
+                    <v-list-item>
+                        <v-list-item-avatar color="pink darken-1">
+                            <v-icon color="white">
+                                mdi-frequently-asked-questions
+                            </v-icon>
+                        </v-list-item-avatar>
 
-        <article class="mb-12">
-            <h2>샘플 페이지</h2>
-            <v-divider class="my-6"></v-divider>
-            <p class="pl-4">
-                참고 가능한 샘플 페이지 폴더입니다.
-            </p>
-            <p class="pl-4">
-                호출을 위한 각 언어별 샘플을 확인해보세요.
-            </p>
-            <p class="pl-4">
-                응답코드 샘플을 확인해보세요.
-            </p>
-        </article>
-
-        <article class="mb-12">
-            <h2>공통 정의사항</h2>
-            <v-divider class="my-6"></v-divider>
-            <p class="pl-4">
-                인코딩: UTF-8
-            </p>
-            <p class="pl-4">
-                SSL 보안통신 필수
-            </p>
-            <p class="pl-4">
-                메시지 포맷: JSON
-            </p>
-        </article>
-
-        <article class="mb-12">
-            <h2>문의</h2>
-            <v-divider class="my-6"></v-divider>
-            <p class="pl-4">
-                기술문의: dev@payple.kr 을 통해 보다 자세한 문의가 가능합니다.
-            </p>
-            <p class="pl-4">
-                가입문의: 페이플 웹사이트 가입문의하기를 통하시면 가장 빠르게 안내받으실 수 있습니다.
-            </p>
-        </article>
+                        <v-list-item-content>
+                            <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
+                            <v-list-item-subtitle>높은 빈도의 문의를 모아봤어요</v-list-item-subtitle>
+                        </v-list-item-content>
+                        <v-list-item-action>
+                            <v-btn fab text color="blue accent-4">
+                                <v-icon>
+                                    mdi-vector-link
+                                </v-icon>
+                            </v-btn>
+                        </v-list-item-action>
+                    </v-list-item>
+                </v-card>
+            </v-col>
+            <v-col col="12" sm="4">
+                <v-card>
+                    <v-list-item>
+                        <v-list-item-avatar color="indigo darken-4">
+                            <v-icon color="white">
+                                mdi-git
+                            </v-icon>
+                        </v-list-item-avatar>
+                        <v-list-item-content>
+                            <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
+                            <v-list-item-subtitle>페이플 오픈 소스에 참여 하세요</v-list-item-subtitle>
+                        </v-list-item-content>
+                        <v-list-item-action>
+                            <v-btn fab text color="blue accent-4">
+                                <v-icon>
+                                    mdi-vector-link
+                                </v-icon>
+                            </v-btn>
+                        </v-list-item-action>
+                    </v-list-item>
+                </v-card>
+            </v-col>
+            <v-col col="12" sm="4">
+                <v-card>
+                    <v-list-item>
+                        <v-list-item-avatar color="teal accent-4">
+                            <v-icon color="white">
+                                mdi-email-send-outline
+                            </v-icon>
+                        </v-list-item-avatar>
+                        <v-list-item-content>
+                            <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
+                            <v-list-item-subtitle>페이플 개발팀에 문의해보세요</v-list-item-subtitle>
+                        </v-list-item-content>
+                        <v-list-item-action>
+                            <v-btn fab text color="blue accent-4">
+                                <v-icon>
+                                    mdi-pencil
+                                </v-icon>
+                            </v-btn>
+                        </v-list-item-action>
+                    </v-list-item>
+                </v-card>
+            </v-col>
+        </v-row>
     </div>
 </template>
 
@@ -105,22 +1049,35 @@ import { component as VueCodeHighlight } from "vue-code-highlight";
 
 export default {
     components: {
-        VueCodeHighlight
+        VueCodeHighlight,
     },
     data() {
         return {
+            toolTipShow: false,
+            code_1: `
+POST /php/auth.php HTTP/1.1
+Host: testcpay.payple.kr
+Content-Type: application/json
+Cache-Control: no-cache //AWS 이용 가맹점인 경우 REFERER
+referer: https://가맹점 도메인
+
+{
+    "cst_id": "test",
+    "custKey": "abcd1234567890"
+}
+`,
             subNavi: [
                 {
                     text: "홈",
                     disabled: false,
-                    to: "/"
+                    to: "/",
                 },
                 {
-                    text: "계좌결제",
-                    disabled: true
-                }
-            ]
+                    text: "카드결제",
+                    disabled: true,
+                },
+            ],
         };
-    }
+    },
 };
 </script>
