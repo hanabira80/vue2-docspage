@@ -6,32 +6,14 @@
             </template>
         </v-breadcrumbs>
 
-        <h1 class="mb-12">현금영수증 발행/<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip></h1>
+        <h1 class="mb-12">현금영수증 발행/취소</h1>
 
         <article class="mb-12">
             <h2 class="">
                 현금영수증 발행요청
             </h2>
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                요청 전 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>이 필요합니다. 관련된 문서는 이곳에서 확인 가능합니다.
+                요청 전 가맹점 인증이 필요합니다. 관련된 문서는 이곳에서 확인 가능합니다.
             </v-alert>
 
             <h3 class="pl-4">
@@ -77,16 +59,7 @@
                                 UFVN...
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 cst_id Token
+                                가맹점 인증 후 리턴 받은 cst_id Token
                             </td>
                         </tr>
                         <tr>
@@ -106,16 +79,7 @@
                                 T3Jz...
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 custKey Token
+                                가맹점 인증 후 리턴 받은 custKey Token
                             </td>
                         </tr>
                         <tr>
@@ -135,16 +99,7 @@
                                 a688c...
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 인증 Token
+                                가맹점 인증 후 리턴 받은 인증 Token
                             </td>
                         </tr>
                         <tr>
@@ -184,17 +139,7 @@
                                 test099942200156938
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>
+                                주문번호
                             </td>
                         </tr>
                         <tr>
@@ -372,17 +317,7 @@
                                 test201804000001
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>
+                                주문번호
                             </td>
                         </tr>
                         <tr>
@@ -437,16 +372,7 @@
 
         <article class="mb-12">
             <h2 class="">
-                현금영수증 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>요청
+                현금영수증 취소요청
             </h2>
 
             <h3 class="pl-4">
@@ -492,16 +418,7 @@
                                 UFVN...
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 cst_id Token
+                                가맹점 인증 후 리턴 받은 cst_id Token
                             </td>
                         </tr>
                         <tr>
@@ -521,16 +438,7 @@
                                 T3Jz...
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 custKey Token
+                                가맹점 인증 후 리턴 받은 custKey Token
                             </td>
                         </tr>
                         <tr>
@@ -550,16 +458,7 @@
                                 a688c...
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 인증 Token
+                                가맹점 인증 후 리턴 받은 인증 Token
                             </td>
                         </tr>
                         <tr>
@@ -599,17 +498,7 @@
                                 test099942200156938
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>
+                                주문번호
                             </td>
                         </tr>
                         <tr>
@@ -723,16 +612,7 @@
                                 TSDL0000
                             </td>
                             <td colspan="1" rowspan="1">
-                                현금영수증 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 성공 코드
+                                현금영수증 취소 성공 코드
                             </td>
                         </tr>
                         <tr>
@@ -740,28 +620,10 @@
                                 PCD_PAY_MSG
                             </td>
                             <td colspan="1" rowspan="1">
-                                현금영수증 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 성공
+                                현금영수증 취소 성공
                             </td>
                             <td colspan="1" rowspan="1">
-                                현금영수증 발행 결과 메시지 (현금영수증 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 성공|실패)
+                                현금영수증 발행 결과 메시지 (현금영수증 취소 성공|실패)
                             </td>
                         </tr>
                         <tr>
@@ -772,16 +634,7 @@
                                 TSCANCEL
                             </td>
                             <td colspan="1" rowspan="1">
-                                현금영수증 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>요청 방식
+                                현금영수증 취소요청 방식
                             </td>
                         </tr>
                         <tr>
@@ -803,17 +656,7 @@
                                 test201804000001
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>
+                                주문번호
                             </td>
                         </tr>
                         <tr>
@@ -843,16 +686,7 @@
                                 PCD_TAXSAVE_MGTNUM
                             </td>
                             <td colspan="1" rowspan="1">
-                                [<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>번호] G..
+                                [취소번호] G..
                             </td>
                             <td colspan="1" rowspan="1">
                                 현금영수증 국세청 발행 번호
@@ -985,59 +819,14 @@ export default {
             code_1_1: `
 #현금영수증 발행요청
  
-POST <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 PCD_PAY_URL  HTTP/1.1
-Host: <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 PCD_PAY_HOST
+POST 가맹점 인증 후 리턴받은 PCD_PAY_URL  HTTP/1.1
+Host: 가맹점 인증 후 리턴받은 PCD_PAY_HOST
 Content-Type: application/json
 Cache-Control: no-cache
 {
-  "PCD_CST_ID": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 cst_id"
-  "PCD_CUST_KEY": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 custKey"
-  "PCD_AUTH_KEY": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 AuthKey",
+  "PCD_CST_ID": "가맹점 인증 후 리턴받은 cst_id"
+  "PCD_CUST_KEY": "가맹점 인증 후 리턴받은 custKey"
+  "PCD_AUTH_KEY": "가맹점 인증 후 리턴받은 AuthKey",
   "PCD_PAYER_ID": "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",
   "PCD_PAY_OID": "test201804000001",
   “PCD_TAXSAVE_AMOUNT”: 1000,
@@ -1060,69 +849,15 @@ Cache-Control: no-cache
 }
 `,
             code_3_1: `
-#현금영수증 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>요청
-POST <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 PCD_PAY_URL HTTP/1.1
-Host: <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 PCD_PAY_HOST
+#현금영수증 취소요청
+POST 가맹점 인증 후 리턴받은 PCD_PAY_URL HTTP/1.1
+Host: 가맹점 인증 후 리턴받은 PCD_PAY_HOST
 Content-Type: application/json
 Cache-Control: no-cache
 {
-  "PCD_CST_ID": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 cst_id"
-  "PCD_CUST_KEY": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 custKey"
-  "PCD_AUTH_KEY": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 AuthKey",
+  "PCD_CST_ID": "가맹점 인증 후 리턴받은 cst_id"
+  "PCD_CUST_KEY": "가맹점 인증 후 리턴받은 custKey"
+  "PCD_AUTH_KEY": "가맹점 인증 후 리턴받은 AuthKey",
   "PCD_PAYER_ID": "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",
   "PCD_PAY_OID": "test202003000001"
 }
@@ -1131,31 +866,13 @@ Cache-Control: no-cache
  {
   "PCD_PAY_RST" => "success",
   “PCD_PAY_CODE” => “T..”,
-  "PCD_PAY_MSG" => "현금영수증 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 성공",
+  "PCD_PAY_MSG" => "현금영수증 취소 성공",
   “PCD_PAY_WORK” => “TSCANCEL”,
   "PCD_PAYER_ID" => "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",
   "PCD_PAY_OID" => "test201804000001",
   "PCD_REGULER_FLAG" => "N",
   "PCD_TAXSAVE_AMOUNT" => 1000,
-  "PCD_TAXSAVE_MGTNUM" => "[<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>번호] G.."
+  "PCD_TAXSAVE_MGTNUM" => "[취소번호] G.."
 }
 `,
         };

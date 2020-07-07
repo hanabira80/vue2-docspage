@@ -245,135 +245,15 @@
             </v-card>
 
             <h2 class="">
-                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>정책
+                환불정책
             </h2>
             <blockquote class="mb-12 blockquote body-1">
-                -개념: 계좌결제에서는 한번 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>된 거래건은 원복되지 않습니다. 다만 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>을 요청하는 고객들을 지원하기 위해서 페이플에서 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>대행서비스를 지원합니다.<br/><br/>
-                가맹점에서 페이플로 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>요청을 하게 되면 페이플에서 고객에게 결제대금을 송금하며, 그 대금은 가맹점에 지급해야하는 정산예정금액에서 차감합니다.<br/><br/>
-                -<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>시간: <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>요청시 즉시 처리됩니다.<br/><br/>
+                -개념: 계좌결제에서는 한번 출금된 거래건은 원복되지 않습니다. 다만 환불을 요청하는 고객들을 지원하기 위해서 페이플에서 환불대행서비스를 지원합니다.<br/><br/>
+                가맹점에서 페이플로 환불요청을 하게 되면 페이플에서 고객에게 결제대금을 송금하며, 그 대금은 가맹점에 지급해야하는 정산예정금액에서 차감합니다.<br/><br/>
+                -환불시간: 환불요청시 즉시 처리됩니다.<br/><br/>
                 -서비스 오픈여부: 가맹점에 추가비용이 발생하여, 별도 신청시에 오픈하여 드립니다. help@payple.kr로 문의주세요.<br/><br/>
-                -유의사항: <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>시에는 결제수수료가 원복되지 않으며, <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>대행수수료가 추가과금됩니다.<br/><br/>
-                -<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>의 제한: 결제완료된 건을 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>하게 되면 페이플에서 해당금액을 앞으로 가맹점에 정산할 예정금액에서 차감합니다. 차감될 정산예정금액이 남아 있지 않은 경우에는 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>가 불가합니다.
+                -유의사항: 환불시에는 결제수수료가 원복되지 않으며, 환불대행수수료가 추가과금됩니다.<br/><br/>
+                -환불의 제한: 결제완료된 건을 취소하게 되면 페이플에서 해당금액을 앞으로 가맹점에 정산할 예정금액에서 차감합니다. 차감될 정산예정금액이 남아 있지 않은 경우에는 취소가 불가합니다.
             </blockquote>
         </article>
         <v-divider class="mb-12"></v-divider>
@@ -487,59 +367,14 @@ export default {
             ],
             code_1_1: `
 #해지 요청
-POST <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 PCD_PAY_URL HTTP/1.1
-Host: <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 PCD_PAY_HOST
+POST 가맹점 인증 후 리턴받은 PCD_PAY_URL HTTP/1.1
+Host: 가맹점 인증 후 리턴받은 PCD_PAY_HOST
 Content-Type: application/json
 Cache-Control: no-cache
 {
-  "PCD_CST_ID": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 cst_id",
-  "PCD_CUST_KEY": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 custKey",
-  "PCD_AUTH_KEY": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 AuthKey",
+  "PCD_CST_ID": "가맹점 인증 후 리턴받은 cst_id",
+  "PCD_CUST_KEY": "가맹점 인증 후 리턴받은 custKey",
+  "PCD_AUTH_KEY": "가맹점 인증 후 리턴받은 AuthKey",
   "PCD_PAYER_ID": "d0to...",
   "PCD_PAYER_NO": “1234”
 }

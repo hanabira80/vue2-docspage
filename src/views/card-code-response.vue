@@ -65,27 +65,9 @@
                             <td dir="ltr">설명</td>
                         </tr>
                         <tr>
-                            <td dir="ltr" rowspan="5">AUTH<br />(<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>)</td>
+                            <td dir="ltr" rowspan="5">AUTH<br />(가맹점 인증)</td>
                             <td dir="ltr">0001</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>에 필요한 cst_id 를 확인해주세요.</td>
+                            <td dir="ltr">가맹점 인증에 필요한 cst_id 를 확인해주세요.</td>
                             <td dir="ltr">
                                 - 가맹점에서 페이플로 전송된 cst_id 가 페이플에서 발급된 cst_id 와 다르거나 공백인 경우에 발생합니다. <br />- cst_id 는 최초
                                 가맹점 오픈 안내 메일에 첨부해 발송드립니다. <br />- 테스트환경과 운영환경에서 쓰이는 cst_id가 다르니 확인해주세요. <br />-
@@ -94,16 +76,7 @@
                         </tr>
                         <tr>
                             <td dir="ltr">0002</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>에 필요한 custKey 를 확인해주세요.</td>
+                            <td dir="ltr">가맹점 인증에 필요한 custKey 를 확인해주세요.</td>
                             <td dir="ltr">
                                 - 가맹점 -&gt; 페이플로 전송된 custKey 가 페이플에서 발급된 custKey 와 다르거나 공백인 경우에 발생합니다. <br />- 테스트환경과
                                 운영환경에서 쓰이는 custKey가 다르니 확인해주세요. <br />- 테스트환경의 custKey는 연동가이드에서 확인할 수 있으며 운영환경에서
@@ -153,17 +126,7 @@
                         <tr>
                             <td dir="ltr">0018</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
-                            <td dir="ltr">- 카드사와의 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 전문 전송이 실패하거나 전문 오류로 인한 전송 실패 시 발생하는 응답입니다.</td>
+                            <td dir="ltr">- 카드사와의 승인 전문 전송이 실패하거나 전문 오류로 인한 전송 실패 시 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">0022</td>
@@ -200,33 +163,14 @@
                         <tr>
                             <td dir="ltr">0201</td>
                             <td dir="ltr">이미 존재하는 거래입니다. 다시 시도해주세요.</td>
-                            <td dir="ltr">- <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip> 중복 오류로 인한 중복결제 시 발생하는 응답입니다.</td>
+                            <td dir="ltr">- 주문번호 중복 오류로 인한 중복결제 시 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
                             <td rowspan="2">CBIL<br />(결제내역)</td>
                             <td dir="ltr">0002</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
-                                - 브라우저의 세션이 만료되어 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
+                                - 브라우저의 세션이 만료되어 가맹점 인증을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
                             </td>
                         </tr>
                         <tr>
@@ -249,16 +193,7 @@
                             <td dir="ltr">0004</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
-                                - 브라우저의 세션이 만료되어 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
+                                - 브라우저의 세션이 만료되어 가맹점 인증을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
                             </td>
                         </tr>
                         <tr>
@@ -283,115 +218,28 @@
                         <tr>
                             <td dir="ltr">0014</td>
                             <td dir="ltr">이미 존재하는 거래입니다. 다시 시도해주세요.</td>
-                            <td dir="ltr">- <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip> 중복 오류로 인한 중복결제 시 발생하는 응답입니다.</td>
+                            <td dir="ltr">- 주문번호 중복 오류로 인한 중복결제 시 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">0014</td>
                             <td dir="ltr">이미 존재하는 거래입니다. 다시 시도해주세요.</td>
-                            <td dir="ltr">- <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip> 중복 오류로 인한 중복결제 시 발생하는 응답입니다.</td>
+                            <td dir="ltr">- 주문번호 중복 오류로 인한 중복결제 시 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">1001</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
-                            <td dir="ltr">- <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>요청에 대한 카드사 응답이 없을 때 발생하는 응답입니다.</td>
+                            <td dir="ltr">- 승인요청에 대한 카드사 응답이 없을 때 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">1003</td>
-                            <td dir="ltr">결제 오류로 인해 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>된 거래건이 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>되었습니다. 다시 시도해주세요.</td>
+                            <td dir="ltr">결제 오류로 인해 승인된 거래건이 취소되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
-                                - 비정상적인 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>데이터로 인해, <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>된 거래건을 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>시키고 응답메세지를 노출합니다.<br />- 다시 한번 결제시도해주세요.
+                                - 비정상적인 승인데이터로 인해, 승인된 거래건을 취소시키고 응답메세지를 노출합니다.<br />- 다시 한번 결제시도해주세요.
                             </td>
                         </tr>
                         <tr>
                             <td dir="ltr">9991</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>에 필요한 custKey 를 확인해주세요.</td>
+                            <td dir="ltr">가맹점 인증에 필요한 custKey 를 확인해주세요.</td>
                             <td dir="ltr">
                                 - 가맹점 -&gt; 페이플로 전송된 custKey 가 페이플에서 발급된 custKey 와 다르거나 공백인 경우에 발생합니다.<br />- custKey 는 최초
                                 가맹점 오픈 안내 메일에 첨부해 발송드립니다.<br />- 테스트환경과 운영환경에서 쓰이는 cst_id가 다르니 확인해주세요.
@@ -414,16 +262,7 @@
                             <td dir="ltr">0006</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
-                                - 브라우저의 세션이 만료되어 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
+                                - 브라우저의 세션이 만료되어 가맹점 인증을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
                             </td>
                         </tr>
                         <tr>
@@ -441,33 +280,14 @@
                         <tr>
                             <td dir="ltr">0015</td>
                             <td dir="ltr">이미 존재하는 거래입니다. 다시 시도해주세요.</td>
-                            <td dir="ltr">- <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>가 중복될 때 발생하는 응답입니다. (월 중복결제 방지)</td>
+                            <td dir="ltr">- 주문번호가 중복될 때 발생하는 응답입니다. (월 중복결제 방지)</td>
                         </tr>
                         <tr>
                             <td dir="ltr" rowspan="2">CDAU<br />(카드등록)</td>
                             <td dir="ltr">0001</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
-                                - 브라우저의 세션이 만료되어 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
+                                - 브라우저의 세션이 만료되어 가맹점 인증을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
                             </td>
                         </tr>
                         <tr>
@@ -559,29 +379,11 @@
                         </tr>
                         <tr>
                             <td>1115</td>
-                            <td>이미 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>된 거래건 입니다.</td>
+                            <td>이미 취소된 거래건 입니다.</td>
                         </tr>
                         <tr>
                             <td>1116</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 불가 상태입니다.</td>
+                            <td>취소 불가 상태입니다.</td>
                         </tr>
                         <tr>
                             <td>1117</td>
@@ -593,16 +395,7 @@
                         </tr>
                         <tr>
                             <td>1120</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>불가 상태입니다. 잠시 후 다시 이용해 주세요.</td>
+                            <td>취소불가 상태입니다. 잠시 후 다시 이용해 주세요.</td>
                         </tr>
                         <tr>
                             <td>1121</td>
@@ -614,16 +407,7 @@
                         </tr>
                         <tr>
                             <td>1123</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 가능기간이 만료되었습니다.</td>
+                            <td>취소 가능기간이 만료되었습니다.</td>
                         </tr>
                         <tr>
                             <td>1124</td>
@@ -635,68 +419,23 @@
                         </tr>
                         <tr>
                             <td>1126</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 금액이 불일치 합니다.</td>
+                            <td>취소 금액이 불일치 합니다.</td>
                         </tr>
                         <tr>
                             <td>1127</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 한도 초과 오류입니다.</td>
+                            <td>취소 한도 초과 오류입니다.</td>
                         </tr>
                         <tr>
                             <td>1128</td>
-                            <td>부분<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 가능 금액 초과 오류입니다.</td>
+                            <td>부분취소 가능 금액 초과 오류입니다.</td>
                         </tr>
                         <tr>
                             <td>1129</td>
-                            <td>일<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 한도 초과 오류입니다.</td>
+                            <td>일취소 한도 초과 오류입니다.</td>
                         </tr>
                         <tr>
                             <td>1130</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 불가한 가맹점입니다.</td>
+                            <td>취소 불가한 가맹점입니다.</td>
                         </tr>
                         <tr>
                             <td>1131</td>
@@ -736,16 +475,7 @@
                         </tr>
                         <tr>
                             <td>1140</td>
-                            <td>당일거래 이외 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 불가 가맹점입니다.</td>
+                            <td>당일거래 이외 취소 불가 가맹점입니다.</td>
                         </tr>
                         <tr>
                             <td>1141</td>
@@ -761,29 +491,11 @@
                         </tr>
                         <tr>
                             <td>1144</td>
-                            <td>부분<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 불가한 가맹점입니다.</td>
+                            <td>부분취소 불가한 가맹점입니다.</td>
                         </tr>
                         <tr>
                             <td>1145</td>
-                            <td>전체<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>만 가능한 해지된 가맹점입니다.</td>
+                            <td>전체취소만 가능한 해지된 가맹점입니다.</td>
                         </tr>
                         <tr>
                             <td>1146</td>
@@ -827,17 +539,7 @@
                         </tr>
                         <tr>
                             <td>1156</td>
-                            <td>가맹점 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip> 중복 거래 요청입니다.</td>
+                            <td>가맹점 주문번호 중복 거래 요청입니다.</td>
                         </tr>
                         <tr>
                             <td>2100</td>
@@ -845,16 +547,7 @@
                         </tr>
                         <tr>
                             <td>2101</td>
-                            <td>사용자가 결제를 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>하였습니다.</td>
+                            <td>사용자가 결제를 취소하였습니다.</td>
                         </tr>
                         <tr>
                             <td>2102</td>
@@ -1318,16 +1011,7 @@
                         </tr>
                         <tr>
                             <td>3118</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 불가한 거래입니다.</td>
+                            <td>취소 불가한 거래입니다.</td>
                         </tr>
                         <tr>
                             <td>3119</td>
@@ -1339,16 +1023,7 @@
                         </tr>
                         <tr>
                             <td>3121</td>
-                            <td>이미 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>된 거래건 입니다.</td>
+                            <td>이미 취소된 거래건 입니다.</td>
                         </tr>
                         <tr>
                             <td>3122</td>
@@ -1492,16 +1167,7 @@
                         </tr>
                         <tr>
                             <td>3158</td>
-                            <td>즉시<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 불가 오류입니다.</td>
+                            <td>즉시취소 불가 오류입니다.</td>
                         </tr>
                         <tr>
                             <td>3159</td>
@@ -1509,17 +1175,7 @@
                         </tr>
                         <tr>
                             <td>3160</td>
-                            <td>심야거래 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 제한 가맹점 입니다.</td>
+                            <td>심야거래 승인 제한 가맹점 입니다.</td>
                         </tr>
                         <tr>
                             <td>3161</td>
@@ -1555,26 +1211,7 @@
                         </tr>
                         <tr>
                             <td>3169</td>
-                            <td>고객 요구로인해 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>되었습니다.</td>
+                            <td>고객 요구로인해 승인 취소되었습니다.</td>
                         </tr>
                         <tr>
                             <td>3170</td>
@@ -1634,31 +1271,11 @@
                         </tr>
                         <tr>
                             <td>3184</td>
-                            <td>공인인증서와 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 시간이 초과하였습니다.</td>
+                            <td>공인인증서와 승인 시간이 초과하였습니다.</td>
                         </tr>
                         <tr>
                             <td>3185</td>
-                            <td>공인인증서 미등록 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>요청입니다.</td>
+                            <td>공인인증서 미등록 승인요청입니다.</td>
                         </tr>
                         <tr>
                             <td>3186</td>
@@ -1694,17 +1311,7 @@
                         </tr>
                         <tr>
                             <td>3194</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>전문 오류입니다.</td>
+                            <td>승인전문 오류입니다.</td>
                         </tr>
                         <tr>
                             <td>3195</td>
@@ -1824,16 +1431,7 @@
                         </tr>
                         <tr>
                             <td>3224</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 불가 거래입니다.</td>
+                            <td>취소 불가 거래입니다.</td>
                         </tr>
                         <tr>
                             <td>3225</td>
@@ -1861,17 +1459,7 @@
                         </tr>
                         <tr>
                             <td>3231</td>
-                            <td>RM카드 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 횟수 초과 오류입니다.</td>
+                            <td>RM카드 승인 횟수 초과 오류입니다.</td>
                         </tr>
                         <tr>
                             <td>3232</td>
@@ -1935,91 +1523,27 @@
                         </tr>
                         <tr>
                             <td>3247</td>
-                            <td>당일 이전 거래는 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>가 불가합니다.</td>
+                            <td>당일 이전 거래는 취소가 불가합니다.</td>
                         </tr>
                         <tr>
                             <td>3248</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>가 불가한 카드입니다.</td>
+                            <td>취소가 불가한 카드입니다.</td>
                         </tr>
                         <tr>
                             <td>3249</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>내역 불일치로 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>가 불가합니다.</td>
+                            <td>승인내역 불일치로 취소가 불가합니다.</td>
                         </tr>
                         <tr>
                             <td>3250</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>가 불가합니다.(원거래 없음)</td>
+                            <td>취소가 불가합니다.(원거래 없음)</td>
                         </tr>
                         <tr>
                             <td>3251</td>
-                            <td>기<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 카드입니다.</td>
+                            <td>기취소 카드입니다.</td>
                         </tr>
                         <tr>
                             <td>3252</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>가 불가합니다.(기매입거래)</td>
+                            <td>취소가 불가합니다.(기매입거래)</td>
                         </tr>
                         <tr>
                             <td>3253</td>
@@ -2027,29 +1551,11 @@
                         </tr>
                         <tr>
                             <td>3254</td>
-                            <td>유효시간이 경과한 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">앱카드</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드사가 제공하는 앱카드,ISP 등의 인증방식으로 결제되는 방식입니다.
-                </span>
-            </template>
-        </v-tooltip> 번호입니다.</td>
+                            <td>유효시간이 경과한 앱카드 번호입니다.</td>
                         </tr>
                         <tr>
                             <td>3255</td>
-                            <td>이미 사용한 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">앱카드</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드사가 제공하는 앱카드,ISP 등의 인증방식으로 결제되는 방식입니다.
-                </span>
-            </template>
-        </v-tooltip> 번호입니다.</td>
+                            <td>이미 사용한 앱카드 번호입니다.</td>
                         </tr>
                         <tr>
                             <td>3256</td>
@@ -2057,27 +1563,7 @@
                         </tr>
                         <tr>
                             <td>3257</td>
-                            <td>ISP<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 대상 가맹점입니다. ISP 이용 재<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 바랍니다.</td>
+                            <td>ISP승인 대상 가맹점입니다. ISP 이용 재승인 바랍니다.</td>
                         </tr>
                         <tr>
                             <td>3258</td>
@@ -2085,17 +1571,7 @@
                         </tr>
                         <tr>
                             <td>3259</td>
-                            <td>ISP거래 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>이 불가합니다.</td>
+                            <td>ISP거래 승인이 불가합니다.</td>
                         </tr>
                         <tr>
                             <td>3260</td>
@@ -2115,27 +1591,7 @@
                         </tr>
                         <tr>
                             <td>3264</td>
-                            <td>IC카드 거래<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 바랍니다. (MS 거래<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 요청 거절)</td>
+                            <td>IC카드 거래승인 바랍니다. (MS 거래승인 요청 거절)</td>
                         </tr>
                         <tr>
                             <td>3265</td>
@@ -2143,17 +1599,7 @@
                         </tr>
                         <tr>
                             <td>3266</td>
-                            <td>체크카드 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>이 불가합니다. (30분 후 거래요망)</td>
+                            <td>체크카드 승인이 불가합니다. (30분 후 거래요망)</td>
                         </tr>
                         <tr>
                             <td>3267</td>
@@ -2169,31 +1615,11 @@
                         </tr>
                         <tr>
                             <td>3270</td>
-                            <td>바우처 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 오류입니다.</td>
+                            <td>바우처 승인 오류입니다.</td>
                         </tr>
                         <tr>
                             <td>3271</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>번호 오류입니다.</td>
+                            <td>승인번호 오류입니다.</td>
                         </tr>
                         <tr>
                             <td>3272</td>
@@ -2252,16 +1678,7 @@
                             <td dir="ltr">Explain</td>
                         </tr>
                         <tr>
-                            <td rowspan="7">AUTH<br />(<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>)</td>
+                            <td rowspan="7">AUTH<br />(가맹점 인증)</td>
                             <td>0001</td>
                             <td>가맹점아이디 값이 존재하지 않습니다.</td>
                             <td>전송된 cst_id 값이 공백이거나 null</td>
@@ -2344,52 +1761,13 @@
                         </tr>
                         <tr>
                             <td>0010</td>
-                            <td>카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 요청 실패!!</td>
+                            <td>카드승인 요청 실패!!</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>0011</td>
                             <td>결제요청 값과 결제결과 값이 다릅니다.</td>
-                            <td dir="ltr">카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>요청금액, 사용자ID 정보 불일치로 <br />카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>처리</td>
+                            <td dir="ltr">카드승인요청금액, 사용자ID 정보 불일치로 <br />카드승인취소처리</td>
                         </tr>
                         <tr>
                             <td>0012</td>
@@ -2423,17 +1801,7 @@
                         </tr>
                         <tr>
                             <td>0018</td>
-                            <td>카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>이제 실패!!</td>
+                            <td>카드승인이제 실패!!</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -2625,28 +1993,8 @@
                         </tr>
                         <tr>
                             <td>0014</td>
-                            <td>기결제내역이 있습니다.(<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>:$pay_oid)</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip> 중복 오류</td>
+                            <td>기결제내역이 있습니다.(주문번호:$pay_oid)</td>
+                            <td dir="ltr">주문번호 중복 오류</td>
                         </tr>
                         <tr>
                             <td>0014</td>
@@ -2726,36 +2074,7 @@
                         <tr>
                             <td>1003</td>
                             <td>결제요청 값과 결제결과 값이 다릅니다.</td>
-                            <td dir="ltr">카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>요청금액, 사용자ID 정보 불일치로 <br />카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>처리</td>
+                            <td dir="ltr">카드승인요청금액, 사용자ID 정보 불일치로 <br />카드승인취소처리</td>
                         </tr>
                         <tr>
                             <td>1004</td>
@@ -2764,40 +2083,12 @@
                         </tr>
                         <tr>
                             <td>9991</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>키 불일치</td>
+                            <td>가맹점 인증키 불일치</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>9997</td>
-                            <td>카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 실패</td>
+                            <td>카드승인취소 실패</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -2894,17 +2185,7 @@
                         <tr>
                             <td>0015</td>
                             <td>중복결제</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip> or 결제구분 년.월 중복 오류</td>
+                            <td dir="ltr">주문번호 or 결제구분 년.월 중복 오류</td>
                         </tr>
                         <tr>
                             <td>0016</td>
@@ -2979,49 +2260,11 @@
                         <tr>
                             <td>1003</td>
                             <td>결제요청 값과 결제결과 값이 다릅니다.</td>
-                            <td dir="ltr">카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>요청금액, 사용자ID 정보 불일치로 <br />카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>처리</td>
+                            <td dir="ltr">카드승인요청금액, 사용자ID 정보 불일치로 <br />카드승인취소처리</td>
                         </tr>
                         <tr>
                             <td>9991</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>키 불일치</td>
+                            <td>가맹점 인증키 불일치</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -3044,16 +2287,7 @@
                             <td>0001</td>
                             <td>인증실패 : MEM INFO ERROR</td>
                             <td dir="ltr">
-                                <div>PCD_CST_ID 또는 PCD_AUTH_KEY 값이 <br />일치하지 않거나 인증세션 만료로 인한 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>오류</div>
+                                <div>PCD_CST_ID 또는 PCD_AUTH_KEY 값이 <br />일치하지 않거나 인증세션 만료로 인한 가맹점 인증오류</div>
                             </td>
                         </tr>
                         <tr>
@@ -3098,16 +2332,7 @@
                         </tr>
                         <tr>
                             <td>9991</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>키 불일치</td>
+                            <td>가맹점 인증키 불일치</td>
                             <td></td>
                         </tr>
                         <tr>

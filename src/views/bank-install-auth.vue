@@ -6,51 +6,15 @@
             </template>
         </v-breadcrumbs>
 
-        <h1 class="">상황별 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청 방식</h1>
+        <h1 class="">상황별 가맹점 인증 요청 방식</h1>
         <blockquote class="mb-12 blockquote body-1">
-            케이스별로 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청에 사용하는 요청변수가 다르니,<br />
-            아래 리스트에서 사용하시려는 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청변수를 확인하시길 바랍니다.
+            케이스별로 가맹점 인증 요청에 사용하는 요청변수가 다르니,<br />
+            아래 리스트에서 사용하시려는 가맹점 인증 요청변수를 확인하시길 바랍니다.
         </blockquote>
 
         <article class="mb-12">
             <h2 class="">
-                간편결제(비밀번호, 일회성) <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청
+                간편결제(비밀번호, 일회성) 가맹점 인증 요청
             </h2>
             <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table class="table-hover-disable">
@@ -196,44 +160,17 @@
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                간편결제에서 월 중복결제 방지기능 사용시에도 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청 형식은 변하지 않습니다.
+                간편결제에서 월 중복결제 방지기능 사용시에도 가맹점 인증 요청 형식은 변하지 않습니다.
             </v-alert>
         </article>
         <v-divider class="mb-12"></v-divider>
 
         <article class="mb-12">
             <h2 class="">
-                정기결제 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청
+                정기결제 가맹점 인증 요청
             </h2>
             <blockquote class="mb-8 blockquote body-1">
-                REST API 로 결제요청을 할 경우 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>에 요청변수가 추가됩니다. 디폴트로 PCD_SIMPLE_FLAG가 사용되며 월 중복결제 방지를 사용하실 경우
+                REST API 로 결제요청을 할 경우 가맹점 인증에 요청변수가 추가됩니다. 디폴트로 PCD_SIMPLE_FLAG가 사용되며 월 중복결제 방지를 사용하실 경우
                 PCD_REGULER_FLAG가 사용됩니다.
             </blockquote>
             <v-card class="temp_table ma-4 mb-12">
@@ -612,26 +549,7 @@
 
         <article class="mb-12">
             <h2 class="">
-                계좌이체 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip> <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청
+                계좌이체 환불 가맹점 인증 요청
             </h2>
             <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table class="table-hover-disable">
@@ -798,16 +716,7 @@
 
         <article class="mb-12">
             <h2 class="">
-                현금영수증 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청
+                현금영수증 가맹점 인증 요청
             </h2>
             <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table class="table-hover-disable">
@@ -974,16 +883,7 @@
 
         <article class="mb-12">
             <h2 class="">
-                등록계좌 해지 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청
+                등록계좌 해지 가맹점 인증 요청
             </h2>
             <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table class="table-hover-disable">
@@ -1150,16 +1050,7 @@
 
         <article class="mb-12">
             <h2 class="">
-                등록계좌 조회 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청
+                등록계좌 조회 가맹점 인증 요청
             </h2>
             <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table class="table-hover-disable">
@@ -1326,16 +1217,7 @@
 
         <article class="mb-12">
             <h2 class="">
-                결제결과 조회 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청
+                결제결과 조회 가맹점 인증 요청
             </h2>
             <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table class="table-hover-disable">
@@ -1502,28 +1384,10 @@
 
         <article class="mb-12">
             <h2 class="">
-                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청 API 공통 응답 메시지
+                가맹점 인증 요청 API 공통 응답 메시지
             </h2>
             <blockquote class="mb-8 blockquote body-1">
-                요청형식은 다르지만 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>에 대한 응답메세지 형식은 동일합니다.
+                요청형식은 다르지만 가맹점 인증에 대한 응답메세지 형식은 동일합니다.
             </blockquote>
 
             <v-card class="temp_table ma-4 mb-12">
@@ -1706,16 +1570,7 @@
             <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
                 <div class="d-flex align-center pa-4">
                     <div class="font-italic font-weight-bold">
-                        <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 요청 응답(공통)
+                        가맹점 인증 요청 응답(공통)
                     </div>
 
                     <div class="ml-auto">

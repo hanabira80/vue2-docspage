@@ -330,7 +330,7 @@
                 </v-expansion-panel-content>
             </v-expansion-panel>
         </v-expansion-panels>
-        <v-divider class="my-12"></v-divider>               
+        <v-divider class="my-12"></v-divider>
 
         <v-row class="mb-12 pt-12">
             <v-col col="12" sm="4">
@@ -402,15 +402,14 @@
             </v-col>
         </v-row>
 
-        <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">/pg/auth</span>
+        <v-tooltip top>
+            <template v-slot:activator="{ on, attrs }">
+                <span class="half-bg--tooltip cursor-pointer" v-bind="attrs" v-on="on">승인</span>
             </template>
-            <template v-slot:default>
-                <span>
-                    가맹점인증을 요청하는 가맹점의 backend script 파일이며 가맹점에서 만들어야 합니다.
-                </span>
-            </template>
+            <span>
+                카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br />
+                승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
+            </span>
         </v-tooltip>
     </div>
 </template>

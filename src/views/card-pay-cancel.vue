@@ -6,83 +6,17 @@
             </template>
         </v-breadcrumbs>
 
-        <h1 class="mb-12"><v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip></h1>
+        <h1 class="mb-12">승인취소</h1>
         <blockquote class="mb-12 blockquote body-1">
-            결제<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>된 거래건을 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>할 수 있는 API입니다.
+            결제승인된 거래건을 취소할 수 있는 API입니다.
         </blockquote>
         <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-            요청을 위한 선행단계로 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 단계를 거쳐야 합니다. 해당 내용은 이곳에서 확인하실 수 있습니다.
+            요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다. 해당 내용은 이곳에서 확인하실 수 있습니다.
         </v-alert>
 
         <article class="mb-12">
             <h2 class="">
-                <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>
+                승인취소
             </h2>
 
             <h3 class="pl-4">
@@ -105,16 +39,7 @@
                             <td colspan="1" rowspan="1">8</td>
                             <td colspan="1" rowspan="1">O</td>
                             <td colspan="1" rowspan="1">UFVN...</td>
-                            <td colspan="1" rowspan="1"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 cst_id Token</td>
+                            <td colspan="1" rowspan="1">가맹점 인증 후 리턴 받은 cst_id Token</td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">PCD_CUST_KEY</td>
@@ -122,16 +47,7 @@
                             <td colspan="1" rowspan="1">255</td>
                             <td colspan="1" rowspan="1">O</td>
                             <td colspan="1" rowspan="1">T3Jz...</td>
-                            <td colspan="1" rowspan="1"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 custKey Token</td>
+                            <td colspan="1" rowspan="1">가맹점 인증 후 리턴 받은 custKey Token</td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">PCD_AUTH_KEY</td>
@@ -139,16 +55,7 @@
                             <td colspan="1" rowspan="1">-</td>
                             <td colspan="1" rowspan="1">O</td>
                             <td colspan="1" rowspan="1">a688c...</td>
-                            <td colspan="1" rowspan="1"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 인증 Token</td>
+                            <td colspan="1" rowspan="1">가맹점 인증 후 리턴 받은 인증 Token</td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">PCD_REFUND_KEY</td>
@@ -156,17 +63,7 @@
                             <td colspan="1" rowspan="1">-</td>
                             <td colspan="1" rowspan="1">O</td>
                             <td colspan="1" rowspan="1">a41c...</td>
-                            <td colspan="1" rowspan="1"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>서비스 Key (관리자페이지 상점정보 &gt; 기본정보에서 확인하실 수 있습니다.)</td>
+                            <td colspan="1" rowspan="1">환불서비스 Key (관리자페이지 상점정보 &gt; 기본정보에서 확인하실 수 있습니다.)</td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">PCD_PAYCANCEL_FLAG</td>
@@ -182,17 +79,7 @@
                             <td colspan="1" rowspan="1">255</td>
                             <td colspan="1" rowspan="1">O</td>
                             <td colspan="1" rowspan="1">test099942200156938</td>
-                            <td colspan="1" rowspan="1"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip></td>
+                            <td colspan="1" rowspan="1">주문번호</td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">PCD_REGULER_FLAG</td>
@@ -224,16 +111,7 @@
                             <td colspan="1" rowspan="1">8</td>
                             <td colspan="1" rowspan="1">O</td>
                             <td colspan="1" rowspan="1">20200320</td>
-                            <td colspan="1" rowspan="1"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>할 원거래일자</td>
+                            <td colspan="1" rowspan="1">취소할 원거래일자</td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">PCD_REFUND_TOTAL</td>
@@ -241,35 +119,7 @@
                             <td colspan="1" rowspan="1">20</td>
                             <td colspan="1" rowspan="1">O</td>
                             <td colspan="1" rowspan="1">100</td>
-                            <td colspan="1" rowspan="1"><v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 요청금액 (기존 결제금액보다 적은 금액 입력 시 부분<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>로 진행)</td>
+                            <td colspan="1" rowspan="1">승인취소 요청금액 (기존 결제금액보다 적은 금액 입력 시 부분취소로 진행)</td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">PCD_PAY_TAXTOTAL</td>
@@ -322,16 +172,7 @@
                                 success
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 결과(success|error)
+                                취소 결과(success|error)
                             </td>
                         </tr>
                         <tr>
@@ -342,16 +183,7 @@
                                 PAYC0000
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 결과코드
+                                취소 결과코드
                             </td>
                         </tr>
                         <tr>
@@ -359,29 +191,10 @@
                                 PCD_PAY_MSG
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>성공
+                                환불성공
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 결과 메시지
+                                취소 결과 메시지
                             </td>
                         </tr>
                         <tr>
@@ -392,17 +205,7 @@
                                 test099942200156938
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>
+                                주문번호
                             </td>
                         </tr>
                         <tr>
@@ -490,16 +293,7 @@
                                 100
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>금액
+                                취소금액
                             </td>
                         </tr>
                         <tr>
@@ -661,79 +455,15 @@ export default {
                 },
             ],
             code_1_1: `
-#<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 요청
-POST <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받는 PCD_PAY_URL HTTP/1.1
-Host: <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받는 PCD_PAY_HOST
+#승인취소 요청
+POST 가맹점 인증 후 리턴받는 PCD_PAY_URL HTTP/1.1
+Host: 가맹점 인증 후 리턴받는 PCD_PAY_HOST
 Content-Type: application/json
 Cache-Control: no-cache	
 {
-  "PCD_CST_ID": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 cst_id",
-  "PCD_CUST_KEY": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 custKey",
-  "PCD_AUTH_KEY": "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴받은 AuthKey",  
+  "PCD_CST_ID": "가맹점 인증 후 리턴받은 cst_id",
+  "PCD_CUST_KEY": "가맹점 인증 후 리턴받은 custKey",
+  "PCD_AUTH_KEY": "가맹점 인증 후 리턴받은 AuthKey",  
   "PCD_REFUND_KEY": "a41ce010ede9...",
   "PCD_PAYCANCEL_FLAG": "Y",
   "PCD_PAY_OID": "test201804000001",
@@ -745,17 +475,7 @@ Cache-Control: no-cache
 {
   "PCD_PAY_RST" => "success",
   “PCD_PAY_CODE” => “PAYC0000”,
-  "PCD_PAY_MSG" => "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>성공",		
+  "PCD_PAY_MSG" => "환불성공",		
   "PCD_PAY_OID" => "test201804000001",
   "PCD_PAY_TYPE" => "card",
   "PCD_PAYER_NO" => 1234,

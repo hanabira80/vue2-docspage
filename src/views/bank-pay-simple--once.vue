@@ -26,16 +26,7 @@
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                결제요청을 위한 선행단계로 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 단계를 거쳐야 합니다. 해당 내용은 이곳에서 확인하실 수 있습니다.
+                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다. 해당 내용은 이곳에서 확인하실 수 있습니다.
             </v-alert>
 
             <h3 class="pl-4">
@@ -120,69 +111,7 @@
                             <td colspan="1" rowspan="1">
                                 PAY
                             </td>
-                            <td colspan="1" rowspan="1">결제요청 방식<br />- CERT: <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">결제요청 재컨펌 (CERT)</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
-                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
-                </span>
-            </template>
-        </v-tooltip> 및 결제요청 방식을 규정합니다.<br/>
-                    브라우저 안에서 결제데이터를 주고받는 ‘<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">즉시결제(PAY)</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    페이플 브라우저(결제창) 안에서 결제요청과 결제가 이루어지는 방식입니다.<br/>
-                    직관적이지만, 결제자의 PC/모바일에서 오류가 브라우저에 영향을 미칠시 결제결과데이터의 수신이 실패될 수 있습니다.
-                </span>
-            </template>
-        </v-tooltip>’ 방식과<br/>
-                    가맹점 서버에서 주고받는 ‘가맹점 확인 후 결제(CERT)’ 방식,<br/>
-                    당장 결제를 내지 않고 빌링키만 등록하는 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
-                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
-                </span>
-            </template>
-        </v-tooltip>(AUTH)</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    자바스크립트를 이용하여 결제를 하기 위해서는 PAY와 CERT방식중에 하나를 선택하여야 하지만<br/>
-                    빌링키 생성을 위해 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
-                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
-                </span>
-            </template>
-        </v-tooltip>(Auth)만 수행할 경우에는 실제 결제가 일어나는 것이 아니므로 Auth 파라미터를 선택하여 빌링키만 발급받습니다.
-                </span>
-            </template>
-        </v-tooltip> 방식이 있습니다.
-                </span>
-            </template>
-        </v-tooltip><br />- PAY: 즉시결제</td>
+                            <td colspan="1" rowspan="1">결제요청 방식<br />- CERT: 결제요청 재컨펌 (CERT)<br />- PAY: 즉시결제</td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">
@@ -321,17 +250,7 @@
                                 test099942200156938
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip> (미입력 시 자동생성)
+                                주문번호 (미입력 시 자동생성)
                             </td>
                         </tr>
                         <tr>
@@ -391,17 +310,7 @@
                                 01012345678
                             </td>
                             <td colspan="1" rowspan="1">
-                                고객 휴대폰번호를 전송하시면 고객의 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>문자 민원을 방지하기 위한 알림톡이 발송됩니다.
+                                고객 휴대폰번호를 전송하시면 고객의 승인문자 민원을 방지하기 위한 알림톡이 발송됩니다.
                             </td>
                         </tr>
                         <tr>
@@ -461,19 +370,7 @@
                                 1000
                             </td>
                             <td colspan="1" rowspan="1">
-                                계좌<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip> 요청금액 (최소 1000원)
+                                계좌출금 요청금액 (최소 1000원)
                             </td>
                         </tr>
                         <tr>
@@ -574,16 +471,7 @@
                                 /auth/..
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 파일 경로
+                                가맹점 인증 파일 경로
                             </td>
                         </tr>
                         <tr>
@@ -641,19 +529,7 @@
                                 PCD_PAY_MSG
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체완료
+                                출금이체완료
                             </td>
                             <td colspan="1" rowspan="1">
                                 결제요청 결과 메시지
@@ -689,17 +565,7 @@
                                 abcd..
                             </td>
                             <td colspan="1" rowspan="1">
-                                CERT - 결제생성 후 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>을 위한 키
+                                CERT - 결제생성 후 승인을 위한 키
                             </td>
                         </tr>
                         <tr>
@@ -710,17 +576,7 @@
                                 http://test..
                             </td>
                             <td colspan="1" rowspan="1">
-                                CERT - 결제<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 후 리턴 URL
+                                CERT - 결제승인 후 리턴 URL
                             </td>
                         </tr>
                         <tr>
@@ -731,17 +587,7 @@
                                 test099942200156938
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>
+                                주문번호
                             </td>
                         </tr>
                         <tr>
@@ -807,19 +653,7 @@
                                 1000
                             </td>
                             <td colspan="1" rowspan="1">
-                                계좌<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip> 완료금액
+                                계좌출금 완료금액
                             </td>
                         </tr>
                         <tr>
@@ -1082,69 +916,7 @@
 
         <article class="mb-12">
             <h2 class="">
-                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">결제요청 재컨펌 (CERT)</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
-                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
-                </span>
-            </template>
-        </v-tooltip> 및 결제요청 방식을 규정합니다.<br/>
-                    브라우저 안에서 결제데이터를 주고받는 ‘<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">즉시결제(PAY)</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    페이플 브라우저(결제창) 안에서 결제요청과 결제가 이루어지는 방식입니다.<br/>
-                    직관적이지만, 결제자의 PC/모바일에서 오류가 브라우저에 영향을 미칠시 결제결과데이터의 수신이 실패될 수 있습니다.
-                </span>
-            </template>
-        </v-tooltip>’ 방식과<br/>
-                    가맹점 서버에서 주고받는 ‘가맹점 확인 후 결제(CERT)’ 방식,<br/>
-                    당장 결제를 내지 않고 빌링키만 등록하는 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
-                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
-                </span>
-            </template>
-        </v-tooltip>(AUTH)</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    자바스크립트를 이용하여 결제를 하기 위해서는 PAY와 CERT방식중에 하나를 선택하여야 하지만<br/>
-                    빌링키 생성을 위해 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
-                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
-                </span>
-            </template>
-        </v-tooltip>(Auth)만 수행할 경우에는 실제 결제가 일어나는 것이 아니므로 Auth 파라미터를 선택하여 빌링키만 발급받습니다.
-                </span>
-            </template>
-        </v-tooltip> 방식이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>(PCD_PAY_WORK : CERT)
+                결제요청 재컨펌 (CERT)(PCD_PAY_WORK : CERT)
             </h2>
             <blockquote class="mb-8 blockquote body-1">
                 최종 결제요청을 위해 REST API를 통해 결제를 요청할 수 있습니다.
@@ -1189,16 +961,7 @@
                                 test
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 cst_id Token
+                                가맹점 인증 후 리턴 받은 cst_id Token
                             </td>
                         </tr>
                         <tr>
@@ -1218,16 +981,7 @@
                                 abcd1234567890
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 custKey Token
+                                가맹점 인증 후 리턴 받은 custKey Token
                             </td>
                         </tr>
                         <tr>
@@ -1247,16 +1001,7 @@
                                 a688c...
                             </td>
                             <td colspan="1" rowspan="1">
-                                <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> 후 리턴 받은 토큰키
+                                가맹점 인증 후 리턴 받은 토큰키
                             </td>
                         </tr>
                         <tr>
@@ -1276,17 +1021,7 @@
                                 Vnx...
                             </td>
                             <td colspan="1" rowspan="1">
-                                최종 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>요청용 키
+                                최종 승인요청용 키
                             </td>
                         </tr>
                         <tr>
@@ -1452,26 +1187,8 @@ obj.PCD_PAY_TYPE = "transfer";
 obj.PCD_PAY_WORK = "PAY";
 
 		
-/* <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>요청 파일 */
-obj.payple_auth_file = "<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>요청 파일";
+/* 가맹점 인증요청 파일 */
+obj.payple_auth_file = "가맹점 인증요청 파일";
 		
 
 obj.PCD_PAYER_NO = 1234;
@@ -1511,69 +1228,7 @@ node
 node
 `,
             code_2_1: `
-/* 결제요청 후 리턴받은 PCD_PAY_COFURL 로 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">결제요청 재컨펌 (CERT)</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
-                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
-                </span>
-            </template>
-        </v-tooltip> 및 결제요청 방식을 규정합니다.<br/>
-                    브라우저 안에서 결제데이터를 주고받는 ‘<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">즉시결제(PAY)</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    페이플 브라우저(결제창) 안에서 결제요청과 결제가 이루어지는 방식입니다.<br/>
-                    직관적이지만, 결제자의 PC/모바일에서 오류가 브라우저에 영향을 미칠시 결제결과데이터의 수신이 실패될 수 있습니다.
-                </span>
-            </template>
-        </v-tooltip>’ 방식과<br/>
-                    가맹점 서버에서 주고받는 ‘가맹점 확인 후 결제(CERT)’ 방식,<br/>
-                    당장 결제를 내지 않고 빌링키만 등록하는 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
-                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
-                </span>
-            </template>
-        </v-tooltip>(AUTH)</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    자바스크립트를 이용하여 결제를 하기 위해서는 PAY와 CERT방식중에 하나를 선택하여야 하지만<br/>
-                    빌링키 생성을 위해 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">빌링키 등록</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드/계좌 정보를 임의의 고유식별문자인 빌링키로 변환하는 과정입니다.<br/>
-                    민감한 개인정보인 카드/계좌 정보의 노출없이 암호화된 키값으로 간편하게 결제할 수 있게 도와줍니다.
-                </span>
-            </template>
-        </v-tooltip>(Auth)만 수행할 경우에는 실제 결제가 일어나는 것이 아니므로 Auth 파라미터를 선택하여 빌링키만 발급받습니다.
-                </span>
-            </template>
-        </v-tooltip> 방식이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>(CERT)  */
+/* 결제요청 후 리턴받은 PCD_PAY_COFURL 로 결제요청 재컨펌 (CERT)(CERT)  */
 POST /php/PayCardConfirmAct.php?ACT_=PAYM HTTP/1.1
 Host: testcpay.payple.kr
 Content-Type: application/json

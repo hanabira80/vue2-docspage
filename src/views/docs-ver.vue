@@ -347,17 +347,7 @@ export default {
 "PCD_PAY_RST" => "success",
 "PCD_PAY_MSG" => “결제결과 리턴 메시지”,
 "PCD_CST_ID" => “가맹점 ID”,
-"PCD_PAY_OID" => “<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>”,
+"PCD_PAY_OID" => “주문번호”,
 "PCD_PAY_TYPE" => “card”,
 "PCD_PAYER_NO" => “회원번호”,
 "PCD_PAYER_ID" => “계좌(카드)등록후 리턴받은 빌링키”,
@@ -366,28 +356,8 @@ export default {
 "PCD_PAY_GOODS" => “상품명”,
 "PCD_PAY_TOTAL" => “상품금액”,
 "PCD_REGULER_FLAG" => “월 중복결제 방지 사용여부”,
-"PCD_REFUND_TOTAL" => “<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>금액”,
-"PCD_REFUND_TIME" => “<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">환불</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서는 신용카드 결제와 달리 돈이 계좌에서 바로 출금되고, 카드처럼 취소되지 않습니다.<br/>
-                    이에 대응하여 페이플이 직접 출금금액을 고객에게 입금하는 서비스를 제공하며, 이것을 ‘환불대행서비스’(환불)이라고 합니다.
-                </span>
-            </template>
-        </v-tooltip>시간”,
+"PCD_REFUND_TOTAL" => “환불금액”,
+"PCD_REFUND_TIME" => “환불시간”,
 "PCD_PAYCANCEL_FLAG" => 'Y'
 }
 `,

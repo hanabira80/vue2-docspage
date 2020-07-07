@@ -65,27 +65,9 @@
                             <td dir="ltr">설명</td>
                         </tr>
                         <tr>
-                            <td dir="ltr" rowspan="5">AUTH<br />(<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>)</td>
+                            <td dir="ltr" rowspan="5">AUTH<br />(가맹점 인증)</td>
                             <td dir="ltr">0001</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>에 필요한 cst_id 를 확인해주세요.</td>
+                            <td dir="ltr">가맹점 인증에 필요한 cst_id 를 확인해주세요.</td>
                             <td dir="ltr">
                                 - 가맹점에서 페이플로 전송된 cst_id 가 페이플에서 발급된 cst_id 와 다르거나 공백인 경우에 발생합니다.<br />- cst_id 는 최초
                                 가맹점 오픈 안내 메일에 첨부해 발송드립니다.<br />- 테스트환경과 운영환경에서 쓰이는 cst_id가 다르니 확인해주세요.<br />-
@@ -94,16 +76,7 @@
                         </tr>
                         <tr>
                             <td dir="ltr">0002</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>에 필요한 custKey 를 확인해주세요.</td>
+                            <td dir="ltr">가맹점 인증에 필요한 custKey 를 확인해주세요.</td>
                             <td dir="ltr">
                                 - 가맹점 -&gt; 페이플로 전송된 custKey 가 페이플에서 발급된 custKey 와 다르거나 공백인 경우에 발생합니다.<br />- 테스트환경과
                                 운영환경에서 쓰이는 custKey가 다르니 확인해주세요.<br />- 테스트환경의 custKey는 연동가이드에서 확인할 수 있으며 운영환경에서
@@ -178,32 +151,11 @@
                             <td dir="ltr"></td>
                         </tr>
                         <tr>
-                            <td dir="ltr" rowspan="10">CPAY<br />(<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>)</td>
+                            <td dir="ltr" rowspan="10">CPAY<br />(출금)</td>
                             <td dir="ltr">0001</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
-                                - 브라우저의 세션이 만료되어 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
+                                - 브라우저의 세션이 만료되어 가맹점 인증을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
                             </td>
                         </tr>
                         <tr>
@@ -238,19 +190,7 @@
                         <tr>
                             <td dir="ltr">0022</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
-                            <td dir="ltr">- 은행으로의 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 전문 전송이 실패하거나 전문 오류로 인한 전송 실패 시 발생하는 응답입니다.</td>
+                            <td dir="ltr">- 은행으로의 출금이체 전문 전송이 실패하거나 전문 오류로 인한 전송 실패 시 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">0026</td>
@@ -260,32 +200,12 @@
                         <tr>
                             <td dir="ltr">0201</td>
                             <td dir="ltr">이미 존재하는 거래입니다. 다시 시도해주세요.</td>
-                            <td dir="ltr">- <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>가 중복될 때 발생하는 응답입니다.</td>
+                            <td dir="ltr">- 주문번호가 중복될 때 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">0202</td>
                             <td dir="ltr">이미 존재하는 거래입니다. 다시 시도해주세요.</td>
-                            <td dir="ltr">- <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>가 중복될 때 발생하는 응답입니다.</td>
+                            <td dir="ltr">- 주문번호가 중복될 때 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">9998</td>
@@ -297,16 +217,7 @@
                             <td dir="ltr">0002</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
-                                - 브라우저의 세션이 만료되어 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
+                                - 브라우저의 세션이 만료되어 가맹점 인증을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
                             </td>
                         </tr>
                         <tr>
@@ -321,19 +232,7 @@
                             <td dir="ltr" rowspan="7">SPAY<br />(간편결제 REST)</td>
                             <td dir="ltr">0002</td>
                             <td dir="ltr">평생계좌번호가 아닌 실계좌번호를 입력해주세요.</td>
-                            <td dir="ltr">- 휴대폰번호 등의 평생계좌번호는 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이 불가능합니다. <br />- 평생계좌번호에 연결된 실계좌번호가 필요합니다.</td>
+                            <td dir="ltr">- 휴대폰번호 등의 평생계좌번호는 출금이 불가능합니다. <br />- 평생계좌번호에 연결된 실계좌번호가 필요합니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">0003</td>
@@ -376,16 +275,7 @@
                             <td dir="ltr">0001</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
-                                - 브라우저의 세션이 만료되어 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
+                                - 브라우저의 세션이 만료되어 가맹점 인증을 수행할 수 없을 때 발생합니다. <br />- 브라우저를 종료하고 다시 시도해주세요.
                             </td>
                         </tr>
                         <tr>
@@ -417,16 +307,7 @@
                             <td dir="ltr" rowspan="15">AUTH<br />(계좌등록)</td>
                             <td dir="ltr">0001</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
-                            <td dir="ltr">- <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>세션이 만료되었을 때 발생하는 응답입니다.</td>
+                            <td dir="ltr">- 가맹점 인증세션이 만료되었을 때 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">0006</td>
@@ -730,19 +611,7 @@
                         <tr>
                             <td dir="ltr">산업은행</td>
                             <td dir="ltr">1004</td>
-                            <td dir="ltr">일부<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip></td>
+                            <td dir="ltr">일부출금</td>
                         </tr>
                         <tr>
                             <td dir="ltr">산업은행</td>
@@ -879,19 +748,7 @@
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">1013</td>
-                            <td dir="ltr">평생계좌 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>거래 안됨</td>
+                            <td dir="ltr">평생계좌 출금거래 안됨</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
@@ -916,19 +773,7 @@
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">3531</td>
-                            <td dir="ltr">평생계좌 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>거래 안됨</td>
+                            <td dir="ltr">평생계좌 출금거래 안됨</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
@@ -1113,70 +958,22 @@
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U212</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌 오류</td>
+                            <td dir="ltr">출금계좌 오류</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U213</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌비밀번호 상이</td>
+                            <td dir="ltr">출금계좌비밀번호 상이</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U214</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌 잔액부족</td>
+                            <td dir="ltr">출금계좌 잔액부족</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U215</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌 거래제한</td>
+                            <td dir="ltr">출금계좌 거래제한</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
@@ -1251,19 +1048,7 @@
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U333</td>
-                            <td dir="ltr">국민카드전액<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>시</td>
+                            <td dir="ltr">국민카드전액출금시</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
@@ -1508,16 +1293,7 @@
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U603</td>
-                            <td dir="ltr">개설은행<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>처리중</td>
+                            <td dir="ltr">개설은행취소처리중</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
@@ -1537,28 +1313,7 @@
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U607</td>
-                            <td dir="ltr">기 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>（<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>）된거래임</td>
+                            <td dir="ltr">기 취소（출금）된거래임</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
@@ -1578,39 +1333,12 @@
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U611</td>
-                            <td dir="ltr">재<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 요망（전일자 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 개설은행 무응답,수신전문오류등）</td>
+                            <td dir="ltr">재취소 요망（전일자 취소 개설은행 무응답,수신전문오류등）</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U612</td>
-                            <td dir="ltr">개설은행 확인요망（전일자 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 불능）</td>
+                            <td dir="ltr">개설은행 확인요망（전일자 취소 불능）</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
@@ -1665,31 +1393,7 @@
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U711</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>은행사용불가,<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>은행장애</td>
+                            <td dir="ltr">출금은행사용불가,출금은행장애</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
@@ -1799,36 +1503,12 @@
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U772</td>
-                            <td dir="ltr">구매전용카드 계좌 아님（입금 또는 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌）</td>
+                            <td dir="ltr">구매전용카드 계좌 아님（입금 또는 출금계좌）</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
                             <td dir="ltr">U773</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌가 가맹점계좌 아님（가맹점계좌이체시）</td>
+                            <td dir="ltr">출금계좌가 가맹점계좌 아님（가맹점계좌이체시）</td>
                         </tr>
                         <tr>
                             <td dir="ltr">기업은행</td>
@@ -1968,19 +1648,7 @@
                         <tr>
                             <td dir="ltr">국민은행</td>
                             <td dir="ltr">119</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌 비밀번호3회이상 오류</td>
+                            <td dir="ltr">출금계좌 비밀번호3회이상 오류</td>
                         </tr>
                         <tr>
                             <td dir="ltr">국민은행</td>
@@ -2015,53 +1683,17 @@
                         <tr>
                             <td dir="ltr">국민은행</td>
                             <td dir="ltr">131</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>모계좌 미등록</td>
+                            <td dir="ltr">출금모계좌 미등록</td>
                         </tr>
                         <tr>
                             <td dir="ltr">국민은행</td>
                             <td dir="ltr">132</td>
-                            <td dir="ltr">입<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌 오류</td>
+                            <td dir="ltr">입출금계좌 오류</td>
                         </tr>
                         <tr>
                             <td dir="ltr">국민은행</td>
                             <td dir="ltr">133</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌 잔액부족</td>
+                            <td dir="ltr">출금계좌 잔액부족</td>
                         </tr>
                         <tr>
                             <td dir="ltr">국민은행</td>
@@ -2123,19 +1755,7 @@
                         <tr>
                             <td dir="ltr">국민은행</td>
                             <td dir="ltr">155</td>
-                            <td dir="ltr">CMS계좌 마감후 입<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip> 불가</td>
+                            <td dir="ltr">CMS계좌 마감후 입출금 불가</td>
                         </tr>
                         <tr>
                             <td dir="ltr">국민은행</td>
@@ -2145,19 +1765,7 @@
                         <tr>
                             <td dir="ltr">국민은행</td>
                             <td dir="ltr">157</td>
-                            <td dir="ltr">입<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌 오류(외화계좌)</td>
+                            <td dir="ltr">입출금계좌 오류(외화계좌)</td>
                         </tr>
                         <tr>
                             <td dir="ltr">국민은행</td>
@@ -2257,53 +1865,17 @@
                         <tr>
                             <td dir="ltr">국민은행</td>
                             <td dir="ltr">2023</td>
-                            <td dir="ltr">입.<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌 미등록</td>
+                            <td dir="ltr">입.출금계좌 미등록</td>
                         </tr>
                         <tr>
                             <td dir="ltr">국민은행</td>
                             <td dir="ltr">2024</td>
-                            <td dir="ltr">입금계좌 지점 미확정(입<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>등록 등록상태)</td>
+                            <td dir="ltr">입금계좌 지점 미확정(입출금등록 등록상태)</td>
                         </tr>
                         <tr>
                             <td dir="ltr">국민은행</td>
                             <td dir="ltr">2027</td>
-                            <td dir="ltr">입<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>등록 해지상태임 혹은 동일한 계좌 등록</td>
+                            <td dir="ltr">입출금등록 해지상태임 혹은 동일한 계좌 등록</td>
                         </tr>
                         <tr>
                             <td dir="ltr">국민은행</td>
@@ -2313,36 +1885,12 @@
                         <tr>
                             <td dir="ltr">국민은행</td>
                             <td dir="ltr">2030</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체시 이체비밀번호 오류</td>
+                            <td dir="ltr">출금이체시 이체비밀번호 오류</td>
                         </tr>
                         <tr>
                             <td dir="ltr">국민은행</td>
                             <td dir="ltr">2036</td>
-                            <td dir="ltr">계좌이동제를 통한 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>은행 변경해지</td>
+                            <td dir="ltr">계좌이동제를 통한 출금은행 변경해지</td>
                         </tr>
                         <tr>
                             <td dir="ltr">국민은행</td>
@@ -2577,19 +2125,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">A002</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 사전계좌등록거래시 당일중복거래 불가합니다.</td>
+                            <td dir="ltr">출금이체 사전계좌등록거래시 당일중복거래 불가합니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -2599,214 +2135,52 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">A004</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 사전계좌등록거래시 당일거래만 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>가능합니다.</td>
+                            <td dir="ltr">출금이체 사전계좌등록거래시 당일거래만 취소가능합니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">A005</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 사전계좌등록거래시 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>대상이 다릅니다.</td>
+                            <td dir="ltr">출금이체 사전계좌등록거래시 취소대상이 다릅니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">A006</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 사전계좌등록거래시 변경대상 아닙니다.</td>
+                            <td dir="ltr">출금이체 사전계좌등록거래시 변경대상 아닙니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">A007</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 사전계좌등록거래시 직전거래미완료 입니다.</td>
+                            <td dir="ltr">출금이체 사전계좌등록거래시 직전거래미완료 입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">A008</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 사전계좌등록거래시 필수항복누락 입니다.</td>
+                            <td dir="ltr">출금이체 사전계좌등록거래시 필수항복누락 입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">A009</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 사전계좌등록거래시 FUNC코드오류 입니다.</td>
+                            <td dir="ltr">출금이체 사전계좌등록거래시 FUNC코드오류 입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">A010</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 사전계좌등록거래시 등록부점오류 입니다.</td>
+                            <td dir="ltr">출금이체 사전계좌등록거래시 등록부점오류 입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">A011</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 사전계좌등록거래시 변경내역이 없읍니다.</td>
+                            <td dir="ltr">출금이체 사전계좌등록거래시 변경내역이 없읍니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">A998</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 최소인<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>액보다 작습니다.</td>
+                            <td dir="ltr">출금이체 최소인출금액보다 작습니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">A999</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 최소인<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>액보다 큽니다.</td>
+                            <td dir="ltr">출금이체 최소인출금액보다 큽니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -2826,19 +2200,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">BACC</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌 적용해지 상태입니다.</td>
+                            <td dir="ltr">출금계좌 적용해지 상태입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -2958,16 +2320,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">D012</td>
-                            <td dir="ltr">기준일이 당일 이전이 아닙니다, 전출점의 고객등록<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 상태입니다.</td>
+                            <td dir="ltr">기준일이 당일 이전이 아닙니다, 전출점의 고객등록취소 상태입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -3002,16 +2355,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">D020</td>
-                            <td dir="ltr">신규<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>된계좌입니다.</td>
+                            <td dir="ltr">신규취소된계좌입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -3061,16 +2405,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">D030</td>
-                            <td dir="ltr">신규가 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>된 계좌입니다.</td>
+                            <td dir="ltr">신규가 취소된 계좌입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -3330,16 +2665,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">D082</td>
-                            <td dir="ltr">TIME OUT 또는 지연응답으로 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>되었습니다.</td>
+                            <td dir="ltr">TIME OUT 또는 지연응답으로 취소되었습니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -3369,16 +2695,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">D207</td>
-                            <td dir="ltr">해지 또는 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>된 계좌이므로 해당거래를 처리할 수 없습니다.</td>
+                            <td dir="ltr">해지 또는 취소된 계좌이므로 해당거래를 처리할 수 없습니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -3423,30 +2740,12 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">F002</td>
-                            <td dir="ltr">원거래를 찾을 수 없는 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>거래 입니다, 고객 정보 조회 오류 입니다,</td>
+                            <td dir="ltr">원거래를 찾을 수 없는 취소거래 입니다, 고객 정보 조회 오류 입니다,</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">F202</td>
-                            <td dir="ltr">이미 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>되었거나 송금처리 되었습니다.</td>
+                            <td dir="ltr">이미 취소되었거나 송금처리 되었습니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -3481,37 +2780,13 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">FACC</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌 FORMAT 오류입니다.</td>
+                            <td dir="ltr">출금계좌 FORMAT 오류입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">FACT</td>
                             <td dir="ltr">
-                                <div>입금계좌번호와 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌번호는 동일한 계좌로 입력할 수 없습니다, 입금계좌 FORMAT 오류입니다.</div>
+                                <div>입금계좌번호와 출금계좌번호는 동일한 계좌로 입력할 수 없습니다, 입금계좌 FORMAT 오류입니다.</div>
                             </td>
                         </tr>
                         <tr>
@@ -3740,16 +3015,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">I001</td>
-                            <td dir="ltr">업무구분 오류 (송금신청/<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>가 아님</td>
+                            <td dir="ltr">업무구분 오류 (송금신청/취소가 아님</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -3934,30 +3200,12 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">I203</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>시 원거래 전문일자 확인하세요</td>
+                            <td dir="ltr">취소시 원거래 전문일자 확인하세요</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">I204</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>시 원거래 전문번호 확인하세요</td>
+                            <td dir="ltr">취소시 원거래 전문번호 확인하세요</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -4077,30 +3325,12 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">S003</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>거래입니다. 원거래를 찾을 수 없습니다.</td>
+                            <td dir="ltr">취소거래입니다. 원거래를 찾을 수 없습니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">S010</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>거래가 비정상 처리 되었습니다.</td>
+                            <td dir="ltr">취소거래가 비정상 처리 되었습니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -4172,19 +3402,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">U201</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌 미등록상태 입니다.</td>
+                            <td dir="ltr">출금계좌 미등록상태 입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -4634,16 +3852,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">X431</td>
-                            <td dir="ltr">타행이체전문 수신전 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>전문을 수신하였습니다.</td>
+                            <td dir="ltr">타행이체전문 수신전 취소전문을 수신하였습니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -4748,16 +3957,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">X603</td>
-                            <td dir="ltr">개설은행 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>처리 중 입니다.</td>
+                            <td dir="ltr">개설은행 취소처리 중 입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -4777,25 +3977,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">X607</td>
-                            <td dir="ltr">기 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>된 거래입니다.(정상<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>된 거래)</td>
+                            <td dir="ltr">기 취소된 거래입니다.(정상취소된 거래)</td>
                         </tr>
                         <tr>
                             <td dir="ltr">외환은행</td>
@@ -4830,19 +4012,7 @@
                         <tr>
                             <td dir="ltr">외환은행</td>
                             <td dir="ltr">ZZ08</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>계좌번호 오류입니다.</td>
+                            <td dir="ltr">출금계좌번호 오류입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
@@ -5797,17 +4967,7 @@
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">D361</td>
-                            <td dir="ltr">자유적립식외화예금 해지시 본부<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>번호 입력불가</td>
+                            <td dir="ltr">자유적립식외화예금 해지시 본부승인번호 입력불가</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
@@ -5932,30 +5092,12 @@
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">F022</td>
-                            <td dir="ltr">송금<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>원거래 미존재</td>
+                            <td dir="ltr">송금취소원거래 미존재</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">F023</td>
-                            <td dir="ltr">송금통지수신으로인한 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>불가</td>
+                            <td dir="ltr">송금통지수신으로인한 취소불가</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
@@ -5971,19 +5113,7 @@
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H004</td>
                             <td dir="ltr">
-                                <div>TIMEOUT 발생 전문 재처리 중입니다. 입<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip> 조회필. (수협은행 전산실로 문의하세요)</div>
+                                <div>TIMEOUT 발생 전문 재처리 중입니다. 입출금 조회필. (수협은행 전산실로 문의하세요)</div>
                             </td>
                         </tr>
                         <tr>
@@ -5994,19 +5124,7 @@
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H006</td>
-                            <td dir="ltr">TIMEOUT이 발생 했습니다.입<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip> 조회필 (수협은행 전산실로 문의하세요)</td>
+                            <td dir="ltr">TIMEOUT이 발생 했습니다.입출금 조회필 (수협은행 전산실로 문의하세요)</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
@@ -6151,33 +5269,12 @@
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H035</td>
-                            <td dir="ltr">개설기관 이체처리중 입니다. 타행처리중(430응답), 입<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip> 조회필</td>
+                            <td dir="ltr">개설기관 이체처리중 입니다. 타행처리중(430응답), 입출금 조회필</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H036</td>
-                            <td dir="ltr">이체전문 수신전 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>전문을 수신 했습니다.</td>
+                            <td dir="ltr">이체전문 수신전 취소전문을 수신 했습니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
@@ -6192,16 +5289,7 @@
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H039</td>
-                            <td dir="ltr">개설기관 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 처리중 입니다.</td>
+                            <td dir="ltr">개설기관 취소 처리중 입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
@@ -6211,56 +5299,17 @@
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H041</td>
-                            <td dir="ltr">재<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 바랍니다.(전일자 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 개설기관 무응답 수신전문 오류등)</td>
+                            <td dir="ltr">재취소 바랍니다.(전일자 취소 개설기관 무응답 수신전문 오류등)</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H042</td>
-                            <td dir="ltr">개설기관 확인 바랍니다.(전일자 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 불능)</td>
+                            <td dir="ltr">개설기관 확인 바랍니다.(전일자 취소 불능)</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H043</td>
-                            <td dir="ltr">요청기관 사고발생(<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>)계좌번호 상위 합니다.</td>
+                            <td dir="ltr">요청기관 사고발생(출금)계좌번호 상위 합니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
@@ -6315,17 +5364,7 @@
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H054</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>금액이 없습니다.</td>
+                            <td dir="ltr">승인금액이 없습니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
@@ -6345,31 +5384,7 @@
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H058</td>
-                            <td dir="ltr"><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>기관 사용불가 합니다.(<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>기관 장애상태)</td>
+                            <td dir="ltr">출금기관 사용불가 합니다.(출금기관 장애상태)</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
@@ -6399,16 +5414,7 @@
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H071</td>
-                            <td dir="ltr">기 정상<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip> 된 거래입니다.</td>
+                            <td dir="ltr">기 정상취소 된 거래입니다.</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
@@ -6418,36 +5424,12 @@
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H073</td>
-                            <td dir="ltr">불능 응답이 왔습니다.입<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip> 조회필</td>
+                            <td dir="ltr">불능 응답이 왔습니다.입출금 조회필</td>
                         </tr>
                         <tr>
                             <td dir="ltr">수협</td>
                             <td dir="ltr">H074</td>
-                            <td dir="ltr">오류 응답이 왔습니다.입<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip> 조회필</td>
+                            <td dir="ltr">오류 응답이 왔습니다.입출금 조회필</td>
                         </tr>
                     </tbody>
                 </v-simple-table>
@@ -6466,16 +5448,7 @@
                             <td dir="ltr">설명</td>
                         </tr>
                         <tr>
-                            <td rowspan="7">AUTH<br />(<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>)</td>
+                            <td rowspan="7">AUTH<br />(가맹점 인증)</td>
                             <td>0001</td>
                             <td>가맹점아이디 값이 존재하지 않습니다.</td>
                             <td>전송된 cst_id 값이 공백이거나 null</td>
@@ -6692,31 +5665,10 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td rowspan="31">CPAY<br />(<v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>)</td>
+                            <td rowspan="31">CPAY<br />(출금)</td>
                             <td>0001</td>
                             <td>MEM ERROR - 인증시간 만료!!</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip> TIME OUT</td>
+                            <td>가맹점 인증 TIME OUT</td>
                         </tr>
                         <tr>
                             <td>0002</td>
@@ -6765,49 +5717,13 @@
                         </tr>
                         <tr>
                             <td>0015</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>요청 전문생성 오류!! [관리자에게 문의하세요~]</td>
+                            <td>출금요청 전문생성 오류!! [관리자에게 문의하세요~]</td>
                             <td>DB ERROR</td>
                         </tr>
                         <tr>
                             <td>0018</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 결과 미수신!! [시스템관리자에게 문의하세요~]</td>
-                            <td>은행 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>결과 미수신(응답없음)</td>
+                            <td>출금이체 결과 미수신!! [시스템관리자에게 문의하세요~]</td>
+                            <td>은행 출금결과 미수신(응답없음)</td>
                         </tr>
                         <tr>
                             <td>0019</td>
@@ -6826,32 +5742,8 @@
                         </tr>
                         <tr>
                             <td>0022</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이제 실패!!</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 전문 전송 실패 / 전문의 오류로 인한 전문전송 실패</td>
+                            <td>출금이제 실패!!</td>
+                            <td>출금이체 전문 전송 실패 / 전문의 오류로 인한 전문전송 실패</td>
                         </tr>
                         <tr>
                             <td>0023</td>
@@ -6885,50 +5777,18 @@
                         </tr>
                         <tr>
                             <td>0030</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>신청 전문 중복오류!! [관리자에게 문의하세요~]</td>
+                            <td>출금신청 전문 중복오류!! [관리자에게 문의하세요~]</td>
                             <td>DB ERROR</td>
                         </tr>
                         <tr>
                             <td>0201</td>
                             <td>중복결제입니다.</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip> 중복 오류</td>
+                            <td>주문번호 중복 오류</td>
                         </tr>
                         <tr>
                             <td>0202</td>
                             <td>중복결제입니다.</td>
-                            <td>정기결제 중복 오류 : <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip> 중복 또는 해당 년.월 분 결제 내역이 존재함.</td>
+                            <td>정기결제 중복 오류 : 주문번호 중복 또는 해당 년.월 분 결제 내역이 존재함.</td>
                         </tr>
                         <tr>
                             <td>9998</td>
@@ -6995,16 +5855,7 @@
                             <td rowspan="27">SPAY<br />(간편결제 REST)</td>
                             <td>0001</td>
                             <td>인증실패 : MEM INFO ERROR</td>
-                            <td>PCD_CST_ID 또는 PCD_AUTH_KEY 값이 일치하지 않거나 인증세션 만료로 인한 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>오류</td>
+                            <td>PCD_CST_ID 또는 PCD_AUTH_KEY 값이 일치하지 않거나 인증세션 만료로 인한 가맹점 인증오류</td>
                         </tr>
                         <tr>
                             <td>0002</td>
@@ -7053,61 +5904,13 @@
                         </tr>
                         <tr>
                             <td>0011</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 결과 미수신!! [시스템관리자에게 문의하세요~]</td>
-                            <td>은행 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>결과 미수신(응답없음)</td>
+                            <td>출금이체 결과 미수신!! [시스템관리자에게 문의하세요~]</td>
+                            <td>은행 출금결과 미수신(응답없음)</td>
                         </tr>
                         <tr>
                             <td>0012</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이제 실패!!</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 전문 전송 실패 / 전문의 오류로 인한 전문전송 실패</td>
+                            <td>출금이제 실패!!</td>
+                            <td>출금이체 전문 전송 실패 / 전문의 오류로 인한 전문전송 실패</td>
                         </tr>
                         <tr>
                             <td>0013</td>
@@ -7126,19 +5929,7 @@
                         </tr>
                         <tr>
                             <td>0016</td>
-                            <td>간편결제 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>결과 등록 실패!!</td>
+                            <td>간편결제 출금결과 등록 실패!!</td>
                             <td>DB ERROR</td>
                         </tr>
                         <tr>
@@ -7153,62 +5944,18 @@
                         </tr>
                         <tr>
                             <td>0019</td>
-                            <td>간편결제 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 실패 : 잘못된 접근입니다.!!</td>
+                            <td>간편결제 출금이체 실패 : 잘못된 접근입니다.!!</td>
                             <td>ACT_ 또는 PCD_SIMPLE_FLAG 값 오류</td>
                         </tr>
                         <tr>
                             <td>0020</td>
-                            <td>간편결제 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 실패 : 결제자 정보나 계좌정보를 바르게 입력하세요!!</td>
+                            <td>간편결제 출금이체 실패 : 결제자 정보나 계좌정보를 바르게 입력하세요!!</td>
                             <td>기타오류</td>
                         </tr>
                         <tr>
                             <td>0021</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>가 존재하지 않습니다.</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>(PCD_PAY_OID) 미전송</td>
+                            <td>주문번호가 존재하지 않습니다.</td>
+                            <td>주문번호(PCD_PAY_OID) 미전송</td>
                         </tr>
                         <tr>
                             <td>0022</td>
@@ -7244,16 +5991,7 @@
                             <td rowspan="28">RPAY<br />(정기결제 REST)</td>
                             <td>0001</td>
                             <td>인증실패 : MEM INFO ERROR</td>
-                            <td>PCD_CST_ID 또는 PCD_AUTH_KEY 값이 일치하지 않거나 인증세션 만료로 인한 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>오류</td>
+                            <td>PCD_CST_ID 또는 PCD_AUTH_KEY 값이 일치하지 않거나 인증세션 만료로 인한 가맹점 인증오류</td>
                         </tr>
                         <tr>
                             <td>0002</td>
@@ -7312,61 +6050,13 @@
                         </tr>
                         <tr>
                             <td>0013</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 결과 미수신!! [시스템관리자에게 문의하세요~]</td>
-                            <td>은행 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>결과 미수신(응답없음)</td>
+                            <td>출금이체 결과 미수신!! [시스템관리자에게 문의하세요~]</td>
+                            <td>은행 출금결과 미수신(응답없음)</td>
                         </tr>
                         <tr>
                             <td>0014</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이제 실패!!</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 전문 전송 실패 / 전문의 오류로 인한 전문전송 실패</td>
+                            <td>출금이제 실패!!</td>
+                            <td>출금이체 전문 전송 실패 / 전문의 오류로 인한 전문전송 실패</td>
                         </tr>
                         <tr>
                             <td>0015</td>
@@ -7390,19 +6080,7 @@
                         </tr>
                         <tr>
                             <td>0019</td>
-                            <td>정기결제 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 실패 : 잘못된 접근입니다.!!</td>
+                            <td>정기결제 출금이체 실패 : 잘못된 접근입니다.!!</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -7412,44 +6090,12 @@
                         </tr>
                         <tr>
                             <td>0021</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>가 존재하지 않습니다.</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip>(PCD_PAY_OID) 미전송</td>
+                            <td>주문번호가 존재하지 않습니다.</td>
+                            <td>주문번호(PCD_PAY_OID) 미전송</td>
                         </tr>
                         <tr>
                             <td>0022</td>
-                            <td>정기결제 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 실패 : 결제자 정보나 계좌정보를 바르게 입력하세요!!</td>
+                            <td>정기결제 출금이체 실패 : 결제자 정보나 계좌정보를 바르게 입력하세요!!</td>
                             <td>기타오류</td>
                         </tr>
                         <tr>
@@ -7486,16 +6132,7 @@
                             <td rowspan="53">AUTH<br />(계좌등록)</td>
                             <td>0001</td>
                             <td>인증실패 : MEM INFO ERROR</td>
-                            <td>PCD_CST_ID 또는 PCD_AUTH_KEY 값이 일치하지 않거나 인증세션 만료로 인한 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>오류</td>
+                            <td>PCD_CST_ID 또는 PCD_AUTH_KEY 값이 일치하지 않거나 인증세션 만료로 인한 가맹점 인증오류</td>
                         </tr>
                         <tr>
                             <td>0002</td>
@@ -7599,17 +6236,7 @@
                         </tr>
                         <tr>
                             <td>1103</td>
-                            <td>법인계좌인증 <v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip> 실패!!</td>
+                            <td>법인계좌인증 승인 실패!!</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -7679,33 +6306,12 @@
                         </tr>
                         <tr>
                             <td>9991</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>키 불일치</td>
+                            <td>가맹점 인증키 불일치</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>9998</td>
-                            <td>간편결제 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">출금</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    계좌결제에서 결제요청이 이루어지면 고객의 계좌에서 돈이 바로 빠져나가고,<br/>
-                    이것을 출금이라고 합니다.<Br/>
-                    거래가 확정되었다는 점에서 카드의 ‘승인’과 같지만,<br/>
-                    신용카드의 승인시점은 신용카드 결제일(출금시점)과 다르다는 점에 차이점이 있습니다.
-                </span>
-            </template>
-        </v-tooltip>이체 실패 : 잘못된 접근입니다.!!</td>
+                            <td>간편결제 출금이체 실패 : 잘못된 접근입니다.!!</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -7792,16 +6398,7 @@
                             <td rowspan="25">CDAU<br />(카드등록)</td>
                             <td>0001</td>
                             <td>인증실패 : MEM INFO ERROR</td>
-                            <td>PCD_CST_ID 또는 PCD_AUTH_KEY 값이 일치하지 않거나 인증세션 만료로 인한 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>오류</td>
+                            <td>PCD_CST_ID 또는 PCD_AUTH_KEY 값이 일치하지 않거나 인증세션 만료로 인한 가맹점 인증오류</td>
                         </tr>
                         <tr>
                             <td>0002</td>
@@ -7835,16 +6432,7 @@
                         </tr>
                         <tr>
                             <td>9991</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>키 불일치</td>
+                            <td>가맹점 인증키 불일치</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -8006,17 +6594,7 @@
                         <tr>
                             <td>0015</td>
                             <td>중복결제</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip> or 결제구분 년.월 중복 오류</td>
+                            <td>주문번호 or 결제구분 년.월 중복 오류</td>
                         </tr>
                         <tr>
                             <td>0016</td>
@@ -8091,49 +6669,11 @@
                         <tr>
                             <td>1003</td>
                             <td>결제요청 값과 결제결과 값이 다릅니다.</td>
-                            <td>카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>요청금액, 사용자ID 정보 불일치로 카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>처리</td>
+                            <td>카드승인요청금액, 사용자ID 정보 불일치로 카드승인취소처리</td>
                         </tr>
                         <tr>
                             <td>9991</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>키 불일치</td>
+                            <td>가맹점 인증키 불일치</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -8205,17 +6745,7 @@
                         <tr>
                             <td>0014</td>
                             <td>중복결제</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">주문번호</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에서 특정거래건에 부여하는 유니크값입니다.<Br/>
-                    결제요청시 주문번호를 가맹점에서 보내주지 않으면 페이플에서 임의로 생성하여 적용합니다.
-                </span>
-            </template>
-        </v-tooltip> 중복 오류</td>
+                            <td>주문번호 중복 오류</td>
                         </tr>
                         <tr>
                             <td>0015</td>
@@ -8290,49 +6820,11 @@
                         <tr>
                             <td>1003</td>
                             <td>결제요청 값과 결제결과 값이 다릅니다.</td>
-                            <td>카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip>요청금액, 사용자ID 정보 불일치로 카드<v-tooltip v-model="toolTipShow" top>
-                    <template v-slot:activator="{ on }">
-                        <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">승인</span>
-                    </template>
-                    <template v-slot:default>
-                        <span>
-                            카드사에서 가맹점의 결제요청에 최종적으로 보내주는 결제완료상태값으로,<br/>
-                            승인을 받았다는 것은 결제가 성공적으로 이루어졌다는 것을 의미합니다.
-                        </span>
-                    </template>
-                </v-tooltip><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">취소</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    카드결제에서 승인된 거래건이 취소되었음을 말합니다.
-                </span>
-            </template>
-        </v-tooltip>처리</td>
+                            <td>카드승인요청금액, 사용자ID 정보 불일치로 카드승인취소처리</td>
                         </tr>
                         <tr>
                             <td>9991</td>
-                            <td><v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>키 불일치</td>
+                            <td>가맹점 인증키 불일치</td>
                             <td></td>
                         </tr>
                         <tr>

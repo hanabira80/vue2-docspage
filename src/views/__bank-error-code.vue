@@ -13,26 +13,8 @@
             <v-divider class="my-6"></v-divider>
 
             <p>
-                페이플은 API에서 CROS Allow를 처리하지 않습니다. 따라서 ajax 등의 javascript 통신은 오류가 발생합니다. 또한 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>이 요청된 서버를 기준으로
-                결과가 리턴됩니다. 만약 <v-tooltip v-model="toolTipShow" top>
-            <template v-slot:activator="{ on }">
-                <span @click="toolTipShow = !toolTipShow" class="half-bg--tooltip cursor-pointer">가맹점 인증</span>
-            </template>
-            <template v-slot:default>
-                <span>
-                    가맹점에 발급되는 고유 ID와 Key값을 확인하여 실제 페이플과 계약된 가맹점이 맞는지를 체크하는 인증 절차입니다.
-                </span>
-            </template>
-        </v-tooltip>요청 서버와 업무처리요청 서버가 다른 경우 결과를 수신 받지 못하게 되며 origin 오류가 발생하게 됩니다.
+                페이플은 API에서 CROS Allow를 처리하지 않습니다. 따라서 ajax 등의 javascript 통신은 오류가 발생합니다. 또한 가맹점 인증이 요청된 서버를 기준으로
+                결과가 리턴됩니다. 만약 가맹점 인증요청 서버와 업무처리요청 서버가 다른 경우 결과를 수신 받지 못하게 되며 origin 오류가 발생하게 됩니다.
             </p>
 
             <p>
