@@ -31,7 +31,7 @@
                 빌링키 등록 방식을 통해 가맹점은 결제수단별 빌링키를 사전에 발급받고, 추후 결제를 낼 수 있습니다.
             </blockquote>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/4-1.png')" cover class="grey darken-4 "></v-img>
             </v-card>
 
             <h3 class="pl-4">
@@ -42,19 +42,19 @@
                 직관적이지만, 결제자의 PC/모바일에서 오류가 브라우저에 영향을 미칠시 결제결과데이터의 수신이 실패될 수 있습니다.
             </blockquote>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/4-2.png')" cover class="grey darken-4 "></v-img>
             </v-card>
 
             <h3 class="pl-4">
-                결제요청 재컨펌 (CERT)(CERT)
+                결제요청 재컨펌 (CERT)
             </h3>
             <blockquote class="blockquote body-1">
                 브라우저(결제창)에서 결제요청과 승인을 모두 처리하는 PAY방식과 달리, CERT방식에서는 최종 결제요청이 브라우저가 아닌 페이플 서버를 통해 이루어집니다.<br/>
                 이는 결제자의 PC/모바일 환경에 따라 브라우저의 오류가 발생할 경우에 나타날 수 있는 결제결과데이터 수신실패 케이스를 예방할 수 있다는 장점이 있습니다.<br/>
                 또한 결제자가 결제정보를 입력하는 도중에 일어나는 재고(인벤토리)변화에 따라, 결제요청을 결제직전에 마지막으로 가맹점에서 확인하여야 하는 경우 유용하게 쓸 수 있습니다.
             </blockquote>
-            <v-card max-width="600" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/test-2.png')" cover class="grey darken-4 "></v-img>
+            <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
+                <v-img :src="require('../../src/assets/4-3.png')" cover class="grey darken-4 "></v-img>
             </v-card>
 
             <h3 class="pl-4">
@@ -64,7 +64,7 @@
                 자바스크립트를 이용하여 결제를 하기 위해서는  PAY와 CERT방식중에 하나를 선택하여야 하지만 빌링키 생성을 위해 빌링키 등록(AUTH)만 수행할 경우에는 실제 결제가 일어나는 것이 아니므로 AUTH를 선택하여 빌링키만 발급받습니다.
             </blockquote>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/4-4.png')" cover class="grey darken-4 "></v-img>
             </v-card>
         </article>
 

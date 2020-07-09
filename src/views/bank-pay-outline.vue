@@ -32,7 +32,7 @@
                 빌링키 등록 방식을 통해 가맹점은 결제수단별 빌링키를 사전에 발급받고, 추후 결제를 낼 수 있습니다.
             </blockquote>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/4-1.png')" cover class="white "></v-img>
             </v-card>
 
             <h3 class="pl-4">
@@ -43,7 +43,7 @@
                 직관적이지만, 결제자의 PC/모바일에서 오류가 브라우저에 영향을 미칠시 결제결과데이터의 수신이 실패될 수 있습니다.
             </blockquote>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/4-2.png')" cover class="white "></v-img>
             </v-card>
 
             <h3 class="pl-4">
@@ -55,7 +55,7 @@
                 또한 결제자가 결제정보를 입력하는 도중에 일어나는 재고(인벤토리)변화에 따라, 결제요청을 결제직전에 마지막으로 가맹점에서 확인하여야 하는 경우 유용하게 쓸 수 있습니다.
             </blockquote>
             <v-card max-width="600" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/test-2.png')" coㅣver class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/4-3.png')" cover class="white "></v-img>
             </v-card>
 
             <h3 class="pl-4">
@@ -65,7 +65,7 @@
                 자바스크립트를 이용하여 결제를 하기 위해서는 PAY와 CERT방식중에 하나를 선택하여야 하지만 빌링키 생성을 위해 빌링키 등록(AUTH)만 수행할 경우에는 실제 결제가 일어나는 것이 아니므로 AUTH를 선택하여 빌링키만 발급받습니다.
             </blockquote>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/4-4.png')" cover class="white "></v-img>
             </v-card>
         </article>
 

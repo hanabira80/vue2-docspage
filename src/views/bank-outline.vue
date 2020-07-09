@@ -17,7 +17,7 @@
 
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
                 <!-- <div class="overline pa-2">첫결제 (빌링키 발급 전)</div> -->
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/1-1.png')" cover class="white "></v-img>
             </v-card>
 
             <v-row class="mb-12">
@@ -36,13 +36,13 @@
                 <v-col col="12" sm="4">
                     <v-card raised col="12" sm="4">
                         <div class="overline pa-2">빌링키 등록 - 최초결제</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                        <v-img :src="require('../../src/assets/1-7.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
                     <v-card raised col="12" sm="4">
                         <div class="overline pa-2">비밀번호 인증 - 재결제</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                        <v-img :src="require('../../src/assets/1-3.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
             </v-row>
@@ -65,13 +65,13 @@
                 <v-col col="12" sm="4">
                     <v-card raised col="12" sm="4">
                         <div class="overline pa-2">빌링키 등록 - 최초결제</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                        <v-img :src="require('../../src/assets/1-7.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
                     <v-card raised col="12" sm="4">
                         <div class="overline pa-2">빌링키 등록 - 재결제</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                        <v-img :src="require('../../src/assets/1-7.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
             </v-row>
@@ -93,13 +93,13 @@
                 <v-col col="12" sm="4">
                     <v-card raised col="12" sm="4">
                         <div class="overline pa-2">빌링키 등록</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                        <v-img :src="require('../../src/assets/1-7.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
                     <v-card raised col="12" sm="4">
                         <div class="overline pa-2">재결제</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                        <v-img :src="require('../../src/assets/1-4.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
             </v-row>
@@ -121,13 +121,13 @@
                 <v-col col="12" sm="4">
                     <v-card raised col="12" sm="4">
                         <div class="overline pa-2">빌링키 등록</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                        <v-img :src="require('../../src/assets/1-1.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
                     <v-card raised col="12" sm="4">
                         <div class="overline pa-2">재결제</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                        <v-img :src="require('../../src/assets/1-8.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
             </v-row>
@@ -149,41 +149,13 @@
                 <v-col col="12" sm="4">
                     <v-card raised col="12" sm="4">
                         <div class="overline pa-2">링크생성</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                        <v-img :src="require('../../src/assets/1-5.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
                     <v-card raised col="12" sm="4">
                         <div class="overline pa-2">링크 접속 후 결제</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
-                    </v-card>
-                </v-col>
-            </v-row>
-            <!-- <v-divider class="my-8"></v-divider> -->
-
-            <v-row class="mb-8">
-                <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
-                        <v-card-text>
-                            <p class="title text--primary">
-                                앱카드결제
-                            </p>
-                            <div class="text--primary">
-                                카드사에서 제공하는 앱카드로 결제하는 방식입니다. 빌링키 등록 단계가 없어, 결제할 때마다 같은 프로세스로 결제합니다.
-                            </div>
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-                <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
-                        <div class="overline pa-2">최초결제</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
-                    </v-card>
-                </v-col>
-                <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
-                        <div class="overline pa-2">재결제</div>
-                        <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 mx-auto"></v-img>
+                        <v-img :src="require('../../src/assets/1-7.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
             </v-row>

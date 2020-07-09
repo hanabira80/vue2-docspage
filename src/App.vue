@@ -114,8 +114,8 @@ export default {
                     { id: 1 - 6, name: "등록카드 해지", to: "/card/regist/cancel" },
                     { id: 1 - 7, name: "등록카드 조회", to: "/card/regist/search" },
                     { id: 1 - 8, name: "결제결과 조회", to: "/card/result/search" },
-                    { id: 1 - 9, name: "정책", to: "/card/policy" },
-                    { id: 1 - 10, name: "응답코드", to: "/card/code/response" },
+                    { id: 1 - 9, name: "응답코드", to: "/card/code/response" },
+                    { id: 1 - 10, name: "정책", to: "/card/policy" },
                 ],
             },
             {
@@ -165,7 +165,8 @@ export default {
                     { id: 2 - 7, name: "등록계좌 조회", to: "/bank/regist/search" },
                     { id: 2 - 8, name: "결제결과 수신", to: "/bank/result/recieve" },
                     { id: 2 - 9, name: "결제결과 조회", to: "/bank/result/search" },
-                    { id: 2 - 10, name: "정책", to: "/bank/policy" },
+                    { id: 2 - 10, name: "응답코드", to: "/bank/code/response" },
+                    { id: 2 - 11, name: "정책", to: "/bank/policy" },
                 ],
             },
             {
@@ -185,6 +186,11 @@ export default {
             },
             {
                 id: 7,
+                name: "용어사전",
+                to: "/dic",
+            },
+            {
+                id: 8,
                 name: "FAQ",
                 to: "/faq",
             },

@@ -23,12 +23,12 @@
 
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
                 <div class="overline pa-2">첫결제 (빌링키 발급 전)</div>
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/5-1.png')" cover class="grey darken-4 "></v-img>
             </v-card>
 
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
                 <div class="overline pa-2">재결제 (빌링키 발급 후)</div>
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/5-2.png')" cover class="grey darken-4 "></v-img>
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">

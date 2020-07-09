@@ -32,7 +32,7 @@
                 가맹점 인증 방식 분류
             </h3>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/2-1.png')" cover class="white "></v-img>
             </v-card>
 
             <h3 class="pl-4">
@@ -43,11 +43,11 @@
             </h3>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
                 <div class="overline pa-2">가맹점 인증요청 프로세스(결제창 호출)</div>
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/2-2.png')" cover class="white "></v-img>
             </v-card>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
                 <div class="overline pa-2">가맹점 인증요청 프로세스(REST API)</div>
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/2-3.png')" cover class="white "></v-img>
             </v-card>
 
             <h3 class="pl-4">

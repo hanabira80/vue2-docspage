@@ -91,16 +91,16 @@ const routes = [
         component: () => import("../views/card-result-search.vue"),
     },
     {
-        path: "/card/policy",
-        name: "card-policy",
-        meta: { title: "카드결제 재결제 간편결제" },
-        component: () => import("../views/card-policy.vue"),
-    },
-    {
         path: "/card/code/response",
         name: "card-code-response",
         meta: { title: "카드결제 재결제 간편결제" },
         component: () => import("../views/card-code-response.vue"),
+    },
+    {
+        path: "/card/policy",
+        name: "card-policy",
+        meta: { title: "카드결제 재결제 간편결제" },
+        component: () => import("../views/card-policy.vue"),
     },
     // 
     // 계좌
@@ -196,11 +196,20 @@ const routes = [
         component: () => import("../views/bank-result-search.vue"),
     },
     {
+        path: "/bank/code/response",
+        name: "bank-code-response",
+        meta: { title: "카드결제 재결제 간편결제" },
+        component: () => import("../views/bank-code-response.vue"),
+    },
+    {
         path: "/bank/policy",
         name: "bank-error-code",
         meta: { title: "계좌결제 응답오류" },
         component: () => import("../views/bank-policy.vue"),
     },
+    // 
+    // 공통
+    // 
     {
         path: "/webhook",
         name: "card-webhook",
@@ -224,6 +233,12 @@ const routes = [
         name: "card-faq",
         meta: { title: "카드결제 재결제 간편결제" },
         component: () => import("../views/faq.vue"),
+    },
+    {
+        path: "/dic",
+        name: "dic",
+        meta: { title: "용어사전" },
+        component: () => import("../views/dic.vue"),
     },
 ];
 // router.beforeEach((to, from, next) => {

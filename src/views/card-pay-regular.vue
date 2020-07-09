@@ -21,7 +21,7 @@
             </h2>
 
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/7-1.png')" cover class="grey darken-4 "></v-img>
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
@@ -1051,7 +1051,7 @@
                 재결제
             </h2>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/test-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/7-2.png')" cover class="grey darken-4 "></v-img>
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
