@@ -304,28 +304,27 @@ Host: 가맹점 인증 후 리턴받은 PCD_PAY_HOST
 Content-Type: application/json
 Cache-Control: no-cache
 {
- 
-  "PCD_CST_ID": "가맹점 인증 후 리턴받은 cst_id",
-  "PCD_CUST_KEY": "가맹점 인증 후 리턴받은 custKey",
-  "PCD_AUTH_KEY": "가맹점 인증 후 리턴받은 AuthKey",  
-  "PCD_PAY_WORK": "LINKREG",
-  "PCD_PAY_TYPE": "card",
-  "PCD_PAY_GOODS": "상품1",
-  "PCD_PAY_TOTAL": 100
+    "PCD_CST_ID": "가맹점 인증 후 리턴받은 cst_id",
+    "PCD_CUST_KEY": "가맹점 인증 후 리턴받은 custKey",
+    "PCD_AUTH_KEY": "가맹점 인증 후 리턴받은 AuthKey",  
+    "PCD_PAY_WORK": "LINKREG",
+    "PCD_PAY_TYPE": "card",
+    "PCD_PAY_GOODS": "상품1",
+    "PCD_PAY_TOTAL": 100
 }
 `,
             code_2_1: `
 {
-  "PCD_LINK_RST":"success",
-  "PCD_LINK_MSG":"링크생성이 완료되었습니다.",
-  "PCD_PAY_TYPE":"card",
-  "PCD_PAY_GOODS":"상품1",
-  "PCD_PAY_TOTAL":100,
-  "PCD_TAXSAVE_FLAG":"N",
-  "PCD_LINK_EXPIREDATE":"",
-  "PCD_LINK_MEMO":"",
-  "PCD_LINK_KEY":"Mjox...",
-  "PCD_LINK_URL":"https:..."
+    "PCD_LINK_RST":"success",
+    "PCD_LINK_MSG":"링크생성이 완료되었습니다.",
+    "PCD_PAY_TYPE":"card",
+    "PCD_PAY_GOODS":"상품1",
+    "PCD_PAY_TOTAL":100,
+    "PCD_TAXSAVE_FLAG":"N",
+    "PCD_LINK_EXPIREDATE":"",
+    "PCD_LINK_MEMO":"",
+    "PCD_LINK_KEY":"Mjox...",
+    "PCD_LINK_URL":"https:..."
 }
 `,
         };

@@ -21,14 +21,13 @@
             </h2>
 
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/7-1.png')" cover class="grey darken-4 "></v-img>
+                <v-img :src="require('../../src/assets/c-7-1@2x.png')" cover class="grey darken-4 "></v-img>
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다. <br /><br />
-                간편결제와 달리 가맹점인증 단계에서 cst_id, custKey 외에 추가되는 요청변수가 있습니다. <br />
-                이곳 에서 요청변수와 샘플코드를 확인해보세요. <br />
-                월 중복결제 방지기능을 사용하는 가맹점은 이곳에서 별도의 가맹점 인증방식을 확인하시면 됩니다.
+                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다. <br/>
+                정기결제 간편결제에 필요한 가맹점 인증요청 파일(payple_auth_file)에 담겨야 하는 정보는 <router-link to="/card/install/auth/#pay-regular">이곳</router-link>을 확인해보세요.<br/>
+                월 중복결제 방지기능(PCD_REGULER_FLAG)을 사용하려면 <router-link to="/card/install/auth/#pay-regular-refuse">이곳</router-link>을 확인하여 인증 단계를 확인해주세요.
             </v-alert>
 
             <h3 class="pl-4">
