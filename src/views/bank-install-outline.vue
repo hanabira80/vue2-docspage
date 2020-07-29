@@ -32,22 +32,22 @@
                 가맹점 인증 방식 분류
             </h3>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/2-1.png')" cover class="white "></v-img>
+                <v-img :src="require('../../src/assets/b-2-1@2x.png')" cover class="white "></v-img>
             </v-card>
 
             <h3 class="pl-4">
-                <div class="half-bg--payple">결제창 호출</div>
+                <b>결제창 호출</b>
                 과
-                <div class="half-bg--payple">REST API</div>
+                <b>REST API</b>
                 인증프로세스의 차이점
             </h3>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <div class="overline pa-2">가맹점 인증요청 프로세스(결제창 호출)</div>
-                <v-img :src="require('../../src/assets/2-2.png')" cover class="white "></v-img>
+                <div class="half-bg--payple pa-2">가맹점 인증요청 프로세스(결제창 호출)</div>
+                <v-img :src="require('../../src/assets/c-2-2@2x.png')" cover class="white "></v-img>
             </v-card>
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <div class="overline pa-2">가맹점 인증요청 프로세스(REST API)</div>
-                <v-img :src="require('../../src/assets/2-3.png')" cover class="white "></v-img>
+                <div class="half-bg--payple pa-2">가맹점 인증요청 프로세스(REST API)</div>
+                <v-img :src="require('../../src/assets/b-2-3@2x.png')" cover class="white "></v-img>
             </v-card>
 
             <h3 class="pl-4">
@@ -110,13 +110,14 @@
                                 비고
                             </td>
                             <td colspan="1" rowspan="1">
-                                - 테스트 계정에서는 카드번호, 유효기간 검증만 진행되며, 도메인 검증을 하지 않습니다.   - 테스트에서 결제된 건은 실제 출금이 되지
+                                - 테스트 계정에서는 카드번호, 유효기간 검증만 진행되며, 도메인 검증을 하지 않습니다.<br/>
+                                - 테스트에서 결제된 건은 실제 출금이 되지
                                 않습니다.
                             </td>
                             <td colspan="1" rowspan="1">
-                                - 실제 승인이 진행되며 카드번호, 유효기간, 비밀번호, 생년월일 검증이 진행됩니다. - 페이플에서는 도메인 검증으로 가맹점 인증을
-                                하고 있기 때문에 REFERER가 정상적으로 넘어오지 않을 경우 AUTH0004 에러가 발생하게 됩니다. - 카페24, 가비아 등 서버호스팅 이용 시
-                                호스팅사에 페이플 URL(테스트, 운영) 방화벽 오픈을 요청하셔야 할 수 있습니다.
+                                - 실제 승인이 진행되며 카드번호, 유효기간, 비밀번호, 생년월일 검증이 진행됩니다.<br/>
+                                - 페이플에서는 도메인 검증으로 가맹점 인증을 하고 있기 때문에 REFERER가 정상적으로 넘어오지 않을 경우 AUTH0004 에러가 발생하게 됩니다. <br/>
+                                - 카페24, 가비아 등 서버호스팅 이용 시 호스팅사에 페이플 URL(테스트, 운영) 방화벽 오픈을 요청하셔야 할 수 있습니다.
                             </td>
                         </tr>
                     </tbody>
@@ -125,75 +126,7 @@
         </article>
         <v-divider class="mb-12"></v-divider>
 
-        <v-row class="mb-12 pt-12">
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="pink darken-1">
-                            <v-icon color="white">
-                                mdi-frequently-asked-questions
-                            </v-icon>
-                        </v-list-item-avatar>
-
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
-                            <v-list-item-subtitle>높은 빈도의 문의를 모아봤어요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="indigo darken-4">
-                            <v-icon color="white">
-                                mdi-git
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
-                            <v-list-item-subtitle>페이플 오픈 소스에 참여 하세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="teal accent-4">
-                            <v-icon color="white">
-                                mdi-email-send-outline
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
-                            <v-list-item-subtitle>페이플 개발팀에 문의해보세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-pencil
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-        </v-row>
+        
     </div>
 </template>
 
@@ -342,16 +275,15 @@ Cache-Control: no-cache
                     to: "/",
                 },
                 {
-                    text: "카드결제",
-                    disabled: false,
-                    to: "/card/outline",
-                },
-                {
-                    text: "최초결제",
+                    text: "계좌결제",
                     disabled: true,
                 },
                 {
-                    text: "가맹점 인증",
+                    text: "환경설정",
+                    disabled: true,
+                },
+                {
+                    text: "환경설정 개요",
                     disabled: true,
                 },
             ],

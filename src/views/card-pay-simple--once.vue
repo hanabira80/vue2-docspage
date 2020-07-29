@@ -933,7 +933,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                8
+                                255
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -1071,15 +1071,14 @@ export default {
                 },
                 {
                     text: "카드결제",
-                    disabled: false,
-                    to: "/card/outline",
-                },
-                {
-                    text: "222",
                     disabled: true,
                 },
                 {
-                    text: "결제 창 호출",
+                    text:"빌링키방식",
+                    disabled: true,
+                },
+                {
+                    text: "일회성 간편결제",
                     disabled: true,
                 },
             ],

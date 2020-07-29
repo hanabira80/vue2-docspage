@@ -402,6 +402,10 @@ referer: https://가맹점 도메인
                     text: "카드결제",
                     disabled: true,
                 },
+                {
+                    text:"카드결제 개요",
+                    disabled: true,
+                },
             ],
         };
     },

@@ -29,6 +29,7 @@ const routes = [
         name: "card-auth",
         meta: { title: "상황별 가맹점 인증 요청 방식" },
         component: () => import("../views/card-install-auth.vue"),
+        // props:true
     },
     {
         path: "/card/pay/outline",
@@ -154,13 +155,13 @@ const routes = [
         component: () => import("../views/bank-pay-link.vue"),
     },
     {
-        path: "/bank/recipt-request",
+        path: "/bank/recipt/request",
         name: "bank-recipt-request",
         meta: { title: "계좌결제 현금영수증 발행" },
         component: () => import("../views/bank-recipt-request.vue"),
     },
     {
-        path: "/bank/recipt-cancel",
+        path: "/bank/recipt/cancel",
         name: "bank-recipt-cancel",
         meta: { title: "계좌결제 현금영수증 취소" },
         component: () => import("../views/bank-recipt-cancel.vue"),

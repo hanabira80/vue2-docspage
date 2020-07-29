@@ -94,15 +94,14 @@ export default {
                 },
                 {
                     text: "카드결제",
-                    disabled: false,
-                    to: "/card/outline",
-                },
-                {
-                    text:"222",
                     disabled: true,
                 },
                 {
-                    text: "결제 창 호출",
+                    text:"빌링키방식",
+                    disabled: true,
+                },
+                {
+                    text: "빌링키방식 개요",
                     disabled: true,
                 },
             ],

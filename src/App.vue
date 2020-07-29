@@ -54,71 +54,77 @@
                 <v-divider class="mb-12"></v-divider>
                 <v-row class="mb-12 pt-12">
                     <v-col col="12" sm="4">
-                        <v-card>
-                            <v-list-item>
-                                <v-list-item-avatar color="pink darken-1">
-                                    <v-icon color="white">
-                                        mdi-frequently-asked-questions
-                                    </v-icon>
-                                </v-list-item-avatar>
+                        <router-link class="no-style-link" to="/faq">
+                            <v-card>
+                                <v-list-item>
+                                    <v-list-item-avatar color="pink darken-1">
+                                        <v-icon color="white">
+                                            mdi-frequently-asked-questions
+                                        </v-icon>
+                                    </v-list-item-avatar>
 
-                                <v-list-item-content>
-                                    <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
-                                    <v-list-item-subtitle>높은 빈도의 문의를 모아봤어요</v-list-item-subtitle>
-                                </v-list-item-content>
-                                <v-list-item-action>
-                                    <v-btn fab text color="blue accent-4">
-                                        <v-icon>
-                                            mdi-vector-link
-                                        </v-icon>
-                                    </v-btn>
-                                </v-list-item-action>
-                            </v-list-item>
-                        </v-card>
+                                    <v-list-item-content>
+                                        <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
+                                        <v-list-item-subtitle>높은 빈도의 문의를 모아봤어요</v-list-item-subtitle>
+                                    </v-list-item-content>
+                                    <v-list-item-action>
+                                        <v-btn fab text color="blue accent-4">
+                                            <v-icon>
+                                                mdi-vector-link
+                                            </v-icon>
+                                        </v-btn>
+                                    </v-list-item-action>
+                                </v-list-item>
+                            </v-card>
+                        </router-link>
                     </v-col>
                     <v-col col="12" sm="4">
-                        <v-card>
-                            <v-list-item>
-                                <v-list-item-avatar color="indigo darken-4">
-                                    <v-icon color="white">
-                                        mdi-git
-                                    </v-icon>
-                                </v-list-item-avatar>
-                                <v-list-item-content>
-                                    <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
-                                    <v-list-item-subtitle>페이플 오픈 소스에 참여 하세요</v-list-item-subtitle>
-                                </v-list-item-content>
-                                <v-list-item-action>
-                                    <v-btn fab text color="blue accent-4">
-                                        <v-icon>
-                                            mdi-vector-link
+                        <a class="no-style-link" href="https://github.com/PAYPLECORP" target="_blank">
+                            <v-card>
+                                <v-list-item>
+                                    <v-list-item-avatar color="indigo darken-4">
+                                        <v-icon color="white">
+                                            mdi-git
                                         </v-icon>
-                                    </v-btn>
-                                </v-list-item-action>
-                            </v-list-item>
-                        </v-card>
+                                    </v-list-item-avatar>
+                                    <v-list-item-content>
+                                        <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
+                                        <v-list-item-subtitle>페이플 오픈 소스에 참여 하세요</v-list-item-subtitle>
+                                    </v-list-item-content>
+                                    <v-list-item-action>
+                                        <v-btn fab text color="blue accent-4">
+                                            <v-icon>
+                                                mdi-vector-link
+                                            </v-icon>
+                                        </v-btn>
+                                    </v-list-item-action>
+                                </v-list-item>
+                            </v-card>
+                        </a>
                     </v-col>
                     <v-col col="12" sm="4">
-                        <v-card>
-                            <v-list-item>
-                                <v-list-item-avatar color="teal accent-4">
-                                    <v-icon color="white">
-                                        mdi-email-send-outline
-                                    </v-icon>
-                                </v-list-item-avatar>
-                                <v-list-item-content>
-                                    <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
-                                    <v-list-item-subtitle>페이플 개발팀에 문의해보세요</v-list-item-subtitle>
-                                </v-list-item-content>
-                                <v-list-item-action>
-                                    <v-btn fab text color="blue accent-4">
-                                        <v-icon>
-                                            mdi-pencil
+                        <a class="no-style-link" href="mailto:dev@payple.kr">
+                            <v-card>
+                                <v-list-item>
+                                    <v-list-item-avatar color="teal accent-4">
+                                        <v-icon color="white">
+                                            mdi-email-send-outline
                                         </v-icon>
-                                    </v-btn>
-                                </v-list-item-action>
-                            </v-list-item>
-                        </v-card>
+                                    </v-list-item-avatar>
+                                    <v-list-item-content>
+                                        <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
+                                        <v-list-item-subtitle>페이플 개발팀에 문의해보세요</v-list-item-subtitle>
+                                    </v-list-item-content>
+                                    <v-list-item-action>
+                                        <v-btn fab text color="blue accent-4">
+                                            <v-icon>
+                                                mdi-pencil
+                                            </v-icon>
+                                        </v-btn>
+                                    </v-list-item-action>
+                                </v-list-item>
+                            </v-card>
+                        </a>
                     </v-col>
                 </v-row>
             </v-container>
@@ -146,10 +152,10 @@ export default {
         // float button end
         navi: [
             {
-                id: 100,
-                name: "결제",
-                children: [
-                    {
+                // id: 100,
+                // name: "결제",
+                // children: [
+                //     {
                         id: 1,
                         name: "카드결제",
                         children: [
@@ -185,8 +191,8 @@ export default {
                                 ],
                             },
                             { id: 1 - 5, name: "승인취소", to: "/card/pay/cancel" },
-                            { id: 1 - 6, name: "등록카드 해지", to: "/card/regist/cancel" },
                             { id: 1 - 7, name: "등록카드 조회", to: "/card/regist/search" },
+                            { id: 1 - 6, name: "등록카드 해지", to: "/card/regist/cancel" },
                             { id: 1 - 8, name: "결제결과 조회", to: "/card/result/search" },
                             { id: 1 - 9, name: "응답코드", to: "/card/code/response" },
                             { id: 1 - 10, name: "정책", to: "/card/policy" },
@@ -222,8 +228,11 @@ export default {
                             {
                                 id: 2 - 3,
                                 name: "기타방식",
-                                children: [{ id: 2 - 3 - 0, name: "URL링크결제", to: "/bank/pay/link" }],
+                                children: [
+                                    { id: 2 - 3 - 0, name: "URL링크결제", to: "/bank/pay/link" }
+                                ],
                             },
+                            { id: 2 - 5, name: "계좌이체 환불", to: "/bank/pay/cancel" },
                             {
                                 id: 2 - 4,
                                 name: "현금영수증",
@@ -232,9 +241,8 @@ export default {
                                     { id: 2 - 4 - 2, name: "현금영수증 취소요청", to: "/bank/recipt/cancel" },
                                 ],
                             },
-                            { id: 2 - 5, name: "계좌이체 환불", to: "/bank/pay/cancel" },
-                            { id: 2 - 6, name: "등록계좌 해지", to: "/bank/regist/cancel" },
                             { id: 2 - 7, name: "등록계좌 조회", to: "/bank/regist/search" },
+                            { id: 2 - 6, name: "등록계좌 해지", to: "/bank/regist/cancel" },
                             { id: 2 - 8, name: "결제결과 수신", to: "/bank/result/recieve" },
                             { id: 2 - 9, name: "결제결과 조회", to: "/bank/result/search" },
                             { id: 2 - 10, name: "응답코드", to: "/bank/code/response" },
@@ -266,12 +274,12 @@ export default {
                         name: "FAQ",
                         to: "/faq",
                     },
-                ],
-            },
-            {
-                id: 200,
-                name: "송금",
-            },
+            //     ],
+            // },
+            // {
+            //     id: 200,
+            //     name: "송금",
+            // },
         ],
     }),
 
@@ -396,5 +404,9 @@ code {
 }
 .cursor-pointer {
     cursor: pointer;
+}
+.no-style-link {
+    color: inherit !important;
+    text-decoration: none !important;
 }
 </style>

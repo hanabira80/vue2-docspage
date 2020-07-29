@@ -53,7 +53,7 @@
                                     String
                                 </td>
                                 <td colspan="1" rowspan="1">
-                                    8
+                                    255
                                 </td>
                                 <td colspan="1" rowspan="1">
                                     O
@@ -93,7 +93,7 @@
                                     String
                                 </td>
                                 <td colspan="1" rowspan="1">
-                                    20
+                                    255
                                 </td>
                                 <td colspan="1" rowspan="1">
                                     O
@@ -373,21 +373,20 @@ Cache-Control: no-cache
                 {
                     text: "홈",
                     disabled: false,
-                    to: "/"
+                    to: "/",
                 },
                 {
                     text: "계좌결제",
-                    disabled: false,
-                    to: "/bank/outline"
+                    disabled: true,
                 },
                 {
                     text: "현금영수증",
-                    disabled: true
+                    disabled: true,
                 },
                 {
-                    text: "현금영수증 취소",
-                    disabled: true
-                }
+                    text: "현금영수증 취소요청",
+                    disabled: true,
+                },
             ]
         };
     }

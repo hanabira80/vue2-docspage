@@ -275,15 +275,14 @@ Cache-Control: no-cache
                 },
                 {
                     text: "카드결제",
-                    disabled: false,
-                    to: "/card/outline",
-                },
-                {
-                    text:"222",
                     disabled: true,
                 },
                 {
-                    text: "가맹점 인증",
+                    text:"환경설정",
+                    disabled: true,
+                },
+                {
+                    text:"환경설정 개요",
                     disabled: true,
                 },
             ],

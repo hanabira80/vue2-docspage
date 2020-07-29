@@ -8,17 +8,14 @@
 
         <h1 class="mb-12">등록계좌 조회</h1>
         <blockquote class="mb-12 blockquote body-1">
-            빌링키(PCD_PAYER_ID)가 제대로 생성되었는지 확인할 수 있는 API입니다.
+            빌링키(PCD_PAYER_ID) 상태를 조회할 수 있는 API입니다.
         </blockquote>
         <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-            요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다. 해당 내용은 이곳에서 확인하실 수 있습니다.
+            요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다.<br/>
+            등록계좌 조회에 필요한 가맹점 인증요청 방법은 <router-link to="/bank/install/auth">이곳</router-link>을 확인해보세요
         </v-alert>
 
         <article class="mb-12">
-            <h2 class="">
-                등록카드 해지
-            </h2>
-
             <h3 class="pl-4">
                 요청 메시지
             </h3>
@@ -53,7 +50,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                8
+                                255
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -93,7 +90,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                -
+                                255
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -133,7 +130,7 @@
                                 Number
                             </td>
                             <td colspan="1" rowspan="1">
-                                255
+                                20
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -304,75 +301,7 @@
         </article>
         <v-divider class="mb-12"></v-divider>
 
-        <v-row class="mb-12 pt-12">
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="pink darken-1">
-                            <v-icon color="white">
-                                mdi-frequently-asked-questions
-                            </v-icon>
-                        </v-list-item-avatar>
-
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
-                            <v-list-item-subtitle>높은 빈도의 문의를 모아봤어요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="indigo darken-4">
-                            <v-icon color="white">
-                                mdi-git
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
-                            <v-list-item-subtitle>페이플 오픈 소스에 참여 하세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="teal accent-4">
-                            <v-icon color="white">
-                                mdi-email-send-outline
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
-                            <v-list-item-subtitle>페이플 개발팀에 문의해보세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-pencil
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-        </v-row>
+        
     </div>
 </template>
 
@@ -398,16 +327,11 @@ export default {
                     to: "/",
                 },
                 {
-                    text: "카드결제",
-                    disabled: false,
-                    to: "/card/outline",
-                },
-                {
-                    text:"222",
+                    text: "계좌결제",
                     disabled: true,
                 },
                 {
-                    text: "결제 창 호출",
+                    text: "등록계좌 조회",
                     disabled: true,
                 },
             ],

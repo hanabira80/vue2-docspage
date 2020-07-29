@@ -10,29 +10,32 @@
         <blockquote class="mb-12 blockquote body-1">
             페이플 간편결제란?<br />
             페이플 결제창을 호출해 결제요청을 할 수 있는 서비스입니다. <br />
-            일회성 결제방식과 비밀번호를 등록해 결제하는 비밀번호 간편결제 방식이 있습니다. <br />
-            비밀번호 결제방식을 사용할 경우 일회성 결제방식에 <br />
-            <b>PCD_PAYER_ID, PCD_SIMPLE_FLAG, PCD_PAYER_AUTHTYPE </b><br />
-            세가지 요청변수를 추가하시면 됩니다.
+            일회성 결제방식과 비밀번호를 등록해 결제하는 비밀번호 간편결제 방식이 있습니다.
         </blockquote>
 
         <article class="mb-12">
             <h2 class="">
                 비밀번호 간편결제
             </h2>
+            <blockquote class="mb-8 blockquote body-1">
+                비밀번호 간편결제는 6자리 핀번호를 등록하여 재결제시 인증을 강화하는 결제방식입니다.<br/> 
+                카드등록시 결제창(브라우저)에서 핀번호를 등록하게 되며,<Br/>
+                재결제시마다 결제창(브라우저)를 호출하여 비밀번호를 인증해야 결제에 성공합니다. 
+            </blockquote>
 
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <div class="overline pa-2">첫결제 (빌링키 발급 전)</div>
-                <v-img :src="require('../../src/assets/b-5-1.png')" cover class="white "></v-img>
+                <div class="half-bg--payple pa-2">첫결제 (빌링키 발급 전)</div>
+                <v-img :src="require('../../src/assets/b-5-1@2x.png')" cover class="white "></v-img>
             </v-card>
 
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <div class="overline pa-2">재결제 (빌링키 발급 후)</div>
-                <v-img :src="require('../../src/assets/b-5-2.png')" cover class="white "></v-img>
+                <div class="half-bg--payple pa-2">재결제 (빌링키 발급 후)</div>
+                <v-img :src="require('../../src/assets/b-5-2@2x.png')" cover class="white "></v-img>
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다. 해당 내용은 이곳에서 확인하실 수 있습니다.
+                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다.<br/>
+                비밀번호 간편결제에 필요한 가맹점 인증요청 파일(payple_auth_file)에 담겨야 하는 정보는 <router-link to="/bank/install/auth">이곳</router-link>을 확인해보세요.
             </v-alert>
 
             <h3 class="pl-4">
@@ -89,7 +92,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                -
+                                20
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -109,7 +112,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                -
+                                20
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -267,7 +270,7 @@
                                 Number
                             </td>
                             <td colspan="1" rowspan="1">
-                                255
+                                20
                             </td>
                             <td colspan="1" rowspan="1">
                                 -
@@ -307,7 +310,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                255
+                                20
                             </td>
                             <td colspan="1" rowspan="1">
                                 -
@@ -327,13 +330,13 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                255
+                                100
                             </td>
                             <td colspan="1" rowspan="1">
                                 -
                             </td>
                             <td colspan="1" rowspan="1">
-                                <a href="mailto:dev@payple.kr">dev@payple.kr</a>
+                                dev@payple.kr
                             </td>
                             <td colspan="1" rowspan="1">
                                 해당 이메일 주소로 결제 안내메일이 발송됩니다.
@@ -408,7 +411,7 @@
                                 Number
                             </td>
                             <td colspan="1" rowspan="1">
-                                20
+                                11
                             </td>
                             <td colspan="1" rowspan="1">
                                 -
@@ -690,7 +693,7 @@
                                 PCD_PAYER_EMAIL
                             </td>
                             <td colspan="1" rowspan="1">
-                                <a href="mailto:dev@payple.kr">dev@payple.kr</a>
+                                dev@payple.kr
                             </td>
                             <td colspan="1" rowspan="1">
                                 결제자 이메일
@@ -922,10 +925,12 @@
 
         <article class="mb-12">
             <h2 class="">
-                결제요청 재컨펌 (CERT)(PCD_PAY_WORK : CERT)
+                결제요청 재컨펌(PCD_PAY_WORK : CERT)
             </h2>
             <blockquote class="mb-8 blockquote body-1">
-                최종 결제요청을 위해 REST API를 통해 기등록된 빌링키로 결제를 요청할 수 있습니다.
+                최종 결제요청을 위해 REST API를 통해 기등록된 빌링키로 결제를 요청할 수 있습니다.<br/>
+                PCD_PAY_WORK : PAY (즉시결제)의 경우와는 달리 CERT(결제요청 재컨펌 (CERT)) 방식에서는 최종 승인 요청을 별도로 주어야 합니다.<br />
+                결제요청 재컨펌 (CERT) 방식에 대한 설명은 <router-link to="/bank/pay/outline">이곳</router-link>에서 확인하실 수 있습니다.
             </blockquote>
             <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table class="table-hover-disable">
@@ -958,7 +963,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                8
+                                255
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -1071,75 +1076,7 @@
             </v-card>
         </article>
 
-        <v-row class="mb-12 pt-12">
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="pink darken-1">
-                            <v-icon color="white">
-                                mdi-frequently-asked-questions
-                            </v-icon>
-                        </v-list-item-avatar>
-
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
-                            <v-list-item-subtitle>높은 빈도의 문의를 모아봤어요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="indigo darken-4">
-                            <v-icon color="white">
-                                mdi-git
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
-                            <v-list-item-subtitle>페이플 오픈 소스에 참여 하세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="teal accent-4">
-                            <v-icon color="white">
-                                mdi-email-send-outline
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
-                            <v-list-item-subtitle>페이플 개발팀에 문의해보세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-pencil
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-        </v-row>
+        
     </div>
 </template>
 
@@ -1165,16 +1102,15 @@ export default {
                     to: "/",
                 },
                 {
-                    text: "카드결제",
-                    disabled: false,
-                    to: "/card/outline",
-                },
-                {
-                    text:"222",
+                    text: "계좌결제",
                     disabled: true,
                 },
                 {
-                    text: "결제 창 호출",
+                    text: "빌링키방식",
+                    disabled: true,
+                },
+                {
+                    text: "비밀번호 간편결제",
                     disabled: true,
                 },
             ],
@@ -1234,7 +1170,55 @@ obj.PCD_CPAY_VER = "1.0.1";
 java
 `,
             code_1_3: `
-node
+<script src="https://testcpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 테스트 -->
+<script src="https://cpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 운영 -->
+ 
+<script>	
+$(document).ready( function () {        
+    $('#payAction').on('click', function (event) {
+        
+    var obj = new Object();
+    obj.PCD_CPAY_VER = "1.0.1";
+	obj.PCD_PAY_TYPE = "transfer";
+	obj.PCD_PAY_WORK = "PAY";
+
+	/* 간편결제 구분 */
+	obj.PCD_SIMPLE_FLAG = "Y";
+	/* 비밀전호결제 인증방식 pwd | sms */
+	obj.PCD_PAYER_AUTH_TYPE = "pwd";
+	/* 가맹점 인증요청 파일 */
+	obj.payple_auth_file = "app.post의 path";
+	/* PCD_PAYER_ID 는 소스상에 표시하지 마시고 반드시 Server Side Script 를 이용하여 불러오시기 바랍니다. */
+	obj.PCD_PAYER_ID = 'VEJMT0FiTms4VG8...';
+			
+
+	obj.PCD_PAYER_NO = 1234;
+	obj.PCD_PAYER_NAME = "홍길동";
+	obj.PCD_PAYER_HP = "01012345678";
+	obj.PCD_PAYER_EMAIL = "dev@payple.kr";
+	obj.PCD_PAY_GOODS = "상품1";
+	obj.PCD_PAY_TOTAL = 1000;
+	obj.PCD_TAXSAVE_FLAG = "Y";
+	obj.PCD_PAY_ISTAX = "Y";
+	obj.PCD_PAY_TAXTOTAL = 10;
+	obj.PCD_PAY_OID = "";
+
+	/* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
+	//obj.callbackFunction = getResult;  // getResult : 콜백 함수명 
+	/* End : 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
+			
+	/* 결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 */
+	obj.PCD_RST_URL = 'app.post의 path';
+	/* End : 결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 */
+	
+        PaypleCpayAuthCheck(obj);
+            
+        event.preventDefault();
+  
+    });   
+});
+< /script>
+<button id=”payAction”>간편 결제하기</button>
 `,
             code_1_4: `
 node

@@ -75,7 +75,7 @@
         </article>
         <v-divider class="mb-12"></v-divider> -->
 
-        <v-expansion-panels multiple focusable hover inset>
+        <v-expansion-panels multiple focusable hover inset class="mb-12">
             <v-expansion-panel>
                 <v-expansion-panel-header>
                     <v-list-item>
@@ -87,10 +87,10 @@
 
                         <v-list-item-content>
                             <v-list-item-title>간편/정기 결제 개념 변경</v-list-item-title>
-                            <v-list-item-subtitle>2020.06.17</v-list-item-subtitle>
+                            <v-list-item-subtitle>2020.07</v-list-item-subtitle>
                         </v-list-item-content>
                         <v-list-item-action>
-                            <v-list-item-title>VER 2.1</v-list-item-title>
+                            <v-list-item-title>VER 1.0.1</v-list-item-title>
                         </v-list-item-action>
                     </v-list-item>
                 </v-expansion-panel-header>
@@ -152,10 +152,12 @@
                                         요약
                                     </td>
                                     <td colspan="1" rowspan="1">
-                                        빌링키를 발급받고 매번 사용자의 결제요청(비밀번호 입력)에 의해 결제를 내는 방식입니다.
+                                        페이플 결제창을 통해 빌링키를 발급받고,<br/>
+                                        페이플의 결제창에서 비밀번호 인증을 통해 결제를 내는 방식입니다.
                                     </td>
                                     <td colspan="1" rowspan="1">
-                                        빌링키를 발급받고 매번 사용자의 동의를 받을 필요 없이 REST방식으로 결제를 내는 방식을 말합니다.
+                                        기본적으로 PCD_SIMPLE_FLAG를 사용하지만,<br/>
+                                        월 중복결제를 방지하고 싶은 경우 PCD_REGULER_FLAG를 사용합니다. 
                                     </td>
                                     <td colspan="1" rowspan="1">
                                         *PCD_REGULER_FLAG를 사용하는 결제방식<br/>
@@ -180,15 +182,15 @@
 
                         <v-list-item-content>
                             <v-list-item-title>페이플 연동 가이드 개편</v-list-item-title>
-                            <v-list-item-subtitle>2020.06.17</v-list-item-subtitle>
+                            <v-list-item-subtitle>2020.07</v-list-item-subtitle>
                         </v-list-item-content>
                         <v-list-item-action>
-                            <v-list-item-title>VER 2.0</v-list-item-title>
+                            <v-list-item-title>VER 1.0.0</v-list-item-title>
                         </v-list-item-action>
                     </v-list-item>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content class="pt-4 px-6">
-                    페이플 연동 가이드가 2.0으로 개편되었습니다.<br />
+                    페이플 연동 가이드가 개편되었습니다.<br />
                     기존의 UI 및 이미지 변경 되었으며,<br />
                     추가된 서비스 내용이 보강되었습니다.
                 </v-expansion-panel-content>
@@ -205,11 +207,11 @@
 
                         <v-list-item-content>
                             <v-list-item-title>기존 페이플 연동가이드</v-list-item-title>
-                            <v-list-item-subtitle>2020.06.17</v-list-item-subtitle>
+                            <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
                         </v-list-item-content>
-                        <v-list-item-action>
+                        <!-- <v-list-item-action>
                             <v-list-item-title>VER 1.0</v-list-item-title>
-                        </v-list-item-action>
+                        </v-list-item-action> -->
                     </v-list-item>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content class="pt-4 px-6">
@@ -233,77 +235,7 @@
                 </v-expansion-panel-content>
             </v-expansion-panel>
         </v-expansion-panels>
-        <v-divider class="my-12"></v-divider>
-
-        <v-row class="mb-12 pt-12">
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="pink darken-1">
-                            <v-icon color="white">
-                                mdi-frequently-asked-questions
-                            </v-icon>
-                        </v-list-item-avatar>
-
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
-                            <v-list-item-subtitle>높은 빈도의 문의를 모아봤어요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="indigo darken-4">
-                            <v-icon color="white">
-                                mdi-git
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
-                            <v-list-item-subtitle>페이플 오픈 소스에 참여 하세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="teal accent-4">
-                            <v-icon color="white">
-                                mdi-email-send-outline
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
-                            <v-list-item-subtitle>페이플 개발팀에 문의해보세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-pencil
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-        </v-row>
+        
     </div>
 </template>
 
@@ -329,16 +261,7 @@ export default {
                     to: "/",
                 },
                 {
-                    text: "카드결제",
-                    disabled: false,
-                    to: "/card/outline",
-                },
-                {
-                    text:"222",
-                    disabled: true,
-                },
-                {
-                    text: "결제 창 호출",
+                    text: "문서 버전 관리",
                     disabled: true,
                 },
             ],

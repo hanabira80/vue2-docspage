@@ -1587,15 +1587,14 @@ export default {
                 },
                 {
                     text: "카드결제",
-                    disabled: false,
-                    to: "/card/outline",
-                },
-                {
-                    text: "222",
                     disabled: true,
                 },
                 {
-                    text: "결제 창 호출",
+                    text:"환경설정",
+                    disabled: true,
+                },
+                {
+                    text:"상황별 가맹점 인증 요청 방식",
                     disabled: true,
                 },
             ],

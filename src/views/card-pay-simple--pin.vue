@@ -92,7 +92,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                -
+                                20
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -112,7 +112,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                -
+                                20
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -431,7 +431,7 @@
                                 Number
                             </td>
                             <td colspan="1" rowspan="1">
-                                20
+                                11
                             </td>
                             <td colspan="1" rowspan="1">
                                 -
@@ -941,7 +941,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                8
+                                255
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -1079,15 +1079,14 @@ export default {
                 },
                 {
                     text: "카드결제",
-                    disabled: false,
-                    to: "/card/outline",
-                },
-                {
-                    text:"222",
                     disabled: true,
                 },
                 {
-                    text: "결제 창 호출",
+                    text:"빌링키방식",
+                    disabled: true,
+                },
+                {
+                    text: "비밀번호 간편결제",
                     disabled: true,
                 },
             ],

@@ -160,7 +160,7 @@
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                간편결제에서 월 중복결제 방지기능 사용시에도 가맹점 인증 요청 형식은 변하지 않습니다.
+                간편결제에서 <router-link to="/faq">월 중복결제 방지기능</router-link> 사용시에도 가맹점 인증 요청 형식은 변하지 않습니다.
             </v-alert>
         </article>
         <v-divider class="mb-12"></v-divider>
@@ -361,6 +361,19 @@
         <article class="mb-12">
             <h2 class="">
                 월 중복결제 방지기능 사용시
+                <v-btn class="ml-2" fab dark x-small color="deep-purple accent-2" to="/faq">
+                    <v-tooltip bottom>
+                        <template v-slot:activator="{ on, attrs }">
+                            <span v-bind="attrs" v-on="on">
+                                <v-icon>mdi-comment-question-outline</v-icon>
+                            </span>
+                        </template>
+                        <span>
+                            FAQ에 등록된 내용입니다.<br />
+                            클릭하시면 바로 이동합니다.
+                        </span>
+                    </v-tooltip>
+                </v-btn>
             </h2>
             <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table class="table-hover-disable">
@@ -789,7 +802,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                5
+                                20
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -956,7 +969,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                7
+                                20
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -1421,7 +1434,7 @@
                                 255
                             </td>
                             <td colspan="1" rowspan="1">
-                                <a href="https://www.google.com/url?q=http://dev.testcpay.payple.kr/&amp;sa=D&amp;ust=1592532233019000">testcpay.payple.kr</a>
+                                testcpay.payple.kr
                             </td>
                             <td colspan="1" rowspan="1">
                                 요청 URL
@@ -1589,75 +1602,7 @@
             </v-card>
         </article>
 
-        <v-row class="mb-12 pt-12">
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="pink darken-1">
-                            <v-icon color="white">
-                                mdi-frequently-asked-questions
-                            </v-icon>
-                        </v-list-item-avatar>
-
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
-                            <v-list-item-subtitle>높은 빈도의 문의를 모아봤어요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="indigo darken-4">
-                            <v-icon color="white">
-                                mdi-git
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
-                            <v-list-item-subtitle>페이플 오픈 소스에 참여 하세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="teal accent-4">
-                            <v-icon color="white">
-                                mdi-email-send-outline
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
-                            <v-list-item-subtitle>페이플 개발팀에 문의해보세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-pencil
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-        </v-row>
+        
     </div>
 </template>
 
@@ -1683,16 +1628,15 @@ export default {
                     to: "/",
                 },
                 {
-                    text: "카드결제",
-                    disabled: false,
-                    to: "/card/outline",
-                },
-                {
-                    text: "최초결제",
+                    text: "계좌결제",
                     disabled: true,
                 },
                 {
-                    text: "결제 창 호출",
+                    text: "환경설정",
+                    disabled: true,
+                },
+                {
+                    text: "상황별 가맹점 인증 요청 방식",
                     disabled: true,
                 },
             ],
@@ -1728,14 +1672,15 @@ curl_setopt($ch, CURLOPT_SSLVERSION, 4);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $header_data);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
  
-$response = curl_exec ($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-echo "status_code:".$status_code." ";
-curl_close ($ch);
-if($status_code == 200) {
-    echo $response;
+ob_start();
+$res = curl_exec($ch);
+$buffer = ob_get_contents();
+ob_end_clean();
+
+if (!$buffer) {
+$returnVal = "";
 } else {
-    echo "Error 내용:".$response;
+echo $buffer;
 }
  
 ?>
@@ -1814,14 +1759,15 @@ curl_setopt($ch, CURLOPT_SSLVERSION, 4);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $header_data);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
  
-$response = curl_exec ($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-echo "status_code:".$status_code." ";
-curl_close ($ch);
-if($status_code == 200) {
-    echo $response;
+ob_start();
+$res = curl_exec($ch);
+$buffer = ob_get_contents();
+ob_end_clean();
+
+if (!$buffer) {
+$returnVal = "";
 } else {
-    echo "Error 내용:".$response;
+echo $buffer;
 }
 ?>
 `,
@@ -1903,14 +1849,15 @@ curl_setopt($ch, CURLOPT_SSLVERSION, 4);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $header_data);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
  
-$response = curl_exec ($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-echo "status_code:".$status_code." ";
-curl_close ($ch);
-if($status_code == 200) {
-    echo $response;
+ob_start();
+$res = curl_exec($ch);
+$buffer = ob_get_contents();
+ob_end_clean();
+
+if (!$buffer) {
+$returnVal = "";
 } else {
-    echo "Error 내용:".$response;
+echo $buffer;
 }
  
 ?>
@@ -1991,14 +1938,15 @@ curl_setopt($ch, CURLOPT_SSLVERSION, 4);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $header_data);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
  
-$response = curl_exec ($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-echo "status_code:".$status_code." ";
-curl_close ($ch);
-if($status_code == 200) {
-    echo $response;
+ob_start();
+$res = curl_exec($ch);
+$buffer = ob_get_contents();
+ob_end_clean();
+
+if (!$buffer) {
+$returnVal = "";
 } else {
-    echo "Error 내용:".$response;
+echo $buffer;
 }
  
 ?>
@@ -2077,14 +2025,15 @@ curl_setopt($ch, CURLOPT_SSLVERSION, 4);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $header_data);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
  
-$response = curl_exec ($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-echo "status_code:".$status_code." ";
-curl_close ($ch);
-if($status_code == 200) {
-    echo $response;
+ob_start();
+$res = curl_exec($ch);
+$buffer = ob_get_contents();
+ob_end_clean();
+
+if (!$buffer) {
+$returnVal = "";
 } else {
-    echo "Error 내용:".$response;
+echo $buffer;
 }
  
 ?>
@@ -2163,14 +2112,15 @@ curl_setopt($ch, CURLOPT_SSLVERSION, 4);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $header_data);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
  
-$response = curl_exec ($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-echo "status_code:".$status_code." ";
-curl_close ($ch);
-if($status_code == 200) {
-    echo $response;
+ob_start();
+$res = curl_exec($ch);
+$buffer = ob_get_contents();
+ob_end_clean();
+
+if (!$buffer) {
+$returnVal = "";
 } else {
-    echo "Error 내용:".$response;
+echo $buffer;
 }
  
 ?>
@@ -2249,14 +2199,15 @@ curl_setopt($ch, CURLOPT_SSLVERSION, 4);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $header_data);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
  
-$response = curl_exec ($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-echo "status_code:".$status_code." ";
-curl_close ($ch);
-if($status_code == 200) {
-    echo $response;
+ob_start();
+$res = curl_exec($ch);
+$buffer = ob_get_contents();
+ob_end_clean();
+
+if (!$buffer) {
+$returnVal = "";
 } else {
-    echo "Error 내용:".$response;
+echo $buffer;
 }
  
 ?>
@@ -2335,14 +2286,15 @@ curl_setopt($ch, CURLOPT_SSLVERSION, 4);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $header_data);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
  
-$response = curl_exec ($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-echo "status_code:".$status_code." ";
-curl_close ($ch);
-if($status_code == 200) {
-    echo $response;
+ob_start();
+$res = curl_exec($ch);
+$buffer = ob_get_contents();
+ob_end_clean();
+
+if (!$buffer) {
+$returnVal = "";
 } else {
-    echo "Error 내용:".$response;
+echo $buffer;
 }
  
 ?>

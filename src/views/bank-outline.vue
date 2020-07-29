@@ -20,9 +20,9 @@
                 <v-img :src="require('../../src/assets/1-1.png')" cover class="white "></v-img>
             </v-card>
 
-            <v-row class="mb-12">
+            <v-row class="mb-12 align-stretch">
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <v-card-text>
                             <p class="title text--primary">
                                 비밀번호 자동결제
@@ -34,13 +34,13 @@
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <div class="overline pa-2">빌링키 등록 - 최초결제</div>
                         <v-img :src="require('../../src/assets/1-7.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <div class="overline pa-2">비밀번호 인증 - 재결제</div>
                         <v-img :src="require('../../src/assets/1-3.png')" cover class="white mx-auto"></v-img>
                     </v-card>
@@ -48,9 +48,9 @@
             </v-row>
             <!-- <v-divider class="my-8"></v-divider> -->
 
-            <v-row class="mb-8">
+            <v-row class="mb-8 align-stretch">
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <v-card-text>
                             <p class="title text--primary">
                                 일회성 간편결제
@@ -63,13 +63,13 @@
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <div class="overline pa-2">빌링키 등록 - 최초결제</div>
                         <v-img :src="require('../../src/assets/1-7.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <div class="overline pa-2">빌링키 등록 - 재결제</div>
                         <v-img :src="require('../../src/assets/1-7.png')" cover class="white mx-auto"></v-img>
                     </v-card>
@@ -77,9 +77,9 @@
             </v-row>
             <!-- <v-divider class="my-8"></v-divider> -->
 
-            <v-row class="mb-8">
+            <v-row class="mb-8 align-stretch">
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <v-card-text>
                             <p class="title text--primary">
                                 정기 결제
@@ -91,13 +91,13 @@
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <div class="overline pa-2">빌링키 등록</div>
                         <v-img :src="require('../../src/assets/1-7.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <div class="overline pa-2">재결제</div>
                         <v-img :src="require('../../src/assets/1-4.png')" cover class="white mx-auto"></v-img>
                     </v-card>
@@ -105,9 +105,9 @@
             </v-row>
             <!-- <v-divider class="my-8"></v-divider> -->
 
-            <v-row class="mb-8">
+            <!-- <v-row class="mb-8 align-stretch">
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <v-card-text>
                             <p class="title text--primary">
                                 월 1회 정기결제
@@ -119,23 +119,23 @@
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <div class="overline pa-2">빌링키 등록</div>
                         <v-img :src="require('../../src/assets/1-1.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <div class="overline pa-2">재결제</div>
                         <v-img :src="require('../../src/assets/1-8.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
-            </v-row>
+            </v-row> -->
             <!-- <v-divider class="my-8"></v-divider> -->
 
-            <v-row class="mb-8">
+            <v-row class="mb-8 align-stretch">
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <v-card-text>
                             <p class="title text--primary">
                                 URL링크결제
@@ -147,13 +147,13 @@
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <div class="overline pa-2">링크생성</div>
                         <v-img :src="require('../../src/assets/1-5.png')" cover class="white mx-auto"></v-img>
                     </v-card>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <v-card raised col="12" sm="4">
+                    <v-card raised col="12" sm="4" height="100%">
                         <div class="overline pa-2">링크 접속 후 결제</div>
                         <v-img :src="require('../../src/assets/1-7.png')" cover class="white mx-auto"></v-img>
                     </v-card>
@@ -186,9 +186,6 @@
                             <td colspan="1" rowspan="1">
                                 URL링크결제
                             </td>
-                            <td colspan="1" rowspan="1">
-                                앱카드 결제
-                            </td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">
@@ -206,11 +203,8 @@
                             <td colspan="1" rowspan="1">
                                 △ (빌링키 등록은 되지만, 발급된 빌링키를 사용하지 않음)
                             </td>
-                            <td colspan="1" rowspan="1">
-                                X
-                            </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td colspan="1" rowspan="1">
                                 빌링키등록 방식
                             </td>
@@ -229,7 +223,7 @@
                             <td colspan="1" rowspan="1">
                                 X
                             </td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td colspan="1" rowspan="1">
                                 최초결제 방식
@@ -241,14 +235,11 @@
                                 결제창 호출 (javascript)
                             </td>
                             <td colspan="1" rowspan="1">
-                                1.빌링키 등록과 동시에 결제까지 진행시, 결제창 호출(javascript)   2. 빌링키 등록은 사전에 되어 있고, 최초결제만 진행시에는 REST
-                                API 사용
+                                1.빌링키 등록과 동시에 결제까지 진행시, 결제창 호출(javascript)<br/>
+                                2. 빌링키 등록은 사전에 되어 있고, 최초결제만 진행시에는 REST API 사용
                             </td>
                             <td colspan="1" rowspan="1">
                                 링크주소로 고객이 직접 접속하여 결제
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결제창 호출 (javascript)
                             </td>
                         </tr>
                         <tr>
@@ -263,9 +254,6 @@
                             </td>
                             <td colspan="1" rowspan="1">
                                 REST API
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                최초결제와 동일
                             </td>
                             <td colspan="1" rowspan="1">
                                 최초결제와 동일
@@ -287,9 +275,6 @@
                             <td colspan="1" rowspan="1">
                                 X
                             </td>
-                            <td colspan="1" rowspan="1">
-                                X
-                            </td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">
@@ -297,9 +282,6 @@
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                X
                             </td>
                             <td colspan="1" rowspan="1">
                                 X
@@ -327,84 +309,13 @@
                             <td colspan="1" rowspan="1">
                                 X
                             </td>
-                            <td colspan="1" rowspan="1">
-                                O
-                            </td>
                         </tr>
                     </tbody>
                 </v-simple-table>
             </v-card>
         </article>
 
-        <v-row class="mb-12 pt-12">
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="pink darken-1">
-                            <v-icon color="white">
-                                mdi-frequently-asked-questions
-                            </v-icon>
-                        </v-list-item-avatar>
-
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
-                            <v-list-item-subtitle>높은 빈도의 문의를 모아봤어요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="indigo darken-4">
-                            <v-icon color="white">
-                                mdi-git
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
-                            <v-list-item-subtitle>페이플 오픈 소스에 참여 하세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-vector-link
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-            <v-col col="12" sm="4">
-                <v-card>
-                    <v-list-item>
-                        <v-list-item-avatar color="teal accent-4">
-                            <v-icon color="white">
-                                mdi-email-send-outline
-                            </v-icon>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
-                            <v-list-item-subtitle>페이플 개발팀에 문의해보세요</v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn fab text color="blue accent-4">
-                                <v-icon>
-                                    mdi-pencil
-                                </v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card>
-            </v-col>
-        </v-row>
+        
     </div>
 </template>
 
@@ -438,7 +349,11 @@ referer: https://가맹점 도메인
                     to: "/",
                 },
                 {
-                    text: "카드결제",
+                    text: "계좌결제",
+                    disabled: true,
+                },
+                {
+                    text: "계좌결제 개요",
                     disabled: true,
                 },
             ],
