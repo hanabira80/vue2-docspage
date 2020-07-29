@@ -7,15 +7,15 @@
         </v-breadcrumbs>
 
         <h1 class="mb-12">샘플코드</h1>
-        <blockquote class="mb-12 blockquote body-1">
+        <blockquote class="blockquote body-1">
             페이플 샘플코드는 이곳에서 확인 하실 수 있습니다.
         </blockquote>
 
-        <!-- <v-row class="mb-12 pt-12">
+        <v-row class="mb-12 pt-12">
             <v-col col="12" sm="4">
                 <v-card>
                     <v-card-text>
-                        <v-list-item>
+                        <v-list-item class="px-0">
                             <v-list-item-avatar color="indigo lighten-1">
                                 <v-icon color="white">
                                     mdi-language-php
@@ -28,81 +28,106 @@
                             </v-list-item-content>
                         </v-list-item>
                         <h3 class=" text--primary my-4">
-                            페이플 PHP 샘플코드
+                            PHP 샘플코드
                         </h3>
                         
                         <div class="text--primary">
-                            페이플 서비스를 이용중인 <b>미스터멘션</b>의 
-                            <b>슈퍼개발자</b>님이 제작해주신 페이플의 PHP 샘플코드입니다.<br/><br/>
-                            페이플을 이용하시나요?<br/>
-                            페이플 오픈 소스에 직접 참여해보세요.
+                            <!-- 페이플 서비스를 이용중인<br/>
+                            <b>미스터멘션</b>의 <b>슈퍼개발자</b>님이<br/>
+                            제작해주신 페이플의 PHP 샘플코드입니다.<br/><br/> -->
+                            결제 연동을 위해<br/> 
+                            페이플에서 제작한 <b>PHP샘플코드</b>입니다.<br/><br/>
+
+                            페이플 오픈 소스 프로젝트는 언제나 여러분의 참여를 환영합니다.
                         </div>
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn text color="deep-purple accent-4">
+                        <v-btn text color="deep-purple accent-4" href="https://github.com/PAYPLECORP/sample-php" target="_blank">
                             바로가기
                         </v-btn>
                     </v-card-actions>
                 </v-card>
             </v-col>
+
             <v-col col="12" sm="4">
                 <v-card>
                     <v-card-text>
-                        <div>
+                        <v-list-item class="px-0">
                             <v-list-item-avatar color="amber darken-2">
                                 <v-icon color="white">
                                     mdi-language-javascript
-                                </v-icon> </v-list-item-avatar
-                            >Word of the Day
-                        </div>
-                        <p class="display-1 text--primary">
-                            페이플 PHP 샘플코드
-                        </p>
-                        <p>adjective</p>
+                                </v-icon>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title class=" mb-2">
+                                    JAVA
+                                </v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <h3 class=" text--primary my-4">
+                            페이플 JAVA 샘플코드
+                        </h3>
+                        
                         <div class="text--primary">
-                            well meaning and kindly.<br />
-                            "a benevolent smile"
+                            <!-- 페이플 서비스를 이용중인<br/>
+                            <b>미스터멘션</b>의 <b>슈퍼개발자</b>님이<br/>
+                            제작해주신 페이플의 PHP 샘플코드입니다.<br/><br/> -->
+                            결제 연동을 위해<br/> 
+                            페이플에서 제작한 <b>JAVA 샘플코드</b>입니다.<br/><br/>
+
+                            페이플 오픈 소스 프로젝트는 언제나 여러분의 참여를 환영합니다.
                         </div>
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn text color="deep-purple accent-4">
+                        <v-btn text color="deep-purple accent-4" href="https://github.com/PAYPLECORP/sample-java" target="_blank">
                             바로가기
                         </v-btn>
                     </v-card-actions>
                 </v-card>
             </v-col>
+
             <v-col col="12" sm="4">
                 <v-card>
                     <v-card-text>
-                        <div>
+                        <v-list-item class="px-0">
                             <v-list-item-avatar color="green lighten-1">
                                 <v-icon color="white">
                                     mdi-nodejs
-                                </v-icon> </v-list-item-avatar
-                            >Word of the Day
-                        </div>
-                        <p class="display-1 text--primary">
-                            페이플 PHP 샘플코드
-                        </p>
-                        <p>adjective</p>
+                                </v-icon>
+                            </v-list-item-avatar>
+                            
+                            <v-list-item-content>
+                                <v-list-item-title class=" mb-2">
+                                    NODE JS
+                                </v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <h3 class=" text--primary my-4">
+                            NODE JS 샘플코드
+                        </h3>
+                        
                         <div class="text--primary">
-                            well meaning and kindly.<br />
-                            "a benevolent smile"
+                            <!-- 페이플 서비스를 이용중인<br/>
+                            <b>미스터멘션</b>의 <b>슈퍼개발자</b>님이<br/>
+                            제작해주신 페이플의 PHP 샘플코드입니다.<br/><br/> -->
+                            결제 연동을 위해<br/> 
+                            페이플에서 제작한 <b>NODE 샘플코드</b>입니다.<br/><br/>
+
+                            페이플 오픈 소스 프로젝트는 언제나 여러분의 참여를 환영합니다.
                         </div>
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn text color="deep-purple accent-4">
+                        <v-btn text color="deep-purple accent-4" href="https://github.com/PAYPLECORP/sample-node" target="_blank">
                             바로가기
                         </v-btn>
                     </v-card-actions>
                 </v-card>
             </v-col>
-        </v-row> -->
-
-        <v-row class="mb-12 ">
+        </v-row>
+        <!-- <v-row class="mb-12 ">
             <v-col col="12" sm="4">
                 <v-card>
                     <v-list-item>
@@ -182,7 +207,7 @@
                     </v-list-item>
                 </v-card>
             </v-col>
-        </v-row>
+        </v-row> -->
     </div>
 </template>
 

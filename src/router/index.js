@@ -191,7 +191,7 @@ const routes = [
         component: () => import("../views/bank-result-recieve.vue"),
     },
     {
-        path: "/bank/result-search",
+        path: "/bank/result/search",
         name: "bank-result-search",
         meta: { title: "계좌결제 결제결과 조회" },
         component: () => import("../views/bank-result-search.vue"),

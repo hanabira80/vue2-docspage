@@ -11,9 +11,9 @@
         <article class="mb-12">
             <h2>[현금영수증 취소요청(REQUEST)]</h2>
             <v-divider class="my-6"></v-divider>
-            <vue-code-highlight language="java">
+            <Prism language="javascript">
                 {{ code_1 }}
-            </vue-code-highlight>
+            </Prism>
         </article>
 
         <article class="mb-12">
@@ -210,9 +210,9 @@
         <article class="mb-12">
             <h2>현금영수증 발행 응답(RESPONSE)</h2>
             <v-divider class="my-6"></v-divider>
-            <vue-code-highlight language="java">
+            <Prism language="javascript">
                 {{ code_2 }}
-            </vue-code-highlight>
+            </Prism>
         </article>
 
         <article class="mb-12">
@@ -323,11 +323,16 @@
 </template>
 
 <script>
-import { component as VueCodeHighlight } from "vue-code-highlight";
+import "prismjs";
+import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/components/prism-markup-templating";
+import "prismjs/components/prism-markup";
+import "prismjs/components/prism-php";
+import Prism from "vue-prism-component";
 
 export default {
     components: {
-        VueCodeHighlight
+        Prism,
     },
     data() {
         return {

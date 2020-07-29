@@ -67,13 +67,13 @@
                                         <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
                                         <v-list-item-subtitle>높은 빈도의 문의를 모아봤어요</v-list-item-subtitle>
                                     </v-list-item-content>
-                                    <v-list-item-action>
+                                    <!-- <v-list-item-action>
                                         <v-btn fab text color="blue accent-4">
                                             <v-icon>
                                                 mdi-vector-link
                                             </v-icon>
                                         </v-btn>
-                                    </v-list-item-action>
+                                    </v-list-item-action> -->
                                 </v-list-item>
                             </v-card>
                         </router-link>
@@ -91,13 +91,13 @@
                                         <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
                                         <v-list-item-subtitle>페이플 오픈 소스에 참여 하세요</v-list-item-subtitle>
                                     </v-list-item-content>
-                                    <v-list-item-action>
+                                    <!-- <v-list-item-action>
                                         <v-btn fab text color="blue accent-4">
                                             <v-icon>
                                                 mdi-vector-link
                                             </v-icon>
                                         </v-btn>
-                                    </v-list-item-action>
+                                    </v-list-item-action> -->
                                 </v-list-item>
                             </v-card>
                         </a>
@@ -115,13 +115,13 @@
                                         <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
                                         <v-list-item-subtitle>페이플 개발팀에 문의해보세요</v-list-item-subtitle>
                                     </v-list-item-content>
-                                    <v-list-item-action>
+                                    <!-- <v-list-item-action>
                                         <v-btn fab text color="blue accent-4">
                                             <v-icon>
                                                 mdi-pencil
                                             </v-icon>
                                         </v-btn>
-                                    </v-list-item-action>
+                                    </v-list-item-action> -->
                                 </v-list-item>
                             </v-card>
                         </a>
@@ -334,9 +334,10 @@ export default {
     font-family: "Noto Sans KR", sans-serif !important;
 }
 table {
-    white-space: nowrap;
+    white-space: normal;
     text-align: center;
     word-break: keep-all;
+    min-width:100%;
 }
 table td {
     border: 1px solid rgba(0, 0, 0, 0.06);
@@ -348,9 +349,16 @@ table th {
     font-size: 1rem !important;
     text-align: center !important;
 }
+@media screen and (min-width: 0px) and (max-width: 720px) {
+    table {
+        white-space: nowrap;
+        text-align: center;
+        word-break: keep-all;
+    }
+}
 .limit table {
     white-space: normal;
-    width: 100%;
+    max-width: 100%;
 }
 .half-bg--payple {
     position: relative;
