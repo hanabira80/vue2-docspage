@@ -13,10 +13,10 @@
 
         <article class="mb-12">
             <h2 class="">
-                응답코드 양식
+                응답코드 노출 규칙
             </h2>
             <blockquote class="mb-12 blockquote body-1">
-                응답코드는 다음과 같은 양식으로 작성되어 있습니다.
+                응답코드는 다음과 같은 규칙으로 작성되어 있습니다.
             </blockquote>
 
             <v-card max-width="600" raised class="pa-2 ma-4 mb-12">
@@ -31,11 +31,11 @@
                     페이플에서 제공하는 응답코드입니다.
                 </p>
                 <h3 class="pl-4 pb-4">
-                    2) 기관 응답코드
+                    2) 기관(카드사/은행) 응답코드
                 </h3>
                 <p class="pl-8 pb-4">
-                    기관에서 제공하는 응답코드입니다.<br/>
-                    응답코드는 페이플 응답코드만 단독으로 나오거나,<br/>
+                    기관에서 제공하는 응답코드입니다.<br />
+                    응답코드는 페이플 응답코드만 단독으로 나오거나,<br />
                     페이플 응답코드와 카드사 응답코드가 동시에 나오는 경우가 있습니다.
                 </p>
                 <h3 class="pl-4 pb-4">
@@ -50,7 +50,6 @@
                     4) 테스트 응답코드
                 </h3>
                 <p class="pl-8">
-                    응답메세지가 나오는 부분입니다. <br />
                     테스트 환경에서 발생한 응답코드인 경우 정확한 식별을 위해 응답코드 맨 앞에 [test]가 노출됩니다.
                 </p>
             </v-alert>
@@ -65,692 +64,1024 @@
                 (구)페이플 응답코드
             </h3>
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                기존 응답코드표이며, 응답코드 내용 변경일정은 사전에 가맹점에 고지드립니다.<br/>
+                기존 응답코드표이며, 응답코드 내용 변경일정은 사전에 가맹점에 고지드립니다.<br />
                 구코드는 신코드 업데이트 완료시 삭제됩니다.
             </v-alert>
             <v-card class="temp_table ma-4 mb-12">
-                <v-simple-table class="table-hover-disable"> 
+                <v-simple-table class="table-hover-disable">
                     <tbody>
                         <tr>
+                            <th>
+                                <div>1</div>
+                            </th>
                             <td>TYPE</td>
-                            <td>CODE</td>
-                            <td>Message(기존)</td>
-                            <td dir="ltr">Explain</td>
+                            <td dir="ltr">응답코드</td>
+                            <td dir="ltr">응답메세지</td>
+                            <td dir="ltr">설명</td>
                         </tr>
                         <tr>
-                            <td rowspan="7">AUTH<br />(가맹점 인증)</td>
+                            <th>
+                                <div>2</div>
+                            </th>
+                            <td rowspan="6">AUTH<br />(가맹점 인증)</td>
                             <td>0001</td>
                             <td>가맹점아이디 값이 존재하지 않습니다.</td>
                             <td>전송된 cst_id 값이 공백이거나 null</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>3</div>
+                            </th>
                             <td>0002</td>
                             <td>가맹점키 값이 존재하지 않습니다.</td>
                             <td>전송된 custKey 값이 공백이거나 null</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>4</div>
+                            </th>
                             <td>0003</td>
                             <td>가맹점 계정이 존재하지 않습니다.</td>
                             <td>cst_id 와 일치하는 가맹점 정보를 찾지 못함.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>5</div>
+                            </th>
                             <td>0004</td>
                             <td>CONNECT SERVER ERROR!!</td>
                             <td>가맹점의 SERVER IP 또는 도메인 불일치</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>6</div>
+                            </th>
                             <td>0005</td>
                             <td>TOKEN CREATE ERROR!!</td>
                             <td>인증키 생성 에러</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>7</div>
+                            </th>
                             <td>0006</td>
                             <td>SSL ERROR!!</td>
                             <td>보안프로토콜(HTTPS) 이 아님</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>8</div>
+                            </th>
                             <td rowspan="38">CPCA<br />(카드결제)</td>
                             <td>0001</td>
                             <td>인증회원정보가 일치하지 않습니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>9</div>
+                            </th>
                             <td>0002</td>
                             <td>인증회원정보 조회 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>10</div>
+                            </th>
                             <td>0003</td>
                             <td>카드인증회원이 아닙니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>11</div>
+                            </th>
                             <td>0004</td>
                             <td>카드정보가 존재하지 않거나, 일치하지 않습니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>12</div>
+                            </th>
                             <td>0005</td>
                             <td>카드결제용 인증키 값이 존재하지 않거나, 일치하지 않습니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>13</div>
+                            </th>
                             <td>0006</td>
                             <td>가맹점 건당 한도 초과 - 해당 사이트 관리자에게 문의 하세요!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>14</div>
+                            </th>
                             <td>0007</td>
                             <td>가맹점 카드 월 한도 초과 - 해당 사이트 관리자에게 문의 하세요!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>15</div>
+                            </th>
                             <td>0008</td>
                             <td>통계정보 업데이트 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>16</div>
+                            </th>
                             <td>0009</td>
                             <td>통계정보 등록 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>17</div>
+                            </th>
                             <td>0010</td>
                             <td>카드승인 요청 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>18</div>
+                            </th>
                             <td>0011</td>
                             <td>결제요청 값과 결제결과 값이 다릅니다.</td>
                             <td dir="ltr">카드승인요청금액, 사용자ID 정보 불일치로 <br />카드승인취소처리</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>19</div>
+                            </th>
                             <td>0012</td>
                             <td>고액결제 알림톡 발송 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>20</div>
+                            </th>
                             <td>0013</td>
                             <td>정기결제내역 등록 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>21</div>
+                            </th>
                             <td>0014</td>
                             <td>결제내역 등록 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>22</div>
+                            </th>
                             <td>0015</td>
                             <td>인증세션 업데이트 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>23</div>
+                            </th>
                             <td>0016</td>
                             <td>통계정보 업데이트 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>24</div>
+                            </th>
                             <td>0017</td>
                             <td>링크결제 카운트 업데이트 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>25</div>
+                            </th>
                             <td>0018</td>
                             <td>카드승인이제 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>26</div>
+                            </th>
                             <td>0019</td>
                             <td>Event Duplication Error</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>27</div>
+                            </th>
                             <td>0020</td>
                             <td>Event Req Update Error</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>28</div>
+                            </th>
                             <td>0021</td>
                             <td>인증세션 업데이트 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>29</div>
+                            </th>
                             <td>0022</td>
                             <td>카드결제 건당 한도($CardLimitOfOne_str) 초과</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>30</div>
+                            </th>
                             <td>0023</td>
                             <td>카드결제 1일 한도($CardLimitOfDay_str) 초과</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>31</div>
+                            </th>
                             <td>0024</td>
                             <td>카드결제 1일 건수($CardMaxCountOfDay_str) 제한 초과</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>32</div>
+                            </th>
                             <td>0025</td>
                             <td>카드결제 월 한도($CardLimitOfMonth_str) 초과</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>33</div>
+                            </th>
                             <td>0026</td>
                             <td>카드(일반)결제 알림톡 발송 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>34</div>
+                            </th>
                             <td>0201</td>
                             <td>중복결제입니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>35</div>
+                            </th>
                             <td>0202</td>
                             <td>정기결제요청내역 등록 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>36</div>
+                            </th>
                             <td>0202</td>
                             <td>결제내역 등록 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>37</div>
+                            </th>
                             <td>9997</td>
                             <td>결제방식 오류</td>
                             <td dir="ltr">pay_type에 card가 없음</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>38</div>
+                            </th>
                             <td>9998</td>
                             <td>카드결제 서비스 이용불가</td>
                             <td dir="ltr">결제수단이 체크되지 않음</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>39</div>
+                            </th>
                             <td>9999</td>
                             <td>카드결제 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>40</div>
+                            </th>
                             <td>E001</td>
                             <td>Event Duplication Error</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>41</div>
+                            </th>
                             <td>E002</td>
                             <td>Event Update Error</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>42</div>
+                            </th>
                             <td>E003</td>
                             <td>$eventTitle(이벤트)이(가) 종료되었습니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>43</div>
+                            </th>
                             <td>E004</td>
                             <td>결제요청 금액이 일치하지 않습니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>44</div>
+                            </th>
                             <td>D001</td>
                             <td>카드등록 해지 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>45</div>
+                            </th>
                             <td>D002</td>
                             <td>카드번호</td>
                             <td dir="ltr">카드 자동 해지처리</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>46</div>
+                            </th>
                             <td rowspan="6">CBIL<br />(결제내역)</td>
                             <td>0001</td>
                             <td>Wrong access attempt</td>
                             <td dir="ltr">인증되지 않은 접속시도</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>47</div>
+                            </th>
                             <td>0002</td>
                             <td>MEM ERROR - 인증시간 만료!!</td>
                             <td dir="ltr">가맹점 아이디+인증키 인증 실패</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>48</div>
+                            </th>
                             <td>0003</td>
                             <td>신용카드(요청)결제 내역 없음!!</td>
                             <td dir="ltr">결제요청 또는 결제완료 내역 조회 실패</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>49</div>
+                            </th>
                             <td>0004</td>
                             <td>Event Duplication Error</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>50</div>
+                            </th>
                             <td>0005</td>
                             <td>Event Req Update Error</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>51</div>
+                            </th>
                             <td>0006</td>
                             <td>인증세션 업데이트 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
-                            <td rowspan="35">SPCD<br />(카드간편결제/단건)</td>
+                            <th>
+                                <div>52</div>
+                            </th>
+                            <td rowspan="33">SPCD<br />(카드간편결제/단건)</td>
                             <td>0001</td>
                             <td>결제용 KEY 값이 존재하지 않습니다.</td>
                             <td dir="ltr">PCD_PAYER_ID 값이 존재하지 않음</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>53</div>
+                            </th>
                             <td>0002</td>
                             <td>결제가능 최저금액은 100원 입니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>54</div>
+                            </th>
                             <td>0003</td>
                             <td>결제상품명이 존재하지 않습니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>55</div>
+                            </th>
                             <td>0004</td>
                             <td>인증실패 : MEM INFO ERROR</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>56</div>
+                            </th>
                             <td>0007</td>
                             <td>카드서비스 이용 불가</td>
                             <td dir="ltr">카드결제 서비스 이용권한이 없음.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>57</div>
+                            </th>
                             <td>0008</td>
                             <td>SEND DATA LOG WRITE ERROR</td>
                             <td dir="ltr">가맹점 전송 데이터 로그기록 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>58</div>
+                            </th>
                             <td>0009</td>
                             <td>가맹점 건당 한도 초과 - 해당 사이트 관리자에게 문의 하세요!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>59</div>
+                            </th>
                             <td>0010</td>
                             <td>가맹점 카드 월 한도 초과 - 해당 사이트 관리자에게 문의 하세요!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>60</div>
+                            </th>
                             <td>0011</td>
                             <td>카드 인증정보 체크 실패!!</td>
                             <td dir="ltr">가맹점의 PCD_PAYER_ID 가 아님.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>61</div>
+                            </th>
                             <td>0012</td>
                             <td>카드 인증정보를 찾을 수 없습니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>62</div>
+                            </th>
                             <td>0013</td>
                             <td>미인증 카드입니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>63</div>
+                            </th>
                             <td>0014</td>
                             <td>기결제내역이 있습니다.(주문번호:$pay_oid)</td>
                             <td dir="ltr">주문번호 중복 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>64</div>
+                            </th>
                             <td>0014</td>
                             <td>단건결제요청 중복결제 신청 - 처리중 또는 결제완료된 <br />결제건이 있습니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>65</div>
+                            </th>
                             <td>0015</td>
                             <td>간편결제요청 등록 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>66</div>
+                            </th>
                             <td>0016</td>
                             <td>통계정보 업데이트 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>67</div>
+                            </th>
                             <td>0017</td>
                             <td>통계정보 등록 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>68</div>
+                            </th>
                             <td>0018</td>
                             <td>카드결제 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>69</div>
+                            </th>
                             <td>0019</td>
                             <td>고액결제 알림톡 발송 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>70</div>
+                            </th>
                             <td>0020</td>
                             <td>간편결제요청 결과 업데이트 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>71</div>
+                            </th>
                             <td>0021</td>
                             <td>간편결제내역 등록 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>72</div>
+                            </th>
                             <td>0022</td>
                             <td>간편결제결과 업데이트 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>73</div>
+                            </th>
                             <td>0023</td>
                             <td>간편결제 결과 등록 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>74</div>
+                            </th>
                             <td>0024</td>
                             <td>통계정보 업데이트 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>75</div>
+                            </th>
                             <td>0025</td>
                             <td>간편결제내역 전송 결과 업데이트 실패!!</td>
                             <td dir="ltr">고객 Email 발송 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>76</div>
+                            </th>
                             <td>0026</td>
                             <td>인증세션 업데이트 실패!!</td>
                             <td dir="ltr">카드결제 로그기록 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>77</div>
+                            </th>
                             <td>1001</td>
                             <td>카드스인 요청 실패!!</td>
                             <td dir="ltr">카드사 응답없음</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>78</div>
+                            </th>
                             <td>1002</td>
                             <td>카드등록 해지 실패!!</td>
                             <td dir="ltr">거래제한카드, 유효기간만료, 도난/분실/위.변조 <br />카드 등록해지 처리 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>79</div>
+                            </th>
                             <td>1003</td>
                             <td>결제요청 값과 결제결과 값이 다릅니다.</td>
                             <td dir="ltr">카드승인요청금액, 사용자ID 정보 불일치로 <br />카드승인취소처리</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>80</div>
+                            </th>
                             <td>1004</td>
                             <td>카드번호</td>
                             <td dir="ltr">카드자동해지처리</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>81</div>
+                            </th>
                             <td>9991</td>
                             <td>가맹점 인증키 불일치</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>82</div>
+                            </th>
                             <td>9997</td>
                             <td>카드승인취소 실패</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>83</div>
+                            </th>
                             <td>9998</td>
                             <td>정기결제(카드) 실패 : 잘못된 접근입니다.!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>84</div>
+                            </th>
                             <td>9999</td>
                             <td>간편결제(카드) 실패 : 정보를 바르게 입력하세요!!</td>
-                            <td></td>
                         </tr>
                         <tr>
-                            <td rowspan="34">RPCD<br />(카드정기)</td>
+                            <th>
+                                <div>85</div>
+                            </th>
+                            <td rowspan="33">RPCD<br />(카드정기)</td>
                             <td>0001</td>
                             <td>결제용 KEY 값이 존재하지 않습니다.</td>
                             <td dir="ltr">PCD_PAYER_ID 값이 존재하지 않음</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>86</div>
+                            </th>
                             <td>0002</td>
                             <td>결제가능 최저금액은 100원 입니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>87</div>
+                            </th>
                             <td>0003</td>
                             <td>결제상품명이 존재하지 않습니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>88</div>
+                            </th>
                             <td>0004</td>
                             <td>정기결제 년도(YYYY) 오류</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>89</div>
+                            </th>
                             <td>0005</td>
                             <td>정기결제 월(MM) 오류</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>90</div>
+                            </th>
                             <td>0006</td>
                             <td>인증실패 : MEM INFO ERROR</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>91</div>
+                            </th>
                             <td>0007</td>
                             <td>카드정기결제서비스 이용 불가</td>
                             <td dir="ltr">카드정기결제 서비스 이용권한이 없음.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>92</div>
+                            </th>
                             <td>0008</td>
                             <td>SEND DATA LOG WRITE ERROR</td>
                             <td dir="ltr">가맹점 전송 데이터 로그기록 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>93</div>
+                            </th>
                             <td>0009</td>
                             <td>가맹점 건당 한도 초과 - 해당 사이트 관리자에게 문의 하세요!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>94</div>
+                            </th>
                             <td>0010</td>
                             <td>가맹점 카드 월 한도 초과 - 해당 사이트 관리자에게 문의 하세요!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>95</div>
+                            </th>
                             <td>0011</td>
                             <td>카드 인증정보 체크 실패!!</td>
                             <td dir="ltr">가맹점의 PCD_PAYER_ID 가 아님.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>96</div>
+                            </th>
                             <td>0012</td>
                             <td>카드 인증정보를 찾을 수 없습니다.</td>
                             <td dir="ltr">존재하지 않는 PCD_PAYER_ID</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>97</div>
+                            </th>
                             <td>0013</td>
                             <td>미인증 카드입니다.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>98</div>
+                            </th>
                             <td>0014</td>
                             <td>결제자 정보 수정 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>99</div>
+                            </th>
                             <td>0015</td>
                             <td>중복결제</td>
                             <td dir="ltr">주문번호 or 결제구분 년.월 중복 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>100</div>
+                            </th>
                             <td>0016</td>
                             <td>정기결제요청 등록 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>101</div>
+                            </th>
                             <td>0017</td>
                             <td>통계정보 업데이트 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>102</div>
+                            </th>
                             <td>0018</td>
                             <td>통계정보 등록 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>103</div>
+                            </th>
                             <td>0019</td>
                             <td>카드결제 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>104</div>
+                            </th>
                             <td>0020</td>
                             <td>고액결제 알림톡 발송 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>105</div>
+                            </th>
                             <td>0021</td>
                             <td>정기결제요청 결과 업데이트 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>106</div>
+                            </th>
                             <td>0022</td>
                             <td>정기결제내역 등록 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>107</div>
+                            </th>
                             <td>0023</td>
                             <td>정기결제결과 업데이트 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>108</div>
+                            </th>
                             <td>0024</td>
                             <td>정기결제결과 업데이트 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>109</div>
+                            </th>
                             <td>0025</td>
                             <td>통계정보 업데이트 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>110</div>
+                            </th>
                             <td>0026</td>
                             <td>정기결제내역 전송 결과 업데이트 실패!!</td>
                             <td dir="ltr">고객 Email 발송 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>111</div>
+                            </th>
                             <td>0027</td>
                             <td>인증세션 업데이트 실패!!</td>
                             <td dir="ltr">카드결제 로그기록 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>112</div>
+                            </th>
                             <td>1001</td>
                             <td>카드스인 요청 실패!!</td>
                             <td dir="ltr">카드사 응답없음</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>113</div>
+                            </th>
                             <td>1002</td>
                             <td>카드등록 해지 실패!!</td>
                             <td dir="ltr">거래제한카드, 유효기간만료, 도난/분실/위.변조 <br />카드 등록해지 처리 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>114</div>
+                            </th>
                             <td>1003</td>
                             <td>결제요청 값과 결제결과 값이 다릅니다.</td>
                             <td dir="ltr">카드승인요청금액, 사용자ID 정보 불일치로 <br />카드승인취소처리</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>115</div>
+                            </th>
                             <td>9991</td>
                             <td>가맹점 인증키 불일치</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>116</div>
+                            </th>
                             <td>9998</td>
                             <td>정기결제(카드) 실패 : 잘못된 접근입니다.!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>117</div>
+                            </th>
                             <td>9999</td>
                             <td>정기결제 카드결제 실패 : 결제자 정보를 바르게 입력하세요!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>118</div>
+                            </th>
                             <td rowspan="18">CDAU<br />(카드등록)</td>
                             <td>0001</td>
                             <td>인증실패 : MEM INFO ERROR</td>
-                            <td dir="ltr">
-                                <div>PCD_CST_ID 또는 PCD_AUTH_KEY 값이 <br />일치하지 않거나 인증세션 만료로 인한 가맹점 인증오류</div>
-                            </td>
+                            <td dir="ltr">PCD_CST_ID 또는 PCD_AUTH_KEY 값이 <br />일치하지 않거나 인증세션 만료로 인한 가맹점 인증오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>119</div>
+                            </th>
                             <td>0002</td>
                             <td>카드번호를 바르게 입력하세요.</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>120</div>
+                            </th>
                             <td>0003</td>
                             <td>결제자 정보 수정 실패!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>121</div>
+                            </th>
                             <td>0004</td>
                             <td>미인증 로그 삭제 실패</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>122</div>
+                            </th>
                             <td>0005</td>
                             <td>카드 인증 정보 생성 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>123</div>
+                            </th>
                             <td>0006</td>
                             <td>카드 인증 정보 생성 실패2!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>124</div>
+                            </th>
                             <td>0007</td>
                             <td>카드 인증 실패 (or 카드사 오류 메세지)</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>125</div>
+                            </th>
                             <td>0008</td>
                             <td>카드 인증 정보 업데이트 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>126</div>
+                            </th>
                             <td>0009</td>
                             <td>세션정보 업데이트 실패!!</td>
                             <td dir="ltr">DB ERROR</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>127</div>
+                            </th>
                             <td>9991</td>
                             <td>가맹점 인증키 불일치</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>128</div>
+                            </th>
                             <td>9998</td>
                             <td>카드 등록 실패 : 잘못된 접근입니다.!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>129</div>
+                            </th>
                             <td>9999</td>
                             <td>인증 실패 : 카드정보를 바르게 입력하세요!!</td>
-                            <td></td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>130</div>
+                            </th>
                             <td>CK01</td>
                             <td>PCD_PAY_TYPE ERROR</td>
                             <td dir="ltr">결제방법(신용카드: card) 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>131</div>
+                            </th>
                             <td>CK02</td>
                             <td>PCD_PAY_WORK ERROR</td>
                             <td dir="ltr">업무구분 (인증: AUTHREG) 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>132</div>
+                            </th>
                             <td>CK03</td>
                             <td>PCD_PAYER_BIRTH ERROR</td>
                             <td dir="ltr">생년월일 앞 6자리(YYMMDD) 또는 <br />사업자번호 10자리 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>133</div>
+                            </th>
                             <td>CK04</td>
                             <td>PCD_PAY_CARDNUM ERROR</td>
                             <td dir="ltr">카드번호 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>134</div>
+                            </th>
                             <td>CK05</td>
                             <td>PCD_PAY_CARDEXYEAR, PCD_PAY_CARDEXMONTH ERROR</td>
                             <td dir="ltr">카드 유효기간 오류</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>135</div>
+                            </th>
                             <td>CK06</td>
                             <td>PCD_PAY_CARDPW ERROR</td>
                             <td dir="ltr">카드 비밀번호 앞2자리 오류</td>
@@ -2129,20 +2460,26 @@
                 (신)페이플 응답코드
             </h3>
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                신규로 업데이트 되는 응답코드표이며, 응답코드 내용 변경일정은 사전에 가맹점에 고지드립니다.<br/>
+                신규로 업데이트 되는 응답코드표이며, 응답코드 내용 변경일정은 사전에 가맹점에 고지드립니다.<br />
                 해당 문구는 업데이트가 끝나면 삭제됩니다.
             </v-alert>
             <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table class="table-hover-disable">
                     <tbody>
                         <tr>
-                            <td dir="ltr">TYPE</td>
+                            <th>
+                                <div>1</div>
+                            </th>
+                            <td>TYPE</td>
                             <td dir="ltr">응답코드</td>
                             <td dir="ltr">응답메세지</td>
                             <td dir="ltr">설명</td>
                         </tr>
                         <tr>
-                            <td dir="ltr" rowspan="5">AUTH<br />(가맹점 인증)</td>
+                            <th>
+                                <div>2</div>
+                            </th>
+                            <td rowspan="6">AUTH<br />(가맹점 인증)</td>
                             <td dir="ltr">0001</td>
                             <td dir="ltr">가맹점 인증에 필요한 cst_id 를 확인해주세요.</td>
                             <td dir="ltr">
@@ -2152,6 +2489,9 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>3</div>
+                            </th>
                             <td dir="ltr">0002</td>
                             <td dir="ltr">가맹점 인증에 필요한 custKey 를 확인해주세요.</td>
                             <td dir="ltr">
@@ -2161,11 +2501,17 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>4</div>
+                            </th>
                             <td dir="ltr">0003</td>
                             <td dir="ltr">가맹점 계정이 존재하지 않습니다.</td>
                             <td dir="ltr">- cst_id 와 일치하는 가맹점 정보를 찾지 못함.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>5</div>
+                            </th>
                             <td dir="ltr">0004</td>
                             <td dir="ltr">접속하시는 서버의 도메인 확인이 필요합니다.</td>
                             <td dir="ltr">
@@ -2177,17 +2523,34 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>6</div>
+                            </th>
+                            <td>0005</td>
+                            <td>TOKEN CREATE ERROR!!</td>
+                            <td>인증키 생성 에러</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>7</div>
+                            </th>
                             <td dir="ltr">0006</td>
                             <td dir="ltr">보안프로토콜(HTTPS) 접속이 필요합니다.</td>
                             <td dir="ltr">- 페이플 서버 접속을 위해서는 보안프로토콜(HTTPS) 접속이 필수입니다.</td>
                         </tr>
                         <tr>
-                            <td dir="ltr" rowspan="9">CPCA<br />(카드결제)</td>
+                            <th>
+                                <div>8</div>
+                            </th>
+                            <td rowspan="38">CPCA<br />(카드결제)</td>
                             <td dir="ltr">0001</td>
                             <td dir="ltr">인증시간(3분)이 초과되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">- 인증에 필요한 시간이 초과되었기 때문에 발생하는 응답입니다.<br />- 사용자의 재시도가 필요합니다.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>9</div>
+                            </th>
                             <td dir="ltr">0002</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
@@ -2196,16 +2559,145 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>10</div>
+                            </th>
+                            <td>0003</td>
+                            <td>카드인증회원이 아닙니다.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>11</div>
+                            </th>
+                            <td>0004</td>
+                            <td>카드정보가 존재하지 않거나, 일치하지 않습니다.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>12</div>
+                            </th>
+                            <td>0005</td>
+                            <td>카드결제용 인증키 값이 존재하지 않거나, 일치하지 않습니다.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>13</div>
+                            </th>
                             <td dir="ltr">0006</td>
                             <td dir="ltr">이용하시는 상점의 한도가 초과되었습니다. 상점 관리자에게 문의주세요.</td>
                             <td dir="ltr">- 가맹점의 건당 한도 초과에 대한 응답이며 페이플의 가맹점 담당자와 협의가 필요합니다.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>14</div>
+                            </th>
+                            <td>0007</td>
+                            <td>가맹점 카드 월 한도 초과 - 해당 사이트 관리자에게 문의 하세요!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>15</div>
+                            </th>
+                            <td>0008</td>
+                            <td>통계정보 업데이트 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>16</div>
+                            </th>
+                            <td>0009</td>
+                            <td>통계정보 등록 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>17</div>
+                            </th>
+                            <td>0010</td>
+                            <td>카드승인 요청 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>18</div>
+                            </th>
+                            <td>0011</td>
+                            <td>결제요청 값과 결제결과 값이 다릅니다.</td>
+                            <td dir="ltr">카드승인요청금액, 사용자ID 정보 불일치로 <br />카드승인취소처리</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>19</div>
+                            </th>
+                            <td>0012</td>
+                            <td>고액결제 알림톡 발송 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>20</div>
+                            </th>
+                            <td>0013</td>
+                            <td>정기결제내역 등록 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>21</div>
+                            </th>
+                            <td>0014</td>
+                            <td>결제내역 등록 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>22</div>
+                            </th>
+                            <td>0015</td>
+                            <td>인증세션 업데이트 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>23</div>
+                            </th>
+                            <td>0016</td>
+                            <td>통계정보 업데이트 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>24</div>
+                            </th>
+                            <td>0017</td>
+                            <td>링크결제 카운트 업데이트 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>25</div>
+                            </th>
                             <td dir="ltr">0018</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">- 카드사와의 승인 전문 전송이 실패하거나 전문 오류로 인한 전송 실패 시 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>26</div>
+                            </th>
+                            <td>0019</td>
+                            <td>Event Duplication Error</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>27</div>
+                            </th>
+                            <td>0020</td>
+                            <td>Event Req Update Error</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>28</div>
+                            </th>
+                            <td>0021</td>
+                            <td>인증세션 업데이트 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>29</div>
+                            </th>
                             <td dir="ltr">0022</td>
                             <td dir="ltr">카드결제 건당 한도(-원)가 초과되었습니다. 상점 관리자에게 문의주세요.</td>
                             <td dir="ltr">
@@ -2214,6 +2706,9 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>30</div>
+                            </th>
                             <td dir="ltr">0023</td>
                             <td dir="ltr">카드결제 1일 한도(-원)가 초과되었습니다. 상점 관리자에게 문의주세요.</td>
                             <td dir="ltr">
@@ -2222,6 +2717,9 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>31</div>
+                            </th>
                             <td dir="ltr">0024</td>
                             <td dir="ltr">카드결제 1일 건수(-건)가 초과되었습니다. 상점 관리자에게 문의주세요.</td>
                             <td dir="ltr">
@@ -2230,6 +2728,9 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>32</div>
+                            </th>
                             <td dir="ltr">0025</td>
                             <td dir="ltr">카드결제 월 한도(-원)가 초과되었습니다. 상점관리자에게 문의주세요.</td>
                             <td dir="ltr">
@@ -2238,12 +2739,113 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>33</div>
+                            </th>
+                            <td>0026</td>
+                            <td>카드(일반)결제 알림톡 발송 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>34</div>
+                            </th>
                             <td dir="ltr">0201</td>
                             <td dir="ltr">이미 존재하는 거래입니다. 다시 시도해주세요.</td>
                             <td dir="ltr">- 주문번호 중복 오류로 인한 중복결제 시 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
-                            <td rowspan="2">CBIL<br />(결제내역)</td>
+                            <th>
+                                <div>35</div>
+                            </th>
+                            <td>0202</td>
+                            <td>정기결제요청내역 등록 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>36</div>
+                            </th>
+                            <td>0202</td>
+                            <td>결제내역 등록 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>37</div>
+                            </th>
+                            <td>9997</td>
+                            <td>결제방식 오류</td>
+                            <td dir="ltr">pay_type에 card가 없음</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>38</div>
+                            </th>
+                            <td>9998</td>
+                            <td>카드결제 서비스 이용불가</td>
+                            <td dir="ltr">결제수단이 체크되지 않음</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>39</div>
+                            </th>
+                            <td>9999</td>
+                            <td>카드결제 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>40</div>
+                            </th>
+                            <td>E001</td>
+                            <td>Event Duplication Error</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>41</div>
+                            </th>
+                            <td>E002</td>
+                            <td>Event Update Error</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>42</div>
+                            </th>
+                            <td>E003</td>
+                            <td>$eventTitle(이벤트)이(가) 종료되었습니다.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>43</div>
+                            </th>
+                            <td>E004</td>
+                            <td>결제요청 금액이 일치하지 않습니다.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>44</div>
+                            </th>
+                            <td>D001</td>
+                            <td>카드등록 해지 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>45</div>
+                            </th>
+                            <td>D002</td>
+                            <td>카드번호</td>
+                            <td dir="ltr">카드 자동 해지처리</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>46</div>
+                            </th>
+                            <td rowspan="6">CBIL<br />(결제내역)</td>
+                            <td>0001</td>
+                            <td>Wrong access attempt</td>
+                            <td dir="ltr">인증되지 않은 접속시도</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>47</div>
+                            </th>
                             <td dir="ltr">0002</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
@@ -2251,22 +2853,62 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>48</div>
+                            </th>
                             <td dir="ltr">0003</td>
                             <td dir="ltr">결제내역이 존재하지 않습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">- 결제요청 또는 결제완료 내역 조회 실패</td>
                         </tr>
                         <tr>
-                            <td dir="ltr" rowspan="12">SPCD<br />(카드간편결제)</td>
+                            <th>
+                                <div>49</div>
+                            </th>
+                            <td>0004</td>
+                            <td>Event Duplication Error</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>50</div>
+                            </th>
+                            <td>0005</td>
+                            <td>Event Req Update Error</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>51</div>
+                            </th>
+                            <td>0006</td>
+                            <td>인증세션 업데이트 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>52</div>
+                            </th>
+                            <td rowspan="33">SPCD<br />(카드간편결제/단건)</td>
                             <td dir="ltr">0001</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">- PCD_PAYER_ID 값이 존재하지 않거나 다를 때 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>53</div>
+                            </th>
+                            <td>0002</td>
+                            <td>결제가능 최저금액은 100원 입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>54</div>
+                            </th>
                             <td dir="ltr">0003</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">- 상품명 미존재 시 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>55</div>
+                            </th>
                             <td dir="ltr">0004</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
@@ -2274,11 +2916,40 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>56</div>
+                            </th>
+                            <td>0007</td>
+                            <td>카드서비스 이용 불가</td>
+                            <td dir="ltr">카드결제 서비스 이용권한이 없음.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>57</div>
+                            </th>
+                            <td>0008</td>
+                            <td>SEND DATA LOG WRITE ERROR</td>
+                            <td dir="ltr">가맹점 전송 데이터 로그기록 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>58</div>
+                            </th>
                             <td dir="ltr">0009</td>
                             <td dir="ltr">이용하시는 상점의 한도가 초과되었습니다. 상점 관리자에게 문의주세요.</td>
                             <td dir="ltr">- 가맹점의 건당 한도 초과에 대한 응답이며 페이플의 가맹점 담당자와 협의가 필요합니다.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>59</div>
+                            </th>
+                            <td>0010</td>
+                            <td>가맹점 카드 월 한도 초과 - 해당 사이트 관리자에게 문의 하세요!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>60</div>
+                            </th>
                             <td dir="ltr">0011</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
@@ -2286,6 +2957,9 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>61</div>
+                            </th>
                             <td dir="ltr">0012</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
@@ -2293,21 +2967,142 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>62</div>
+                            </th>
+                            <td>0013</td>
+                            <td>미인증 카드입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>63</div>
+                            </th>
                             <td dir="ltr">0014</td>
                             <td dir="ltr">이미 존재하는 거래입니다. 다시 시도해주세요.</td>
                             <td dir="ltr">- 주문번호 중복 오류로 인한 중복결제 시 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>64</div>
+                            </th>
                             <td dir="ltr">0014</td>
                             <td dir="ltr">이미 존재하는 거래입니다. 다시 시도해주세요.</td>
                             <td dir="ltr">- 주문번호 중복 오류로 인한 중복결제 시 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>65</div>
+                            </th>
+                            <td>0015</td>
+                            <td>간편결제요청 등록 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>66</div>
+                            </th>
+                            <td>0016</td>
+                            <td>통계정보 업데이트 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>67</div>
+                            </th>
+                            <td>0017</td>
+                            <td>통계정보 등록 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>68</div>
+                            </th>
+                            <td>0018</td>
+                            <td>카드결제 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>69</div>
+                            </th>
+                            <td>0019</td>
+                            <td>고액결제 알림톡 발송 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>70</div>
+                            </th>
+                            <td>0020</td>
+                            <td>간편결제요청 결과 업데이트 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>71</div>
+                            </th>
+                            <td>0021</td>
+                            <td>간편결제내역 등록 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>72</div>
+                            </th>
+                            <td>0022</td>
+                            <td>간편결제결과 업데이트 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>73</div>
+                            </th>
+                            <td>0023</td>
+                            <td>간편결제 결과 등록 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>74</div>
+                            </th>
+                            <td>0024</td>
+                            <td>통계정보 업데이트 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>75</div>
+                            </th>
+                            <td>0025</td>
+                            <td>간편결제내역 전송 결과 업데이트 실패!!</td>
+                            <td dir="ltr">고객 Email 발송 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>76</div>
+                            </th>
+                            <td>0026</td>
+                            <td>인증세션 업데이트 실패!!</td>
+                            <td dir="ltr">카드결제 로그기록 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>77</div>
+                            </th>
                             <td dir="ltr">1001</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">- 승인요청에 대한 카드사 응답이 없을 때 발생하는 응답입니다.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>78</div>
+                            </th>
+                            <td>1002</td>
+                            <td>카드등록 해지 실패!!</td>
+                            <td dir="ltr">거래제한카드, 유효기간만료, 도난/분실/위.변조 <br />카드 등록해지 처리 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>79</div>
+                            </th>
                             <td dir="ltr">1003</td>
                             <td dir="ltr">결제 오류로 인해 승인된 거래건이 취소되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
@@ -2315,6 +3110,17 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>80</div>
+                            </th>
+                            <td>1004</td>
+                            <td>카드번호</td>
+                            <td dir="ltr">카드자동해지처리</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>81</div>
+                            </th>
                             <td dir="ltr">9991</td>
                             <td dir="ltr">가맹점 인증에 필요한 custKey 를 확인해주세요.</td>
                             <td dir="ltr">
@@ -2323,12 +3129,31 @@
                             </td>
                         </tr>
                         <tr>
-                            <td dir="ltr">9999</td>
-                            <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
-                            <td></td>
+                            <th>
+                                <div>82</div>
+                            </th>
+                            <td>9997</td>
+                            <td>카드승인취소 실패</td>
                         </tr>
                         <tr>
-                            <td dir="ltr" rowspan="5">RPCD<br />(카드정기)</td>
+                            <th>
+                                <div>83</div>
+                            </th>
+                            <td>9998</td>
+                            <td>정기결제(카드) 실패 : 잘못된 접근입니다.!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>84</div>
+                            </th>
+                            <td dir="ltr">9999</td>
+                            <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>85</div>
+                            </th>
+                            <td rowspan="34">RPCD<br />(카드정기)</td>
                             <td dir="ltr">0001</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
@@ -2336,6 +3161,37 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>86</div>
+                            </th>
+                            <td>0002</td>
+                            <td>결제가능 최저금액은 100원 입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>87</div>
+                            </th>
+                            <td>0003</td>
+                            <td>결제상품명이 존재하지 않습니다.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>88</div>
+                            </th>
+                            <td>0004</td>
+                            <td>정기결제 년도(YYYY) 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>89</div>
+                            </th>
+                            <td>0005</td>
+                            <td>정기결제 월(MM) 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>90</div>
+                            </th>
                             <td dir="ltr">0006</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
@@ -2343,11 +3199,40 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>91</div>
+                            </th>
+                            <td>0007</td>
+                            <td>카드정기결제서비스 이용 불가</td>
+                            <td dir="ltr">카드정기결제 서비스 이용권한이 없음.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>92</div>
+                            </th>
+                            <td>0008</td>
+                            <td>SEND DATA LOG WRITE ERROR</td>
+                            <td dir="ltr">가맹점 전송 데이터 로그기록 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>93</div>
+                            </th>
                             <td dir="ltr">0009</td>
                             <td dir="ltr">상점의 건당 한도가 초과되었습니다.</td>
                             <td dir="ltr">- 가맹점의 건당 한도 초과에 대한 응답이며 페이플의 가맹점 담당자와 협의가 필요합니다.</td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>94</div>
+                            </th>
+                            <td>0010</td>
+                            <td>가맹점 카드 월 한도 초과 - 해당 사이트 관리자에게 문의 하세요!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>95</div>
+                            </th>
                             <td dir="ltr">0011</td>
                             <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
@@ -2355,12 +3240,186 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>
+                                <div>96</div>
+                            </th>
+                            <td>0012</td>
+                            <td>카드 인증정보를 찾을 수 없습니다.</td>
+                            <td dir="ltr">존재하지 않는 PCD_PAYER_ID</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>97</div>
+                            </th>
+                            <td>0013</td>
+                            <td>미인증 카드입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>98</div>
+                            </th>
+                            <td>0014</td>
+                            <td>결제자 정보 수정 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>99</div>
+                            </th>
                             <td dir="ltr">0015</td>
                             <td dir="ltr">이미 존재하는 거래입니다. 다시 시도해주세요.</td>
                             <td dir="ltr">- 주문번호가 중복될 때 발생하는 응답입니다. (월 중복결제 방지)</td>
                         </tr>
                         <tr>
-                            <td dir="ltr" rowspan="2">CDAU<br />(카드등록)</td>
+                            <th>
+                                <div>100</div>
+                            </th>
+                            <td dir="ltr">0015</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>101</div>
+                            </th>
+                            <td>0016</td>
+                            <td>정기결제요청 등록 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>102</div>
+                            </th>
+                            <td>0017</td>
+                            <td>통계정보 업데이트 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>103</div>
+                            </th>
+                            <td>0018</td>
+                            <td>통계정보 등록 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>104</div>
+                            </th>
+                            <td>0019</td>
+                            <td>카드결제 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>105</div>
+                            </th>
+                            <td>0020</td>
+                            <td>고액결제 알림톡 발송 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>106</div>
+                            </th>
+                            <td>0021</td>
+                            <td>정기결제요청 결과 업데이트 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>107</div>
+                            </th>
+                            <td>0022</td>
+                            <td>정기결제내역 등록 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>108</div>
+                            </th>
+                            <td>0023</td>
+                            <td>정기결제결과 업데이트 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>109</div>
+                            </th>
+                            <td>0024</td>
+                            <td>정기결제결과 업데이트 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>110</div>
+                            </th>
+                            <td>0025</td>
+                            <td>통계정보 업데이트 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>111</div>
+                            </th>
+                            <td>0026</td>
+                            <td>정기결제내역 전송 결과 업데이트 실패!!</td>
+                            <td dir="ltr">고객 Email 발송 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>112</div>
+                            </th>
+                            <td>0027</td>
+                            <td>인증세션 업데이트 실패!!</td>
+                            <td dir="ltr">카드결제 로그기록 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>113</div>
+                            </th>
+                            <td>1001</td>
+                            <td>카드스인 요청 실패!!</td>
+                            <td dir="ltr">카드사 응답없음</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>114</div>
+                            </th>
+                            <td>1002</td>
+                            <td>카드등록 해지 실패!!</td>
+                            <td dir="ltr">거래제한카드, 유효기간만료, 도난/분실/위.변조 <br />카드 등록해지 처리 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>115</div>
+                            </th>
+                            <td>1003</td>
+                            <td>결제요청 값과 결제결과 값이 다릅니다.</td>
+                            <td dir="ltr">카드승인요청금액, 사용자ID 정보 불일치로 <br />카드승인취소처리</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>116</div>
+                            </th>
+                            <td>9991</td>
+                            <td>가맹점 인증키 불일치</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>117</div>
+                            </th>
+                            <td>9998</td>
+                            <td>정기결제(카드) 실패 : 잘못된 접근입니다.!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>118</div>
+                            </th>
+                            <td>9999</td>
+                            <td>정기결제 카드결제 실패 : 결제자 정보를 바르게 입력하세요!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>119</div>
+                            </th>
+                            <td rowspan="18">CDAU<br />(카드등록)</td>
                             <td dir="ltr">0001</td>
                             <td dir="ltr">인증세션이 만료되었습니다. 다시 시도해주세요.</td>
                             <td dir="ltr">
@@ -2368,9 +3427,133 @@
                             </td>
                         </tr>
                         <tr>
-                            <td dir="ltr">0002</td>
-                            <td dir="ltr">카드번호를 바르게 입력하세요.</td>
-                            <td></td>
+                            <th>
+                                <div>120</div>
+                            </th>
+                            <td>0002</td>
+                            <td>카드번호를 바르게 입력하세요.</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>121</div>
+                            </th>
+                            <td>0003</td>
+                            <td>결제자 정보 수정 실패!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>122</div>
+                            </th>
+                            <td>0004</td>
+                            <td>미인증 로그 삭제 실패</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>123</div>
+                            </th>
+                            <td>0005</td>
+                            <td>카드 인증 정보 생성 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>124</div>
+                            </th>
+                            <td>0006</td>
+                            <td>카드 인증 정보 생성 실패2!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>125</div>
+                            </th>
+                            <td>0007</td>
+                            <td>카드 인증 실패 (or 카드사 오류 메세지)</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>126</div>
+                            </th>
+                            <td>0008</td>
+                            <td>카드 인증 정보 업데이트 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>127</div>
+                            </th>
+                            <td>0009</td>
+                            <td>세션정보 업데이트 실패!!</td>
+                            <td dir="ltr">DB ERROR</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>128</div>
+                            </th>
+                            <td>9991</td>
+                            <td>가맹점 인증키 불일치</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>129</div>
+                            </th>
+                            <td>9998</td>
+                            <td>카드 등록 실패 : 잘못된 접근입니다.!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>130</div>
+                            </th>
+                            <td>9999</td>
+                            <td>인증 실패 : 카드정보를 바르게 입력하세요!!</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>131</div>
+                            </th>
+                            <td>CK01</td>
+                            <td>PCD_PAY_TYPE ERROR</td>
+                            <td dir="ltr">결제방법(신용카드: card) 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>132</div>
+                            </th>
+                            <td>CK02</td>
+                            <td>PCD_PAY_WORK ERROR</td>
+                            <td dir="ltr">업무구분 (인증: AUTHREG) 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>133</div>
+                            </th>
+                            <td>CK03</td>
+                            <td>PCD_PAYER_BIRTH ERROR</td>
+                            <td dir="ltr">생년월일 앞 6자리(YYMMDD) 또는 <br />사업자번호 10자리 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>134</div>
+                            </th>
+                            <td>CK04</td>
+                            <td>PCD_PAY_CARDNUM ERROR</td>
+                            <td dir="ltr">카드번호 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>135</div>
+                            </th>
+                            <td>CK05</td>
+                            <td>PCD_PAY_CARDEXYEAR, PCD_PAY_CARDEXMONTH ERROR</td>
+                            <td dir="ltr">카드 유효기간 오류</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>136</div>
+                            </th>
+                            <td>CK06</td>
+                            <td>PCD_PAY_CARDPW ERROR</td>
+                            <td dir="ltr">카드 비밀번호 앞2자리 오류</td>
                         </tr>
                     </tbody>
                 </v-simple-table>
@@ -2405,7 +3588,7 @@ export default {
                     disabled: true,
                 },
                 {
-                    text:"응답코드",
+                    text: "응답코드",
                     disabled: true,
                 },
             ],

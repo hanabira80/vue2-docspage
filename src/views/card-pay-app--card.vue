@@ -861,7 +861,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                -
+                                255
                             </td>
                             <td colspan="1" rowspan="1">
                                 O

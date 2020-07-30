@@ -25,7 +25,7 @@
                     <v-card raised col="12" sm="4" height="100%">
                         <v-card-text>
                             <p class="title text--primary">
-                                비밀번호 자동결제
+                                비밀번호 간편결제
                             </p>
                             <div class="text--primary">
                                 빌링키 등록시, 6자리 비밀번호를 설정하고 재결제시 비밀번호 인증을 받아 부정사용을 방지하는 결제방식입니다.

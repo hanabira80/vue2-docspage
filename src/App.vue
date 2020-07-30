@@ -200,11 +200,11 @@ export default {
                     },
                     {
                         id: 2,
-                        name: "계좌결제",
+                        name: "계좌이체",
                         children: [
                             {
                                 id: 2 - 0,
-                                name: "계좌결제 개요",
+                                name: "계좌이체 개요",
                                 to: "/bank/outline",
                             },
                             {
@@ -243,7 +243,7 @@ export default {
                             },
                             { id: 2 - 7, name: "등록계좌 조회", to: "/bank/regist/search" },
                             { id: 2 - 6, name: "등록계좌 해지", to: "/bank/regist/cancel" },
-                            { id: 2 - 8, name: "결제결과 수신", to: "/bank/result/recieve" },
+                            // { id: 2 - 8, name: "결제결과 수신", to: "/bank/result/recieve" },
                             { id: 2 - 9, name: "결제결과 조회", to: "/bank/result/search" },
                             { id: 2 - 10, name: "응답코드", to: "/bank/code/response" },
                             { id: 2 - 11, name: "정책", to: "/bank/policy" },

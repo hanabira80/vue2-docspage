@@ -116,7 +116,7 @@
                             </td>
                             <td colspan="1" rowspan="1">결제요청 방식<br />- CERT: 결제요청 재컨펌 (CERT)<br />- PAY: 즉시결제</td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td colspan="1" rowspan="1">
                                 PCD_SIMPLE_FLAG
                             </td>
@@ -135,7 +135,7 @@
                             <td colspan="1" rowspan="1">
                                 간편결제 구분 (비밀번호 결제: Y)
                             </td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td colspan="1" rowspan="1">
                                 PCD_CARD_VER

@@ -16,10 +16,6 @@
         </v-alert>
 
         <article class="mb-12">
-            <h2 class="">
-                등록카드 해지
-            </h2>
-
             <h3 class="pl-4">
                 요청 메시지
             </h3>
@@ -134,7 +130,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                200
+                                20
                             </td>
                             <td colspan="1" rowspan="1">
                                 O

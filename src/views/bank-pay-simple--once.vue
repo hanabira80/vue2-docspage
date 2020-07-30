@@ -994,7 +994,7 @@
                                 String
                             </td>
                             <td colspan="1" rowspan="1">
-                                -
+                                255
                             </td>
                             <td colspan="1" rowspan="1">
                                 O
@@ -1119,7 +1119,9 @@ obj.PCD_CPAY_VER = "1.0.1";
 obj.PCD_PAY_TYPE = "transfer";           
 obj.PCD_PAY_WORK = "PAY";
 
-		
+/* 01 : 빌링키결제 */
+obj.PCD_CARD_VER = "01"
+
 /* 가맹점 인증요청 파일 */
 obj.payple_auth_file = "가맹점 인증요청 파일";
 		

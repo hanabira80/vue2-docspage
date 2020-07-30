@@ -543,10 +543,7 @@
                     {{ code_2_1 }}
                 </Prism>
             </v-card>
-        </article>
-        <v-divider class="mb-12"></v-divider>
-
-        
+        </article>        
     </div>
 </template>
 

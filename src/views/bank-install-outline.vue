@@ -124,9 +124,6 @@
                 </v-simple-table>
             </v-card>
         </article>
-        <v-divider class="mb-12"></v-divider>
-
-        
     </div>
 </template>
 

@@ -13,7 +13,7 @@
                 현금영수증 발행요청
             </h2>
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                요청 전 가맹점 인증이 필요합니다. 관련된 문서는 이곳에서 확인 가능합니다.
+                요청 전 가맹점 인증이 필요합니다. 관련된 문서는 <router-link to="/bank/install/auth">이곳</router-link>에서 확인 가능합니다.
             </v-alert>
 
             <h3 class="pl-4">

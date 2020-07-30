@@ -16,10 +16,6 @@
         </v-alert>
 
         <article class="mb-12">
-            <h2 class="">
-                승인취소
-            </h2>
-
             <h3 class="pl-4">
                 요청 메시지
             </h3>
