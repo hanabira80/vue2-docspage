@@ -454,7 +454,11 @@ export default {
                 },
             ],
             code_1_1: `
-#링크생성 요청
+/* 
+* 링크생성 요청
+* TEST : https://testcpay.payple.kr
+* REAL : https://cpay.payple.kr
+*/
 POST 가맹점 인증 후 리턴받은 PCD_PAY_URL HTTP/1.1
 Host: 가맹점 인증 후 리턴받은 PCD_PAY_HOST
 Content-Type: application/json
@@ -467,8 +471,7 @@ Cache-Control: no-cache
   "PCD_PAY_WORK": "LINKREG",
   "PCD_PAY_TYPE": "transfer",
   "PCD_PAY_GOODS": "상품1",
-  "PCD_PAY_TOTAL": 1000,
-  “PCD_TAXSAVE_FLAG”: “Y”
+  "PCD_PAY_TOTAL": 100
 }
 `,
             code_2_1: `

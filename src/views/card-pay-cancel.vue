@@ -376,7 +376,11 @@ export default {
                 },
             ],
             code_1_1: `
-#승인취소 요청
+/* 
+* 승인취소 요청
+* TEST : https://testcpay.payple.kr
+* REAL : https://cpay.payple.kr
+*/
 POST 가맹점 인증 후 리턴받는 PCD_PAY_URL HTTP/1.1
 Host: 가맹점 인증 후 리턴받는 PCD_PAY_HOST
 Content-Type: application/json
@@ -387,8 +391,8 @@ Cache-Control: no-cache
   "PCD_AUTH_KEY": "가맹점 인증 후 리턴받은 AuthKey",  
   "PCD_REFUND_KEY": "a41ce010ede9...",
   "PCD_PAYCANCEL_FLAG": "Y",
-  "PCD_PAY_OID": "test201804000001",
-  "PCD_PAY_DATE": “20200317”,
+  "PCD_PAY_OID": "test099942200156938",
+  "PCD_PAY_DATE": "20200320",
   "PCD_REFUND_TOTAL": 100
 }
 `,

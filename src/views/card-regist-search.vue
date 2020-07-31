@@ -355,14 +355,19 @@ export default {
                 },
             ],
             code_1_1: `
+/* 
+* 카드 조회
+* TEST : https://testcpay.payple.kr
+* REAL : https://cpay.payple.kr
+*/
 POST 가맹점 인증 후 리턴받는 PCD_PAY_URL HTTP/1.1
 Host: 가맹점 인증 후 리턴받는 PCD_PAY_HOST
 Content-Type: application/json
 Cache-Control: no-cache
 {
-   "PCD_CST_ID": “가맹점 인증 후 리턴받은 cst_id”,                           
-   "PCD_CUST_KEY": “가맹점 인증 후 리턴받은 custKey”,                        
-   "PCD_AUTH_KEY": “가맹점 인증 후 리턴받은 AuthKey”,                        
+   "PCD_CST_ID": "가맹점 인증 후 리턴받은 cst_id",
+   "PCD_CUST_KEY": "가맹점 인증 후 리턴받은 custKey",                        
+   "PCD_AUTH_KEY": "가맹점 인증 후 리턴받은 AuthKey",                        
    "PCD_PAYER_ID": "d0toSS9sT084bVJSNThScnFXQm9Gdz09", 
    "PCD_PAYER_NO": 1234                            
 }
@@ -374,13 +379,13 @@ Cache-Control: no-cache
    "PCD_PAY_MSG": "회원조회 성공",
    "PCD_PAY_TYPE": "card",
    "PCD_PAY_BANKACCTYPE": "개인",
-   "PCD_PAYER_ID" => "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",
+   "PCD_PAYER_ID": "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",
    "PCD_PAYER_NAME": "홍길동",
    "PCD_PAYER_HP": "010-****-5678",
    "PCD_PAY_CARD": "0200",
    "PCD_PAY_CARDNAME": "BC카드",
    "PCD_PAY_CARDNUM": "1111-****-****-2222",
-   “PCD_PAY_ISTAX”: “Y”
+   "PCD_PAY_ISTAX": "Y"
 }
 `,
         };

@@ -1106,118 +1106,182 @@ export default {
                 },
             ],
             code_1_1: `
-<!-- payple js 호출. 테스트/운영 선택 -->
-<script src="https://testcpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 테스트 -->
-<script src="https://cpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 운영 -->
- 
-<script>	
-$(document).ready( function () {        
-$('#payAction').on('click', function (event) {
-        
-var obj = new Object();
-obj.PCD_CPAY_VER = "1.0.1";
-obj.PCD_PAY_TYPE = "transfer";           
-obj.PCD_PAY_WORK = "PAY";
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">< /script>
+    <!-- payple js 호출. 테스트/운영 선택 -->
+    <script src="https://testcpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 테스트 -->
+    <script src="https://cpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 운영 -->
+    
+    <script>  
+    $(document).ready( function () {    	
+        $('#payAction').on('click', function (event) {
+            
+                var obj = new Object();
+                obj.PCD_CPAY_VER = "1.0.1";
+                obj.PCD_PAY_TYPE = "transfer";       	
+                obj.PCD_PAY_WORK = "PAY";
 
-/* 01 : 빌링키결제 */
-obj.PCD_CARD_VER = "01"
+                /* 01 : 빌링키결제 */
+                obj.PCD_CARD_VER = "01"
+                
+                /* 간편결제 구분 */
+                obj.PCD_SIMPLE_FLAG = "N";
+                
+                /* 가맹점 인증요청 */
+                obj.payple_auth_file = "가맹점 인증요청 파일 URL";
+                
 
-/* 가맹점 인증요청 파일 */
-obj.payple_auth_file = "가맹점 인증요청 파일";
-		
+                obj.PCD_PAYER_NO = 1234;
+                obj.PCD_PAYER_NAME = "홍길동";
+                obj.PCD_PAYER_HP = "01012345678";
+                obj.PCD_PAYER_EMAIL = "dev@payple.kr";
+                obj.PCD_PAY_GOODS = "상품1";
+                obj.PCD_PAY_TOTAL = 100;
+                obj.PCD_PAY_ISTAX = "Y";
+                obj.PCD_PAY_TAXTOTAL = 10;
 
-obj.PCD_PAYER_NO = 1234;
-obj.PCD_PAYER_NAME = "홍길동";
-obj.PCD_PAYER_HP = "01012345678";
-obj.PCD_PAYER_EMAIL = "dev@payple.kr";
-obj.PCD_PAY_GOODS = "상품1";
-obj.PCD_PAY_TOTAL = 1000;
-obj.PCD_PAY_ISTAX = "Y";
-obj.PCD_PAY_TAXTOTAL = 10;
-obj.PCD_PAY_OID = "";
-
-/* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
-//obj.callbackFunction = getResult;  // getResult : 콜백 함수명 
-/* End : 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
-			
-/* 결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 */
-obj.PCD_RST_URL = '결제 결과 받을 페이지’;
-/* End : 결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 */
-		
-PaypleCpayAuthCheck(obj);
-		
-event.preventDefault(); 
-
-    });   
-});
-< /script>
-<button id=”payAction”>일회성 간편결제</button>
+                /* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
+                //obj.callbackFunction = getResult;  // getResult : 콜백 함수명
+                                
+                /* 
+                결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 
+                (모바일에서 팝업방식은 상대경로, 다이렉트 방식은 절대경로로 설정)
+                */
+                obj.PCD_RST_URL = "결제 결과 받을 파일 URL";
+                
+                PaypleCpayAuthCheck(obj);
+                
+                event.preventDefault(); 	
+    
+        });  
+    });
+    < /script>
+    <button id="payAction">일회성 간편결제</button>
 `,
             code_1_2: `
-java
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">< /script>
+    <!-- payple js 호출. 테스트/운영 선택 -->
+    <script src="https://testcpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 테스트 -->
+    <script src="https://cpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 운영 -->
+    
+    <script>  
+    $(document).ready( function () {    	
+        $('#payAction').on('click', function (event) {
+            
+                var obj = new Object();
+                obj.PCD_CPAY_VER = "1.0.1";
+                obj.PCD_PAY_TYPE = "transfer";       	
+                obj.PCD_PAY_WORK = "PAY";
+
+                /* 01 : 빌링키결제 */
+                obj.PCD_CARD_VER = "01"
+                
+                /* 간편결제 구분 */
+                obj.PCD_SIMPLE_FLAG = "N";
+                
+                /* 
+                가맹점 인증요청
+                @RequestMapping 의 URL
+                */
+                obj.payple_auth_file = "http://localhost:8080/auth";
+                
+
+                obj.PCD_PAYER_NO = 1234;
+                obj.PCD_PAYER_NAME = "홍길동";
+                obj.PCD_PAYER_HP = "01012345678";
+                obj.PCD_PAYER_EMAIL = "dev@payple.kr";
+                obj.PCD_PAY_GOODS = "상품1";
+                obj.PCD_PAY_TOTAL = 100;
+                obj.PCD_PAY_ISTAX = "Y";
+                obj.PCD_PAY_TAXTOTAL = 10;
+
+                /* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
+                //obj.callbackFunction = getResult;  // getResult : 콜백 함수명
+                                
+                /* 
+                결과를 콜백 함수가 아닌 URL로 받고자 하는 경우
+                (모바일에서 팝업방식은 상대경로, 다이렉트 방식은 절대경로로 설정)
+                @RequestMapping 의 URL
+                */
+                obj.PCD_RST_URL = "/order_result";
+                
+                PaypleCpayAuthCheck(obj);
+                
+                event.preventDefault(); 	
+    
+        });  
+    });
+    < /script>
+    <button id="payAction">일회성 간편결제</button>
 `,
             code_1_3: `
-<!-- payple js 호출. 테스트/운영 선택 -->
-<script src="https://testcpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 테스트 -->
-<script src="https://cpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 운영 -->
- 
-<script>	
-$(document).ready( function () {        
-$('#payAction').on('click', function (event) {
-        
-var obj = new Object();
-obj.PCD_CPAY_VER = "1.0.1";
-obj.PCD_PAY_TYPE = "transfer";           
-obj.PCD_PAY_WORK = "PAY";
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">< /script>
+    <!-- payple js 호출. 테스트/운영 선택 -->
+    <script src="https://testcpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 테스트 -->
+    <script src="https://cpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 운영 -->
+    
+    <script>  
+    $(document).ready( function () {    	
+        $('#payAction').on('click', function (event) {
+            
+                var obj = new Object();
+                obj.PCD_CPAY_VER = "1.0.1";
+                obj.PCD_PAY_TYPE = "transfer";       	
+                obj.PCD_PAY_WORK = "PAY";
 
-		
-/* 가맹점 인증요청 파일 */
-obj.payple_auth_file = "app.post의 path";
-		
+                /* 01 : 빌링키결제 */
+                obj.PCD_CARD_VER = "01"
 
-obj.PCD_PAYER_NO = 1234;
-obj.PCD_PAYER_NAME = "홍길동";
-obj.PCD_PAYER_HP = "01012345678";
-obj.PCD_PAYER_EMAIL = "dev@payple.kr";
-obj.PCD_PAY_GOODS = "상품1";
-obj.PCD_PAY_TOTAL = 1000;
-obj.PCD_PAY_ISTAX = "Y";
-obj.PCD_PAY_TAXTOTAL = 10;
-obj.PCD_PAY_OID = "";
+                /* 간편결제 구분 */
+                obj.PCD_SIMPLE_FLAG = "N";
+                
+                /* 가맹점 인증요청 */
+                obj.payple_auth_file = "app.post의 path";
+                
 
-/* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
-//obj.callbackFunction = getResult;  // getResult : 콜백 함수명 
-/* End : 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
-			
-/* 결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 */
-obj.PCD_RST_URL = 'app.post의 path’;
-/* End : 결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 */
-		
-PaypleCpayAuthCheck(obj);
-		
-event.preventDefault(); 
+                obj.PCD_PAYER_NO = 1234;
+                obj.PCD_PAYER_NAME = "홍길동";
+                obj.PCD_PAYER_HP = "01012345678";
+                obj.PCD_PAYER_EMAIL = "dev@payple.kr";
+                obj.PCD_PAY_GOODS = "상품1";
+                obj.PCD_PAY_TOTAL = 100;
+                obj.PCD_PAY_ISTAX = "Y";
+                obj.PCD_PAY_TAXTOTAL = 10;
 
-    });   
-});
-< /script>
-<button id=”payAction”>일회성 간편결제</button>
-`,
-            code_1_4: `
-node
+                /* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
+                //obj.callbackFunction = getResult;  // getResult : 콜백 함수명
+                                
+                /* 
+                결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 
+                (모바일에서 팝업방식은 상대경로, 다이렉트 방식은 절대경로로 설정)
+                */
+                obj.PCD_RST_URL = 'app.post의 path';
+                
+                PaypleCpayAuthCheck(obj);
+                
+                event.preventDefault(); 	
+    
+        });  
+    });
+    < /script>
+    <button id="payAction">일회성 간편결제</button>
 `,
             code_2_1: `
-/* 결제요청 후 리턴받은 PCD_PAY_COFURL 로 결제요청 재컨펌 (CERT)(CERT)  */
-POST /php/PayCardConfirmAct.php?ACT_=PAYM HTTP/1.1
-Host: testcpay.payple.kr
-Content-Type: application/json
-Cache-Control: no-cache
-{
-  "PCD_CST_ID": "test",										
-  "PCD_CUST_KEY": "abcd1234567890",								
-  "PCD_AUTH_KEY": "결제요청 후 리턴받은 PCD_AUTH_KEY", 
-  "PCD_PAY_REQKEY": "결제요청 후 리턴받은 PCD_PAY_REQKEY",					
-  "PCD_PAYER_ID": "결제요청 후 리턴받은 PCD_PAYER_ID"
-}
+ /* 
+    * TEST : https://testcpay.payple.kr
+    * REAL : https://cpay.payple.kr
+    */
+    /* 결제요청 후 리턴받은 PCD_PAY_COFURL 로 결제요청 재컨펌 (CERT)  */
+    POST /php/PayCardConfirmAct.php?ACT_=PAYM HTTP/1.1
+    Host: testcpay.payple.kr
+    Content-Type: application/json
+    Cache-Control: no-cache
+    {
+    "PCD_CST_ID": "test",										
+    "PCD_CUST_KEY": "abcd1234567890",								
+    "PCD_AUTH_KEY": "결제요청 후 리턴받은 PCD_AUTH_KEY", 
+    "PCD_PAY_REQKEY": "결제요청 후 리턴받은 PCD_PAY_REQKEY",					
+    "PCD_PAYER_ID": "결제요청 후 리턴받은 PCD_PAYER_ID"
+    }
 `,
         };
     },

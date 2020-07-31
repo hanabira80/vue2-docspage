@@ -511,23 +511,25 @@ export default {
                 },
             ],
             code_1_1: `
-POST 가맹점 인증 후 리턴받은 PCD_PAY_URL HTTP/1.1
-Host: 가맹점 인증 후 리턴받은 PCD_PAY_HOST
-Content-Type: application/json
-Cache-Control: no-cache
-{
-  "PCD_CST_ID" : “가맹점 인증 후 리턴받은 cst_id”, 
-  "PCD_CUST_KEY" : “가맹점 인증 후 리턴받은 custKey”,
-  "PCD_AUTH_KEY" : “가맹점 인증 후 리턴받은 AuthKey”,
-  "PCD_REFUND_KEY" : "a41ce010...",
-  "PCD_PAYCANCEL_FLAG": "Y",
-  "PCD_PAY_OID": "test099942200156938",
-  "PCD_REGULER_FLAG": "Y",
-  "PCD_PAY_YEAR": 2020,
-  "PCD_PAY_MONTH": "03",
-  "PCD_PAY_DATE": “20200320”,
-  "PCD_REFUND_TOTAL": 1000
-}
+/* 
+    * 계좌이체 환불
+    * TEST : https://testcpay.payple.kr
+    * REAL : https://cpay.payple.kr
+    */
+    POST 가맹점 인증 후 리턴받은 PCD_PAY_URL HTTP/1.1
+    Host: 가맹점 인증 후 리턴받은 PCD_PAY_HOST
+    Content-Type: application/json
+    Cache-Control: no-cache
+    {
+    "PCD_CST_ID" : "가맹점 인증 후 리턴받은 cst_id", 
+    "PCD_CUST_KEY" : "가맹점 인증 후 리턴받은 custKey",
+    "PCD_AUTH_KEY" : "가맹점 인증 후 리턴받은 AuthKey",
+    "PCD_REFUND_KEY" : "a41ce010...",
+    "PCD_PAYCANCEL_FLAG": "Y",
+    "PCD_PAY_OID": "test099942200156938",
+    "PCD_PAY_DATE": "20200320",
+    "PCD_REFUND_TOTAL": 1000
+    }
 `,
             code_2_1: `
 {

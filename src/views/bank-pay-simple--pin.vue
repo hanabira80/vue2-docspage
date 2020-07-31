@@ -18,9 +18,9 @@
                 비밀번호 간편결제
             </h2>
             <blockquote class="mb-8 blockquote body-1">
-                비밀번호 간편결제는 6자리 핀번호를 등록하여 재결제시 인증을 강화하는 결제방식입니다.<br/> 
-                카드등록시 결제창(브라우저)에서 핀번호를 등록하게 되며,<Br/>
-                재결제시마다 결제창(브라우저)를 호출하여 비밀번호를 인증해야 결제에 성공합니다. 
+                비밀번호 간편결제는 6자리 핀번호를 등록하여 재결제시 인증을 강화하는 결제방식입니다.<br />
+                카드등록시 결제창(브라우저)에서 핀번호를 등록하게 되며,<Br />
+                재결제시마다 결제창(브라우저)를 호출하여 비밀번호를 인증해야 결제에 성공합니다.
             </blockquote>
 
             <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
@@ -34,8 +34,9 @@
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다.<br/>
-                비밀번호 간편결제에 필요한 가맹점 인증요청 파일(payple_auth_file)에 담겨야 하는 정보는 <router-link to="/bank/install/auth">이곳</router-link>을 확인해보세요.
+                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다.<br />
+                비밀번호 간편결제에 필요한 가맹점 인증요청 파일(payple_auth_file)에 담겨야 하는 정보는 <router-link to="/bank/install/auth">이곳</router-link>을
+                확인해보세요.
             </v-alert>
 
             <h3 class="pl-4">
@@ -928,7 +929,7 @@
                 결제요청 재컨펌(PCD_PAY_WORK : CERT)
             </h2>
             <blockquote class="mb-8 blockquote body-1">
-                최종 결제요청을 위해 REST API를 통해 기등록된 빌링키로 결제를 요청할 수 있습니다.<br/>
+                최종 결제요청을 위해 REST API를 통해 기등록된 빌링키로 결제를 요청할 수 있습니다.<br />
                 PCD_PAY_WORK : PAY (즉시결제)의 경우와는 달리 CERT(결제요청 재컨펌 (CERT)) 방식에서는 최종 승인 요청을 별도로 주어야 합니다.<br />
                 결제요청 재컨펌 (CERT) 방식에 대한 설명은 <router-link to="/bank/pay/outline">이곳</router-link>에서 확인하실 수 있습니다.
             </blockquote>
@@ -972,7 +973,7 @@
                                 test
                             </td>
                             <td colspan="1" rowspan="1">
-                                가맹점 인증 후 리턴 받은 cst_id Token
+                                가맹점 cst_id
                             </td>
                         </tr>
                         <tr>
@@ -992,7 +993,7 @@
                                 abcd1234567890
                             </td>
                             <td colspan="1" rowspan="1">
-                                가맹점 인증 후 리턴 받은 custKey Token
+                                가맹점 custKey
                             </td>
                         </tr>
                         <tr>
@@ -1012,7 +1013,7 @@
                                 a688c...
                             </td>
                             <td colspan="1" rowspan="1">
-                                가맹점 인증 후 리턴 받은 토큰키
+                                CERT 결제요청 후 리턴받은 토큰키
                             </td>
                         </tr>
                         <tr>
@@ -1032,7 +1033,7 @@
                                 Vnx...
                             </td>
                             <td colspan="1" rowspan="1">
-                                최종 승인요청용 키
+                                CERT 결제요청 후 최종 승인요청용 키
                             </td>
                         </tr>
                         <tr>
@@ -1052,7 +1053,7 @@
                                 d0to...
                             </td>
                             <td colspan="1" rowspan="1">
-                                계좌등록 후 리턴받은 빌링키
+                                CERT 결제요청 후 리턴받은 빌링키(PCD_CARD_VER:01 일 때 필수)
                             </td>
                         </tr>
                     </tbody>
@@ -1075,8 +1076,6 @@
                 </Prism>
             </v-card>
         </article>
-
-        
     </div>
 </template>
 
@@ -1115,126 +1114,191 @@ export default {
                 },
             ],
             code_1_1: `
-<!-- payple js 호출. 테스트/운영 선택 -->
-<script src="https://testcpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 테스트 -->
-<script src="https://cpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 운영 -->
- 
-<script>	
-$(document).ready( function () {        
-    $('#payAction').on('click', function (event) {
-        
-var obj = new Object();
-obj.PCD_CPAY_VER = "1.0.1";
-	obj.PCD_PAY_TYPE = "transfer";
-	obj.PCD_PAY_WORK = "PAY";
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">< /script>
+    <!-- payple js 호출. 테스트/운영 선택 -->
+    <script src="https://testcpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 테스트 -->
+    <script src="https://cpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 운영 -->
 
-	/* 간편결제 구분 */
-	obj.PCD_SIMPLE_FLAG = "Y";
-	/* 비밀전호결제 인증방식 pwd | sms */
-	obj.PCD_PAYER_AUTH_TYPE = "pwd";
-	/* 가맹점 인증요청 파일 */
-	obj.payple_auth_file = "가맹점 인증요청 파일";
-	/* PCD_PAYER_ID 는 소스상에 표시하지 마시고 반드시 Server Side Script 를 이용하여 불러오시기 바랍니다. */
-	obj.PCD_PAYER_ID = 'VEJMT0FiTms4VG8...';
-			
-
-	obj.PCD_PAYER_NO = 1234;
-	obj.PCD_PAYER_NAME = "홍길동";
-	obj.PCD_PAYER_HP = "01012345678";
-	obj.PCD_PAYER_EMAIL = "dev@payple.kr";
-	obj.PCD_PAY_GOODS = "상품1";
-	obj.PCD_PAY_TOTAL = 1000;
-	obj.PCD_TAXSAVE_FLAG = "Y";
-	obj.PCD_PAY_ISTAX = "Y";
-	obj.PCD_PAY_TAXTOTAL = 10;
-	obj.PCD_PAY_OID = "";
-
-	/* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
-	//obj.callbackFunction = getResult;  // getResult : 콜백 함수명 
-	/* End : 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
-			
-	/* 결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 */
-	obj.PCD_RST_URL = '결제 결과 받을 페이지';
-	/* End : 결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 */
-	
-        PaypleCpayAuthCheck(obj);
+    <script>	
+    $(document).ready( function () {        
+        $('#payAction').on('click', function (event) {
             
-        event.preventDefault();
-  
-    });   
-});
-< /script>
-<button id=”payAction”>간편 결제하기</button>
+            var obj = new Object();
+            obj.PCD_CPAY_VER = "1.0.1";
+            obj.PCD_PAY_TYPE = "transfer";           
+            obj.PCD_PAY_WORK = "PAY";
+
+            /* 01 : 빌링키결제 */
+            obj.PCD_CARD_VER = "01"
+
+            /* 비밀번호 간편결제 구분 */
+            obj.PCD_SIMPLE_FLAG = "Y";
+            /* 비밀번호 결제 인증방식 pwd */
+            obj.PCD_PAYER_AUTH_TYPE = "pwd";
+            
+            /* PCD_PAYER_ID 는 소스상에 표시하지 마시고 반드시 Server Side Script 를 이용하여 불러오시기 바랍니다. */
+            /* 첫 결제 완료 후, 재결제 시 주석을 풀고 리턴받은 데이터 중 PCD_PAYER_ID 를 넣어주세요.  */
+            //obj.PCD_PAYER_ID = "";
+
+            /* 가맹점 인증요청 */
+            obj.payple_auth_file = "가맹점 인증 파일 URL";
+            
+            obj.PCD_PAYER_NO = 1234;
+            obj.PCD_PAYER_NAME = "홍길동";
+            obj.PCD_PAYER_HP = "01012345678";
+            obj.PCD_PAYER_EMAIL = "dev@payple.kr";
+            obj.PCD_PAY_GOODS = "상품1";
+            obj.PCD_PAY_TOTAL = 100;
+            obj.PCD_PAY_ISTAX = "Y";
+            obj.PCD_PAY_TAXTOTAL = 10;
+
+            /* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
+            //obj.callbackFunction = getResult;  // getResult : 콜백 함수명 
+                
+            /* 
+            결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 
+            (모바일에서 팝업방식은 상대경로, 다이렉트 방식은 절대경로로 설정)
+            */
+            obj.PCD_RST_URL = "결제 결과 받을 파일 URL";
+        
+            PaypleCpayAuthCheck(obj);
+            
+            event.preventDefault();     
+        });   
+    });
+    < /script>
+    <button id="payAction">비밀번호 간편결제</button>
 `,
             code_1_2: `
-java
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">< /script>
+    <!-- payple js 호출. 테스트/운영 선택 -->
+    <script src="https://testcpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 테스트 -->
+    <script src="https://cpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 운영 -->
+
+    <script>	
+    $(document).ready( function () {        
+        $('#payAction').on('click', function (event) {
+            
+            var obj = new Object();
+            obj.PCD_CPAY_VER = "1.0.1";
+            obj.PCD_PAY_TYPE = "card";           
+            obj.PCD_PAY_WORK = "PAY";
+
+            /* 01 : 빌링키결제 */
+            obj.PCD_CARD_VER = "01"
+
+            /* 비밀번호 간편결제 구분 */
+            obj.PCD_SIMPLE_FLAG = "Y";
+            /* 비밀번호 결제 인증방식 pwd */
+            obj.PCD_PAYER_AUTH_TYPE = "pwd";
+            
+            /* PCD_PAYER_ID 는 소스상에 표시하지 마시고 반드시 Server Side Script 를 이용하여 불러오시기 바랍니다. */
+            /* 첫 결제 완료 후, 재결제 시 주석을 풀고 리턴받은 데이터 중 PCD_PAYER_ID 를 넣어주세요.  */
+            //obj.PCD_PAYER_ID = "";
+
+            /* 가맹점 인증요청 */
+            obj.payple_auth_file = "http://localhost:8080/auth";
+            
+            obj.PCD_PAYER_NO = 1234;
+            obj.PCD_PAYER_NAME = "홍길동";
+            obj.PCD_PAYER_HP = "01012345678";
+            obj.PCD_PAYER_EMAIL = "dev@payple.kr";
+            obj.PCD_PAY_GOODS = "상품1";
+            obj.PCD_PAY_TOTAL = 100;
+            obj.PCD_PAY_ISTAX = "Y";
+            obj.PCD_PAY_TAXTOTAL = 10;
+
+            /* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
+            //obj.callbackFunction = getResult;  // getResult : 콜백 함수명 
+                
+            /* 
+            결과를 콜백 함수가 아닌 URL로 받고자 하는 경우
+            (모바일에서 팝업방식은 상대경로, 다이렉트 방식은 절대경로로 설정)
+            @RequestMapping 의 URL
+            */
+            obj.PCD_RST_URL = "/order_result";
+            
+            PaypleCpayAuthCheck(obj);
+            
+            event.preventDefault();     
+        });   
+    });
+    < /script>
+    <button id="payAction">비밀번호 간편결제</button>
 `,
             code_1_3: `
-<script src="https://testcpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 테스트 -->
-<script src="https://cpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 운영 -->
- 
-<script>	
-$(document).ready( function () {        
-    $('#payAction').on('click', function (event) {
-        
-    var obj = new Object();
-    obj.PCD_CPAY_VER = "1.0.1";
-	obj.PCD_PAY_TYPE = "transfer";
-	obj.PCD_PAY_WORK = "PAY";
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">< /script>
+    <!-- payple js 호출. 테스트/운영 선택 -->
+    <script src="https://testcpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 테스트 -->
+    <script src="https://cpay.payple.kr/js/cpay.payple.1.0.1.js">< /script> <!-- 운영 -->
 
-	/* 간편결제 구분 */
-	obj.PCD_SIMPLE_FLAG = "Y";
-	/* 비밀전호결제 인증방식 pwd | sms */
-	obj.PCD_PAYER_AUTH_TYPE = "pwd";
-	/* 가맹점 인증요청 파일 */
-	obj.payple_auth_file = "app.post의 path";
-	/* PCD_PAYER_ID 는 소스상에 표시하지 마시고 반드시 Server Side Script 를 이용하여 불러오시기 바랍니다. */
-	obj.PCD_PAYER_ID = 'VEJMT0FiTms4VG8...';
-			
-
-	obj.PCD_PAYER_NO = 1234;
-	obj.PCD_PAYER_NAME = "홍길동";
-	obj.PCD_PAYER_HP = "01012345678";
-	obj.PCD_PAYER_EMAIL = "dev@payple.kr";
-	obj.PCD_PAY_GOODS = "상품1";
-	obj.PCD_PAY_TOTAL = 1000;
-	obj.PCD_TAXSAVE_FLAG = "Y";
-	obj.PCD_PAY_ISTAX = "Y";
-	obj.PCD_PAY_TAXTOTAL = 10;
-	obj.PCD_PAY_OID = "";
-
-	/* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
-	//obj.callbackFunction = getResult;  // getResult : 콜백 함수명 
-	/* End : 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
-			
-	/* 결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 */
-	obj.PCD_RST_URL = 'app.post의 path';
-	/* End : 결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 */
-	
-        PaypleCpayAuthCheck(obj);
+    <script>	
+    $(document).ready( function () {        
+        $('#payAction').on('click', function (event) {
             
-        event.preventDefault();
-  
-    });   
-});
-< /script>
-<button id=”payAction”>간편 결제하기</button>
-`,
-            code_1_4: `
-node
+            var obj = new Object();
+            obj.PCD_CPAY_VER = "1.0.1";
+            obj.PCD_PAY_TYPE = "transfer";           
+            obj.PCD_PAY_WORK = "PAY";
+
+            /* 01 : 빌링키결제 */
+            obj.PCD_CARD_VER = "01"
+
+            /* 비밀번호 간편결제 구분 */
+            obj.PCD_SIMPLE_FLAG = "Y";
+            /* 비밀번호 결제 인증방식 pwd */
+            obj.PCD_PAYER_AUTH_TYPE = "pwd";
+            
+            /* PCD_PAYER_ID 는 소스상에 표시하지 마시고 반드시 Server Side Script 를 이용하여 불러오시기 바랍니다. */
+            /* 첫 결제 완료 후, 재결제 시 주석을 풀고 리턴받은 데이터 중 PCD_PAYER_ID 를 넣어주세요.  */
+            //obj.PCD_PAYER_ID = "";
+
+            /* 가맹점 인증요청 */
+            obj.payple_auth_file = "app.post의 path";
+            
+            obj.PCD_PAYER_NO = 1234;
+            obj.PCD_PAYER_NAME = "홍길동";
+            obj.PCD_PAYER_HP = "01012345678";
+            obj.PCD_PAYER_EMAIL = "dev@payple.kr";
+            obj.PCD_PAY_GOODS = "상품1";
+            obj.PCD_PAY_TOTAL = 100;
+            obj.PCD_PAY_ISTAX = "Y";
+            obj.PCD_PAY_TAXTOTAL = 10;
+
+            /* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
+            //obj.callbackFunction = getResult;  // getResult : 콜백 함수명 
+                
+            /* 
+            결과를 콜백 함수가 아닌 URL로 받고자 하는 경우
+            (모바일에서 팝업방식은 상대경로, 다이렉트 방식은 절대경로로 설정)
+            */
+            obj.PCD_RST_URL = 'app.post의 path';
+        
+            PaypleCpayAuthCheck(obj);
+            
+            event.preventDefault();     
+        });   
+    });
+    < /script>
+    <button id="payAction">비밀번호 간편결제</button>
 `,
             code_2_1: `
-POST /php/PayCardConfirmAct.php?ACT_=PAYM HTTP/1.1
-Host: testcpay.payple.kr
-Content-Type: application/json
-Cache-Control: no-cache
-{
-  "PCD_CST_ID": "test",										
-  "PCD_CUST_KEY": "abcd1234567890",								
-  "PCD_AUTH_KEY": "결제요청 후 리턴받은 PCD_AUTH_KEY", 
-  "PCD_PAY_REQKEY": "결제요청 후 리턴받은 PCD_PAY_REQKEY",					
-  "PCD_PAYER_ID": "결제요청 후 리턴받은 PCD_PAYER_ID"
-}
+ /* 
+    * TEST : https://testcpay.payple.kr
+    * REAL : https://cpay.payple.kr
+    */
+    /* 결제요청 후 리턴받은 PCD_PAY_COFURL 로 결제요청 재컨펌 (CERT)  */
+    POST /php/PayCardConfirmAct.php?ACT_=PAYM HTTP/1.1
+    Host: testcpay.payple.kr
+    Content-Type: application/json
+    Cache-Control: no-cache
+    {
+        "PCD_CST_ID": "test",										
+        "PCD_CUST_KEY": "abcd1234567890",								
+        "PCD_AUTH_KEY": "결제요청 후 리턴받은 PCD_AUTH_KEY", 
+        "PCD_PAY_REQKEY": "결제요청 후 리턴받은 PCD_PAY_REQKEY",					
+        "PCD_PAYER_ID": "결제요청 후 리턴받은 PCD_PAYER_ID"
+    }
 `,
         };
     },

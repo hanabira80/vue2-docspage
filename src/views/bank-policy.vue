@@ -20,9 +20,7 @@
                             <td colspan="1" rowspan="1">
                                 은행명
                             </td>
-                            <td colspan="1" rowspan="1">
-                                코드
-                            </td>
+                            
                             <td colspan="1" rowspan="1">
                                 평일, 토요일
                             </td>
@@ -34,9 +32,7 @@
                             <td colspan="1" rowspan="1">
                                 국민은행
                             </td>
-                            <td colspan="1" rowspan="1">
-                                004
-                            </td>
+                            
                             <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
                             </td>
@@ -47,9 +43,6 @@
                         <tr>
                             <td colspan="1" rowspan="1">
                                 농협은행
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                011
                             </td>
                             <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
@@ -63,9 +56,6 @@
                                 신한은행
                             </td>
                             <td colspan="1" rowspan="1">
-                                088
-                            </td>
-                            <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
                             </td>
                             <td colspan="1" rowspan="1">
@@ -75,9 +65,6 @@
                         <tr>
                             <td colspan="1" rowspan="1">
                                 우리은행
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                020
                             </td>
                             <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
@@ -91,9 +78,6 @@
                                 기업은행
                             </td>
                             <td colspan="1" rowspan="1">
-                                003
-                            </td>
-                            <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
                             </td>
                             <td colspan="1" rowspan="1">
@@ -103,9 +87,6 @@
                         <tr>
                             <td colspan="1" rowspan="1">
                                 산업은행
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                002
                             </td>
                             <td colspan="1" rowspan="1">
                                 00:00 ~ 03:00
@@ -119,9 +100,6 @@
                                 KEB하나은행
                             </td>
                             <td colspan="1" rowspan="1">
-                                081
-                            </td>
-                            <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
                             </td>
                             <td colspan="1" rowspan="1">
@@ -131,9 +109,6 @@
                         <tr>
                             <td colspan="1" rowspan="1">
                                 우체국
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                071
                             </td>
                             <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
@@ -147,9 +122,6 @@
                                 새마을금고
                             </td>
                             <td colspan="1" rowspan="1">
-                                045
-                            </td>
-                            <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
                             </td>
                             <td colspan="1" rowspan="1">
@@ -159,9 +131,6 @@
                         <tr>
                             <td colspan="1" rowspan="1">
                                 신협중앙회
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                048
                             </td>
                             <td colspan="1" rowspan="1">
                                 22:00 ~ 08:00
@@ -175,9 +144,6 @@
                                 대구은행
                             </td>
                             <td colspan="1" rowspan="1">
-                                031
-                            </td>
-                            <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
                             </td>
                             <td colspan="1" rowspan="1">
@@ -187,9 +153,6 @@
                         <tr>
                             <td colspan="1" rowspan="1">
                                 광주은행
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                034
                             </td>
                             <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
@@ -203,9 +166,6 @@
                                 경남은행
                             </td>
                             <td colspan="1" rowspan="1">
-                                039
-                            </td>
-                            <td colspan="1" rowspan="1">
                                 23:30 ~ 06:00
                             </td>
                             <td colspan="1" rowspan="1">
@@ -217,9 +177,6 @@
                                 수협중앙회
                             </td>
                             <td colspan="1" rowspan="1">
-                                007
-                            </td>
-                            <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
                             </td>
                             <td colspan="1" rowspan="1">
@@ -229,9 +186,6 @@
                         <tr>
                             <td colspan="1" rowspan="1">
                                 부산은행
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                032
                             </td>
                             <td colspan="1" rowspan="1">
                                 23:30 ~ 00:30
