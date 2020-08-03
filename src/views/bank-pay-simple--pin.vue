@@ -1181,7 +1181,7 @@ export default {
             
             var obj = new Object();
             obj.PCD_CPAY_VER = "1.0.1";
-            obj.PCD_PAY_TYPE = "card";           
+            obj.PCD_PAY_TYPE = "transfer";           
             obj.PCD_PAY_WORK = "PAY";
 
             /* 01 : 빌링키결제 */
@@ -1283,21 +1283,21 @@ export default {
     <button id="payAction">비밀번호 간편결제</button>
 `,
             code_2_1: `
- /* 
+  /* 
     * TEST : https://testcpay.payple.kr
     * REAL : https://cpay.payple.kr
     */
-    /* 결제요청 후 리턴받은 PCD_PAY_COFURL 로 결제요청 재컨펌 (CERT)  */
-    POST /php/PayCardConfirmAct.php?ACT_=PAYM HTTP/1.1
+   /* 결제요청 후 리턴받은 PCD_PAY_COFURL 로 결제요청 재컨펌 (CERT)  */
+    POST /php/PayConfirmAct.php?ACT_=PAYM HTTP/1.1
     Host: testcpay.payple.kr
     Content-Type: application/json
     Cache-Control: no-cache
     {
-        "PCD_CST_ID": "test",										
-        "PCD_CUST_KEY": "abcd1234567890",								
-        "PCD_AUTH_KEY": "결제요청 후 리턴받은 PCD_AUTH_KEY", 
-        "PCD_PAY_REQKEY": "결제요청 후 리턴받은 PCD_PAY_REQKEY",					
-        "PCD_PAYER_ID": "결제요청 후 리턴받은 PCD_PAYER_ID"
+    "PCD_CST_ID": "test",										
+    "PCD_CUST_KEY": "abcd1234567890",								
+    "PCD_AUTH_KEY": "결제요청 후 리턴받은 PCD_AUTH_KEY", 
+    "PCD_PAY_REQKEY": "결제요청 후 리턴받은 PCD_PAY_REQKEY",					
+    "PCD_PAYER_ID": "결제요청 후 리턴받은 PCD_PAYER_ID"
     }
 `,
         };

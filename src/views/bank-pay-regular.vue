@@ -962,7 +962,7 @@
                                 test
                             </td>
                             <td colspan="1" rowspan="1">
-                                가맹점 인증 후 리턴 받은 cst_id Token
+                                가맹점 cst_id
                             </td>
                         </tr>
                         <tr>
@@ -982,7 +982,7 @@
                                 abcd1234567890
                             </td>
                             <td colspan="1" rowspan="1">
-                                가맹점 인증 후 리턴 받은 custKey Token
+                                가맹점 custKey
                             </td>
                         </tr>
                         <tr>
@@ -1002,7 +1002,7 @@
                                 a688c...
                             </td>
                             <td colspan="1" rowspan="1">
-                                가맹점 인증 후 리턴 받은 토큰키
+                                CERT 결제요청 후 리턴받은 토큰키
                             </td>
                         </tr>
                         <tr>
@@ -1022,7 +1022,7 @@
                                 Vnx...
                             </td>
                             <td colspan="1" rowspan="1">
-                                최종 승인요청용 키
+                                CERT 결제요청 후 최종 승인요청용 키
                             </td>
                         </tr>
                         <tr>
@@ -1042,7 +1042,7 @@
                                 d0to...
                             </td>
                             <td colspan="1" rowspan="1">
-                                계좌등록 후 리턴받은 빌링키
+                                CERT 결제요청 후 리턴받은 빌링키(PCD_CARD_VER:01 일 때 필수)
                             </td>
                         </tr>
                     </tbody>
@@ -1257,7 +1257,7 @@
                             <td colspan="1" rowspan="1">
                                 1
                             </td>
-                            <td colspan="2" rowspan="1">
+                            <td colspan="1" rowspan="2">
                                 O
                             </td>
                             <td colspan="1" rowspan="1">
@@ -1991,18 +1991,22 @@ export default {
     <button id="payAction">정기결제</button>
 `,
             code_2_1: `
-/* 결제요청 후 리턴받은 PCD_PAY_COFURL 로 결제요청 재컨펌 (CERT) */
-POST /php/PayCardConfirmAct.php?ACT_=PAYM HTTP/1.1
-Host: testcpay.payple.kr
-Content-Type: application/json
-Cache-Control: no-cache
-{
-  "PCD_CST_ID": "test",										
-  "PCD_CUST_KEY": "abcd1234567890",								
-  "PCD_AUTH_KEY": "결제요청 후 리턴받은 PCD_AUTH_KEY", 
-  "PCD_PAY_REQKEY": "결제요청 후 리턴받은 PCD_PAY_REQKEY",					
-  "PCD_PAYER_ID": "결제요청 후 리턴받은 PCD_PAYER_ID"
-}
+ /* 
+    * TEST : https://testcpay.payple.kr
+    * REAL : https://cpay.payple.kr
+    */
+   /* 결제요청 후 리턴받은 PCD_PAY_COFURL 로 결제요청 재컨펌 (CERT)  */
+    POST /php/PayConfirmAct.php?ACT_=PAYM HTTP/1.1
+    Host: testcpay.payple.kr
+    Content-Type: application/json
+    Cache-Control: no-cache
+    {
+    "PCD_CST_ID": "test",										
+    "PCD_CUST_KEY": "abcd1234567890",								
+    "PCD_AUTH_KEY": "결제요청 후 리턴받은 PCD_AUTH_KEY", 
+    "PCD_PAY_REQKEY": "결제요청 후 리턴받은 PCD_PAY_REQKEY",					
+    "PCD_PAYER_ID": "결제요청 후 리턴받은 PCD_PAYER_ID"
+    }
 `,
             code_3_1: `
 /* 
@@ -2028,28 +2032,29 @@ Cache-Control: no-cache
 `,
             code_3_2: `
 {
-	  "PCD_PAY_RST" => "success|error",
-	  "PCD_PAY_MSG" => "카드결제완료|카드결제실패",
-	  "PCD_PAY_OID" => "test201804000001",		
-	  "PCD_PAY_TYPE" => "transfer",			
-	  "PCD_PAYER_NO" => "",
-	  "PCD_PAYER_ID" => "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",		
-      "PCD_PAYER_NAME" => "홍길동",
-      "PCD_PAYER_HP":"",
-      "PCD_PAYER_EMAIL":"",
-	  "PCD_PAY_GOODS" => "상품1",
-      "PCD_PAY_TOTAL" => 100,	
-      "PCD_PAY_TAXTOTAL":"",
-      "PCD_PAY_ISTAX":"Y",
-	  "PCD_PAY_TIME" => "20200323130201",
-	  "PCD_PAY_CARDNANE" => "BC 카드",	
-	  "PCD_PAY_CARDNUM" => "12345678****1234",	
-	  "PCD_PAY_CARDTRADENUM" => "201904141320332692022400",
-      "PCD_PAY_CARDAUTHNO" => "98123445",
-      "PCD_PAY_CARDRECEIPT":"https://www.danalpay..",
-	  "PCD_SIMPLE_FLAG" => "Y",
-	  "PCD_USER_DEFINE1" => "가맹점 사용 필드 1"	
-	  "PCD_USER_DEFINE2" => "가맹점 사용 필드 2"	
+    "PCD_PAY_RST" => "success|error",
+    "PCD_PAY_MSG" => "출금이체완료|출금요청실패",
+    "PCD_PAY_OID" => "RPAY...",		
+    "PCD_PAY_TYPE" => "transfer",			
+    "PCD_PAYER_NO" => "1234",
+    "PCD_PAYER_ID" => "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",		
+    "PCD_PAYER_NAME" => "홍길동",
+    "PCD_PAYER_HT" => "",
+    "PCD_PAYER_EMAIL" => "",
+    "PCD_PAY_GOODS" => "상품1",
+    "PCD_PAY_TOTAL" => "1000",	
+    "PCD_PAY_ISTAX" => "Y",
+    "PCD_PAY_TAXTOTAL" => "",
+    "PCD_PAY_BANK" => "088",
+    "PCD_PAY_BANKNAME" => "신한은행",
+    "PCD_PAY_BANKNUM" => "110-******-222",
+    "PCD_PAY_TIME" => "20200323130201",
+    "PCD_PAY_TAXSAVE_FLAG" => "Y",
+    "PCD_TAXSAVE_RST" => "Y",
+    "PCD_TAXSAVE_MGTNUM" => "G…",
+    "PCD_SIMPLE_FLAG" => "Y",
+    "PCD_USER_DEFINE1" => "가맹점 사용 필드 1"	
+    "PCD_USER_DEFINE2" => "가맹점 사용 필드 2"	
 }
 `,
         };

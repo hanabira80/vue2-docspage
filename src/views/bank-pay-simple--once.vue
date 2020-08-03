@@ -963,7 +963,7 @@
                                 test
                             </td>
                             <td colspan="1" rowspan="1">
-                                가맹점 인증 후 리턴 받은 cst_id Token
+                                가맹점 cst_id
                             </td>
                         </tr>
                         <tr>
@@ -983,7 +983,7 @@
                                 abcd1234567890
                             </td>
                             <td colspan="1" rowspan="1">
-                                가맹점 인증 후 리턴 받은 custKey Token
+                                가맹점 custKey
                             </td>
                         </tr>
                         <tr>
@@ -1003,7 +1003,7 @@
                                 a688c...
                             </td>
                             <td colspan="1" rowspan="1">
-                                가맹점 인증 후 리턴 받은 토큰키
+                                CERT 결제요청 후 리턴받은 토큰키
                             </td>
                         </tr>
                         <tr>
@@ -1023,7 +1023,7 @@
                                 Vnx...
                             </td>
                             <td colspan="1" rowspan="1">
-                                최종 승인요청용 키
+                                CERT 결제요청 후 최종 승인요청용 키
                             </td>
                         </tr>
                         <tr>
@@ -1043,7 +1043,7 @@
                                 d0to...
                             </td>
                             <td colspan="1" rowspan="1">
-                                계좌등록 후 리턴받은 빌링키
+                                CERT 결제요청 후 리턴받은 빌링키(PCD_CARD_VER:01 일 때 필수)
                             </td>
                         </tr>
                     </tbody>
@@ -1270,8 +1270,8 @@ export default {
     * TEST : https://testcpay.payple.kr
     * REAL : https://cpay.payple.kr
     */
-    /* 결제요청 후 리턴받은 PCD_PAY_COFURL 로 결제요청 재컨펌 (CERT)  */
-    POST /php/PayCardConfirmAct.php?ACT_=PAYM HTTP/1.1
+   /* 결제요청 후 리턴받은 PCD_PAY_COFURL 로 결제요청 재컨펌 (CERT)  */
+    POST /php/PayConfirmAct.php?ACT_=PAYM HTTP/1.1
     Host: testcpay.payple.kr
     Content-Type: application/json
     Cache-Control: no-cache

@@ -322,13 +322,13 @@ Cache-Control: no-cache
 `,
             code_2_1: `
 {
-  "PCD_PAY_RST" => "success",
-  “PCD_PAY_CODE” => “PUER0000”,
-  "PCD_PAY_MSG" => "계좌해지 완료",
-  "PCD_PAY_TYPE" => "transfer",
-  "PCD_PAY_WORK" => "PUSERDEL",
-  "PCD_PAYER_ID" => "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",
-  "PCD_PAYER_NO" => "1234"
+    "PCD_PAY_RST" => "success",
+    “PCD_PAY_CODE” => “PUER0000”,
+    "PCD_PAY_MSG" => "계좌해지 완료",
+    "PCD_PAY_TYPE" => "transfer",
+    "PCD_PAY_WORK" => "PUSERDEL",
+    "PCD_PAYER_ID" => "NS9qNTgzU2xRNHR2RmFBWWFBTWk5UT09",
+    "PCD_PAYER_NO" => "1234"
 }
 `,
         };

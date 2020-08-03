@@ -6,7 +6,7 @@
             </template>
         </v-breadcrumbs>
 
-        <h1 class="mb-4">계좌결제 개요</h1>
+        <h1 class="mb-4">계좌이체 개요</h1>
         <blockquote class="mb-12 blockquote body-1">
             페이플 카드결제 서비스는 간편결제, 정기결제와 같은<br />
             새로운 비즈니스모델과 서비스를 지원하기 위해 다양한 결제방식을 제공합니다.

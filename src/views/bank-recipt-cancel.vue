@@ -9,17 +9,11 @@
         <h1 class="mt-2 mb-8">현금영수증 취소요청</h1>
 
         <article class="mb-12">
-            <h2>[현금영수증 취소요청(REQUEST)]</h2>
-            <v-divider class="my-6"></v-divider>
-            <Prism language="javascript">
-                {{ code_1 }}
-            </Prism>
-        </article>
+            <h3 class="pl-4">
+                요청 메시지
+            </h3>   
 
-        <article class="mb-12">
-            <h2>요청변수</h2>
-            <v-divider class="my-6"></v-divider>
-            <v-card>
+            <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table>
                     <template v-slot:default>
                         <thead>
@@ -204,21 +198,24 @@
                         </tbody>
                     </template>
                 </v-simple-table>
+            </v-card>     
+
+            <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
+                <div class="d-flex align-center pa-4">
+                    <div class="font-italic font-weight-bold">
+                        REST REQUEST
+                    </div>
+                </div>
+                <Prism language="php">
+                    {{ code_1 }}
+                </Prism>
             </v-card>
-        </article>
 
-        <article class="mb-12">
-            <h2>현금영수증 발행 응답(RESPONSE)</h2>
-            <v-divider class="my-6"></v-divider>
-            <Prism language="javascript">
-                {{ code_2 }}
-            </Prism>
-        </article>
+            <h3>
+                응답 메시지
+            </h3>
 
-        <article class="mb-12">
-            <h2>응답변수</h2>
-            <v-divider class="my-6"></v-divider>
-            <v-card>
+            <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table>
                     <template v-slot:default>
                         <thead>
@@ -317,6 +314,17 @@
                         </tbody>
                     </template>
                 </v-simple-table>
+            </v-card>
+
+            <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
+                <div class="d-flex align-center pa-4">
+                    <div class="font-italic font-weight-bold">
+                        REST RESPONSE
+                    </div>
+                </div>
+                <Prism language="php">
+                    {{ code_2 }}
+                </Prism>
             </v-card>
         </article>
     </div>

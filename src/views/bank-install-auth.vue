@@ -2520,7 +2520,7 @@ Cache-Control: no-cache
 {
   "cst_id": "test",
   "custKey": "abcd1234567890",
-  "PCD_PAY_WORK": "PUSERDEL"
+  "PCD_PAY_WORK": "TSREG"
 }
 
 
@@ -2541,7 +2541,7 @@ Cache-Control: no-cache
     $post_data = array (
         "cst_id" => "test",
         "custKey" => "abcd1234567890",
-        "PCD_PAY_WORK": "PUSERDEL"
+        "PCD_PAY_WORK": "TSREG"
     );
     
     $ch = curl_init('https://testcpay.payple.kr/php/auth.php');
@@ -2580,7 +2580,7 @@ Cache-Control: no-cache
             // 발급받은 비밀키. 유출에 주의하시기 바랍니다.
             String cst_id = "test";
             String cust_key = "abcd1234567890";
-            String PCD_PAY_WORK = "PUSERDEL";
+            String PCD_PAY_WORK = "TSREG";
 
             JSONObject obj = new JSONObject();
             obj.put("cst_id", cst_id);
@@ -2628,7 +2628,7 @@ Cache-Control: no-cache
     {
         "CST_ID" : "test", // 발급받은 비밀키. 유출에 주의하시기 바랍니다.
         "CUST_KEY" : "abcd1234567890",
-        "PCD_PAY_WORK": "PUSERDEL",
+        "PCD_PAY_WORK": "TSREG",
         "URL" : "https://testcpay.payple.kr/php/auth.php"
     }
     

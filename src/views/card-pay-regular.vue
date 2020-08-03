@@ -26,7 +26,7 @@
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
                 결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다. <br/>
-                정기결제에 필요한 가맹점 인증요청 방법은 <router-link to="/card/install/auth">이곳</router-link>을 확인해보세요.
+                정기결제에 필요한 가맹점 인증요청 방법은 <router-link to="/card/install/auth">이곳</router-link>을 확인해보세요.<br/>
                 월 중복결제 방지기능(PCD_REGULER_FLAG)을 사용하려면 <router-link to="/card/install/auth">이곳</router-link>을 확인하여 인증 단계를 확인해주세요.
             </v-alert>
 
@@ -1055,8 +1055,8 @@
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
                 결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다.<br/>
-                정기결제에 필요한 가맹점 인증요청 파일(payple_auth_file)에 담겨야 하는 정보는 <router-link to="/card/install/auth/#pay-regular">이곳</router-link>을 확인해보세요.<br/>
-                월 중복결제 방지기능(PCD_REGULER_FLAG)을 사용하려면 <router-link to="/card/install/auth/#pay-regular-refuse">이곳</router-link>을 확인하여 인증 단계를 확인해주세요
+                정기결제에 필요한 가맹점 인증요청 방법은 <router-link to="/card/install/auth">이곳</router-link>을 확인해보세요.<br/>
+                월 중복결제 방지기능(PCD_REGULER_FLAG)을 사용하려면 <router-link to="/card/install/auth">이곳</router-link>을 확인하여 인증 단계를 확인해주세요
             </v-alert>
 
             <h3 class="pl-4">
