@@ -87,7 +87,7 @@
                 샘플코드
             </h3>
 
-            <v-tabs grow>
+            <v-tabs background-color="indigo" grow dark>
                 <v-tab color="purple darken-1">
                     <div class=" font-weight-bold">
                         요청예시
@@ -294,7 +294,7 @@
                 샘플코드
             </h3>
 
-            <v-tabs grow>
+            <v-tabs background-color="indigo" grow dark>
                 <v-tab color="purple darken-1">
                     <div class=" font-weight-bold">
                         요청예시
@@ -516,7 +516,7 @@
                 샘플코드
             </h3>
 
-            <v-tabs grow>
+            <v-tabs background-color="indigo" grow dark>
                 <v-tab color="purple darken-1">
                     <div class=" font-weight-bold">
                         요청예시
@@ -656,7 +656,7 @@
             <h3 class="pl-4">
                 샘플코드
             </h3>
-            <v-tabs grow>
+            <v-tabs background-color="indigo" grow dark>
                 <v-tab color="purple darken-1">
                     <div class=" font-weight-bold">
                         요청예시
@@ -844,7 +844,7 @@
             <h3 class="pl-4">
                 샘플코드
             </h3>
-            <v-tabs grow>
+            <v-tabs background-color="indigo" grow dark>
                 <v-tab color="purple darken-1">
                     <div class=" font-weight-bold">
                         요청예시
@@ -1032,7 +1032,7 @@
             <h3 class="pl-4">
                 샘플코드
             </h3>
-            <v-tabs grow>
+            <v-tabs background-color="indigo" grow dark>
                 <v-tab color="purple darken-1">
                     <div class=" font-weight-bold">
                         요청예시
@@ -1219,7 +1219,7 @@
             <h3 class="pl-4">
                 샘플코드
             </h3>
-            <v-tabs grow>
+            <v-tabs background-color="indigo" grow dark>
                 <v-tab color="purple darken-1">
                     <div class=" font-weight-bold">
                         요청예시
@@ -1405,7 +1405,7 @@
             <h3 class="pl-4">
                 샘플코드
             </h3>
-            <v-tabs grow>
+            <v-tabs background-color="indigo" grow dark>
                 <v-tab color="purple darken-1">
                     <div class=" font-weight-bold">
                         요청예시

@@ -360,6 +360,9 @@ table th {
     white-space: normal;
     max-width: 100%;
 }
+.temp_table.no_th th{
+    display:none !important;
+}
 .half-bg--payple {
     position: relative;
     display: inline;

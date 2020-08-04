@@ -36,7 +36,7 @@
                 <p class="pl-8 pb-4">
                     기관에서 제공하는 응답코드입니다.<br />
                     응답코드는 페이플 응답코드만 단독으로 나오거나,<br />
-                    페이플 응답코드와 카드사 응답코드가 동시에 나오는 경우가 있습니다.
+                    페이플 응답코드와 기관 응답코드가 동시에 나오는 경우가 있습니다.
                 </p>
                 <h3 class="pl-4 pb-4">
                     3) 응답 메세지
@@ -59,7 +59,7 @@
                 <v-tab>카드기관 응답코드</v-tab>
                 <v-tab>(구)페이플 응답코드</v-tab>
             </v-tabs> -->
-            <v-tabs>
+            <v-tabs background-color="indigo" dark>
                 <v-tab color="purple darken-1">
                     <div class=" font-weight-bold">
                         페이플 응답코드
@@ -67,12 +67,12 @@
                 </v-tab>
                 <v-tab>
                     <div class=" font-weight-bold">
-                        카드기관 응답코드
+                        기관 응답코드
                     </div>
                 </v-tab>
 
                 <v-tab-item>
-                    <v-card class="temp_table ma-4 mb-12">
+                    <v-card class="temp_table no_th ma-4 mb-12">
                         <v-simple-table class="table-hover-disable">
                             <tbody>
                                 <tr>
@@ -495,7 +495,7 @@
                                     <th>
                                         <div>52</div>
                                     </th>
-                                    <td rowspan="33">SPCD<br />(카드간편결제/단건)</td>
+                                    <td rowspan="32">SPCD<br />(카드간편결제/단건)</td>
                                     <td dir="ltr">0001</td>
                                     <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
                                     <td dir="ltr">- PCD_PAYER_ID 값이 존재하지 않거나 다를 때 발생하는 응답입니다.</td>
@@ -766,12 +766,10 @@
                                     <th>
                                         <div>85</div>
                                     </th>
-                                    <td rowspan="34">RPCD<br />(카드정기)</td>
+                                    <td rowspan="33">RPCD<br />(카드정기)</td>
                                     <td dir="ltr">0001</td>
                                     <td dir="ltr">결제 진행 중 오류가 발생하였습니다. 다시 시도해주세요.</td>
-                                    <td dir="ltr">
-                                        - 요청한 PCD_PAYER_ID가 페이플에 등록되어 있지 않을 때 발생하는 응답입니다.<br />PCD_PAYER_ID를 다시 확인해주세요.
-                                    </td>
+                                    <td dir="ltr"> - 요청한 PCD_PAYER_ID가 페이플에 등록되어 있지 않을 때 발생하는 응답입니다.<br />PCD_PAYER_ID를 다시 확인해주세요. </td>
                                 </tr>
                                 <tr>
                                     <th>

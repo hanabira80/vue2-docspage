@@ -59,7 +59,7 @@
                 <v-tab>카드기관 응답코드</v-tab>
                 <v-tab>(구)페이플 응답코드</v-tab>
             </v-tabs> -->
-            <v-tabs>
+            <v-tabs background-color="indigo" dark>
                 <v-tab color="purple darken-1">
                     <div class=" font-weight-bold">
                         페이플 응답코드
@@ -67,12 +67,12 @@
                 </v-tab>
                 <v-tab>
                     <div class=" font-weight-bold">
-                        카드기관 응답코드
+                        기관 응답코드
                     </div>
                 </v-tab>
 
                 <v-tab-item>
-                    <v-card class="temp_table ma-4 mb-12">
+                    <v-card class="temp_table no_th ma-4 mb-12">
                         <v-simple-table class="table-hover-disable">
                             <tbody>
                                 <tr>
