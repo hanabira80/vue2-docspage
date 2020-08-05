@@ -48,7 +48,7 @@
             </template>
         </v-navigation-drawer>
 
-        <v-content>
+        <v-main>
             <v-container style="max-width:1000px;">
                 <router-view></router-view>
                 <v-divider class="mb-12"></v-divider>
@@ -128,7 +128,7 @@
                     </v-col>
                 </v-row>
             </v-container>
-        </v-content>
+        </v-main>
 
         <v-footer app inset absolute align-center class=" pa-4"> &copy;{{ new Date().getFullYear() }} — <strong>PAYPLE</strong> </v-footer>
     </v-app>
