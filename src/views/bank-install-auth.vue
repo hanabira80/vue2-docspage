@@ -1918,7 +1918,12 @@ export default {
     header("Cache-Control: post-check=0; pre-check=0", false);
     header("Pragma: no-cache");
     header("Content-type: application/json; charset=utf-8");
-    
+
+    //AWS 이용 가맹점인 경우 REFERER 에 도메인을 넣어주세요.
+    $CURLOPT_HTTPHEADER = array(
+        "referer: http://localhost:80"
+    );
+
     // 발급받은 비밀키. 유출에 주의하시기 바랍니다.
     $post_data = array (
         "cst_id" => "test",
@@ -1929,7 +1934,7 @@ export default {
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSLVERSION, 4);
-    curl_setopt($ch, CURLOPT_REFERER, $SERVER_NAME); //AWS 이용 가맹점인 경우 REFERER
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $CURLOPT_HTTPHEADER);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
 
     ob_start();
@@ -1943,7 +1948,6 @@ export default {
     if($status_code == 200) {
         echo $buffer;
     }
-
 `,
             code_1_3: `
 /* 

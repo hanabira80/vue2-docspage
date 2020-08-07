@@ -394,7 +394,7 @@ table th {
     border-radius: 4px;
 }
 .white-space-normal {
-    white-space: normal;
+    white-space: normal !important;
 }
 .word-break-keep-all {
     word-break: keep-all;

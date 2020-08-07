@@ -86,7 +86,7 @@
                         </v-list-item-avatar>
 
                         <v-list-item-content>
-                            <v-list-item-title>간편/정기 결제 개념 변경</v-list-item-title>
+                            <v-list-item-title class="white-space-normal">간편/정기 결제 개념 변경</v-list-item-title>
                             <v-list-item-subtitle>2020.07</v-list-item-subtitle>
                         </v-list-item-content>
                         <v-list-item-action>
@@ -181,7 +181,7 @@
                         </v-list-item-avatar>
 
                         <v-list-item-content>
-                            <v-list-item-title>페이플 연동 가이드 개편</v-list-item-title>
+                            <v-list-item-title class="white-space-normal">페이플 연동 가이드 개편</v-list-item-title>
                             <v-list-item-subtitle>2020.07</v-list-item-subtitle>
                         </v-list-item-content>
                         <v-list-item-action>
@@ -206,7 +206,7 @@
                         </v-list-item-avatar>
 
                         <v-list-item-content>
-                            <v-list-item-title>기존 페이플 연동가이드</v-list-item-title>
+                            <v-list-item-title class="white-space-normal">기존 페이플 연동가이드</v-list-item-title>
                             <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
                         </v-list-item-content>
                         <!-- <v-list-item-action>

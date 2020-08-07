@@ -254,6 +254,25 @@
                                 현금영수증 발행여부 (Default:N 이며, 발행: Y, 미발행: N)
                             </td>
                         </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1"> PCD_LINK_EXPIREDATE </td>
+                            <td colspan="1" rowspan="1"> String </td>
+                            <td colspan="1" rowspan="1"> 8 </td>
+                            <td colspan="1" rowspan="1"> - </td>
+                            <td colspan="1" rowspan="1"> 20200806 </td>
+                            <td colspan="1" rowspan="1"> 링크결제의 만료일을 지정합니다. </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1"> PCD_LINK_MEMO </td>
+                            <td colspan="1" rowspan="1"> String </td>
+                            <td colspan="1" rowspan="1">2048</td>
+                            <td colspan="1" rowspan="1"> - </td>
+                            <td colspan="1" rowspan="1"> 링크결제입니다. </td>
+                            <td colspan="1" rowspan="1"> 
+                                링크결제로 결제한 고객을 식별하기 위한 정보를 기재하거나<br/>
+                                CS 및 히스토리 관리를 위한 메모기능입니다.
+                            </td>
+                        </tr>
                     </tbody>
                 </v-simple-table>
             </v-card>
@@ -261,7 +280,7 @@
             <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
                 <div class="d-flex align-center pa-4">
                     <div class="font-italic font-weight-bold">
-                        요청예시
+                        REST REQUEST
                     </div>
                 </div>
 
@@ -358,10 +377,10 @@
                                 PCD_LINK_EXPIREDATE
                             </td>
                             <td colspan="1" rowspan="1">
-                                -
+                                20200806
                             </td>
                             <td colspan="1" rowspan="1">
-                                링크결제 만료시간
+                                링크결제의 만료일을 지정합니다.
                             </td>
                         </tr>
                         <tr>
@@ -369,10 +388,11 @@
                                 PCD_LINK_MEMO
                             </td>
                             <td colspan="1" rowspan="1">
-                                테스트
+                                -
                             </td>
                             <td colspan="1" rowspan="1">
-                                링크결제 메모
+                                링크결제로 결제한 고객을 식별하기 위한 정보를 기재하거나<br/>
+                                CS 및 히스토리 관리를 위한 메모기능입니다.
                             </td>
                         </tr>
                         <tr>
@@ -404,7 +424,7 @@
             <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
                 <div class="d-flex align-center pa-4">
                     <div class="font-italic font-weight-bold">
-                        요청예시
+                        REST RESPONSE
                     </div>
                 </div>
 
@@ -413,7 +433,7 @@
                 </Prism>
             </v-card>
         </article>
-        <v-divider class="mb-12"></v-divider>
+
 
         
     </div>
@@ -455,24 +475,26 @@ export default {
             ],
             code_1_1: `
 /* 
-* 링크생성 요청
-* TEST : https://testcpay.payple.kr
-* REAL : https://cpay.payple.kr
-*/
-POST 가맹점 인증 후 리턴받은 PCD_PAY_URL HTTP/1.1
-Host: 가맹점 인증 후 리턴받은 PCD_PAY_HOST
-Content-Type: application/json
-Cache-Control: no-cache
-{
- 
-  "PCD_CST_ID": "가맹점 인증 후 리턴받은 cst_id",
-  "PCD_CUST_KEY": "가맹점 인증 후 리턴받은 custKey",
-  "PCD_AUTH_KEY": "가맹점 인증 후 리턴받은 AuthKey",  
-  "PCD_PAY_WORK": "LINKREG",
-  "PCD_PAY_TYPE": "transfer",
-  "PCD_PAY_GOODS": "상품1",
-  "PCD_PAY_TOTAL": 100
-}
+    * 링크생성 요청
+    * TEST : https://testcpay.payple.kr
+    * REAL : https://cpay.payple.kr
+    */
+    POST 가맹점 인증 후 리턴받은 PCD_PAY_URL HTTP/1.1
+    Host: 가맹점 인증 후 리턴받은 PCD_PAY_HOST
+    Content-Type: application/json
+    Cache-Control: no-cache
+    {
+    
+    "PCD_CST_ID": "가맹점 인증 후 리턴받은 cst_id",
+    "PCD_CUST_KEY": "가맹점 인증 후 리턴받은 custKey",
+    "PCD_AUTH_KEY": "가맹점 인증 후 리턴받은 AuthKey",  
+    "PCD_PAY_WORK": "LINKREG",
+    "PCD_PAY_TYPE": "transfer",
+    "PCD_PAY_GOODS": "상품1",
+    "PCD_TAXSAVE_FLAG": "Y",
+    "PCD_PAY_TOTAL": 1000,
+    "PCD_LINK_EXPIREDATE": 20200806
+    }
 `,
             code_2_1: `
 {
@@ -482,7 +504,7 @@ Cache-Control: no-cache
   "PCD_PAY_GOODS":"상품1",
   "PCD_PAY_TOTAL":1000,
   "PCD_TAXSAVE_FLAG":"Y",
-  "PCD_LINK_EXPIREDATE":"",
+  "PCD_LINK_EXPIREDATE":"20200806",
   "PCD_LINK_MEMO":"",
   "PCD_LINK_KEY":"Mjox...",
   "PCD_LINK_URL":"https:..."

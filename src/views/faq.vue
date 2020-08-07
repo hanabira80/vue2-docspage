@@ -20,7 +20,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>
+                                <v-list-item-title class="white-space-normal">
                                     서비스 서버와 API 서버가 분리되어 있어서 Referer을 보낼 수 없어요!
                                 </v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
@@ -45,7 +45,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>가맹점 인증을 하는데 AUTH0004 에러가 발생하는 이유가 뭔가요?</v-list-item-title>
+                                <v-list-item-title class="white-space-normal">가맹점 인증을 하는데 AUTH0004 에러가 발생하는 이유가 뭔가요?</v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
                             </v-list-item-content>
                         </v-list-item>
@@ -69,7 +69,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>
+                                <v-list-item-title class="white-space-normal">
                                     테스트에서는 가맹점 인증이 됐는데 운영서버에 적용 후 인증실패가 떠요!
                                 </v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
@@ -90,7 +90,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>
+                                <v-list-item-title class="white-space-normal">
                                     페이플 결제창을 로드하는 JavaScript 코드 중 payple_auth_file 가 뭔지 모르겠어요.
                                 </v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
@@ -118,7 +118,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>
+                                <v-list-item-title class="white-space-normal">
                                     테스트에서 결제창은 떴는데 닫기를 눌러도 창이 닫히지 않아요.
                                 </v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
@@ -149,7 +149,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>
+                                <v-list-item-title class="white-space-normal">
                                     얼마전까지 결제창 창닫기가 됐는데 지금은 안돼요!
                                 </v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
@@ -177,7 +177,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>
+                                <v-list-item-title class="white-space-normal">
                                     인앱브라우저에서 결제창을 연동했는데 팝업이 차단되었다는 경고창이 뜹니다.
                                 </v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
@@ -203,7 +203,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>
+                                <v-list-item-title class="white-space-normal">
                                     결제요청 화면은 떴는데 에러창이 뜨고 진행이 되지 않아요!
                                 </v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
@@ -228,7 +228,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>
+                                <v-list-item-title class="white-space-normal">
                                     PCD_PAY_TOTAL  / PCD_PAY_ISTAX / PCD_PAY_TAXTOTAL 설정방법
                                 </v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
@@ -275,7 +275,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>
+                                <v-list-item-title class="white-space-normal">
                                     월 중복결제 방지가 무엇인가요?
                                 </v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
@@ -315,7 +315,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>CORS(Cross Origin Resource Sharing) 안내</v-list-item-title>
+                                <v-list-item-title class="white-space-normal">CORS(Cross Origin Resource Sharing) 안내</v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
                             </v-list-item-content>
                         </v-list-item>
@@ -348,7 +348,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>페이스북, 카카오톡 등 외부 앱에 연동되는 인앱브라우저 PCD_RST_URL 처리 방법</v-list-item-title>
+                                <v-list-item-title class="white-space-normal">페이스북, 카카오톡 등 외부 앱에 연동되는 인앱브라우저 PCD_RST_URL 처리 방법</v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
                             </v-list-item-content>
                         </v-list-item>
