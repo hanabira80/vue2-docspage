@@ -87,7 +87,7 @@
 
                         <v-list-item-content>
                             <v-list-item-title class="white-space-normal">간편/정기 결제 개념 변경</v-list-item-title>
-                            <v-list-item-subtitle>2020.07</v-list-item-subtitle>
+                            <v-list-item-subtitle>2020.08</v-list-item-subtitle>
                         </v-list-item-content>
                         <v-list-item-action>
                             <v-list-item-title>VER 1.0.1</v-list-item-title>
@@ -182,7 +182,7 @@
 
                         <v-list-item-content>
                             <v-list-item-title class="white-space-normal">페이플 연동 가이드 개편</v-list-item-title>
-                            <v-list-item-subtitle>2020.07</v-list-item-subtitle>
+                            <v-list-item-subtitle>2020.08</v-list-item-subtitle>
                         </v-list-item-content>
                         <v-list-item-action>
                             <v-list-item-title>VER 1.0.0</v-list-item-title>
@@ -215,7 +215,9 @@
                     </v-list-item>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content class="pt-4 px-6">
-                    <p class="c66"><span class="c35 c1 c21">1.0 버전의 문서를 확인 하실 수 있습니다.</span></p>
+                    <p class="c66">
+                        <span class="c35 c1 c21">기존 버전의 문서를 확인하실 수 있습니다.</span>
+                    </p>
                     <p class="c66">
                         <span>(카드) &gt; </span
                         ><span class="c187"
