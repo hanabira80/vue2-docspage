@@ -20,12 +20,13 @@
                             <td colspan="1" rowspan="1">
                                 은행명
                             </td>
-                            
                             <td colspan="1" rowspan="1">
-                                평일, 토요일
+                                평일, 토요일<br/>
+                                (서비스 점검시간)
                             </td>
                             <td colspan="1" rowspan="1">
-                                공휴일
+                                공휴일<br/>
+                                (서비스 점검시간)
                             </td>
                         </tr>
                         <tr>

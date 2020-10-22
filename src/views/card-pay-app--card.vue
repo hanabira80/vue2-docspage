@@ -8,9 +8,11 @@
 
         <h1 class="mb-12">앱카드결제</h1>
         <blockquote class="mb-12 blockquote body-1">
-            카드사가 제공하는 앱카드 인증방식으로 결제를 내는 방식입니다.<Br/>
-            빌링키(PCD_PAYER_ID)를 사용하지 않기 때문에 카드 등록 단계가 없습니다.<br/>
-            또한, 앱카드결제 방법은 결제창 호출만으로 결제를 내기 때문에 REST_API를 사용하지 않습니다.
+            카드사가 제공하는 앱카드 인증방식으로 결제를 내는 방식입니다.<br />
+            빌링키(PCD_PAYER_ID)를 사용하지 않기 때문에 빌링키방식에서처럼 카드 등록(AUTH) 및 재결제 단계가 없습니다.<br /><br />
+
+            앱카드결제에서도 PCD_PAY_WORK 방식을 선택해야 합니다. 가맹점 상황에 따라 즉시결제(PAY)와 결제요청 재컨펌(CERT)를 선택합니다.<br />
+            <router-link to="/card/pay/outline">여기</router-link>에서 PAY와 CERT에 대한 설명을 확인 할 수 있습니다.
         </blockquote>
 
         <article class="mb-12">
@@ -23,8 +25,9 @@
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다. <br/>
-                앱카드결제에 필요한 가맹점 인증요청 파일(payple_auth_file)에 담겨야 하는 정보는 <router-link to="/card/install/auth">이곳</router-link>을 확인해보세요.
+                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다. <br />
+                앱카드결제에 필요한 가맹점 인증요청 파일(payple_auth_file)에 담겨야 하는 정보는 <router-link to="/card/install/auth">이곳</router-link>을
+                확인해보세요.
             </v-alert>
 
             <h3 class="pl-4">
@@ -107,7 +110,7 @@
                                 O
                             </td>
                             <td colspan="1" rowspan="1">
-                                PAY
+                                CERT
                             </td>
                             <td colspan="1" rowspan="1">결제요청 방식<br />- CERT: 결제요청 재컨펌 (CERT)<br />- PAY: 즉시결제</td>
                         </tr>
@@ -374,6 +377,81 @@
                 </v-simple-table>
             </v-card>
 
+
+            <h3 class="pl-4">
+                샘플코드
+            </h3>
+
+            <v-tabs background-color="indigo" grow dark>
+                <v-tab color="purple darken-1">
+                    <div class=" font-weight-bold">
+                        PHP 샘플코드
+                    </div>
+                </v-tab>
+                <v-tab>
+                    <div class="font-weight-bold">
+                        JAVA 샘플코드
+                    </div>
+                </v-tab>
+                <v-tab>
+                    <div class="font-weight-bold">
+                        Node 샘플코드
+                    </div>
+                </v-tab>
+
+                <v-tab-item>
+                    <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
+                        <div class="d-flex align-center pa-4">
+                            <div class="ml-auto">
+                                <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-php" target="_blank">
+                                    <v-icon left>
+                                        mdi-gitlab
+                                    </v-icon>
+                                    Github
+                                </v-btn>
+                            </div>
+                        </div>
+                        <Prism language="php">
+                            {{ code_1_1 }}
+                        </Prism>
+                    </v-card>
+                </v-tab-item>
+                <v-tab-item>
+                    <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
+                        <div class="d-flex align-center pa-4">
+                            <div class="ml-auto">
+                                <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-java" target="_blank">
+                                    <v-icon left>
+                                        mdi-gitlab
+                                    </v-icon>
+                                    Github
+                                </v-btn>
+                            </div>
+                        </div>
+                        <Prism language="javascript">
+                            {{ code_1_2 }}
+                        </Prism>
+                    </v-card>
+                </v-tab-item>
+                <v-tab-item>
+                    <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
+                        <div class="d-flex align-center pa-4">
+                            <div class="ml-auto">
+                                <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-nodeJS" target="_blank">
+                                    <v-icon left>
+                                        mdi-gitlab
+                                    </v-icon>
+                                    Github
+                                </v-btn>
+                            </div>
+                        </div>
+                        <Prism language="javascript">
+                            {{ code_1_3 }}
+                        </Prism>
+                    </v-card>
+                </v-tab-item>
+            </v-tabs>
+
             <h3 class="pl-4">
                 응답 메시지
             </h3>
@@ -440,7 +518,7 @@
                                 PCD_PAY_WORK
                             </td>
                             <td colspan="1" rowspan="1">
-                                PAY
+                                CERT
                             </td>
                             <td colspan="1" rowspan="1">
                                 결제 요청방식
@@ -714,70 +792,6 @@
                     </tbody>
                 </v-simple-table>
             </v-card>
-
-            <h3 class="pl-4">
-                샘플코드
-            </h3>
-
-            <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
-                <div class="d-flex align-center pa-4">
-                    <div class="font-italic font-weight-bold">
-                        PHP 샘플코드
-                    </div>
-
-                    <div class="ml-auto">
-                        <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-php" target="_blank">
-                            <v-icon left>
-                                mdi-gitlab
-                            </v-icon>
-                            Github
-                        </v-btn>
-                    </div>
-                </div>
-                <Prism language="php">
-                    {{ code_1_1 }}
-                </Prism>
-            </v-card>
-
-            <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
-                <div class="d-flex align-center pa-4">
-                    <div class="font-italic font-weight-bold">
-                        JAVA 샘플코드
-                    </div>
-
-                    <div class="ml-auto">
-                        <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-java" target="_blank">
-                            <v-icon left>
-                                mdi-gitlab
-                            </v-icon>
-                            Github
-                        </v-btn>
-                    </div>
-                </div>
-                <Prism language="javascript">
-                    {{ code_1_2 }}
-                </Prism>
-            </v-card>
-
-            <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
-                <div class="d-flex align-center pa-4">
-                    <div class="font-italic font-weight-bold">
-                        Node 샘플코드
-                    </div>
-
-                    <div class="ml-auto">
-                        <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-nodeJS" target="_blank">
-                            <v-icon left>
-                                mdi-gitlab
-                            </v-icon>
-                            Github
-                        </v-btn>
-                    </div>
-                </div>
-                <Prism language="javascript">
-                    {{ code_1_3 }}
-                </Prism>
-            </v-card>
         </article>
         <v-divider class="mb-12"></v-divider>
 
@@ -786,8 +800,8 @@
                 결제요청 재컨펌 (PCD_PAY_WORK : CERT)
             </h2>
             <blockquote class="mb-8 blockquote body-1">
-                최종 결제요청을 위해 REST API를 통해 결제를 요청할 수 있습니다.<br/>
-                PCD_PAY_WORK : PAY (즉시결제)의 경우와는 달리 CERT(결제요청 재컨펌 (CERT)) 방식에서는 최종 승인 요청을 별도로 주어야 합니다.<br/>
+                최종 결제요청을 위해 REST API를 통해 결제를 요청할 수 있습니다.<br />
+                PCD_PAY_WORK : PAY (즉시결제)의 경우와는 달리 CERT(결제요청 재컨펌 (CERT)) 방식에서는 최종 승인 요청을 별도로 주어야 합니다.<br />
                 결제요청 재컨펌 (CERT) 방식에 대한 설명은 <router-link to="/card/pay/outline">이곳</router-link>에서 확인하실 수 있습니다
             </blockquote>
             <v-card class="temp_table ma-4 mb-12">
@@ -938,11 +952,11 @@ export default {
                     disabled: true,
                 },
                 {
-                    text:"기타방식",
+                    text: "기타방식",
                     disabled: true,
                 },
                 {
-                    text:"앱카드결제",
+                    text: "앱카드결제",
                     disabled: true,
                 },
             ],
@@ -959,7 +973,7 @@ export default {
             var obj = new Object();
             obj.PCD_CPAY_VER = "1.0.1";
             obj.PCD_PAY_TYPE = "card";           
-            obj.PCD_PAY_WORK = "PAY";
+            obj.PCD_PAY_WORK = "CERT";
 
             /* 02 : 앱카드결제 */
             obj.PCD_CARD_VER = "02"
@@ -1009,7 +1023,7 @@ export default {
                 var obj = new Object();
                 obj.PCD_CPAY_VER = "1.0.1";
                 obj.PCD_PAY_TYPE = "card";           
-                obj.PCD_PAY_WORK = "PAY";
+                obj.PCD_PAY_WORK = "CERT";
 
                 /* 02 : 앱카드결제 */
                 obj.PCD_CARD_VER = "02"
@@ -1057,7 +1071,7 @@ $(document).ready( function () {
 var obj = new Object();
 		obj.PCD_CPAY_VER = "1.0.1";
 		obj.PCD_PAY_TYPE = "card";           
-		obj.PCD_PAY_WORK = "PAY";
+		obj.PCD_PAY_WORK = "CERT";
 
 		/* 02 : 앱카드결제 */
 		obj.PCD_CARD_VER = "02"

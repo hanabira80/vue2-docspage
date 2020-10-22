@@ -25,8 +25,8 @@
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다. <br/>
-                정기결제에 필요한 가맹점 인증요청 방법은 <router-link to="/card/install/auth">이곳</router-link>을 확인해보세요.<br/>
+                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다. <br />
+                정기결제에 필요한 가맹점 인증요청 방법은 <router-link to="/card/install/auth">이곳</router-link>을 확인해보세요.<br />
                 월 중복결제 방지기능(PCD_REGULER_FLAG)을 사용하려면 <router-link to="/card/install/auth">이곳</router-link>을 확인하여 인증 단계를 확인해주세요.
             </v-alert>
 
@@ -110,7 +110,7 @@
                                 O
                             </td>
                             <td colspan="1" rowspan="1">
-                                PAY
+                                CERT
                             </td>
                             <td colspan="1" rowspan="1">결제요청 방식 - AUTH: 빌링키등록<br />- CERT: 결제요청 재컨펌 (CERT)<br />- PAY: 즉시결제</td>
                         </tr>
@@ -497,6 +497,82 @@
                 </v-simple-table>
             </v-card>
 
+
+
+            <h3 class="pl-4">
+                샘플코드
+            </h3>
+
+            <v-tabs background-color="indigo" grow dark>
+                <v-tab color="purple darken-1">
+                    <div class=" font-weight-bold">
+                        PHP 샘플코드
+                    </div>
+                </v-tab>
+                <v-tab>
+                    <div class="font-weight-bold">
+                        JAVA 샘플코드
+                    </div>
+                </v-tab>
+                <v-tab>
+                    <div class="font-weight-bold">
+                        Node 샘플코드
+                    </div>
+                </v-tab>
+
+                <v-tab-item>
+                    <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
+                        <div class="d-flex align-center pa-4">
+                            <div class="ml-auto">
+                                <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-php" target="_blank">
+                                    <v-icon left>
+                                        mdi-gitlab
+                                    </v-icon>
+                                    Github
+                                </v-btn>
+                            </div>
+                        </div>
+                        <Prism language="php">
+                            {{ code_1_1 }}
+                        </Prism>
+                    </v-card>
+                </v-tab-item>
+                <v-tab-item>
+                    <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
+                        <div class="d-flex align-center pa-4">
+                            <div class="ml-auto">
+                                <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-java" target="_blank">
+                                    <v-icon left>
+                                        mdi-gitlab
+                                    </v-icon>
+                                    Github
+                                </v-btn>
+                            </div>
+                        </div>
+                        <Prism language="javascript">
+                            {{ code_1_2 }}
+                        </Prism>
+                    </v-card>
+                </v-tab-item>
+                <v-tab-item>
+                    <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
+                        <div class="d-flex align-center pa-4">
+                            <div class="ml-auto">
+                                <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-nodeJS" target="_blank">
+                                    <v-icon left>
+                                        mdi-gitlab
+                                    </v-icon>
+                                    Github
+                                </v-btn>
+                            </div>
+                        </div>
+                        <Prism language="javascript">
+                            {{ code_1_3 }}
+                        </Prism>
+                    </v-card>
+                </v-tab-item>
+            </v-tabs>
+
             <h3 class="pl-4">
                 응답 메시지
             </h3>
@@ -541,7 +617,7 @@
                                 PCD_PAY_WORK
                             </td>
                             <td colspan="1" rowspan="1">
-                                PAY
+                                CERT
                             </td>
                             <td colspan="1" rowspan="1">
                                 결제요청방식
@@ -826,70 +902,6 @@
                     </tbody>
                 </v-simple-table>
             </v-card>
-
-            <h3 class="pl-4">
-                샘플코드
-            </h3>
-
-            <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
-                <div class="d-flex align-center pa-4">
-                    <div class="font-italic font-weight-bold">
-                        PHP 샘플코드
-                    </div>
-
-                    <div class="ml-auto">
-                        <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-php" target="_blank">
-                            <v-icon left>
-                                mdi-gitlab
-                            </v-icon>
-                            Github
-                        </v-btn>
-                    </div>
-                </div>
-                <Prism language="php">
-                    {{ code_1_1 }}
-                </Prism>
-            </v-card>
-
-            <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
-                <div class="d-flex align-center pa-4">
-                    <div class="font-italic font-weight-bold">
-                        JAVA 샘플코드
-                    </div>
-
-                    <div class="ml-auto">
-                        <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-java" target="_blank">
-                            <v-icon left>
-                                mdi-gitlab
-                            </v-icon>
-                            Github
-                        </v-btn>
-                    </div>
-                </div>
-                <Prism language="javascript">
-                    {{ code_1_2 }}
-                </Prism>
-            </v-card>
-
-            <v-card outlined elevation="4" class="temp_code ma-4 mb-12">
-                <div class="d-flex align-center pa-4">
-                    <div class="font-italic font-weight-bold">
-                        Node 샘플코드
-                    </div>
-
-                    <div class="ml-auto">
-                        <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-nodeJS" target="_blank">
-                            <v-icon left>
-                                mdi-gitlab
-                            </v-icon>
-                            Github
-                        </v-btn>
-                    </div>
-                </div>
-                <Prism language="javascript">
-                    {{ code_1_3 }}
-                </Prism>
-            </v-card>
         </article>
         <v-divider class="mb-12"></v-divider>
 
@@ -1054,8 +1066,8 @@
             </v-card>
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다.<br/>
-                정기결제에 필요한 가맹점 인증요청 방법은 <router-link to="/card/install/auth">이곳</router-link>을 확인해보세요.<br/>
+                결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다.<br />
+                정기결제에 필요한 가맹점 인증요청 방법은 <router-link to="/card/install/auth">이곳</router-link>을 확인해보세요.<br />
                 월 중복결제 방지기능(PCD_REGULER_FLAG)을 사용하려면 <router-link to="/card/install/auth">이곳</router-link>을 확인하여 인증 단계를 확인해주세요
             </v-alert>
 
@@ -1802,7 +1814,7 @@ export default {
                     disabled: true,
                 },
                 {
-                    text:"빌링키방식",
+                    text: "빌링키방식",
                     disabled: true,
                 },
                 {
@@ -1822,7 +1834,7 @@ export default {
             var obj = new Object();
             obj.PCD_CPAY_VER = "1.0.1";
             obj.PCD_PAY_TYPE = "card";       	
-            obj.PCD_PAY_WORK = "PAY";
+            obj.PCD_PAY_WORK = "CERT";
 
             /* 01 : 빌링키결제 */
             obj.PCD_CARD_VER = "01"
@@ -1870,7 +1882,7 @@ export default {
             var obj = new Object();
             obj.PCD_CPAY_VER = "1.0.1";
             obj.PCD_PAY_TYPE = "card";       	
-            obj.PCD_PAY_WORK = "PAY";
+            obj.PCD_PAY_WORK = "CERT";
 
             /* 01 : 빌링키결제 */
             obj.PCD_CARD_VER = "01"
@@ -1921,7 +1933,7 @@ export default {
             var obj = new Object();
             obj.PCD_CPAY_VER = "1.0.1";
             obj.PCD_PAY_TYPE = "card";       	
-            obj.PCD_PAY_WORK = "PAY";
+            obj.PCD_PAY_WORK = "CERT";
 
             /* 01 : 빌링키결제 */
             obj.PCD_CARD_VER = "01"
@@ -1993,9 +2005,10 @@ Cache-Control: no-cache
         "PCD_SIMPLE_FLAG": "Y"
     }
 `,
-code_3_2: `
+            code_3_2: `
 {
-	  "PCD_PAY_RST" => "success|error",
+      "PCD_PAY_RST" => "success|error",
+      "PCD_PAY_CODE" => "SPCD0000",
 	  "PCD_PAY_MSG" => "카드결제완료|카드결제실패",
 	  "PCD_PAY_OID" => "test201804000001",		
 	  "PCD_PAY_TYPE" => "card",			

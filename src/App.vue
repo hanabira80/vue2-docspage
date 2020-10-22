@@ -170,6 +170,7 @@ export default {
                                 children: [
                                     { id: 1 - 1 - 1, name: "환경설정 개요", to: "/card/install/outline" },
                                     { id: 1 - 1 - 2, name: "상황별 인증 요청 방식", to: "/card/install/auth" },
+                                    { id: 1 - 1 - 3, name: "계정발급", to: "/card/install/account" },
                                 ],
                             },
                             {
@@ -213,6 +214,7 @@ export default {
                                 children: [
                                     { id: 2 - 1 - 1, name: "환경설정 개요", to: "/bank/install/outline" },
                                     { id: 2 - 1 - 2, name: "상황별 인증 요청 방식", to: "/bank/install/auth" },
+                                    { id: 2 - 1 - 3, name: "계정발급", to: "/bank/install/account" },
                                 ],
                             },
                             {
@@ -397,7 +399,10 @@ table th {
     white-space: normal !important;
 }
 .word-break-keep-all {
-    word-break: keep-all;
+    word-break: keep-all !important;
+}
+.word-break-break-all {
+    word-break: break-all !important;
 }
 pre {
     margin: 0 !important;

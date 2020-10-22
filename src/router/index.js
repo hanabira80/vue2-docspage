@@ -32,6 +32,13 @@ const routes = [
         // props:true
     },
     {
+        path: "/card/install/account",
+        name: "card-account",
+        meta: { title: "계정발급" },
+        component: () => import("../views/card-install-account.vue"),
+        // props:true
+    },
+    {
         path: "/card/pay/outline",
         name: "card-pay-outline",
         meta: { title: "빌링키 방식 개요" },
@@ -103,9 +110,9 @@ const routes = [
         meta: { title: "카드결제 재결제 간편결제" },
         component: () => import("../views/card-policy.vue"),
     },
-    // 
+    //
     // 계좌
-    // 
+    //
     {
         path: "/bank/outline",
         name: "bank-outline",
@@ -123,6 +130,13 @@ const routes = [
         name: "bank-call",
         meta: { title: "계좌결제 결제창 호출" },
         component: () => import("../views/bank-install-auth.vue"),
+    },
+    {
+        path: "/bank/install/account",
+        name: "bank-account",
+        meta: { title: "계정발급" },
+        component: () => import("../views/bank-install-account.vue"),
+        // props:true
     },
     {
         path: "/bank/pay/outline",
@@ -202,9 +216,9 @@ const routes = [
         meta: { title: "계좌결제 응답오류" },
         component: () => import("../views/bank-policy.vue"),
     },
-    // 
+    //
     // 공통
-    // 
+    //
     {
         path: "/webhook",
         name: "card-webhook",

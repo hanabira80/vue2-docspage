@@ -1622,7 +1622,7 @@
                             <td colspan="1" rowspan="1">
                                 255
                             </td>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" class="word-break-break-all">
                                 a688ccb3555c25cd722483f03e23065c3d0251701ad6da895eb2d830bc06e34d
                             </td>
                             <td colspan="1" rowspan="1">
@@ -1660,7 +1660,7 @@
                                 &lt;return_uri&gt;
                             </td>
                             <td colspan="1" rowspan="1">
-                                결제요청 URI *고정값으로 사용하지 않기를 권장합니다.
+                                결제요청 URI<br/>(고정값으로 사용하지 않기를 권장합니다.)
                             </td>
                         </tr>
                         <tr>
@@ -1677,7 +1677,8 @@
                                 &lt;return full uri&gt;
                             </td>
                             <td colspan="1" rowspan="1">
-                                결제요청 URI (PCD_PAY_HOST + PCD_PAY_URL) *고정값으로 사용하지 않기를 권장합니다.
+                                결제요청 URI (PCD_PAY_HOST + PCD_PAY_URL)<br/>
+                                (고정값으로 사용하지 않기를 권장합니다.)
                             </td>
                         </tr>
                     </tbody>

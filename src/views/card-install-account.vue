@@ -6,50 +6,16 @@
             </template>
         </v-breadcrumbs>
 
-        <h1 class="mt-4 mb-12">환경설정 개요</h1>
+        <h1 class="mt-4 mb-12">계정발급</h1>
 
         <article class="mb-8">
-            <h2 class="">공통 정의사항</h2>
-            <blockquote class="blockquote body-1">
-                <ul>
-                    <li>UTF-8 인코딩</li>
-                    <li>SSL 보안 통신 필수</li>
-                    <li>JSON(JavaScript Object Notation) 메시지 포맷</li>
-                    <li>jQuery CDN uncompressed, minified 사용 가능</li>
-                </ul>
-            </blockquote>
-        </article>
-
-        <article class="mb-8">
-            <h2 class="">가맹점 인증</h2>
+            <!-- <h2 class="">계정발급</h2>
             <blockquote class="blockquote body-1">
                 모든 연동작업은 가맹점 인증 요청을 통해 페이플 서버접근권한을 획득한 후에야 수행할 수 있습니다.<br />
                 전체적인 가맹점 인증 프로세스에 대해서 소개해드립니다.
-            </blockquote>
+            </blockquote> -->
 
             <h3 class="pl-4">
-                가맹점 인증 방식 분류
-            </h3>
-            <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <v-img :src="require('../../src/assets/c-2-1@2x.png')" cover class="white "></v-img>
-            </v-card>
-
-            <h3 class="pl-4">
-                <b>결제창 호출</b>
-                과
-                <b>REST API</b>
-                인증프로세스의 차이점
-            </h3>
-            <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <div class="half-bg--payple pa-2">가맹점 인증요청 프로세스(결제창 호출)</div>
-                <v-img :src="require('../../src/assets/c-2-2@2x.png')" cover class="white "></v-img>
-            </v-card>
-            <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
-                <div class="half-bg--payple pa-2">가맹점 인증요청 프로세스(REST API)</div>
-                <v-img :src="require('../../src/assets/c-2-3@2x.png')" cover class="white "></v-img>
-            </v-card>
-
-            <!-- <h3 class="pl-4">
                 테스트 & 운영 계정
             </h3>
             <blockquote class="blockquote body-2">
@@ -135,7 +101,7 @@
                         </tr>
                     </tbody>
                 </v-simple-table>
-            </v-card> -->
+            </v-card>
         </article>
     </div>
 </template>
@@ -293,7 +259,7 @@ Cache-Control: no-cache
                     disabled: true,
                 },
                 {
-                    text:"환경설정 개요",
+                    text:"계정발급",
                     disabled: true,
                 },
             ],

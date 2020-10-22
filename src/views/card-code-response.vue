@@ -1166,6 +1166,17 @@
                                     <td>PCD_PAY_CARDPW ERROR</td>
                                     <td dir="ltr">카드 비밀번호 앞2자리 오류</td>
                                 </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        INSERT ERROR
+                                    </td>
+                                    <td dir="ltr" class="text-left">
+                                        1. 주문번호가 기존 거래와 중복일 경우 발생합니다.<br/>
+                                        2. 월 중복결제 방지(PCD_REGULER_FLAG)를 사용할 경우 결제년(PCD_PAY_YEAR) / 월(PCD_PAY_MONTH)이 기존 거래건과 중복될 경우 발생합니다.<br/>
+                                        3. 기존 거래내역이 처리중일 때 동일한 REQUEST 가 전송되면 오류검증차원에서 차단되어 발생합니다.<br/>
+                                        4. 요청변수 값에 규정된 길이를 초과하여 보낸 경우 발생합니다. 
+                                    </td>
+                                </tr>
                             </tbody>
                         </v-simple-table>
                     </v-card>

@@ -50,7 +50,7 @@
                 <v-img :src="require('../../src/assets/b-2-3@2x.png')" cover class="white "></v-img>
             </v-card>
 
-            <h3 class="pl-4">
+            <!-- <h3 class="pl-4">
                 테스트 & 운영 계정
             </h3>
             <blockquote class="blockquote body-2">
@@ -107,6 +107,17 @@
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1">
+                                취소/환불키 (PCD_REFUND_KEY)
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-left white-space-normal word-break-break-all">
+                                a41ce010ede9fcbfb3be86b24858806596a9db68b79d138b147c3e563e1829a0
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                계약 후 발급
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
                                 비고
                             </td>
                             <td colspan="1" rowspan="1">
@@ -122,7 +133,7 @@
                         </tr>
                     </tbody>
                 </v-simple-table>
-            </v-card>
+            </v-card> -->
         </article>
     </div>
 </template>

@@ -20,6 +20,14 @@
 
         <article class="mb-12">
             <h2 class="">
+                웹훅 수신데이터 방식 예시
+            </h2>
+
+            <v-card max-width="1000" raised class="pa-2 ma-4 mb-12">
+                <v-img :src="require('../../src/assets/z-1-1@2x.png')" cover class="grey darken-4 "></v-img>
+            </v-card>
+
+            <h2 class="">
                 제공되는 웹훅 URL 종류
             </h2>
             <blockquote class="mb-12 blockquote body-1">
@@ -27,18 +35,27 @@
                 <span class="tree-gutter"></span>&#9702;웹훅 전송 시점<br />
                 <span class="tree-gutter"></span><span class="tree-gutter"></span>- 가맹점의 결제 결과 정상 return 수신 시 동시 전송<br />
                 <span class="tree-gutter"></span><span class="tree-gutter"></span>- 결제 내역 수신이 지연된 거래건의 return 수신 시<br />
+                <span class="tree-gutter"></span><span class="tree-gutter"></span>- 카드/계좌 등록시 결과<br />
                 &#9679;계좌(카드)해지결과 수신<br />
                 <span class="tree-gutter"></span>&#9702;웹훅 전송 시점<br />
                 <span class="tree-gutter"></span><span class="tree-gutter"></span>- 가맹점에서 페이플 관리자사이트를 통해 개별적으로 등록해지시
+
+                <v-alert border="left" colored-border type="error" elevation="2" class="mt-8">
+                    가맹점에서 직접 ‘등록카드 해지’ 혹은 ‘등록계좌 해지’ API를 통해 해지한 건은 웹훅URL로 수신되지 않습니다.
+                </v-alert>
+                <v-alert border="left" colored-border type="error" elevation="2" class="">
+                    웹훅을 설정한 경우 결제데이터의 수신은 기존의 pay/cert/auth방식을 통해 수신되는 결제데이터와 중복하여 받게 됩니다.<br />
+                    미수신되는 케이스를 줄이기 위해 웹훅을 사용하므로, 결제데이터 처리의 기준은 웹훅 수신 데이터를 기준으로 삼습니다.
+                </v-alert>
             </blockquote>
 
             <h2 class="">
                 웹훅 URL 설정 방법
             </h2>
             <blockquote class="mb-12 blockquote body-1">
-                1) 가맹점 관리자 페이지 > 기본정보 > 결제 결과 수신 URL (가맹점 미수신 결과 확인) 입력<br/>
-                <span class="tree-gutter"></span>ex) https://www.aaa.com/PAYhook.php<br/><br/>
-                2) 가맹점 관리자 페이지 > 기본정보 > 계좌(카드)해지결과 수식 URL 입력 <br/>
+                1) 가맹점 관리자 페이지 > 기본정보 > 결제 결과 수신 URL (가맹점 미수신 결과 확인) 입력<br />
+                <span class="tree-gutter"></span>ex) https://www.aaa.com/PAYhook.php<br /><br />
+                2) 가맹점 관리자 페이지 > 기본정보 > 계좌(카드)해지결과 수식 URL 입력 <br />
                 <span class="tree-gutter"></span>ex) https://www.aaa.com/cancelhook.php
             </blockquote>
 
@@ -72,7 +89,7 @@
                     {{ code_2_1 }}
                 </Prism>
             </v-card>
-        </article>        
+        </article>
     </div>
 </template>
 

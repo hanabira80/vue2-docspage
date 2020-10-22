@@ -524,7 +524,7 @@ export default {
     "PCD_CST_ID" : "가맹점 인증 후 리턴받은 cst_id", 
     "PCD_CUST_KEY" : "가맹점 인증 후 리턴받은 custKey",
     "PCD_AUTH_KEY" : "가맹점 인증 후 리턴받은 AuthKey",
-    "PCD_REFUND_KEY" : "a41ce010...",
+    "PCD_REFUND_KEY" : "a41ce010ede9fcbfb3be86b24858806596a9db68b79d138b147c3e563e1829a0",
     "PCD_PAYCANCEL_FLAG": "Y",
     "PCD_PAY_OID": "test099942200156938",
     "PCD_PAY_DATE": "20200320",
