@@ -155,7 +155,7 @@ export default {
 POST /php/auth.php HTTP/1.1
 Host: testcpay.payple.kr
 Content-Type: application/json
-Cache-Control: no-cache //AWS 이용 가맹점인 경우 REFERER
+Cache-Control: no-cache //가맹점 인증 API를 요청하는 서버와 결제창을 띄우는 서버가 다른 경우 또는 AWS 이용 가맹점인 경우 REFERER
 referer: https://가맹점 도메인
 
 {
@@ -241,7 +241,7 @@ POST /php/auth.php HTTP/1.1
 Host: testcpay.payple.kr
 Content-Type: application/json
 Cache-Control: no-cache
-*AWS 이용 가맹점인 경우 REFERER
+//가맹점 인증 API를 요청하는 서버와 결제창을 띄우는 서버가 다른 경우 또는 AWS 이용 가맹점인 경우 REFERER
 Referer: https://가맹점 도메인
 {
     "cst_id": "test",
