@@ -43,7 +43,7 @@
 
             <template v-slot:append>
                 <div class="pa-2">
-                    <v-switch :label="`어두운 테마`" v-model="goDark"></v-switch>
+                    <v-switch :label="`다크모드로 보기`" v-model="goDark"></v-switch>
                 </div>
             </template>
         </v-navigation-drawer>
@@ -84,7 +84,7 @@
                                 <v-list-item>
                                     <v-list-item-avatar color="indigo darken-4">
                                         <v-icon color="white">
-                                            mdi-git
+                                            mdi-github
                                         </v-icon>
                                     </v-list-item-avatar>
                                     <v-list-item-content>
@@ -130,7 +130,10 @@
             </v-container>
         </v-main>
 
-        <v-footer app inset absolute align-center class=" pa-4"> &copy;{{ new Date().getFullYear() }} — <strong>PAYPLE</strong> </v-footer>
+        <v-footer app inset absolute align-center class="pa-4">
+            <!-- &copy;{{ new Date().getFullYear() }} — <strong>PAYPLE</strong>  -->
+            &copy; Payple Inc. All rights reserved.
+        </v-footer>
     </v-app>
 </template>
 

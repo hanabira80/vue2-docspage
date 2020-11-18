@@ -525,7 +525,7 @@
                             <div class="ml-auto">
                                 <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-php" target="_blank">
                                     <v-icon left>
-                                        mdi-git
+                                        mdi-github
                                     </v-icon>
                                     Github
                                 </v-btn>
@@ -542,7 +542,7 @@
                             <div class="ml-auto">
                                 <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-java" target="_blank">
                                     <v-icon left>
-                                        mdi-git
+                                        mdi-github
                                     </v-icon>
                                     Github
                                 </v-btn>
@@ -559,7 +559,7 @@
                             <div class="ml-auto">
                                 <v-btn small color="indigo accent-2" dark href="https://github.com/PAYPLECORP/sample-nodeJS" target="_blank">
                                     <v-icon left>
-                                        mdi-git
+                                        mdi-github
                                     </v-icon>
                                     Github
                                 </v-btn>

@@ -201,7 +201,7 @@
                     <v-list-item>
                         <v-list-item-avatar color="indigo darken-4">
                             <v-icon color="white">
-                                mdi-git
+                                mdi-github
                             </v-icon>
                         </v-list-item-avatar>
 
