@@ -19,19 +19,43 @@
                 <router-link to="/">
                     <v-img :src="require('../src/assets/header-logo--docs.svg')" alt="" class="shrink " contain min-width="48" width="48" />
                 </router-link>
+
+                <v-btn class="ml-6 mx-2 grey--text text--darken-3" color="deep-purple lighten-5" rounded dense>
+                <v-switch class="" hide-details v-model="goDark" prepend-icon="mdi-white-balance-sunny" append-icon="mdi-weather-night">
+                </v-switch>
+                </v-btn>
+
+                
             </div>
 
             <v-spacer></v-spacer>
 
-            <v-btn text href="https://www.payple.kr/" target="_blank" class="mx-2 d-none d-sm-flex">
-                <v-icon class="mr-2">mdi-home-outline</v-icon> 페이플 홈페이지
+            <v-btn class="mx-2 grey--text text--darken-3" color="deep-purple lighten-5" rounded href="https://www.payple.kr/" target="_blank" >
+                <v-icon class="mr-2" color="blue lighten-1">mdi-home-outline</v-icon> 페이플 홈페이지
             </v-btn>
-            <v-btn text href="https://www.payple.kr/?ACT_=demo" target="_blank" class="mx-2 d-none d-sm-flex">
-                <v-icon class="mr-2">mdi-book-play-outline</v-icon> 페이플 데모
+            <v-btn class="mx-2 grey--text text--darken-3" color="deep-purple lighten-5" rounded href="https://www.payple.kr/?ACT_=demo" target="_blank" >
+                <v-icon class="mr-2" color="pink darken-1">mdi-book-play-outline</v-icon> 페이플 데모
             </v-btn>
+
+            <v-btn class="mx-2 grey--text text--darken-3" color="deep-purple lighten-5" rounded>
+                <v-icon class="mr-2" color="yellow darken-2">mdi-weather-night</v-icon> 다크모드
+            </v-btn>
+
+            <!-- <v-btn text href="https://www.payple.kr/?ACT_=demo" target="_blank" class="mx-2 deep-purple accent-3" color="">
+                <v-icon class="mr-2" color="yellow darken-1">mdi-weather-sunny</v-icon> 라이트모드
+            </v-btn> -->
+
+             <!-- <v-btn-toggle v-model="goDark" dark>
+                <v-btn >
+                <v-icon>mdi-format-align-left</v-icon>
+                </v-btn>
+             </v-btn-toggle>                -->
+            
         </v-app-bar>
 
         <v-navigation-drawer v-model="drawer" app clipped>
+            
+            
             <v-list dense>
                 <v-treeview :items="navi" openOnClick open-all>
                     <template slot="label" slot-scope="props">
@@ -40,12 +64,6 @@
                     </template>
                 </v-treeview>
             </v-list>
-
-            <template v-slot:append>
-                <div class="pa-2">
-                    <v-switch :label="`다크모드로 보기`" v-model="goDark"></v-switch>
-                </div>
-            </template>
         </v-navigation-drawer>
 
         <v-main>
@@ -145,6 +163,7 @@ export default {
             dark: false,
         },
     },
+    
     data: () => ({
         drawer: null,
         group: null,
@@ -291,6 +310,8 @@ export default {
     computed: {
         setTheme() {
             if (this.goDark == true) {
+                // this.$propsVisible : false;
+                // this.$props.isVisible;
                 return (this.$vuetify.theme.dark = true);
             } else {
                 return (this.$vuetify.theme.dark = false);
