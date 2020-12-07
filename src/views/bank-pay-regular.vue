@@ -1478,6 +1478,50 @@
                                 않습니다.
                             </td>
                         </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                PCD_TAXSAVE_FLAG
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                string
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                1
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                -
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                Y
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                1. 현금영수증 발행여부 선택옵션입니다.<br />
+                                (Default:N 이며, 발행: Y, 미발행: N)<br />
+                                2. 계좌등록시에 입력받은 휴대전화번호나 사업자번호로 자동발행됩니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                PCD_TAXSAVE_IDENTINUM
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                String
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                -
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                -
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                01012345678
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                현금영수증 발행대상정보를 수정할 수 있는 요청변수입니다. <br />
+                                1. PCD_TAXSAVE_FLAG를 Y로 사용했을 경우에만 사용할 수 있습니다.<br />
+                                2. PCD_TAXSAVE_IDENTINUM 요청변수에 입력된 휴대전화번호 혹은 사업자정보로 현금영수증이 발행됩니다.
+                            </td>
+                        </tr>
                     </tbody>
                 </v-simple-table>
             </v-card>
