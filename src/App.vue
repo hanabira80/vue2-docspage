@@ -1,5 +1,5 @@
 <template>
-    <v-app :dark="setTheme">
+    <v-app :dark="!!(isDark === 'dark')">
         <v-app-bar app clipped-left color="deep-purple darken-1" dark>
             <div class="d-flex align-center">
                 <v-app-bar-nav-icon class="hidden-lg-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -20,10 +20,14 @@
                     <v-img :src="require('../src/assets/header-logo--docs.svg')" alt="" class="shrink " contain min-width="48" width="48" />
                 </router-link>
 
-                <v-btn class="ml-6 mx-2 grey--text text--darken-3" color="deep-purple lighten-5" rounded dense>
-                <v-switch class="" hide-details v-model="goDark" prepend-icon="mdi-white-balance-sunny" append-icon="mdi-weather-night">
-                </v-switch>
-                </v-btn>
+                <v-btn
+          icon id="mode-switcher"
+          @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+        >
+          <v-icon :color="($vuetify.theme.dark) ? 'primary' : 'primary lighten-4'">
+            {{ ($vuetify.theme.dark) ? 'mdi-weather-night' : 'mdi-weather-sunny' }}
+          </v-icon>
+        </v-btn>
 
                 
             </div>
@@ -156,19 +160,20 @@
 </template>
 
 <script>
+
 export default {
     name: "App",
-    opts: {
-        theme: {
-            dark: false,
-        },
-    },
+    // opts: {
+    //     theme: {
+    //         dark: false,
+    //     },
+    // },
     
     data: () => ({
         drawer: null,
         group: null,
         // drawer end
-        goDark: false,
+        // goDark: false,
         // dark theme end
         hidden: false,
         // float button end
@@ -306,18 +311,25 @@ export default {
             // },
         ],
     }),
-
     computed: {
-        setTheme() {
-            if (this.goDark == true) {
-                // this.$propsVisible : false;
-                // this.$props.isVisible;
-                return (this.$vuetify.theme.dark = true);
-            } else {
-                return (this.$vuetify.theme.dark = false);
-            }
-        },
+        isDark () {
+        return (this.$vuetify.theme.dark)
+            ? 'dark'
+            : 'light'
+        }
     },
+
+    // computed: {
+    //     setTheme() {
+    //         if (this.goDark == true) {
+    //             // this.$propsVisible : false;
+    //             // this.$props.isVisible;
+    //             return (this.$vuetify.theme.dark = true);
+    //         } else {
+    //             return (this.$vuetify.theme.dark = false);
+    //         }
+    //     },
+    // },
 
     watch: {
         group() {
