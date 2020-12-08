@@ -1,65 +1,92 @@
 <template>
     <v-app :dark="!!(isDark === 'dark')">
-        <v-app-bar app clipped-left color="deep-purple darken-1" dark>
+        <v-app-bar app clipped-left :color="$vuetify.theme.dark ? 'grey darken-4' : 'white'">
             <div class="d-flex align-center">
                 <v-app-bar-nav-icon class="hidden-lg-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
                 <router-link to="/">
-                    <v-img :src="require('../src/assets/header-logo.svg')" alt="" class="shrink mr-2" contain transition="scale-transition" width="32" />
+                    <v-img :src="require('../src/assets/header-logo--bk.svg')" alt="" class="shrink" contain transition="scale-transition" width="160" />
                 </router-link>
-                <router-link to="/">
-                    <v-img
-                        :src="require('../src/assets/header-logo--txt-wh.svg')"
-                        alt=""
-                        class="shrink mr-2 hidden-sm-and-down"
-                        contain
-                        min-width="80"
-                        width="80"
-                    />
-                </router-link>
-                <router-link to="/">
-                    <v-img :src="require('../src/assets/header-logo--docs.svg')" alt="" class="shrink " contain min-width="48" width="48" />
-                </router-link>
-
-                <v-btn
-          icon id="mode-switcher"
-          @click="$vuetify.theme.dark = !$vuetify.theme.dark"
-        >
-          <v-icon :color="($vuetify.theme.dark) ? 'primary' : 'primary lighten-4'">
-            {{ ($vuetify.theme.dark) ? 'mdi-weather-night' : 'mdi-weather-sunny' }}
-          </v-icon>
-        </v-btn>
-
-                
+                <div class="ml-2">
+                    <!-- <v-tooltip right open-delay="500">
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-btn icon id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark" v-bind="attrs" v-on="on">
+                                <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow darken-3'">
+                                    {{ $vuetify.theme.dark ? "mdi-weather-night" : "mdi-white-balance-sunny" }}
+                                </v-icon>
+                            </v-btn>
+                        </template>
+                        <span>
+                            <v-img :src="require('../src/assets/guide--dark-mode.svg')" alt="" contain width="480" />
+                        </span>
+                    </v-tooltip> -->
+                    <v-btn icon id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark">
+                        <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow darken-3'">
+                            {{ $vuetify.theme.dark ? "mdi-weather-night" : "mdi-white-balance-sunny" }}
+                        </v-icon>
+                    </v-btn>
+                </div>
             </div>
 
             <v-spacer></v-spacer>
 
-            <v-btn class="mx-2 grey--text text--darken-3" color="deep-purple lighten-5" rounded href="https://www.payple.kr/" target="_blank" >
-                <v-icon class="mr-2" color="blue lighten-1">mdi-home-outline</v-icon> 페이플 홈페이지
-            </v-btn>
-            <v-btn class="mx-2 grey--text text--darken-3" color="deep-purple lighten-5" rounded href="https://www.payple.kr/?ACT_=demo" target="_blank" >
-                <v-icon class="mr-2" color="pink darken-1">mdi-book-play-outline</v-icon> 페이플 데모
-            </v-btn>
-
-            <v-btn class="mx-2 grey--text text--darken-3" color="deep-purple lighten-5" rounded>
-                <v-icon class="mr-2" color="yellow darken-2">mdi-weather-night</v-icon> 다크모드
-            </v-btn>
-
-            <!-- <v-btn text href="https://www.payple.kr/?ACT_=demo" target="_blank" class="mx-2 deep-purple accent-3" color="">
-                <v-icon class="mr-2" color="yellow darken-1">mdi-weather-sunny</v-icon> 라이트모드
-            </v-btn> -->
-
-             <!-- <v-btn-toggle v-model="goDark" dark>
-                <v-btn >
-                <v-icon>mdi-format-align-left</v-icon>
+            <div class="hidden-md-and-down">
+                <v-btn class="mx-2 white--text" color="deep-purple accent-2" href="https://www.payple.kr/" target="_blank">
+                    <v-icon class="mr-2">mdi-home-outline</v-icon> 홈
                 </v-btn>
-             </v-btn-toggle>                -->
-            
+                <v-btn class="mx-2 white--text" color="deep-purple accent-2" href="https://www.payple.kr/?ACT_=demo" target="_blank">
+                    <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
+                </v-btn>
+            </div>
         </v-app-bar>
 
+        <div class="guide--dark-mode active">
+            <v-img
+                :src="require('../src/assets/guide--dark-mode-05.svg')"
+                alt=""
+                contain
+                width="200"
+                style="position:fixed; top:60px; left:200px; z-index:10000"
+                class="hidden-md-and-down"
+            />
+            <v-img
+                :src="require('../src/assets/guide--dark-mode-04.svg')"
+                alt=""
+                contain
+                width="200"
+                style="position:fixed; top:60px; left:80px; z-index:10000"
+                class="hidden-lg-and-up"
+            />
+        </div>
+
         <v-navigation-drawer v-model="drawer" app clipped>
-            
-            
+            <template v-slot:prepend>
+                <div class="hidden-lg-and-up">
+                    <v-row>
+                        <v-col col="6" class="text-center">
+                            <v-btn text color="grey darken-3" href="https://www.payple.kr/" target="_blank">
+                                <v-icon class="mr-2">mdi-home-outline</v-icon> 홈
+                            </v-btn>
+                        </v-col>
+                        <v-divider vertical></v-divider>
+                        <v-col col="6" class="text-center">
+                            <v-btn text color="grey darken-3" href="https://www.payple.kr/?ACT_=demo" target="_blank">
+                                <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
+                            </v-btn>
+                        </v-col>
+                    </v-row>
+                    <v-divider></v-divider>
+                </div>
+                <!-- <div class="hidden-lg-and- up">
+                    <v-btn color="warning" fab dark>
+                        <v-icon>mdi-account-circle</v-icon>
+                    </v-btn>
+                    <v-btn text color="grey darken-3" href="https://www.payple.kr/" target="_blank"> <v-icon class="mr-2">mdi-home-outline</v-icon> 홈 </v-btn>
+                    <v-btn text color="grey darken-3" href="https://www.payple.kr/?ACT_=demo" target="_blank">
+                        <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
+                    </v-btn>
+                    <v-divider></v-divider>
+                </div> -->
+            </template>
             <v-list dense>
                 <v-treeview :items="navi" openOnClick open-all>
                     <template slot="label" slot-scope="props">
@@ -160,15 +187,31 @@
 </template>
 
 <script>
-
+window.addEventListener("load", function(event) {
+    // let el = document.getElementsByClassName("guide--dark-mode");
+    // setTimeout(() => {
+    //     el.classList.remove('active')
+    // }, 3000)
+});
 export default {
+    created() {
+        this.$cookies.set('test', 'Hello world!', 1);
+    },
+    // create() {
+    //     window.addEventListener("load", this.onWindowLoad);
+    // },
+    // methods: {
+    //     onWindowLoad() {
+    //         console.log("window load event");
+    //     },
+    // },
     name: "App",
     // opts: {
     //     theme: {
     //         dark: false,
     //     },
     // },
-    
+
     data: () => ({
         drawer: null,
         group: null,
@@ -183,126 +226,124 @@ export default {
                 // name: "결제",
                 // children: [
                 //     {
-                        id: 1,
-                        name: "카드결제",
+                id: 1,
+                name: "카드결제",
+                children: [
+                    {
+                        id: 1 - 0,
+                        name: "카드결제 개요",
+                        to: "/card/outline",
+                    },
+                    {
+                        id: 1 - 1,
+                        name: "환경설정",
                         children: [
-                            {
-                                id: 1 - 0,
-                                name: "카드결제 개요",
-                                to: "/card/outline",
-                            },
-                            {
-                                id: 1 - 1,
-                                name: "환경설정",
-                                children: [
-                                    { id: 1 - 1 - 1, name: "환경설정 개요", to: "/card/install/outline" },
-                                    { id: 1 - 1 - 2, name: "상황별 인증 요청 방식", to: "/card/install/auth" },
-                                    { id: 1 - 1 - 3, name: "계정발급", to: "/card/install/account" },
-                                ],
-                            },
-                            {
-                                id: 1 - 2,
-                                name: "빌링키방식",
-                                children: [
-                                    { id: 1 - 2 - 0, name: "빌링키방식 개요", to: "/card/pay/outline" },
-                                    { id: 1 - 2 - 1, name: "비밀번호 간편결제", to: "/card/pay/simple-pin" },
-                                    { id: 1 - 2 - 2, name: "일회성 간편결제", to: "/card/pay/simple-once" },
-                                    { id: 1 - 2 - 3, name: "정기결제", to: "/card/pay/regular" },
-                                ],
-                            },
-                            {
-                                id: 1 - 3,
-                                name: "기타방식",
-                                children: [
-                                    { id: 1 - 3 - 0, name: "URL링크결제", to: "/card/pay/link" },
-                                    { id: 1 - 3 - 1, name: "앱카드결제", to: "/card/pay/app-card" },
-                                ],
-                            },
-                            { id: 1 - 5, name: "승인취소", to: "/card/pay/cancel" },
-                            { id: 1 - 7, name: "등록카드 조회", to: "/card/regist/search" },
-                            { id: 1 - 6, name: "등록카드 해지", to: "/card/regist/cancel" },
-                            { id: 1 - 8, name: "결제결과 조회", to: "/card/result/search" },
-                            { id: 1 - 9, name: "응답코드", to: "/card/code/response" },
-                            { id: 1 - 10, name: "정책", to: "/card/policy" },
+                            { id: 1 - 1 - 1, name: "환경설정 개요", to: "/card/install/outline" },
+                            { id: 1 - 1 - 2, name: "상황별 인증 요청 방식", to: "/card/install/auth" },
+                            { id: 1 - 1 - 3, name: "계정발급", to: "/card/install/account" },
                         ],
                     },
                     {
-                        id: 2,
-                        name: "계좌이체",
+                        id: 1 - 2,
+                        name: "빌링키방식",
                         children: [
-                            {
-                                id: 2 - 0,
-                                name: "계좌이체 개요",
-                                to: "/bank/outline",
-                            },
-                            {
-                                id: 2 - 1,
-                                name: "환경설정",
-                                children: [
-                                    { id: 2 - 1 - 1, name: "환경설정 개요", to: "/bank/install/outline" },
-                                    { id: 2 - 1 - 2, name: "상황별 인증 요청 방식", to: "/bank/install/auth" },
-                                    { id: 2 - 1 - 3, name: "계정발급", to: "/bank/install/account" },
-                                ],
-                            },
-                            {
-                                id: 2 - 2,
-                                name: "빌링키방식",
-                                children: [
-                                    { id: 2 - 2 - 0, name: "빌링키방식 개요", to: "/bank/pay/outline" },
-                                    { id: 2 - 2 - 1, name: "비밀번호 간편결제", to: "/bank/pay/simple-pin" },
-                                    { id: 2 - 2 - 2, name: "일회성 간편결제", to: "/bank/pay/simple-once" },
-                                    { id: 2 - 2 - 3, name: "정기결제", to: "/bank/pay/regular" },
-                                ],
-                            },
-                            {
-                                id: 2 - 3,
-                                name: "기타방식",
-                                children: [
-                                    { id: 2 - 3 - 0, name: "URL링크결제", to: "/bank/pay/link" }
-                                ],
-                            },
-                            { id: 2 - 5, name: "계좌이체 환불", to: "/bank/pay/cancel" },
-                            {
-                                id: 2 - 4,
-                                name: "현금영수증",
-                                children: [
-                                    { id: 2 - 4 - 1, name: "현금영수증 발행요청", to: "/bank/recipt/request" },
-                                    { id: 2 - 4 - 2, name: "현금영수증 취소요청", to: "/bank/recipt/cancel" },
-                                ],
-                            },
-                            { id: 2 - 7, name: "등록계좌 조회", to: "/bank/regist/search" },
-                            { id: 2 - 6, name: "등록계좌 해지", to: "/bank/regist/cancel" },
-                            // { id: 2 - 8, name: "결제결과 수신", to: "/bank/result/recieve" },
-                            { id: 2 - 9, name: "결제결과 조회", to: "/bank/result/search" },
-                            { id: 2 - 10, name: "응답코드", to: "/bank/code/response" },
-                            { id: 2 - 11, name: "정책", to: "/bank/policy" },
+                            { id: 1 - 2 - 0, name: "빌링키방식 개요", to: "/card/pay/outline" },
+                            { id: 1 - 2 - 1, name: "비밀번호 간편결제", to: "/card/pay/simple-pin" },
+                            { id: 1 - 2 - 2, name: "일회성 간편결제", to: "/card/pay/simple-once" },
+                            { id: 1 - 2 - 3, name: "정기결제", to: "/card/pay/regular" },
                         ],
                     },
                     {
-                        id: 4,
-                        name: "웹훅(Webhook) URL 설정",
-                        to: "/webhook",
+                        id: 1 - 3,
+                        name: "기타방식",
+                        children: [
+                            { id: 1 - 3 - 0, name: "URL링크결제", to: "/card/pay/link" },
+                            { id: 1 - 3 - 1, name: "앱카드결제", to: "/card/pay/app-card" },
+                        ],
+                    },
+                    { id: 1 - 5, name: "승인취소", to: "/card/pay/cancel" },
+                    { id: 1 - 7, name: "등록카드 조회", to: "/card/regist/search" },
+                    { id: 1 - 6, name: "등록카드 해지", to: "/card/regist/cancel" },
+                    { id: 1 - 8, name: "결제결과 조회", to: "/card/result/search" },
+                    { id: 1 - 9, name: "응답코드", to: "/card/code/response" },
+                    { id: 1 - 10, name: "정책", to: "/card/policy" },
+                ],
+            },
+            {
+                id: 2,
+                name: "계좌이체",
+                children: [
+                    {
+                        id: 2 - 0,
+                        name: "계좌이체 개요",
+                        to: "/bank/outline",
                     },
                     {
-                        id: 5,
-                        name: "샘플코드",
-                        to: "/sample-code",
+                        id: 2 - 1,
+                        name: "환경설정",
+                        children: [
+                            { id: 2 - 1 - 1, name: "환경설정 개요", to: "/bank/install/outline" },
+                            { id: 2 - 1 - 2, name: "상황별 인증 요청 방식", to: "/bank/install/auth" },
+                            { id: 2 - 1 - 3, name: "계정발급", to: "/bank/install/account" },
+                        ],
                     },
                     {
-                        id: 6,
-                        name: "문서 버전 관리",
-                        to: "/docs-ver",
+                        id: 2 - 2,
+                        name: "빌링키방식",
+                        children: [
+                            { id: 2 - 2 - 0, name: "빌링키방식 개요", to: "/bank/pay/outline" },
+                            { id: 2 - 2 - 1, name: "비밀번호 간편결제", to: "/bank/pay/simple-pin" },
+                            { id: 2 - 2 - 2, name: "일회성 간편결제", to: "/bank/pay/simple-once" },
+                            { id: 2 - 2 - 3, name: "정기결제", to: "/bank/pay/regular" },
+                        ],
                     },
                     {
-                        id: 7,
-                        name: "용어사전",
-                        to: "/dic",
+                        id: 2 - 3,
+                        name: "기타방식",
+                        children: [{ id: 2 - 3 - 0, name: "URL링크결제", to: "/bank/pay/link" }],
                     },
+                    { id: 2 - 5, name: "계좌이체 환불", to: "/bank/pay/cancel" },
                     {
-                        id: 8,
-                        name: "FAQ",
-                        to: "/faq",
+                        id: 2 - 4,
+                        name: "현금영수증",
+                        children: [
+                            { id: 2 - 4 - 1, name: "현금영수증 발행요청", to: "/bank/recipt/request" },
+                            { id: 2 - 4 - 2, name: "현금영수증 취소요청", to: "/bank/recipt/cancel" },
+                        ],
                     },
+                    { id: 2 - 7, name: "등록계좌 조회", to: "/bank/regist/search" },
+                    { id: 2 - 6, name: "등록계좌 해지", to: "/bank/regist/cancel" },
+                    // { id: 2 - 8, name: "결제결과 수신", to: "/bank/result/recieve" },
+                    { id: 2 - 9, name: "결제결과 조회", to: "/bank/result/search" },
+                    { id: 2 - 10, name: "응답코드", to: "/bank/code/response" },
+                    { id: 2 - 11, name: "정책", to: "/bank/policy" },
+                ],
+            },
+            {
+                id: 4,
+                name: "웹훅(Webhook) URL 설정",
+                to: "/webhook",
+            },
+            {
+                id: 5,
+                name: "샘플코드",
+                to: "/sample-code",
+            },
+            {
+                id: 6,
+                name: "문서 버전 관리",
+                to: "/docs-ver",
+            },
+            {
+                id: 7,
+                name: "용어사전",
+                to: "/dic",
+            },
+            {
+                id: 8,
+                name: "FAQ",
+                to: "/faq",
+            },
             //     ],
             // },
             // {
@@ -312,11 +353,9 @@ export default {
         ],
     }),
     computed: {
-        isDark () {
-        return (this.$vuetify.theme.dark)
-            ? 'dark'
-            : 'light'
-        }
+        isDark() {
+            return this.$vuetify.theme.dark ? "dark" : "light";
+        },
     },
 
     // computed: {
@@ -375,7 +414,7 @@ table {
     white-space: normal;
     text-align: center;
     word-break: keep-all;
-    min-width:100%;
+    min-width: 100%;
 }
 table td {
     border: 1px solid rgba(0, 0, 0, 0.06);
@@ -398,8 +437,8 @@ table th {
     white-space: normal;
     max-width: 100%;
 }
-.temp_table.no_th th{
-    display:none !important;
+.temp_table.no_th th {
+    display: none !important;
 }
 .half-bg--payple {
     position: relative;
@@ -460,5 +499,53 @@ code {
 .no-style-link {
     color: inherit !important;
     text-decoration: none !important;
+}
+.guide--dark-mode {
+    position: relative;
+    z-index: 10000;
+    animation: bounce_bottom 7s ease;
+    animation-iteration-count: 1;
+    opacity: 0;
+}
+@keyframes bounce_bottom {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    4% {
+        transform: translate3d(0, 12px, 0);
+    }
+    8% {
+        transform: translate3d(0, 0, 0);
+    }
+    12% {
+        transform: translate3d(0, 6px, 0);
+    }
+    16% {
+        transform: translate3d(0, 0, 0);
+    }
+    45% {
+        transform: translate3d(0, 0, 0);
+    }
+    49% {
+        transform: translate3d(0, 12px, 0);
+    }
+    53% {
+        transform: translate3d(0, 0, 0);
+    }
+    57% {
+        transform: translate3d(0, 6px, 0);
+    }
+    61% {
+        transform: translate3d(0, 0, 0);
+    }
+    90% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, -40px, 0);
+        opacity: 0;
+    }
 }
 </style>

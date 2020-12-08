@@ -15,6 +15,11 @@ import "@babel/polyfill";
 // Vue.component("prism", Prism);
 // import 'prism-es6/components/prism-markup-templating';
 // import 'prism-es6/components/prism-php';
+import VueCookies from "vue-cookies";
+
+Vue.use(VueCookies);
+Vue.$cookies.config("1y");
+
 Vue.config.productionTip = false;
 
 new Vue({
