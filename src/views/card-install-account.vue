@@ -86,17 +86,27 @@
                                 비고
                             </td>
                             <td colspan="1" rowspan="1" class="text-left white-space-normal">
-                                - 테스트 계정에서는 카드번호, 유효기간 검증만 진행되며, 도메인 검증을 하지 않습니다.<br />
-
-                                - 테스트시 결제된 건들은 별도로 취소처리하지 않더라도 24시간 내에 자동취소됩니다.
+                                <p class="indent--hyphen">
+                                    테스트 계정에서는 카드번호, 유효기간 검증만 진행되며, 도메인 검증을 하지 않습니다.
+                                </p>
+                                <p class="indent--hyphen">
+                                    테스트시 결제된 건들은 별도로 취소처리하지 않더라도 24시간 내에 자동취소됩니다.
+                                </p>
+                                <p class="indent--hyphen">
+                                    테스트시 결제된 건들은 별도로 취소처리하지 않더라도 24시간 내에 자동취소됩니다.
+                                </p>
                             </td>
                             <td colspan="1" rowspan="1" class="text-left white-space-normal">
-                                - 실제 승인이 진행되며 카드번호, 유효기간, 비밀번호, 생년월일 검증이 진행됩니다.<br />
-
-                                - 페이플에서는 도메인 검증으로 가맹점 인증을 하고 있기 때문에 REFERER가 정상적으로 넘어오지 않을 경우 AUTH0004 에러가 발생하게
-                                됩니다.<br />
-
-                                - 카페24, 가비아 등 서버호스팅 이용 시 호스팅사에 페이플 URL(테스트, 운영) 방화벽 오픈을 요청하셔야 할 수 있습니다.
+                                <p class="indent--hyphen">
+                                    실제 승인이 진행되며 카드번호, 유효기간, 비밀번호, 생년월일 검증이 진행됩니다.
+                                </p>
+                                <p class="indent--hyphen">
+                                    페이플에서는 도메인 검증으로 가맹점 인증을 하고 있기 때문에 REFERER가 정상적으로 넘어오지 않을 경우 AUTH0004 에러가 발생하게
+                                    됩니다.
+                                </p>
+                                <p class="indent--hyphen">
+                                    카페24, 가비아 등 서버호스팅 이용 시 호스팅사에 페이플 URL(테스트, 운영) 방화벽 오픈을 요청하셔야 할 수 있습니다.
+                                </p>
                             </td>
                         </tr>
                     </tbody>
@@ -255,11 +265,11 @@ Cache-Control: no-cache
                     disabled: true,
                 },
                 {
-                    text:"환경설정",
+                    text: "환경설정",
                     disabled: true,
                 },
                 {
-                    text:"계정발급",
+                    text: "계정발급",
                     disabled: true,
                 },
             ],

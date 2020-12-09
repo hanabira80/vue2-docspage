@@ -424,6 +424,20 @@ code {
 .cursor-pointer {
     cursor: pointer;
 }
+.indent--hyphen {
+    padding-left:1rem;
+    position:relative;    
+}
+.indent--hyphen:before {
+    content:"-";
+    width:1rem;
+    line-height: 1rem;
+    position:absolute;
+    top:0;
+    left:0;
+    font-size:1rem;
+    text-align:center;
+}
 .no-style-link {
     color: inherit !important;
     text-decoration: none !important;
