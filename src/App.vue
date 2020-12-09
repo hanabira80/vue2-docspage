@@ -1,11 +1,23 @@
 <template>
     <v-app :dark="!!(isDark === 'dark')">
         <v-app-bar app clipped-left :color="$vuetify.theme.dark ? 'grey darken-4' : 'white'">
-            <div class="d-flex align-center">
-                <v-app-bar-nav-icon class="hidden-lg-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-                <router-link to="/">
-                    <v-img :src="require('../src/assets/header-logo--bk.svg')" alt="" class="shrink" contain transition="scale-transition" width="160" />
-                </router-link>
+            <div :class="{ 'justify-space-between mo-res--tool-bar': $vuetify.breakpoint.mdAndDown }" class="d-flex align-center">
+                <div class="d-flex align-center">
+                    <v-app-bar-nav-icon class="hidden-lg-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+                    <router-link to="/">
+                        <!-- <v-img :src="$vuetify.theme.dark ? '@/assets/header-logo--bk.svg' : '/assets/header-logo--wh.svg'" alt="" class="shrink" contain transition="scale-transition" width="160" /> -->
+                        <!-- <v-img :src="require('./assets/header-logo--bk.svg')" alt="" class="shrink" contain transition="scale-transition" width="160" /> -->
+                        <v-img
+                            :src="require($vuetify.theme.dark ? './assets/header-logo--wh.svg' : './assets/header-logo--bk.svg')"
+                            alt=""
+                            class="shrink"
+                            contain
+                            transition="scale-transition"
+                            width="160"
+                        />
+                    </router-link>
+                </div>
+
                 <div class="ml-4">
                     <!-- <v-tooltip right open-delay="500">
                         <template v-slot:activator="{ on, attrs }">
@@ -19,8 +31,12 @@
                             <v-img :src="require('../src/assets/guide--dark-mode.svg')" alt="" contain width="480" />
                         </span>
                     </v-tooltip> -->
-                    <v-btn id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark" :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-5'">
-                    <!-- <v-btn id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark" color="deep-purple accent-2"> -->
+                    <v-btn
+                        id="mode-switcher"
+                        @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+                        :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-5'"
+                    >
+                        <!-- <v-btn id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark" color="deep-purple accent-2"> -->
                         <!-- <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow darken-3'"> -->
                         <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow accent-4'">
                             {{ $vuetify.theme.dark ? "mdi-weather-night" : "mdi-white-balance-sunny" }}
@@ -32,7 +48,7 @@
                 </div>
             </div>
 
-            <v-spacer></v-spacer>
+            <v-spacer class="hidden-md-and-down"></v-spacer>
 
             <div class="hidden-md-and-down">
                 <v-btn class="mx-2 white--text" color="deep-purple accent-2" href="https://www.payple.kr/" target="_blank">
@@ -45,35 +61,51 @@
         </v-app-bar>
 
         <div class="guide--dark-mode active">
-            <v-img
-                :src="require('../src/assets/guide--dark-mode-05.svg')"
-                alt=""
-                contain
-                width="200"
-                style="position:fixed; top:60px; left:210px; z-index:10000"
-                class="hidden-md-and-down"
-            />
+            <v-img :src="require('../src/assets/guide--dark-mode-05.svg')" alt="" contain width="200" class="hidden-md-and-down pc-img" />
             <v-img
                 :src="require('../src/assets/guide--dark-mode-04.svg')"
                 alt=""
                 contain
                 width="200"
-                style="position:fixed; top:60px; left:90px; z-index:10000"
-                class="hidden-lg-and-up"
+                class="hidden-lg-and-up mo-img"
+                :class="{ 'modify-position': $vuetify.breakpoint.xs }"
             />
         </div>
 
         <v-navigation-drawer v-model="drawer" app clipped>
             <template v-slot:prepend>
-                <div class="hidden-lg-and-up text-center pa-4">
-                    <v-btn depressed class="mx-2" color="" href="https://www.payple.kr/" target="_blank" >
+                <!-- <div class="hidden-lg-and-up text-center pa-2">
+                    <v-btn class="mx-1" color="deep-purple lighten-4" href="https://www.payple.kr/" target="_blank" >
                         <v-icon class="mr-2">mdi-home-outline</v-icon> 홈
                     </v-btn>
-                    <v-btn depressed class="mx-2" color="" href="https://www.payple.kr/?ACT_=demo" target="_blank" >
+                    <v-btn class="mx-1" color="deep-purple lighten-4" href="https://www.payple.kr/?ACT_=demo" target="_blank" >
                         <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
                     </v-btn>
+                </div> -->
+                <div class="hidden-lg-and-up text-center">
+                    <v-row col="12" class="mo-navi--header">
+                        <v-col col="6" class="pa-0">
+                            <v-btn x-large tile depressed block class="white--text" color="deep-purple accent-2" href="https://www.payple.kr/" target="_blank">
+                                <v-icon class="mr-2">mdi-home-outline</v-icon> 홈
+                            </v-btn>
+                        </v-col>
+                        <v-col col="6" class="pa-0">
+                            <v-btn
+                                x-large
+                                tile
+                                depressed
+                                block
+                                class="white--text"
+                                color="deep-purple accent-2"
+                                href="https://www.payple.kr/?ACT_=demo"
+                                target="_blank"
+                            >
+                                <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
+                            </v-btn>
+                        </v-col>
+                    </v-row>
                 </div>
-                <v-divider></v-divider>
+                <!-- <v-divider></v-divider> -->
                 <!-- <div class="hidden-lg-and- up">
                     <v-btn color="warning" fab dark>
                         <v-icon>mdi-account-circle</v-icon>
@@ -86,7 +118,7 @@
                 </div> -->
             </template>
             <v-list dense>
-                <v-treeview :items="navi" openOnClick >
+                <v-treeview :items="navi" openOnClick>
                     <template slot="label" slot-scope="props">
                         <router-link :to="props.item.to" v-if="props.item.to">{{ props.item.name }}</router-link>
                         <span v-else>{{ props.item.name }}</span>
@@ -193,7 +225,7 @@ window.addEventListener("load", function(event) {
 });
 export default {
     created() {
-        this.$cookies.set('test', 'Hello world!', 1);
+        this.$cookies.set("test", "Hello world!", 1);
     },
     // create() {
     //     window.addEventListener("load", this.onWindowLoad);
@@ -504,11 +536,13 @@ code {
     animation: bounce_bottom 7s ease;
     animation-iteration-count: 1;
     opacity: 0;
+    visibility: hidden;
 }
 @keyframes bounce_bottom {
     0% {
         transform: translate3d(0, 0, 0);
         opacity: 1;
+        visibility: visible;
     }
     4% {
         transform: translate3d(0, 12px, 0);
@@ -541,9 +575,46 @@ code {
         transform: translate3d(0, 0, 0);
         opacity: 1;
     }
-    100% {
+    99% {
         transform: translate3d(0, -40px, 0);
         opacity: 0;
+        visibility: visible;
     }
+    100% {
+        visibility: hidden;
+    }
+}
+.guide--dark-mode .pc-img {
+    position: fixed;
+    top: 60px;
+    left: 210px;
+    z-index: 10000;
+}
+.guide--dark-mode .mo-img {
+    position: fixed;
+    top: 60px;
+    right: 95px;
+    z-index: 10000;
+}
+.guide--dark-mode .mo-img.modify-position {
+    right: 20px;
+}
+.mo-navi--header {
+    position: relative;
+    background: #7c4dff !important;
+}
+.mo-navi--header:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+    left: calc(50% - 1px);
+    width: 3px;
+    background: #512da8;
+    border-radius: 4px;
+}
+.mo-res--tool-bar {
+    width: 100%;
 }
 </style>
