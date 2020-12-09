@@ -6,7 +6,7 @@
                 <router-link to="/">
                     <v-img :src="require('../src/assets/header-logo--bk.svg')" alt="" class="shrink" contain transition="scale-transition" width="160" />
                 </router-link>
-                <div class="ml-2">
+                <div class="ml-4">
                     <!-- <v-tooltip right open-delay="500">
                         <template v-slot:activator="{ on, attrs }">
                             <v-btn icon id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark" v-bind="attrs" v-on="on">
@@ -19,10 +19,15 @@
                             <v-img :src="require('../src/assets/guide--dark-mode.svg')" alt="" contain width="480" />
                         </span>
                     </v-tooltip> -->
-                    <v-btn icon id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark">
-                        <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow darken-3'">
+                    <v-btn id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark" :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-5'">
+                    <!-- <v-btn id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark" color="deep-purple accent-2"> -->
+                        <!-- <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow darken-3'"> -->
+                        <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow accent-4'">
                             {{ $vuetify.theme.dark ? "mdi-weather-night" : "mdi-white-balance-sunny" }}
                         </v-icon>
+                        <span class="pl-2 hidden-xs-only">
+                            {{ $vuetify.theme.dark ? "다크모드" : "라이트모드" }}
+                        </span>
                     </v-btn>
                 </div>
             </div>
@@ -45,7 +50,7 @@
                 alt=""
                 contain
                 width="200"
-                style="position:fixed; top:60px; left:200px; z-index:10000"
+                style="position:fixed; top:60px; left:210px; z-index:10000"
                 class="hidden-md-and-down"
             />
             <v-img
@@ -53,29 +58,22 @@
                 alt=""
                 contain
                 width="200"
-                style="position:fixed; top:60px; left:80px; z-index:10000"
+                style="position:fixed; top:60px; left:90px; z-index:10000"
                 class="hidden-lg-and-up"
             />
         </div>
 
         <v-navigation-drawer v-model="drawer" app clipped>
             <template v-slot:prepend>
-                <div class="hidden-lg-and-up">
-                    <v-row>
-                        <v-col col="6" class="text-center">
-                            <v-btn text color="grey darken-3" href="https://www.payple.kr/" target="_blank">
-                                <v-icon class="mr-2">mdi-home-outline</v-icon> 홈
-                            </v-btn>
-                        </v-col>
-                        <v-divider vertical></v-divider>
-                        <v-col col="6" class="text-center">
-                            <v-btn text color="grey darken-3" href="https://www.payple.kr/?ACT_=demo" target="_blank">
-                                <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
-                            </v-btn>
-                        </v-col>
-                    </v-row>
-                    <v-divider></v-divider>
+                <div class="hidden-lg-and-up text-center pa-4">
+                    <v-btn depressed class="mx-2" color="" href="https://www.payple.kr/" target="_blank" >
+                        <v-icon class="mr-2">mdi-home-outline</v-icon> 홈
+                    </v-btn>
+                    <v-btn depressed class="mx-2" color="" href="https://www.payple.kr/?ACT_=demo" target="_blank" >
+                        <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
+                    </v-btn>
                 </div>
+                <v-divider></v-divider>
                 <!-- <div class="hidden-lg-and- up">
                     <v-btn color="warning" fab dark>
                         <v-icon>mdi-account-circle</v-icon>
@@ -88,7 +86,7 @@
                 </div> -->
             </template>
             <v-list dense>
-                <v-treeview :items="navi" openOnClick open-all>
+                <v-treeview :items="navi" openOnClick >
                     <template slot="label" slot-scope="props">
                         <router-link :to="props.item.to" v-if="props.item.to">{{ props.item.name }}</router-link>
                         <span v-else>{{ props.item.name }}</span>
