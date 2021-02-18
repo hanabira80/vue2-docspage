@@ -1,16 +1,24 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-// import notFound from "../components/404.vue";
+// import notFound from "../views/404.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
     {
+        path: "/404",
+        name: "notFound",
+        name: "not-found",
+        meta: { title: "404" },
+        component: () => import("../views/404.vue"),
+    },
+
+    {
         path: "/",
         name: "Home",
         component: Home,
-        meta: { title: "페이플 Docs" },
+        meta: { title: "연동가이드 - 페이플" },
     },
     {
         path: "/card/outline",
@@ -248,6 +256,10 @@ const routes = [
         name: "dic",
         meta: { title: "용어사전" },
         component: () => import("../views/dic.vue"),
+    },
+    {
+        path: "/:pathMatch(.*)*",
+        redirect: "/404",
     },
 ];
 // router.beforeEach((to, from, next) => {

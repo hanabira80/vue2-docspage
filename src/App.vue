@@ -60,7 +60,10 @@
             </div>
         </v-app-bar>
 
-        <div class="guide--dark-mode active">
+        <div 
+            :class="{ 'xs': $vuetify.breakpoint.xs, 'sm': $vuetify.breakpoint.sm, 'md': $vuetify.breakpoint.md, 'lg': $vuetify.breakpoint.lgAndUp }" 
+            class="guide--dark-mode active
+        ">
             <v-img :src="require('../src/assets/guide--dark-mode-05.svg')" alt="" contain width="200" class="hidden-md-and-down pc-img" />
             <v-img
                 :src="require('../src/assets/guide--dark-mode-04.svg')"
@@ -130,8 +133,8 @@
         <v-main>
             <v-container style="max-width:1000px;">
                 <router-view></router-view>
-                <v-divider class="mb-12"></v-divider>
-                <v-row class="mb-12 pt-12">
+                <v-divider class="mb-6"></v-divider>
+                <v-row class="mb-12 pt-6">
                     <v-col col="12" sm="4">
                         <router-link class="no-style-link" to="/faq">
                             <v-card>
@@ -144,7 +147,7 @@
 
                                     <v-list-item-content>
                                         <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
-                                        <v-list-item-subtitle>높은 빈도의 문의를 모아봤어요</v-list-item-subtitle>
+                                        <v-list-item-subtitle>높은 빈도의 문의를 확인하세요.</v-list-item-subtitle>
                                     </v-list-item-content>
                                     <!-- <v-list-item-action>
                                         <v-btn fab text color="blue accent-4">
@@ -168,7 +171,7 @@
                                     </v-list-item-avatar>
                                     <v-list-item-content>
                                         <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
-                                        <v-list-item-subtitle>페이플 오픈 소스에 참여 하세요</v-list-item-subtitle>
+                                        <v-list-item-subtitle>페이플 오픈 소스에 참여하세요</v-list-item-subtitle>
                                     </v-list-item-content>
                                     <!-- <v-list-item-action>
                                         <v-btn fab text color="blue accent-4">
@@ -192,7 +195,7 @@
                                     </v-list-item-avatar>
                                     <v-list-item-content>
                                         <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
-                                        <v-list-item-subtitle>페이플 개발팀에 문의해보세요</v-list-item-subtitle>
+                                        <v-list-item-subtitle>페이플 개발팀에 문의하세요.</v-list-item-subtitle>
                                     </v-list-item-content>
                                     <!-- <v-list-item-action>
                                         <v-btn fab text color="blue accent-4">
@@ -545,12 +548,31 @@ code {
     text-decoration: none !important;
 }
 .guide--dark-mode {
-    position: relative;
+    position: fixed;
     z-index: 10000;
     animation: bounce_bottom 7s ease;
     animation-iteration-count: 1;
     opacity: 0;
     visibility: hidden;
+}
+.guide--dark-mode.lg {
+    position: fixed;
+    top: 60px;
+    left: 210px;
+    z-index: 10000;
+}
+.guide--dark-mode.md,
+.guide--dark-mode.sm {
+    position: fixed;
+    top: 60px;
+    right: 95px;
+    z-index: 10000;
+}
+.guide--dark-mode.xs {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 10000;
 }
 @keyframes bounce_bottom {
     0% {
@@ -598,7 +620,7 @@ code {
         visibility: hidden;
     }
 }
-.guide--dark-mode .pc-img {
+/* .guide--dark-mode .pc-img {
     position: fixed;
     top: 60px;
     left: 210px;
@@ -612,7 +634,8 @@ code {
 }
 .guide--dark-mode .mo-img.modify-position {
     right: 20px;
-}
+} */
+
 .mo-navi--header {
     position: relative;
     background: #7c4dff !important;

@@ -133,7 +133,7 @@
                                 20
                             </td>
                             <td colspan="1" rowspan="1">
-                                O
+                                -
                             </td>
                             <td colspan="1" rowspan="1">
                                 1234

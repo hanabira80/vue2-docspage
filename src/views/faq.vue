@@ -104,7 +104,6 @@
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
-                
 
             <h3 class="pl-4 mt-12 mb-8">
                 결제 > 결제요청
@@ -211,10 +210,10 @@
                         </v-list-item>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content class="pt-4 px-6">
-                        만약, 크롬80 브라우저를 사용하고 계신다면 쿠키설정의 SameSite=none을 확인해주세요.<br/>
-                        크롬80 이슈로 해당 에러가 발생할 수 있습니다. <br/>
-                        이경우 가맹점 서버나 개발소스에 쿠키:SameSite=none 과 관련된 설정을 진행해 주셔야 할 수 있습니다.<br/><br/>
-                        
+                        만약, 크롬80 브라우저를 사용하고 계신다면 쿠키설정의 SameSite=none을 확인해주세요.<br />
+                        크롬80 이슈로 해당 에러가 발생할 수 있습니다. <br />
+                        이경우 가맹점 서버나 개발소스에 쿠키:SameSite=none 과 관련된 설정을 진행해 주셔야 할 수 있습니다.<br /><br />
+
                         <b>– 가맹점에서 쿠키 생성시 설정 변경 : SameSite=None; Secure</b>
                         <b>– 가맹점 응답 URL은 HTTPS로 처리되어야 합니다.</b>
                     </v-expansion-panel-content>
@@ -229,41 +228,41 @@
 
                             <v-list-item-content>
                                 <v-list-item-title class="white-space-normal">
-                                    PCD_PAY_TOTAL  / PCD_PAY_ISTAX / PCD_PAY_TAXTOTAL 설정방법
+                                    PCD_PAY_TOTAL / PCD_PAY_ISTAX / PCD_PAY_TAXTOTAL 설정방법
                                 </v-list-item-title>
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
                             </v-list-item-content>
                         </v-list-item>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content class="pt-4 px-6">
-                        가맹점에서 판매하는 상품(재화와 서비스)은 기본적으로 부가가치세(이하 부가세) 적용 대상이며,<BR/> 
-                        결제금액의 10%가 부가가치세로 적용되어야 합니다.<br/><br/>
+                        가맹점에서 판매하는 상품(재화와 서비스)은 기본적으로 부가가치세(이하 부가세) 적용 대상이며,<BR /> 결제금액의 10%가 부가가치세로
+                        적용되어야 합니다.<br /><br />
 
-                        다만, 특정 상품의 경우 부가세가 면제된 ‘면세’상품일 경우가 있고,<BR/> 
-                        가맹점에서는 장바구니 기능을 통해 과세 상품과 면세상품을 모아서 총금액만 페이플에 결제요청하는 경우가 있습니다. <BR/> 
-                        이를 ‘복합과세’라고 합니다.<br/><br/>
+                        다만, 특정 상품의 경우 부가세가 면제된 ‘면세’상품일 경우가 있고,<BR /> 가맹점에서는 장바구니 기능을 통해 과세 상품과 면세상품을 모아서
+                        총금액만 페이플에 결제요청하는 경우가 있습니다. <BR /> 이를 ‘복합과세’라고 합니다.<br /><br />
 
-                        페이플에서는 결제총금액만 가맹점으로부터 전달받기 때문에 ‘과세’,’면세’,’복합과세’의 세가지 시나리오가 발생합니다.<br/>
-                        각각의 케이스에 연동하는 방법을 안내하여 드립니다.<br/><br/>
+                        페이플에서는 결제총금액만 가맹점으로부터 전달받기 때문에 ‘과세’,’면세’,’복합과세’의 세가지 시나리오가 발생합니다.<br />
+                        각각의 케이스에 연동하는 방법을 안내하여 드립니다.<br /><br />
 
-                        1. 결제금액의 전체가 과세상품(부가세 적용)일 경우:<br/><br/>
+                        1. 결제금액의 전체가 과세상품(부가세 적용)일 경우:<br /><br />
 
-                        PCD_PAY_TOTAL: 결제총금액을 넣습니다.<br/>
-                        PCD_PAY_ISTAX: 필수값이 아니므로 넣지 않습니다.<br/>
-                        PCD_PAY_TAXTOTAL: 필수값이 아니므로 넣지 않습니다.<br/>
-                        <i><b>*페이플에서 자동으로 10%에 해당하는 값을 부가세로 설정합니다.</b></i><br/><br/>
-                        
-                        2. 결제금액의 전체가 면세상품(부가세 미적용)일 경우:<br/><br/>
+                        PCD_PAY_TOTAL: 결제총금액을 넣습니다.<br />
+                        PCD_PAY_ISTAX: 필수값이 아니므로 넣지 않습니다.<br />
+                        PCD_PAY_TAXTOTAL: 필수값이 아니므로 넣지 않습니다.<br />
+                        <i><b>*페이플에서 자동으로 10%에 해당하는 값을 부가세로 설정합니다.</b></i
+                        ><br /><br />
 
-                        PCD_PAY_TOTAL: 결제총금액을 넣습니다.<br/>
-                        PCD_PAY_ISTAX: ‘N’값을 입력합니다.<br/>
-                        PCD_PAY_TAXTOTAL: 부가세가 없는 면세상품이므로 넣지 않습니다.<br/><br/>
-                        
-                        3. 결제금액의 전체가 복합과세상품(부가세 적용된 상품과 미적용된 상품 혼합)일 경우:<br/><br/>
+                        2. 결제금액의 전체가 면세상품(부가세 미적용)일 경우:<br /><br />
 
-                        PCD_PAY_TOTAL: 결제총금액을 넣습니다.(과세상품 금액+면세상품금액)<br/>
-                        PCD_PAY_ISTAX: ‘Y’값을 입력합니다.<br/>
-                        PCD_PAY_TAXTOTAL: 부가세 적용된 상품의 ‘부가세’만 입력합니다.<br/>
+                        PCD_PAY_TOTAL: 결제총금액을 넣습니다.<br />
+                        PCD_PAY_ISTAX: ‘N’값을 입력합니다.<br />
+                        PCD_PAY_TAXTOTAL: 부가세가 없는 면세상품이므로 넣지 않습니다.<br /><br />
+
+                        3. 결제금액의 전체가 복합과세상품(부가세 적용된 상품과 미적용된 상품 혼합)일 경우:<br /><br />
+
+                        PCD_PAY_TOTAL: 결제총금액을 넣습니다.(과세상품 금액+면세상품금액)<br />
+                        PCD_PAY_ISTAX: ‘Y’값을 입력합니다.<br />
+                        PCD_PAY_TAXTOTAL: 부가세 적용된 상품의 ‘부가세’만 입력합니다.<br />
                     </v-expansion-panel-content>
                 </v-expansion-panel>
 
@@ -283,22 +282,321 @@
                         </v-list-item>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content class="pt-4 px-6">
-                        <b>월 중복결제 방지(PCD_REGULER_FLAG)</b><br/><br/>
+                        <b>월 중복결제 방지(PCD_REGULER_FLAG)</b><br /><br />
 
-                        페이플의 정기결제는 기본적으로 가맹점에서 빌링키를 가지고 결제 스케쥴링을 하신 후<br/>
-                        결제가 필요한 시점에 리얼타임으로 페이플에 결제요청을 하며, 실시간으로 결제가 이루어집니다.<br/><br/>
+                        페이플의 정기결제는 기본적으로 가맹점에서 빌링키를 가지고 결제 스케쥴링을 하신 후<br />
+                        결제가 필요한 시점에 리얼타임으로 페이플에 결제요청을 하며, 실시간으로 결제가 이루어집니다.<br /><br />
 
-                        이때 월 정기결제(한달에 단 한번만 과금하는 서비스)를 구현하려고 하는 가맹점의 경우,<br/>
-                         가맹점 내부의 결제 로직상 에러로 인해 중복결제가 나는 경우를 방지하고 싶을 경우가 있습니다.<br/>
-                         즉, 하나의 빌링키로 한달에 한번만 결제를 내고자 합니다.<br/><br/>
+                        이때 월 정기결제(한달에 단 한번만 과금하는 서비스)를 구현하려고 하는 가맹점의 경우,<br />
+                        가맹점 내부의 결제 로직상 에러로 인해 중복결제가 나는 경우를 방지하고 싶을 경우가 있습니다.<br />
+                        즉, 하나의 빌링키로 한달에 한번만 결제를 내고자 합니다.<br /><br />
 
-                        이런 케이스를 예방하기 위해 페이플에서 월 중복결제 방지 기능을 제공합니다. <br/>
-                        결제년(PCD_PAY_YEAR) / 월(PCD_PAY_MONTH)을 지정하고<br/>
-                        월 중복결제 방지 기능(PCD_REGULER_FLAG)을 Y로 설정하여 결제요청을 한 경우<br/>
-                        페이플에서 해당 빌링키가 이미 해당 월에 결제가 난 건인지를 파악하여, 이미 결제가 난 건이면 결제를 거부합니다.<br/><br/>
+                        이런 케이스를 예방하기 위해 페이플에서 월 중복결제 방지 기능을 제공합니다. <br />
+                        결제년(PCD_PAY_YEAR) / 월(PCD_PAY_MONTH)을 지정하고<br />
+                        월 중복결제 방지 기능(PCD_REGULER_FLAG)을 Y로 설정하여 결제요청을 한 경우<br />
+                        페이플에서 해당 빌링키가 이미 해당 월에 결제가 난 건인지를 파악하여, 이미 결제가 난 건이면 결제를 거부합니다.<br /><br />
 
-                        또한, 중복결제를 판단하는 기준이 빌링키(PCD_PAYER_ID)로 기결제여부를 판단하게 되므로<br/>
+                        또한, 중복결제를 판단하는 기준이 빌링키(PCD_PAYER_ID)로 기결제여부를 판단하게 되므로<br />
                         빌링키가 발급되지 않는 결제방식((EX) 앱카드결제)에서는 사용하실 수 없습니다.
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
+            </v-expansion-panels>
+
+            <h3 class="pl-4 mt-12 mb-8">
+                결제 > URL링크결제
+            </h3>
+            <v-expansion-panels multiple focusable hover inset>
+                <v-expansion-panel>
+                    <v-expansion-panel-header class="py-1">
+                        <v-list-item>
+                            <v-list-item-avatar tile color="blue lighten-1 elevation-3">
+                                <span class="white--text">Q</span>
+                            </v-list-item-avatar>
+
+                            <v-list-item-content>
+                                <v-list-item-title class="white-space-normal">
+                                    URL링크결제시 주문번호(OID)는 이렇게 처리됩니다.
+                                </v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content class="pt-4 px-6">
+                        <h4 class="mb-2">
+                            1. 자동 주문번호 생성방식 <b class="red--text text--accent-4">(기본 적용)</b>
+                        </h4>
+                        <p class="pl-2 mb-6">
+                            가맹점에서는 주문번호를 생성하지 않고, 페이플에서 주문번호를 자동으로 생성하는 방식입니다.
+                        </p>
+
+                        <v-timeline align-top dense class="pt-0 mb-8">
+                            <v-timeline-item color="pink" small>
+                                <v-card class="elevation-2 pa-2">
+                                    <v-row class="pt-1">
+                                        <v-col cols="12" md="2">
+                                            <div class="subtitle-1 deep-purple--text text--darken-04">
+                                                STEP 1
+                                            </div>
+                                            <h3>
+                                                링크생성
+                                            </h3>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/browser-design--admin-link-create.svg')" cover class="white "></v-img>
+                                            <div class="caption text-center">
+                                                [ 가맹점 관리자 ]
+                                            </div>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/icon--rest-api--frame.svg')" cover class="white"></v-img>
+
+                                            <div class="caption text-center">
+                                                [ API ]
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                    <v-divider></v-divider>
+                                    <v-row>
+                                        <v-col cols="0" md="3"></v-col>
+                                        <v-col cols="12" md="9">
+                                            <b>(링크주소 예시)</b><br />
+                                            <a href="https://testlink.payple.kr/MTI6MTU4NDYwNzI4Mg" target="_blank">
+                                                https://testlink.payple.kr/MTI6MTU4NDYwNzI4Mg
+                                            </a>
+                                        </v-col>
+                                    </v-row>
+                                </v-card>
+                            </v-timeline-item>
+
+                            <v-timeline-item color="teal" small>
+                                <v-card class="elevation-2 pa-2">
+                                    <v-row class="pt-1">
+                                        <v-col cols="12" md="2">
+                                            <div class="subtitle-1 deep-purple--text text--darken-04">
+                                                STEP 2
+                                            </div>
+                                            <h3>
+                                                링크접속
+                                            </h3>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/browser-design--link-payment.svg')" cover class="white "></v-img>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5"> </v-col>
+                                    </v-row>
+                                </v-card>
+                            </v-timeline-item>
+
+                            <v-timeline-item color="light-blue" small>
+                                <v-card class="elevation-2 pa-2">
+                                    <v-row class="pt-1">
+                                        <v-col cols="12" md="2">
+                                            <div class="subtitle-1 deep-purple--text text--darken-04">
+                                                STEP 3
+                                            </div>
+                                            <h3>
+                                                결제완료
+                                            </h3>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/browser-design--regist-done.svg')" cover class="white "></v-img>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5"> </v-col>
+                                    </v-row>
+                                    <v-divider></v-divider>
+                                    <v-row>
+                                        <v-col cols="0" md="3"></v-col>
+                                        <v-col cols="12" md="9">
+                                            페이플에서 자동으로 주문번호를 생성합니다.<br />
+                                            (예시 주문번호) LINK123456ABCDE
+                                        </v-col>
+                                    </v-row>
+                                </v-card>
+                            </v-timeline-item>
+
+                            <v-timeline-item class="pb-0" color="amber" small>
+                                <v-card class="elevation-2 pa-2">
+                                    <v-row class="pt-1">
+                                        <v-col cols="12" md="2">
+                                            <div class="subtitle-1 deep-purple--text text--darken-04">
+                                                STEP 4
+                                            </div>
+                                            <h3>
+                                                결과리턴
+                                            </h3>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/browser-design--admin-link-result.svg')" cover class="white "></v-img>
+                                            <div class="caption text-center">
+                                                [ 가맹점 관리자 ]
+                                            </div>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/icon--webhook--frame.svg')" cover class="white"></v-img>
+
+                                            <div class="caption text-center">
+                                                [ API ]
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                    <v-divider></v-divider>
+                                    <v-row>
+                                        <v-col cols="0" md="3"></v-col>
+                                        <v-col cols="12" md="9">
+                                            가맹점관리자와 등록하신 Webhook URL에<br />
+                                            결제결과(주문번호 포함)를 안내합니다.
+                                        </v-col>
+                                    </v-row>
+                                </v-card>
+                            </v-timeline-item>
+                        </v-timeline>
+
+                        <h4 class="my-2">
+                            2. 직접 주문번호 입력방식
+                        </h4>
+                        <p class="pl-2 mb-6">
+                            생성된 링크주소뒤에 ?OID=주문번호를 덧붙이면 가맹점에서 지정한 주문번호를 사용할 수 있습니다.
+                        </p>
+
+                        <v-timeline align-top dense class="pt-0 mb-8">
+                            <v-timeline-item color="pink" small>
+                                <v-card class="elevation-2 pa-2">
+                                    <v-row class="pt-1">
+                                        <v-col cols="12" md="2">
+                                            <div class="subtitle-1 deep-purple--text text--darken-04">
+                                                STEP 1
+                                            </div>
+                                            <h3>
+                                                링크생성
+                                            </h3>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/browser-design--admin-link-create.svg')" cover class="white "></v-img>
+                                            <div class="caption text-center">
+                                                [ 가맹점 관리자 ]
+                                            </div>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/icon--rest-api--frame.svg')" cover class="white"></v-img>
+
+                                            <div class="caption text-center">
+                                                [ API ]
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                </v-card>
+                            </v-timeline-item>
+
+                            <v-timeline-item color="purple" small>
+                                <v-card class="elevation-2 pa-2">
+                                    <v-row class="pt-1">
+                                        <v-col cols="12" md="2">
+                                            <div class="subtitle-1 deep-purple--text text--darken-04">
+                                                STEP 2
+                                            </div>
+                                            <h4>
+                                                링크주소 수정
+                                            </h4>
+                                        </v-col>
+                                        <v-col cols="12" md="10">
+                                            <v-img :src="require('../../src/assets/info--oid.svg')" cover class="white "></v-img>
+                                            <v-divider></v-divider>
+                                            <p class="pb-0 pt-4 pl-4">
+                                                1. 링크주소<br/>
+                                                <a href="https://testlink.payple.kr/MTI6MTU4NDYwNzI4Mg" target="_blank" class="pl-4">
+                                                    https://testlink.payple.kr/MTI6MTU4NDYwNzI4Mg
+                                                </a><br/>
+                                                2. 파라미터<br/>
+                                                3. 주문번호
+                                            </p>
+                                        </v-col>
+                                    </v-row>
+                                </v-card>
+                            </v-timeline-item>
+
+                            <v-timeline-item color="teal" small>
+                                <v-card class="elevation-2 pa-2">
+                                    <v-row class="pt-1">
+                                        <v-col cols="12" md="2">
+                                            <div class="subtitle-1 deep-purple--text text--darken-04">
+                                                STEP 3
+                                            </div>
+                                            <h3>
+                                                링크접속
+                                            </h3>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/browser-design--link-payment.svg')" cover class="white "></v-img>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5"> </v-col>
+                                    </v-row>
+                                </v-card>
+                            </v-timeline-item>
+
+                            <v-timeline-item color="light-blue" small>
+                                <v-card class="elevation-2 pa-2">
+                                    <v-row class="pt-1">
+                                        <v-col cols="12" md="2">
+                                            <div class="subtitle-1 deep-purple--text text--darken-04">
+                                                STEP 4
+                                            </div>
+                                            <h3>
+                                                결제완료
+                                            </h3>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/browser-design--regist-done.svg')" cover class="white "></v-img>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5"> </v-col>
+                                    </v-row>
+                                </v-card>
+                            </v-timeline-item>
+
+                            <v-timeline-item class="pb-0" color="amber" small>
+                                <v-card class="elevation-2 pa-2">
+                                    <v-row class="pt-1">
+                                        <v-col cols="12" md="2">
+                                            <div class="subtitle-1 deep-purple--text text--darken-04">
+                                                STEP 5
+                                            </div>
+                                            <h3>
+                                                결과리턴
+                                            </h3>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/browser-design--admin-link-result.svg')" cover class="white "></v-img>
+                                            <div class="caption text-center">
+                                                [ 가맹점 관리자 ]
+                                            </div>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="5">
+                                            <v-img :src="require('../../src/assets/icon--webhook--frame.svg')" cover class="white"></v-img>
+
+                                            <div class="caption text-center">
+                                                [ API ]
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                    <v-divider></v-divider>
+                                    <v-row>
+                                        <v-col cols="0" md="3"></v-col>
+                                        <v-col cols="12" md="9">
+                                            가맹점관리자와 등록하신 Webhook URL에<br />
+                                            결제결과(주문번호 포함)를 안내합니다.
+                                        </v-col>
+                                    </v-row>
+                                </v-card>
+                            </v-timeline-item>
+                        </v-timeline>
+
+                        <v-alert border="left" colored-border type="error" elevation="2" class="mx-4 mt-4">
+                            URL링크결제로 결제결과를 안내받으려면 Webhook URL 등록이 필요합니다.<br/>
+                            <router-link to="/webhook">이곳</router-link>에서 Webhook URL에 대해 안내 받아보세요.
+                        </v-alert>
+
+                        <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
+                            하나의 링크주소를 다수의 고객에게 결제를 받으면서,<br/>
+                            동시에 주문번호는 고유식별번호로 처리하고 싶은 경우 고객마다 주문번호를 다르게 설정해서 링크주소에 붙여주세요.
+                        </v-alert>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
@@ -348,7 +646,9 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title class="white-space-normal">페이스북, 카카오톡 등 외부 앱에 연동되는 인앱브라우저 PCD_RST_URL 처리 방법</v-list-item-title>
+                                <v-list-item-title class="white-space-normal"
+                                    >페이스북, 카카오톡 등 외부 앱에 연동되는 인앱브라우저 PCD_RST_URL 처리 방법</v-list-item-title
+                                >
                                 <!-- <v-list-item-subtitle>2020.06.17</v-list-item-subtitle> -->
                             </v-list-item-content>
                         </v-list-item>
