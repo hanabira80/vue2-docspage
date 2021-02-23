@@ -1,6 +1,6 @@
 <template>
     <div class="px-6 py-4">
-        <h1>URL 링크 결제!!</h1>
+        <h1>URL 링크 결제!!!</h1>
     </div>
 </template>
 
