@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import Vue from "vue";
 import App from "./App.vue";
 // import Gtm from "vue-gtm";
-import VueGtag from "vue-gtag";
+// import VueGtag from "vue-gtag";
 import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
@@ -18,6 +18,7 @@ import "@babel/polyfill";
 // import 'prism-es6/components/prism-markup-templating';
 // import 'prism-es6/components/prism-php';
 import VueCookies from "vue-cookies";
+import VueAnalytics from "vue-analytics";
 
 Vue.use(VueCookies);
 Vue.$cookies.config("1y");
@@ -47,8 +48,13 @@ Vue.config.productionTip = false;
 //     })
 // );
 
-Vue.use(VueGtag, {
-    config: { id: "UA-190087092-1" },
+// Vue.use(VueGtag, {
+//     config: { id: "UA-190087092-1" },
+// });
+
+Vue.use(VueAnalytics, {
+    id: "UA-190087092-1",
+    router,
 });
 
 new Vue({
