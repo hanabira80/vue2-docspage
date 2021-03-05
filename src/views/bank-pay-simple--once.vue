@@ -454,8 +454,34 @@
                                 /result/..
                             </td>
                             <td colspan="1" rowspan="1">
-                                결제(요청)결과 RETURN URL - 결제결과를 콜백함수가 아닌 URL로 수신할 경우만 해당<br />- 모바일에서 팝업방식은 상대경로, 다이렉트
-                                방식은 절대경로로 설정
+                                1. 결제(요청)결과 RETURN URL <br />
+                                결제결과를 URL로 수신할 수 있습니다.<br />
+                                콜백함수(callbackFunction)를 사용하면 PCD_RST_URL에 설정한 URL로 결과를 수신할 수 없습니다.<br /><br />
+
+                                2. 결제창 호출방식 설정<br />
+                                경로를 상대경로로 지정하면 팝업방식으로,<br />
+                                절대경로로 지정하면 다이렉트 방식으로 호출합니다.<br /><br />
+
+                                더 상세한 설명은 <router-link to="/faq/pay/callback">여기</router-link> 에서 확인 할 수 있습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                callbackFunction
+                            </td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1">
+                                -
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                -
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                getResult
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                PCD_RST_URL대신 결제결과를 받을 수 있는 callback 함수를 설정할 수 있습니다. 더 상세한 설명은
+                                <router-link to="/faq">여기</router-link> 에서 확인 할 수 있습니다.
                             </td>
                         </tr>
                         <tr>
@@ -476,22 +502,43 @@
                                 가맹점 인증 파일 경로
                             </td>
                         </tr>
+
                         <tr>
                             <td colspan="1" rowspan="1">
-                                callbackFunction
+                                PCD_USER_DEFINE1
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                String
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                2048
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                -
                             </td>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1">
-                                -
+                                가맹점 사용 필드 1 <br />
+                                (가맹점에 제공하는 메모기능입니다. 가맹점에서 해당 필드값에 넣은 값은 결제 완료 후 그대로 리턴됩니다.)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1">
+                                PCD_USER_DEFINE2
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                String
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                2048
                             </td>
                             <td colspan="1" rowspan="1">
                                 -
                             </td>
+                            <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1">
-                                getResult
-                            </td>
-                            <td colspan="1" rowspan="1">
-                                결제결과를 받을 수 있는 callback 함수 (PCD_RST_URL도 같이 사용합니다)
+                                가맹점 사용 필드 2 <br />
+                                (가맹점에 제공하는 메모기능입니다. 가맹점에서 해당 필드값에 넣은 값은 결제 완료 후 그대로 리턴됩니다.)
                             </td>
                         </tr>
                     </tbody>
@@ -1149,11 +1196,7 @@ export default {
 
                 /* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
                 //obj.callbackFunction = getResult;  // getResult : 콜백 함수명
-                                
-                /* 
-                결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 
-                (모바일에서 팝업방식은 상대경로, 다이렉트 방식은 절대경로로 설정)
-                */
+                
                 obj.PCD_RST_URL = "결제 결과 받을 파일 URL";
                 
                 PaypleCpayAuthCheck(obj);
@@ -1206,8 +1249,6 @@ export default {
                 //obj.callbackFunction = getResult;  // getResult : 콜백 함수명
                                 
                 /* 
-                결과를 콜백 함수가 아닌 URL로 받고자 하는 경우
-                (모바일에서 팝업방식은 상대경로, 다이렉트 방식은 절대경로로 설정)
                 @RequestMapping 의 URL
                 */
                 obj.PCD_RST_URL = "/order_result";
@@ -1258,10 +1299,6 @@ export default {
                 /* 결과를 콜백 함수로 받고자 하는 경우 함수 설정 추가 */
                 //obj.callbackFunction = getResult;  // getResult : 콜백 함수명
                                 
-                /* 
-                결과를 콜백 함수가 아닌 URL로 받고자 하는 경우 
-                (모바일에서 팝업방식은 상대경로, 다이렉트 방식은 절대경로로 설정)
-                */
                 obj.PCD_RST_URL = 'app.post의 path';
                 
                 PaypleCpayAuthCheck(obj);

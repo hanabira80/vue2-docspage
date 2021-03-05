@@ -18,7 +18,15 @@ const routes = [
         path: "/",
         name: "Home",
         component: Home,
-        meta: { title: "연동가이드 - 페이플" },
+        meta: {
+            title: "연동가이드 - 페이플",
+            metaTags: [
+                {
+                    property: "og:test",
+                    content: "Hello Webisfree!",
+                },
+            ],
+        },
     },
     {
         path: "/card/outline",
@@ -252,6 +260,12 @@ const routes = [
         component: () => import("../views/faq.vue"),
     },
     {
+        path: "/faq/pay/callback",
+        name: "faq-pay-callback",
+        meta: { title: "FAQ - PCD_RST_URL & Callback 함수의 설정" },
+        component: () => import("../views/faq-pay-callback.vue"),
+    },
+    {
         path: "/dic",
         name: "dic",
         meta: { title: "용어사전" },
@@ -287,3 +301,5 @@ router.beforeEach((to, from, next) => {
 //   })
 
 export default router;
+
+

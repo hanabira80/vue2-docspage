@@ -300,6 +300,26 @@
                         빌링키가 발급되지 않는 결제방식((EX) 앱카드결제)에서는 사용하실 수 없습니다.
                     </v-expansion-panel-content>
                 </v-expansion-panel>
+
+                <v-expansion-panel readonly >
+                    <router-link to="/faq/pay/callback" class="black--text" style="text-decoration:none;">
+                        <v-expansion-panel-header class="py-1">
+                            <v-list-item>
+                                <v-list-item-avatar tile color="blue lighten-1 elevation-3">
+                                    <span class="white--text">Q</span>
+                                </v-list-item-avatar>
+
+                                <v-list-item-content>
+                                    <v-list-item-title class="white-space-normal" >
+                                        PCD_RST_URL 및 callbackFuntion은 어떻게 설정하나요?
+                                    </v-list-item-title>
+                                </v-list-item-content>
+                            </v-list-item>
+                        </v-expansion-panel-header>
+                    </router-link>
+                    <v-expansion-panel-content class="pt-4 px-6">
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
             </v-expansion-panels>
 
             <h3 class="pl-4 mt-12 mb-8">
@@ -321,9 +341,7 @@
                         </v-list-item>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content class="pt-4 px-6">
-                        <h4 class="mb-2">
-                            1. 자동 주문번호 생성방식 <b class="red--text text--accent-4">(기본 적용)</b>
-                        </h4>
+                        <h4 class="mb-2">1. 자동 주문번호 생성방식 <b class="red--text text--accent-4">(기본 적용)</b></h4>
                         <p class="pl-2 mb-6">
                             가맹점에서는 주문번호를 생성하지 않고, 페이플에서 주문번호를 자동으로 생성하는 방식입니다.
                         </p>
@@ -501,11 +519,11 @@
                                             <v-img :src="require('../../src/assets/info--oid.svg')" cover class="white "></v-img>
                                             <v-divider></v-divider>
                                             <p class="pb-0 pt-4 pl-4">
-                                                1. 링크주소<br/>
+                                                1. 링크주소<br />
                                                 <a href="https://testlink.payple.kr/MTI6MTU4NDYwNzI4Mg" target="_blank" class="pl-4">
-                                                    https://testlink.payple.kr/MTI6MTU4NDYwNzI4Mg
-                                                </a><br/>
-                                                2. 파라미터<br/>
+                                                    https://testlink.payple.kr/MTI6MTU4NDYwNzI4Mg </a
+                                                ><br />
+                                                2. 파라미터<br />
                                                 3. 주문번호
                                             </p>
                                         </v-col>
@@ -589,12 +607,12 @@
                         </v-timeline>
 
                         <v-alert border="left" colored-border type="error" elevation="2" class="mx-4 mt-4">
-                            URL링크결제로 결제결과를 안내받으려면 Webhook URL 등록이 필요합니다.<br/>
+                            URL링크결제로 결제결과를 안내받으려면 Webhook URL 등록이 필요합니다.<br />
                             <router-link to="/webhook">이곳</router-link>에서 Webhook URL에 대해 안내 받아보세요.
                         </v-alert>
 
                         <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
-                            하나의 링크주소를 다수의 고객에게 결제를 받으면서,<br/>
+                            하나의 링크주소를 다수의 고객에게 결제를 받으면서,<br />
                             동시에 주문번호는 고유식별번호로 처리하고 싶은 경우 고객마다 주문번호를 다르게 설정해서 링크주소에 붙여주세요.
                         </v-alert>
                     </v-expansion-panel-content>

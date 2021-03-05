@@ -19,7 +19,9 @@ import "@babel/polyfill";
 // import 'prism-es6/components/prism-php';
 import VueCookies from "vue-cookies";
 import VueAnalytics from "vue-analytics";
+import VueMeta from "vue-meta";
 
+Vue.use(VueMeta);
 Vue.use(VueCookies);
 Vue.$cookies.config("1y");
 
