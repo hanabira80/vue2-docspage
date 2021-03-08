@@ -439,22 +439,22 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']">
                                 PCD_RST_URL
                             </td>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']">
                                 String
                             </td>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']">
                                 -
                             </td>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']">
                                 O
                             </td>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']">
                                 /result/..
                             </td>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']">
                                 1. 결제(요청)결과 RETURN URL <br />
                                 결제결과를 URL로 수신할 수 있습니다.<br />
                                 콜백함수(callbackFunction)를 사용하면 PCD_RST_URL에 설정한 URL로 결과를 수신할 수 없습니다.<br /><br />
@@ -463,27 +463,27 @@
                                 경로를 상대경로로 지정하면 팝업방식으로,<br />
                                 절대경로로 지정하면 다이렉트 방식으로 호출합니다.<br /><br />
 
-                                더 상세한 설명은 <router-link to="/faq/pay/callback">여기</router-link> 에서 확인 할 수 있습니다.
+                                더 상세한 설명은 <router-link to="/faq/pay/callback" target="_blank">여기</router-link> 에서 확인 할 수 있습니다.
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']">
                                 callbackFunction
                             </td>
-                            <td colspan="1" rowspan="1"></td>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']"></td>
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']">
                                 -
                             </td>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']">
                                 -
                             </td>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']">
                                 getResult
                             </td>
-                            <td colspan="1" rowspan="1">
+                            <td colspan="1" rowspan="1" :class="[$vuetify.theme.dark ? 'table-high-light-bg-dm':'table-high-light-bg']">
                                 PCD_RST_URL대신 결제결과를 받을 수 있는 callback 함수를 설정할 수 있습니다.<br /><br />
 
-                                더 상세한 설명은 <router-link to="/faq/pay/callback">여기</router-link> 에서 확인 할 수 있습니다.
+                                더 상세한 설명은 <router-link to="/faq/pay/callback" target="_blank">여기</router-link> 에서 확인 할 수 있습니다.
                             </td>
                         </tr>
                         <tr>

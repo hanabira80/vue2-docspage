@@ -486,6 +486,12 @@ table th {
 .temp_table.no_th th {
     display: none !important;
 }
+.table-high-light-bg {
+    background: #D1C4E9;
+}
+.table-high-light-bg-dm {
+    background:#7986CB
+}
 .half-bg--payple {
     position: relative;
     display: inline;
