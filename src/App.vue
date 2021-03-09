@@ -127,6 +127,14 @@
                         <span v-else>{{ props.item.name }}</span>
                     </template>
                 </v-treeview>
+                <!-- <template slot="label" slot-scope="props">
+                    <router-link :to="props.item.to">
+                    <v-treeview :items="navi" openOnClick>
+                        <div v-if="props.item.to">{{ props.item.name }}</div>
+                        <span v-else>{{ props.item.name }}</span>
+                    </v-treeview>
+                    </router-link>
+                </template> -->
             </v-list>
         </v-navigation-drawer>
 
@@ -433,6 +441,13 @@ export default {
             this.right = !val;
         },
     },
+    // created: function(){
+
+    //     var currentUrl = window.location.pathname;
+
+    //     console.log(currentUrl);
+
+    //   }
 };
 </script>
 

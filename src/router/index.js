@@ -293,6 +293,10 @@ router.beforeEach((to, from, next) => {
     document.title = to.meta.title;
     next();
 });
+router.afterEach((to, from) => {
+    // var currentUrl = window.location.pathname;
+    // console.log(currentUrl);
+});
 
 // router.afterEach((to, from) => {
 //     Vue.nextTick(() => {
