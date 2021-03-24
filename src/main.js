@@ -20,6 +20,7 @@ import "@babel/polyfill";
 import VueCookies from "vue-cookies";
 import VueAnalytics from "vue-analytics";
 import VueMeta from "vue-meta";
+import VueGtag from "vue-gtag";
 
 Vue.use(VueMeta);
 Vue.use(VueCookies);
@@ -54,10 +55,19 @@ Vue.config.productionTip = false;
 //     config: { id: "UA-190087092-1" },
 // });
 
-Vue.use(VueAnalytics, {
-    id: "UA-190087092-1",
-    router,
-});
+// Vue.use(VueAnalytics, {
+//     id: "UA-190087092-1",
+//     router,
+// });
+
+Vue.use(VueGtag, {
+    config: {
+        id: "G-F1ZQQFQHP2",
+    },
+    includes: [
+        {id: "UA-190087092-1"},
+    ]
+},router);
 
 new Vue({
     router,
