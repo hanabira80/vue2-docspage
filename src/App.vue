@@ -243,12 +243,12 @@
                 <img src="./assets/ev_210408-bg-pc.png" class="v-ms-img" alt="">
             
 
-            <!-- <template v-slot:action="{ attrs }">
+            <template v-slot:action="{ attrs }">
                 <v-btn color="red" text v-bind="attrs" @click="snackbar = false">
                     Close
                 </v-btn>
-            </template> -->
-        <!-- </v-snackbar> -->
+            </template>
+        </v-snackbar> -->
     </v-app>
 </template>
 
