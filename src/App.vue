@@ -1,12 +1,34 @@
 <template>
     <v-app :dark="!!(isDark === 'dark')">
+        <v-banner single-line app sticky>
+            <v-img :src="require('./assets/ev_210408-bg-pc.png')" cover height="70" class="d-flex align-center">
+                <div class="d-flex justify-center align-center flex-wrap px-6">
+                    <div class="text-h6 text-sm-h5 font-weight-bold white--text mr-0 mr-sm-6 text-shadow-400">
+                        지금 페이플 추천하면 카드수수료 핵이득!
+                    </div>
+                    <div class="mr-6">
+                        <v-img :src="require('./assets/banner-money.svg')" width="40" class=""></v-img>
+                    </div>
+                    <div>
+                        <a href="https://www.payple.kr/html/notice/202104-event.html" target="_blank">
+                            <v-img :src="require('./assets/banner-btn.svg')" width="100" class=""></v-img>
+                        </a>
+                    </div>
+                </div>
+            </v-img>
+            <template v-slot:actions="{ dismiss }">
+                <v-btn icon color="white" @click="dismiss">
+                    <v-icon dark>
+                        mdi-close-circle-outline
+                    </v-icon>
+                </v-btn>
+            </template>
+        </v-banner>
         <v-app-bar app clipped-left :color="$vuetify.theme.dark ? 'grey darken-4' : 'white'">
             <div :class="{ 'justify-space-between mo-res--tool-bar': $vuetify.breakpoint.mdAndDown }" class="d-flex align-center">
                 <div class="d-flex align-center">
                     <v-app-bar-nav-icon class="hidden-lg-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
                     <router-link to="/">
-                        <!-- <v-img :src="$vuetify.theme.dark ? '@/assets/header-logo--bk.svg' : '/assets/header-logo--wh.svg'" alt="" class="shrink" contain transition="scale-transition" width="160" /> -->
-                        <!-- <v-img :src="require('./assets/header-logo--bk.svg')" alt="" class="shrink" contain transition="scale-transition" width="160" /> -->
                         <v-img
                             :src="require($vuetify.theme.dark ? './assets/header-logo--wh.svg' : './assets/header-logo--bk.svg')"
                             alt=""
@@ -19,25 +41,11 @@
                 </div>
 
                 <div class="ml-4">
-                    <!-- <v-tooltip right open-delay="500">
-                        <template v-slot:activator="{ on, attrs }">
-                            <v-btn icon id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark" v-bind="attrs" v-on="on">
-                                <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow darken-3'">
-                                    {{ $vuetify.theme.dark ? "mdi-weather-night" : "mdi-white-balance-sunny" }}
-                                </v-icon>
-                            </v-btn>
-                        </template>
-                        <span>
-                            <v-img :src="require('../src/assets/guide--dark-mode.svg')" alt="" contain width="480" />
-                        </span>
-                    </v-tooltip> -->
                     <v-btn
                         id="mode-switcher"
                         @click="$vuetify.theme.dark = !$vuetify.theme.dark"
                         :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-5'"
                     >
-                        <!-- <v-btn id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark" color="deep-purple accent-2"> -->
-                        <!-- <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow darken-3'"> -->
                         <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow accent-4'">
                             {{ $vuetify.theme.dark ? "mdi-weather-night" : "mdi-white-balance-sunny" }}
                         </v-icon>
@@ -52,7 +60,7 @@
 
             <div class="hidden-md-and-down">
                 <v-btn class="mx-2 white--text" color="deep-purple accent-2" href="https://www.payple.kr/" target="_blank">
-                    <v-icon class="mr-2">mdi-home-outline</v-icon> 홈
+                    <v-icon class="mr-2">mdi-home-outline</v-icon>페이플 홈
                 </v-btn>
                 <v-btn class="mx-2 white--text" color="deep-purple accent-2" href="https://www.payple.kr/?ACT_=demo" target="_blank">
                     <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
@@ -60,10 +68,11 @@
             </div>
         </v-app-bar>
 
-        <div 
-            :class="{ 'xs': $vuetify.breakpoint.xs, 'sm': $vuetify.breakpoint.sm, 'md': $vuetify.breakpoint.md, 'lg': $vuetify.breakpoint.lgAndUp }" 
+        <div
+            :class="{ xs: $vuetify.breakpoint.xs, sm: $vuetify.breakpoint.sm, md: $vuetify.breakpoint.md, lg: $vuetify.breakpoint.lgAndUp }"
             class="guide--dark-mode active
-        ">
+        "
+        >
             <v-img :src="require('../src/assets/guide--dark-mode-05.svg')" alt="" contain width="200" class="hidden-md-and-down pc-img" />
             <v-img
                 :src="require('../src/assets/guide--dark-mode-04.svg')"
@@ -77,14 +86,6 @@
 
         <v-navigation-drawer v-model="drawer" app clipped>
             <template v-slot:prepend>
-                <!-- <div class="hidden-lg-and-up text-center pa-2">
-                    <v-btn class="mx-1" color="deep-purple lighten-4" href="https://www.payple.kr/" target="_blank" >
-                        <v-icon class="mr-2">mdi-home-outline</v-icon> 홈
-                    </v-btn>
-                    <v-btn class="mx-1" color="deep-purple lighten-4" href="https://www.payple.kr/?ACT_=demo" target="_blank" >
-                        <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
-                    </v-btn>
-                </div> -->
                 <div class="hidden-lg-and-up text-center">
                     <v-row col="12" class="mo-navi--header">
                         <v-col col="6" class="pa-0">
@@ -108,34 +109,69 @@
                         </v-col>
                     </v-row>
                 </div>
-                <!-- <v-divider></v-divider> -->
-                <!-- <div class="hidden-lg-and- up">
-                    <v-btn color="warning" fab dark>
-                        <v-icon>mdi-account-circle</v-icon>
-                    </v-btn>
-                    <v-btn text color="grey darken-3" href="https://www.payple.kr/" target="_blank"> <v-icon class="mr-2">mdi-home-outline</v-icon> 홈 </v-btn>
-                    <v-btn text color="grey darken-3" href="https://www.payple.kr/?ACT_=demo" target="_blank">
-                        <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
-                    </v-btn>
-                    <v-divider></v-divider>
-                </div> -->
             </template>
             <v-list dense>
                 <v-treeview :items="navi" openOnClick>
                     <template slot="label" slot-scope="props">
-                        <router-link :to="props.item.to" v-if="props.item.to">{{ props.item.name }}</router-link>
+                        <router-link :to="props.item.to" v-if="props.item.to" class="d-block">
+                            {{ props.item.name }}
+                        </router-link>
                         <span v-else>{{ props.item.name }}</span>
                     </template>
                 </v-treeview>
-                <!-- <template slot="label" slot-scope="props">
-                    <router-link :to="props.item.to">
-                    <v-treeview :items="navi" openOnClick>
-                        <div v-if="props.item.to">{{ props.item.name }}</div>
-                        <span v-else>{{ props.item.name }}</span>
-                    </v-treeview>
-                    </router-link>
-                </template> -->
             </v-list>
+
+            <!-- <template>
+                <v-card class="mx-auto" width="300">
+                    <v-list>
+                        <v-list-item>
+                            <v-list-item-icon>
+                                <v-icon>mdi-home</v-icon>
+                            </v-list-item-icon>
+
+                            <v-list-item-title>Home</v-list-item-title>
+                        </v-list-item>
+
+                        <v-list-group :value="true" prepend-icon="mdi-account-circle">
+                            <template v-slot:activator>
+                                <v-list-item-title>Users</v-list-item-title>
+                            </template>
+
+                            <v-list-group :value="true" no-action sub-group>
+                                <template v-slot:activator>
+                                    <v-list-item-content>
+                                        <v-list-item-title>Admin</v-list-item-title>
+                                    </v-list-item-content>
+                                </template>
+
+                                <v-list-item v-for="([title, icon], i) in admins" :key="i" link>
+                                    <v-list-item-title v-text="title"></v-list-item-title>
+
+                                    <v-list-item-icon>
+                                        <v-icon v-text="icon"></v-icon>
+                                    </v-list-item-icon>
+                                </v-list-item>
+                            </v-list-group>
+
+                            <v-list-group no-action sub-group>
+                                <template v-slot:activator>
+                                    <v-list-item-content>
+                                        <v-list-item-title>Actions</v-list-item-title>
+                                    </v-list-item-content>
+                                </template>
+
+                                <v-list-item v-for="([title, icon], i) in cruds" :key="i" link>
+                                    <v-list-item-title v-text="title"></v-list-item-title>
+
+                                    <v-list-item-icon>
+                                        <v-icon v-text="icon"></v-icon>
+                                    </v-list-item-icon>
+                                </v-list-item>
+                            </v-list-group>
+                        </v-list-group>
+                    </v-list>
+                </v-card>
+            </template> -->
         </v-navigation-drawer>
 
         <v-main>
@@ -157,13 +193,6 @@
                                         <v-list-item-title class=" mb-2">FAQ</v-list-item-title>
                                         <v-list-item-subtitle>높은 빈도의 문의를 확인하세요.</v-list-item-subtitle>
                                     </v-list-item-content>
-                                    <!-- <v-list-item-action>
-                                        <v-btn fab text color="blue accent-4">
-                                            <v-icon>
-                                                mdi-vector-link
-                                            </v-icon>
-                                        </v-btn>
-                                    </v-list-item-action> -->
                                 </v-list-item>
                             </v-card>
                         </router-link>
@@ -181,13 +210,6 @@
                                         <v-list-item-title class=" mb-2">GITHUB</v-list-item-title>
                                         <v-list-item-subtitle>페이플 오픈 소스에 참여하세요</v-list-item-subtitle>
                                     </v-list-item-content>
-                                    <!-- <v-list-item-action>
-                                        <v-btn fab text color="blue accent-4">
-                                            <v-icon>
-                                                mdi-vector-link
-                                            </v-icon>
-                                        </v-btn>
-                                    </v-list-item-action> -->
                                 </v-list-item>
                             </v-card>
                         </a>
@@ -205,13 +227,6 @@
                                         <v-list-item-title class=" mb-2">MAIL</v-list-item-title>
                                         <v-list-item-subtitle>페이플 개발팀에 문의하세요.</v-list-item-subtitle>
                                     </v-list-item-content>
-                                    <!-- <v-list-item-action>
-                                        <v-btn fab text color="blue accent-4">
-                                            <v-icon>
-                                                mdi-pencil
-                                            </v-icon>
-                                        </v-btn>
-                                    </v-list-item-action> -->
                                 </v-list-item>
                             </v-card>
                         </a>
@@ -221,65 +236,69 @@
         </v-main>
 
         <v-footer app inset absolute align-center class="pa-4">
-            <!-- &copy;{{ new Date().getFullYear() }} — <strong>PAYPLE</strong>  -->
             &copy; Payple Inc. All rights reserved.
         </v-footer>
+        <!-- <v-snackbar :timeout="-1" :value="true">
+            
+                <img src="./assets/ev_210408-bg-pc.png" class="v-ms-img" alt="">
+            
+
+            <!-- <template v-slot:action="{ attrs }">
+                <v-btn color="red" text v-bind="attrs" @click="snackbar = false">
+                    Close
+                </v-btn>
+            </template> -->
+        <!-- </v-snackbar> -->
     </v-app>
 </template>
 
 <script>
-window.addEventListener("load", function(event) {
-    // let el = document.getElementsByClassName("guide--dark-mode");
-    // setTimeout(() => {
-    //     el.classList.remove('active')
-    // }, 3000)
-});
 export default {
-    name: 'App',    
+    name: "App",
     // metaInfo() {
-    //     return { 
+    //     return {
     //         title: "Epiloge - Build your network in your field of interest",
     //         meta: [
     //             { name: 'description', content:  'Epiloge is about connecting in your field of interest. Our vision is to help people share their knowledge, work, projects, papers and ideas and build their network through what they do rather where they live, study or work.'},
     //             { property: 'og:title', content: "Epiloge - Build your network in your field of interest"},
     //             { property: 'og:site_name', content: 'Epiloge'},
-    //             {property: 'og:type', content: 'website'},    
-    //             {name: 'robots', content: 'index,follow'} 
+    //             {property: 'og:type', content: 'website'},
+    //             {name: 'robots', content: 'index,follow'}
     //         ]
     //     }
     // },
-    created() {
-        this.$cookies.set("test", "Hello world!", 1);
-    },
-    // create() {
-    //     window.addEventListener("load", this.onWindowLoad);
-    // },
-    // methods: {
-    //     onWindowLoad() {
-    //         console.log("window load event");
-    //     },
-    // },
     name: "App",
-    // opts: {
-    //     theme: {
-    //         dark: false,
-    //     },
-    // },
 
     data: () => ({
+        v0: true,
+        // snackbar: true,
+        // text: 'Lorem ipsum dolor sit amet',
+        // vertical: false,
         drawer: null,
         group: null,
-        // drawer end
-        // goDark: false,
-        // dark theme end
         hidden: false,
-        // float button end
         navi: [
             {
-                // id: 100,
-                // name: "결제",
-                // children: [
-                //     {
+                id: 6,
+                name: "버전",
+                to: "/docs-ver",
+            },
+            {
+                id: 7,
+                name: "용어사전",
+                to: "/dic",
+            },
+            {
+                id: 8,
+                name: "FAQ",
+                to: "/faq",
+            },
+            {
+                id: 5,
+                name: "샘플코드",
+                to: "/sample-code",
+            },
+            {
                 id: 1,
                 name: "카드결제",
                 children: [
@@ -304,14 +323,14 @@ export default {
                             { id: 1 - 2 - 0, name: "빌링키방식 개요", to: "/card/pay/outline" },
                             { id: 1 - 2 - 1, name: "비밀번호 간편결제", to: "/card/pay/simple-pin" },
                             { id: 1 - 2 - 2, name: "일회성 간편결제", to: "/card/pay/simple-once" },
-                            { id: 1 - 2 - 3, name: "정기결제", to: "/card/pay/regular" },
+                            { id: 1 - 2 - 3, name: "정기(구독)결제", to: "/card/pay/regular" },
                         ],
                     },
                     {
                         id: 1 - 3,
                         name: "기타방식",
                         children: [
-                            { id: 1 - 3 - 0, name: "URL링크결제", to: "/card/pay/link" },
+                            { id: 1 - 3 - 0, name: "URL 링크결제", to: "/card/pay/link" },
                             { id: 1 - 3 - 1, name: "앱카드결제", to: "/card/pay/app-card" },
                         ],
                     },
@@ -348,13 +367,13 @@ export default {
                             { id: 2 - 2 - 0, name: "빌링키방식 개요", to: "/bank/pay/outline" },
                             { id: 2 - 2 - 1, name: "비밀번호 간편결제", to: "/bank/pay/simple-pin" },
                             { id: 2 - 2 - 2, name: "일회성 간편결제", to: "/bank/pay/simple-once" },
-                            { id: 2 - 2 - 3, name: "정기결제", to: "/bank/pay/regular" },
+                            { id: 2 - 2 - 3, name: "정기(구독)결제", to: "/bank/pay/regular" },
                         ],
                     },
                     {
                         id: 2 - 3,
                         name: "기타방식",
-                        children: [{ id: 2 - 3 - 0, name: "URL링크결제", to: "/bank/pay/link" }],
+                        children: [{ id: 2 - 3 - 0, name: "URL 링크결제", to: "/bank/pay/link" }],
                     },
                     { id: 2 - 5, name: "계좌이체 환불", to: "/bank/pay/cancel" },
                     {
@@ -367,7 +386,6 @@ export default {
                     },
                     { id: 2 - 7, name: "등록계좌 조회", to: "/bank/regist/search" },
                     { id: 2 - 6, name: "등록계좌 해지", to: "/bank/regist/cancel" },
-                    // { id: 2 - 8, name: "결제결과 수신", to: "/bank/result/recieve" },
                     { id: 2 - 9, name: "결제결과 조회", to: "/bank/result/search" },
                     { id: 2 - 10, name: "응답코드", to: "/bank/code/response" },
                     { id: 2 - 11, name: "정책", to: "/bank/policy" },
@@ -378,32 +396,6 @@ export default {
                 name: "웹훅(Webhook) URL 설정",
                 to: "/webhook",
             },
-            {
-                id: 5,
-                name: "샘플코드",
-                to: "/sample-code",
-            },
-            {
-                id: 6,
-                name: "문서 버전 관리",
-                to: "/docs-ver",
-            },
-            {
-                id: 7,
-                name: "용어사전",
-                to: "/dic",
-            },
-            {
-                id: 8,
-                name: "FAQ",
-                to: "/faq",
-            },
-            //     ],
-            // },
-            // {
-            //     id: 200,
-            //     name: "송금",
-            // },
         ],
     }),
     computed: {
@@ -411,18 +403,6 @@ export default {
             return this.$vuetify.theme.dark ? "dark" : "light";
         },
     },
-
-    // computed: {
-    //     setTheme() {
-    //         if (this.goDark == true) {
-    //             // this.$propsVisible : false;
-    //             // this.$props.isVisible;
-    //             return (this.$vuetify.theme.dark = true);
-    //         } else {
-    //             return (this.$vuetify.theme.dark = false);
-    //         }
-    //     },
-    // },
 
     watch: {
         group() {
@@ -441,13 +421,6 @@ export default {
             this.right = !val;
         },
     },
-    // created: function(){
-
-    //     var currentUrl = window.location.pathname;
-
-    //     console.log(currentUrl);
-
-    //   }
 };
 </script>
 
@@ -502,10 +475,10 @@ table th {
     display: none !important;
 }
 .table-high-light-bg {
-    background: #D1C4E9;
+    background: #d1c4e9;
 }
 .table-high-light-bg-dm {
-    background:#7986CB
+    background: #7986cb;
 }
 .half-bg--payple {
     position: relative;
@@ -564,18 +537,18 @@ code {
     cursor: pointer;
 }
 .indent--hyphen {
-    padding-left:1rem;
-    position:relative;    
+    padding-left: 1rem;
+    position: relative;
 }
 .indent--hyphen:before {
-    content:"-";
-    width:1rem;
+    content: "-";
+    width: 1rem;
     line-height: 1rem;
-    position:absolute;
-    top:0;
-    left:0;
-    font-size:1rem;
-    text-align:center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    text-align: center;
 }
 .no-style-link {
     color: inherit !important;
@@ -654,21 +627,6 @@ code {
         visibility: hidden;
     }
 }
-/* .guide--dark-mode .pc-img {
-    position: fixed;
-    top: 60px;
-    left: 210px;
-    z-index: 10000;
-}
-.guide--dark-mode .mo-img {
-    position: fixed;
-    top: 60px;
-    right: 95px;
-    z-index: 10000;
-}
-.guide--dark-mode .mo-img.modify-position {
-    right: 20px;
-} */
 
 .mo-navi--header {
     position: relative;
@@ -687,5 +645,30 @@ code {
 }
 .mo-res--tool-bar {
     width: 100%;
+}
+.v-banner__wrapper {
+    padding: 0 !important;
+}
+.v-banner__actions {
+    position: absolute;
+    right: 12px;
+}
+.v-snack__content {
+    padding: 0 !important;
+    overflow: hidden;
+    margin-right:0 !important;
+}
+
+.v-ms-img {
+    margin:0;
+    padding:0;
+    border:none;
+    vertical-align: middle;
+}
+.v-application--is-ltr .v-banner--is-mobile .v-banner__content {
+    padding-right:0 !important;
+}
+.text-shadow-400 {
+    text-shadow: -1px -1px 1px rgb(0 0 0 / 10%), 1px 1px 1px rgb(0 0 0 / 50%);
 }
 </style>

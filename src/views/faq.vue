@@ -323,7 +323,7 @@
             </v-expansion-panels>
 
             <h3 class="pl-4 mt-12 mb-8">
-                결제 > URL링크결제
+                결제 > URL 링크결제
             </h3>
             <v-expansion-panels multiple focusable hover inset>
                 <v-expansion-panel>
@@ -335,7 +335,7 @@
 
                             <v-list-item-content>
                                 <v-list-item-title class="white-space-normal">
-                                    URL링크결제시 주문번호(OID)는 이렇게 처리됩니다.
+                                    URL 링크결제시 주문번호(OID)는 이렇게 처리됩니다.
                                 </v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
@@ -607,7 +607,7 @@
                         </v-timeline>
 
                         <v-alert border="left" colored-border type="error" elevation="2" class="mx-4 mt-4">
-                            URL링크결제로 결제결과를 안내받으려면 Webhook URL 등록이 필요합니다.<br />
+                            URL 링크결제로 결제결과를 안내받으려면 Webhook URL 등록이 필요합니다.<br />
                             <router-link to="/webhook">이곳</router-link>에서 Webhook URL에 대해 안내 받아보세요.
                         </v-alert>
 

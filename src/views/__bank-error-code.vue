@@ -370,7 +370,7 @@ Cache-Control: no-cache
                     to: "/"
                 },
                 {
-                    text: "계좌결제",
+                    text: "계좌이체",
                     disabled: false,
                     to: "/bank/outline"
                 },

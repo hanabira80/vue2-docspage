@@ -440,7 +440,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>

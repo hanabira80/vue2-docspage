@@ -8,7 +8,7 @@
 
         <h1 class="mb-12">URL 링크결제</h1>
         <blockquote class="mb-12 blockquote body-1">
-            URL링크의 생성은 가맹점관리자페이지에서도 수기로 생성이 가능합니다.<br />
+            URL 링크의 생성은 가맹점관리자페이지에서도 수기로 생성이 가능합니다.<br />
             이 문서에서는 대량생성등의 사유로 API를 통해 링크를 생성하는 방법에 대해 안내합니다.
         </blockquote>
 
@@ -23,7 +23,7 @@
 
             <v-alert border="left" colored-border type="error" elevation="2" class="mx-4">
                 결제요청을 위한 선행단계로 가맹점 인증 단계를 거쳐야 합니다.<br/>
-                URL링크 생성에 필요한 가맹점 인증요청 방법은 <router-link to="/bank/install/auth">이곳</router-link>을 확인해보세요.
+                URL 링크 생성에 필요한 가맹점 인증요청 방법은 <router-link to="/bank/install/auth">이곳</router-link>을 확인해보세요.
             </v-alert>
 
             <h3 class="pl-4">
@@ -461,7 +461,7 @@ export default {
                     to: "/",
                 },
                 {
-                    text: "계좌결제",
+                    text: "계좌이체",
                     disabled: true,
                 },
                 {

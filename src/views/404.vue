@@ -33,11 +33,11 @@ export default {
                     to: "/",
                 },
                 {
-                    text: "계좌결제",
+                    text: "계좌이체",
                     disabled: true,
                 },
                 {
-                    text: "계좌결제 개요",
+                    text: "계좌이체 개요",
                     disabled: true,
                 },
             ],

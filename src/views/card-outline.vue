@@ -137,7 +137,7 @@
                     <v-card raised col="12" sm="4" height="100%">
                         <v-card-text>
                             <p class="title text--primary">
-                                URL링크결제
+                                URL 링크결제
                             </p>
                             <div class="text--primary">
                                 페이플에서 제공하는 관리자사이트에서 결제링크를  생성해 결제를 받는 방식입니다. 따라서 개발연동과정이 필요가 없습니다.
@@ -211,7 +211,7 @@
                                 일회성 간편결제
                             </th>
                             <th colspan="1" rowspan="1">
-                                URL링크결제
+                                URL 링크결제
                             </th>
                             <th colspan="1" rowspan="1">
                                 앱카드 결제

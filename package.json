@@ -13,6 +13,7 @@
     "@mdi/svg": "^5.8.55",
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.7.0",
+    "esm": "^3.2.25",
     "npm-check-updates": "^11.1.8",
     "prismjs": "^1.22.0",
     "vue": "^2.6.12",

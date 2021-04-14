@@ -99,7 +99,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -315,7 +315,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -536,7 +536,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -618,7 +618,7 @@
         
         <article class="mb-12">
             <h2 class="">
-                URL링크결제-링크생성시 가맹점 인증 요청
+                URL 링크결제-링크생성시 가맹점 인증 요청
             </h2>
 
             <h3 class="pl-4">
@@ -637,7 +637,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -822,7 +822,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -1008,7 +1008,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -1194,7 +1194,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -1380,7 +1380,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -1566,7 +1566,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -1878,7 +1878,7 @@ export default {
                     to: "/",
                 },
                 {
-                    text: "계좌결제",
+                    text: "계좌이체",
                     disabled: true,
                 },
                 {

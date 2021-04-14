@@ -7,7 +7,7 @@
         </v-breadcrumbs> -->
 
         <h1 class="mt-2">
-            Simple Payment For People!<br />
+            Payment Must Be Simple!<br />
             We are Payple!
         </h1>
         <p class="mt-4 mb-12">
@@ -44,7 +44,7 @@
                 <v-card raised col="12" sm="6">
                     <v-card-text>
                         <p class="title text--primary">
-                            계좌결제
+                            계좌이체
                         </p>
                         <v-row class="mb-8">
                             <v-col col="12" sm="6" class="text-center">

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="127" height="51" viewBox="0 0 127 51">
+  <defs>
+    <filter id="사각형_2" x="0" y="0" width="127" height="51" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="바로가기" x="15" y="6" width="81" height="39" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="그룹_5" data-name="그룹 5" transform="translate(-1435 -116)">
+    <g transform="matrix(1, 0, 0, 1, 1435, 116)" filter="url(#사각형_2)">
+      <g id="사각형_2-2" data-name="사각형 2" transform="translate(9 6)" fill="none" stroke="#fff" stroke-width="2">
+        <rect width="109" height="33" rx="6" stroke="none"/>
+        <rect x="1" y="1" width="107" height="31" rx="5" fill="none"/>
+      </g>
+    </g>
+    <g id="그룹_4" data-name="그룹 4" transform="translate(2 -1)">
+      <g transform="matrix(1, 0, 0, 1, 1433, 117)" filter="url(#바로가기)">
+        <text id="바로가기-2" data-name="바로가기" transform="translate(24 28)" fill="#fff" font-size="18" font-family="AppleSDGothicNeo-Bold, Apple SD Gothic Neo" font-weight="700"><tspan x="0" y="0">바로가기</tspan></text>
+      </g>
+      <g id="그룹_3" data-name="그룹 3" transform="translate(-57.924 3.399)">
+        <path id="Icon_ionic-ios-arrow-forward" data-name="Icon ionic-ios-arrow-forward" d="M15.455,11.463,11.468,7.479a.75.75,0,0,1,0-1.064.759.759,0,0,1,1.067,0l4.518,4.515a.752.752,0,0,1,.022,1.039l-4.537,4.546a.753.753,0,0,1-1.067-1.064Z" transform="translate(1572.856 123.42)" fill="#fff"/>
+        <path id="Icon_ionic-ios-arrow-forward-2" data-name="Icon ionic-ios-arrow-forward" d="M15.455,11.463,11.468,7.479a.75.75,0,0,1,0-1.064.759.759,0,0,1,1.067,0l4.518,4.515a.752.752,0,0,1,.022,1.039l-4.537,4.546a.753.753,0,0,1-1.067-1.064Z" transform="translate(1576.869 123.42)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

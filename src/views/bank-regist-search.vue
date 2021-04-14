@@ -327,7 +327,7 @@ export default {
                     to: "/",
                 },
                 {
-                    text: "계좌결제",
+                    text: "계좌이체",
                     disabled: true,
                 },
                 {

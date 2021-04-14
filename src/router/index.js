@@ -6,27 +6,31 @@ import Home from "../views/Home.vue";
 Vue.use(VueRouter);
 
 const routes = [
-    {
-        path: "/404",
-        name: "notFound",
-        name: "not-found",
-        meta: { title: "404" },
-        component: () => import("../views/404.vue"),
-    },
+    // {
+    //     path: "/404",
+    //     name: "notFound",
+    //     name: "not-found",
+    //     meta: { title: "404" },
+    //     component: () => import("../views/404.vue"),
+    // },
 
     {
+        // path: "/",
+        // name: "Home",
+        // component: Home,
+        // meta: {
+        //     title: "연동가이드 - 페이플",
+        //     metaTags: [
+        //         {
+        //             property: "og:test",
+        //             content: "Hello Webisfree!",
+        //         },
+        //     ],
+        // },
         path: "/",
         name: "Home",
-        component: Home,
-        meta: {
-            title: "연동가이드 - 페이플",
-            metaTags: [
-                {
-                    property: "og:test",
-                    content: "Hello Webisfree!",
-                },
-            ],
-        },
+        meta: { title: "연동가이드 - 페이플" },
+        component: () => import("../views/Home.vue"),
     },
     {
         path: "/card/outline",
@@ -132,92 +136,92 @@ const routes = [
     {
         path: "/bank/outline",
         name: "bank-outline",
-        meta: { title: "계좌결제 개요" },
+        meta: { title: "계좌이체 개요" },
         component: () => import("../views/bank-outline.vue"),
     },
     {
         path: "/bank/install/outline",
         name: "bank-auth",
-        meta: { title: "계좌결제 가맹점 인증요청" },
+        meta: { title: "계좌이체 가맹점 인증요청" },
         component: () => import("../views/bank-install-outline.vue"),
     },
     {
         path: "/bank/install/auth",
         name: "bank-call",
-        meta: { title: "계좌결제 결제창 호출" },
+        meta: { title: "계좌이체 결제창 호출" },
         component: () => import("../views/bank-install-auth.vue"),
     },
     {
         path: "/bank/install/account",
         name: "bank-account",
-        meta: { title: "계좌결제 계정발급" },
+        meta: { title: "계좌이체 계정발급" },
         component: () => import("../views/bank-install-account.vue"),
         // props:true
     },
     {
         path: "/bank/pay/outline",
         name: "bank-repeat-outline",
-        meta: { title: "계좌결제 빌링키방식 개요" },
+        meta: { title: "계좌이체 빌링키방식 개요" },
         component: () => import("../views/bank-pay-outline.vue"),
     },
     {
         path: "/bank/pay/simple-pin",
         name: "bank-simple",
-        meta: { title: "계좌결제 간편결제" },
+        meta: { title: "계좌이체 간편결제" },
         component: () => import("../views/bank-pay-simple--pin.vue"),
     },
     {
         path: "/bank/pay/simple-once",
         name: "bank-pay/simple-once",
-        meta: { title: "계좌결제 단건결제" },
+        meta: { title: "계좌이체 단건결제" },
         component: () => import("../views/bank-pay-simple--once.vue"),
     },
     {
         path: "/bank/pay/regular",
         name: "bank-regular",
-        meta: { title: "계좌결제 정기결제" },
+        meta: { title: "계좌이체 정기결제" },
         component: () => import("../views/bank-pay-regular.vue"),
     },
     {
         path: "/bank/pay/link",
         name: "bank-link",
-        meta: { title: "계좌결제 링크결제" },
+        meta: { title: "계좌이체 링크결제" },
         component: () => import("../views/bank-pay-link.vue"),
     },
     {
         path: "/bank/recipt/request",
         name: "bank-recipt-request",
-        meta: { title: "계좌결제 현금영수증 발행" },
+        meta: { title: "계좌이체 현금영수증 발행" },
         component: () => import("../views/bank-recipt-request.vue"),
     },
     {
         path: "/bank/recipt/cancel",
         name: "bank-recipt-cancel",
-        meta: { title: "계좌결제 현금영수증 취소" },
+        meta: { title: "계좌이체 현금영수증 취소" },
         component: () => import("../views/bank-recipt-cancel.vue"),
     },
     {
         path: "/bank/pay/cancel",
         name: "bank-cancel",
-        meta: { title: "계좌결제 승인취소" },
+        meta: { title: "계좌이체 승인취소" },
         component: () => import("../views/bank-pay-cancel.vue"),
     },
     {
         path: "/bank/regist/cancel",
         name: "bank-reg-cancel",
-        meta: { title: "계좌결제 등록계좌 해지" },
+        meta: { title: "계좌이체 등록계좌 해지" },
         component: () => import("../views/bank-regist-cancel.vue"),
     },
     {
         path: "/bank/regist/search",
         name: "bank-reg-search",
-        meta: { title: "계좌결제 등록계좌 해지" },
+        meta: { title: "계좌이체 등록계좌 해지" },
         component: () => import("../views/bank-regist-search.vue"),
     },
     {
         path: "/bank/result/search",
         name: "bank-result-search",
-        meta: { title: "계좌결제 결제결과 조회" },
+        meta: { title: "계좌이체 결제결과 조회" },
         component: () => import("../views/bank-result-search.vue"),
     },
     {
@@ -229,7 +233,7 @@ const routes = [
     {
         path: "/bank/policy",
         name: "bank-error-code",
-        meta: { title: "계좌결제 정책" },
+        meta: { title: "계좌이체 정책" },
         component: () => import("../views/bank-policy.vue"),
     },
     //

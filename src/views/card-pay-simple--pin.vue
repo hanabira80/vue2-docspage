@@ -570,7 +570,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -666,7 +666,7 @@
                                 PCD_PAY_MSG
                             </td>
                             <td colspan="1" rowspan="1">
-                                결제완료
+                                카드인증완료
                             </td>
                             <td colspan="1" rowspan="1">
                                 결제요청 결과 메시지

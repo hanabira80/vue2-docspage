@@ -66,7 +66,7 @@
                             </v-list-item-content>
                         </v-list-item>
                         <h3 class=" text--primary my-4">
-                            페이플 JAVA 샘플코드
+                            페이플 Java 샘플코드
                         </h3>
                         
                         <div class="text--primary">
@@ -74,7 +74,7 @@
                             <b>미스터멘션</b>의 <b>슈퍼개발자</b>님이<br/>
                             제작해주신 페이플의 PHP 샘플코드입니다.<br/><br/> -->
                             결제 연동을 위해<br/> 
-                            페이플에서 제작한 <b>JAVA 샘플코드</b>입니다.<br/><br/>
+                            페이플에서 제작한 <b>Java 샘플코드</b>입니다.<br/><br/>
 
                             페이플 오픈 소스 프로젝트는 언제나 여러분의 참여를 환영합니다.
                         </div>
@@ -100,12 +100,12 @@
                             
                             <v-list-item-content>
                                 <v-list-item-title class=" mb-2">
-                                    NODE JS
+                                    Node.js
                                 </v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                         <h3 class=" text--primary my-4">
-                            NODE JS 샘플코드
+                            Node.js 샘플코드
                         </h3>
                         
                         <div class="text--primary">
@@ -113,7 +113,7 @@
                             <b>미스터멘션</b>의 <b>슈퍼개발자</b>님이<br/>
                             제작해주신 페이플의 PHP 샘플코드입니다.<br/><br/> -->
                             결제 연동을 위해<br/> 
-                            페이플에서 제작한 <b>NODE 샘플코드</b>입니다.<br/><br/>
+                            페이플에서 제작한 <b>Node.js 샘플코드</b>입니다.<br/><br/>
 
                             페이플 오픈 소스 프로젝트는 언제나 여러분의 참여를 환영합니다.
                         </div>
@@ -166,7 +166,7 @@
                         <v-list-item-content>
                             <v-list-item-title class=" mb-2">JAVA</v-list-item-title>
                             <v-list-item-subtitle>
-                                페이플 JAVA 샘플코드 입니다.<br/>
+                                페이플 Java 샘플코드 입니다.<br/>
                                 페이플을 이용하시나요?<br/>
                                 페이플 오픈 소스 프로젝트에 직접 참여해보세요!
                             </v-list-item-subtitle>

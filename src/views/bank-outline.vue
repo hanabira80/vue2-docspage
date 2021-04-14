@@ -138,7 +138,7 @@
                     <v-card raised col="12" sm="4" height="100%">
                         <v-card-text>
                             <p class="title text--primary">
-                                URL링크결제
+                                URL 링크결제
                             </p>
                             <div class="text--primary">
                                 페이플에서 제공하는 관리자사이트에서 결제링크를 생성해 결제를 받는 방식입니다. 따라서 개발연동과정이 필요가 없습니다.
@@ -184,7 +184,7 @@
                                 일회성 간편결제
                             </td>
                             <td colspan="1" rowspan="1">
-                                URL링크결제
+                                URL 링크결제
                             </td>
                         </tr>
                         <tr>
@@ -349,11 +349,11 @@ referer: https://가맹점 도메인
                     to: "/",
                 },
                 {
-                    text: "계좌결제",
+                    text: "계좌이체",
                     disabled: true,
                 },
                 {
-                    text: "계좌결제 개요",
+                    text: "계좌이체 개요",
                     disabled: true,
                 },
             ],

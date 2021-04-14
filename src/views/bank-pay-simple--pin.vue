@@ -565,7 +565,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -660,7 +660,7 @@
                                 PCD_PAY_MSG
                             </td>
                             <td colspan="1" rowspan="1">
-                                출금이체완료
+                                계좌인증완료
                             </td>
                             <td colspan="1" rowspan="1">
                                 결제요청 결과 메시지
@@ -1158,7 +1158,7 @@ export default {
                     to: "/",
                 },
                 {
-                    text: "계좌결제",
+                    text: "계좌이체",
                     disabled: true,
                 },
                 {

@@ -100,7 +100,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -307,7 +307,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -529,7 +529,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -612,7 +612,7 @@
 
         <article class="mb-12">
             <h2 class="" id="pay-link">
-                URL링크결제-링크생성시 가맹점 인증 요청
+                URL 링크결제-링크생성시 가맹점 인증 요청
             </h2>
             <v-card class="temp_table ma-4 mb-12">
                 <v-simple-table class="table-hover-disable">
@@ -669,7 +669,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -857,7 +857,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -1045,7 +1045,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -1232,7 +1232,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
@@ -1418,7 +1418,7 @@
                 </v-tab>
                 <v-tab>
                     <div class="font-weight-bold">
-                        JAVA 샘플코드
+                        Java 샘플코드
                     </div>
                 </v-tab>
                 <v-tab>
