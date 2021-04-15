@@ -2,11 +2,11 @@
     <v-app :dark="!!(isDark === 'dark')">
         <v-banner single-line app sticky>
             <v-img :src="require('./assets/ev_210408-bg-pc.png')" cover height="70" class="d-flex align-center">
-                <div class="d-flex justify-center align-center flex-wrap px-6">
-                    <div class="text-h6 text-sm-h5 font-weight-bold white--text mr-0 mr-sm-6 text-shadow-400">
+                <div class="d-flex justify-center align-center flex-wrap px-8">
+                    <div class="text-body2 text-sm-h5 font-weight-bold white--text text-shadow-400">
                         지금 페이플 추천하면 카드수수료 핵이득!
                     </div>
-                    <div class="mr-6">
+                    <div class="ml-6  mr-6">
                         <v-img :src="require('./assets/banner-money.svg')" width="40" class=""></v-img>
                     </div>
                     <div>
