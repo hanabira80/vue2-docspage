@@ -1,0 +1,26 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://docs.payple.kr/</loc>
+        <lastmod>2021-04-22</lastmod>       
+    </url>
+    <url>
+        <loc>https://docs.payple.kr/card/pay/regular</loc>
+        <lastmod>2021-04-22</lastmod>       
+    </url>
+    <url>
+        <loc>https://docs.payple.kr/card/pay/simple-pin</loc>
+        <lastmod>2021-04-22</lastmod>      
+    </url>
+    <url>
+        <loc>https://docs.payple.kr/card/pay/link</loc>
+        <lastmod>2021-04-22</lastmod>
+    </url>
+    <url>
+        <loc>https://docs.payple.kr/bank/pay/simple-pin</loc>
+        <lastmod>2021-04-22</lastmod>
+    </url>
+    <url>
+        <loc>https://docs.payple.kr/bank/pay/regular</loc>
+        <lastmod>2021-04-22</lastmod>
+    </url>
+</urlset>

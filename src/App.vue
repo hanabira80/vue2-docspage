@@ -35,7 +35,7 @@
                             class="shrink"
                             contain
                             transition="scale-transition"
-                            width="160"
+                            width="140"
                         />
                     </router-link>
                 </div>
