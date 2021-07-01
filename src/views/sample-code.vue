@@ -12,7 +12,7 @@
         </blockquote>
 
         <v-row class="mb-12 pt-12">
-            <v-col col="12" sm="4">
+            <v-col class="d-flex align-stretch" col="12" sm="4">
                 <v-card>
                     <v-card-text>
                         <v-list-item class="px-0">
@@ -50,7 +50,7 @@
                 </v-card>
             </v-col>
 
-            <v-col col="12" sm="4">
+            <v-col class="d-flex align-stretch" col="12" sm="4">
                 <v-card>
                     <v-card-text>
                         <v-list-item class="px-0">
@@ -88,7 +88,7 @@
                 </v-card>
             </v-col>
 
-            <v-col col="12" sm="4">
+            <v-col class="d-flex align-stretch" col="12" sm="4">
                 <v-card>
                     <v-card-text>
                         <v-list-item class="px-0">
@@ -120,7 +120,85 @@
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn text color="deep-purple accent-4" href="https://github.com/PAYPLECORP/sample-node" target="_blank">
+                        <v-btn text color="deep-purple accent-4" href="https://github.com/PAYPLECORP/sample_nodejs" target="_blank">
+                            바로가기
+                        </v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-col>
+
+            <v-col class="d-flex align-stretch" col="12" sm="4">
+                <v-card>
+                    <v-card-text>
+                        <v-list-item class="px-0">
+                            <v-list-item-avatar color="#61dafb">
+                                <v-icon color="white">
+                                    mdi-react
+                                </v-icon>
+                            </v-list-item-avatar>
+                            
+                            <v-list-item-content>
+                                <v-list-item-title class=" mb-2">
+                                    React
+                                </v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <h3 class=" text--primary my-4">
+                            React 샘플코드
+                        </h3>
+                        
+                        <div class="text--primary">
+                            <!-- 페이플 서비스를 이용중인<br/>
+                            <b>미스터멘션</b>의 <b>슈퍼개발자</b>님이<br/>
+                            제작해주신 페이플의 PHP 샘플코드입니다.<br/><br/> -->
+                            결제 연동을 위해<br/> 
+                            페이플에서 제작한 <b>React 샘플코드</b>입니다.<br/><br/>
+
+                            페이플 오픈 소스 프로젝트는 언제나 여러분의 참여를 환영합니다.
+                        </div>
+                    </v-card-text>
+
+                    <v-card-actions>
+                        <v-btn text color="deep-purple accent-4" href="https://github.com/PAYPLECORP/sample_react" target="_blank">
+                            바로가기
+                        </v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-col>
+
+            <v-col class="d-flex align-stretch" col="12" sm="4">
+                <v-card>
+                    <v-card-text>
+                        <v-list-item class="px-0">
+                            <v-list-item-avatar color="#2b5b84">
+                                <v-icon color="white">
+                                    mdi-language-python
+                                </v-icon>
+                            </v-list-item-avatar>
+                            
+                            <v-list-item-content>
+                                <v-list-item-title class=" mb-2">
+                                    Python
+                                </v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <h3 class=" text--primary my-4">
+                            Python 샘플코드
+                        </h3>
+                        
+                        <div class="text--primary">
+                            <!-- 페이플 서비스를 이용중인<br/>
+                            <b>미스터멘션</b>의 <b>슈퍼개발자</b>님이<br/>
+                            제작해주신 페이플의 PHP 샘플코드입니다.<br/><br/> -->
+                            결제 연동을 위해<br/> 
+                            페이플에서 제작한 <b>Python 샘플코드</b>입니다.<br/><br/>
+
+                            페이플 오픈 소스 프로젝트는 언제나 여러분의 참여를 환영합니다.
+                        </div>
+                    </v-card-text>
+
+                    <v-card-actions>
+                        <v-btn text color="deep-purple accent-4" href="https://github.com/PAYPLECORP/sample_python" target="_blank">
                             바로가기
                         </v-btn>
                     </v-card-actions>

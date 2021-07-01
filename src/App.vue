@@ -1,16 +1,13 @@
 <template>
     <v-app :dark="!!(isDark === 'dark')">
-        <v-banner single-line app sticky>
-            <v-img :src="require('./assets/ev_210408-bg-pc.png')" cover height="70" class="d-flex align-center">
+        <!-- <v-banner single-line app sticky>
+            <v-img :src="require('./assets/bg-1.png')" cover height="70" class="d-flex align-center">
                 <div class="d-flex justify-center align-center flex-wrap px-8">
                     <div class="text-body2 text-sm-h5 font-weight-bold white--text text-shadow-400">
-                        지금 페이플 추천하면 카드수수료 핵이득!
+                        지금이 페이플 가입 찬스! WELCOME EVENT
                     </div>
-                    <div class="ml-6  mr-6">
-                        <v-img :src="require('./assets/banner-money.svg')" width="40" class=""></v-img>
-                    </div>
-                    <div>
-                        <a href="https://www.payple.kr/html/notice/202104-event.html" target="_blank">
+                    <div class="ml-6">
+                        <a href="https://www.payple.kr/html/notice/202106-event.html" target="_blank">
                             <v-img :src="require('./assets/banner-btn.svg')" width="100" class=""></v-img>
                         </a>
                     </div>
@@ -23,49 +20,43 @@
                     </v-icon>
                 </v-btn>
             </template>
-        </v-banner>
-        <v-app-bar app clipped-left :color="$vuetify.theme.dark ? 'grey darken-4' : 'white'">
-            <div :class="{ 'justify-space-between mo-res--tool-bar': $vuetify.breakpoint.mdAndDown }" class="d-flex align-center">
+        </v-banner> -->
+        <!-- <v-app-bar app clipped-left :color="$vuetify.theme.dark ? 'grey darken-4' : 'white'"> -->
+        <v-app-bar app clipped-left color="#5C539D">
+            <v-toolbar-items
+                :class="{ 'justify-space-between mo-res--tool-bar pl-0': $vuetify.breakpoint.mdAndDown, 'pl-2': $vuetify.breakpoint.mdAndUp }"
+                class="d-flex align-center py-5"
+            >
                 <div class="d-flex align-center">
-                    <v-app-bar-nav-icon class="hidden-lg-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+                    <v-app-bar-nav-icon class="hidden-lg-and-up" color="#fff" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
                     <router-link to="/">
-                        <v-img
-                            :src="require($vuetify.theme.dark ? './assets/header-logo--wh.svg' : './assets/header-logo--bk.svg')"
-                            alt=""
-                            class="shrink"
-                            contain
-                            transition="scale-transition"
-                            width="160"
-                        />
+                        <v-img :src="require('./assets/header-logo-api--wh.svg')" alt="" class="shrink" contain transition="scale-transition" width="140" />
                     </router-link>
                 </div>
 
-                <div class="ml-4">
-                    <v-btn
-                        id="mode-switcher"
-                        @click="$vuetify.theme.dark = !$vuetify.theme.dark"
-                        :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-5'"
-                    >
-                        <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow accent-4'">
-                            {{ $vuetify.theme.dark ? "mdi-weather-night" : "mdi-white-balance-sunny" }}
-                        </v-icon>
-                        <span class="pl-2 hidden-xs-only">
-                            {{ $vuetify.theme.dark ? "다크모드" : "라이트모드" }}
-                        </span>
-                    </v-btn>
-                </div>
-            </div>
+                <v-divider vertical color="#bbb" class="ml-3 hidden-md-and-down"></v-divider>
+
+                <v-btn text id="mode-switcher" @click="$vuetify.theme.dark = !$vuetify.theme.dark">
+                    <v-icon :color="$vuetify.theme.dark ? 'blue accent-2' : 'yellow accent-4'">
+                        {{ $vuetify.theme.dark ? "mdi-weather-night" : "mdi-white-balance-sunny" }}
+                    </v-icon>
+                    <span class="pl-2 hidden-xs-only white--text">
+                        {{ $vuetify.theme.dark ? "다크모드" : "라이트모드" }}
+                    </span>
+                </v-btn>
+            </v-toolbar-items>
 
             <v-spacer class="hidden-md-and-down"></v-spacer>
 
-            <div class="hidden-md-and-down">
-                <v-btn class="mx-2 white--text" color="deep-purple accent-2" href="https://www.payple.kr/" target="_blank">
-                    <v-icon class="mr-2">mdi-home-outline</v-icon>페이플 홈
+            <v-toolbar-items class="hidden-md-and-down py-5">
+                <v-btn text class="font-weight-bold" color="white" href="https://www.payple.kr/" target="_blank">
+                    HOME
                 </v-btn>
-                <v-btn class="mx-2 white--text" color="deep-purple accent-2" href="https://www.payple.kr/?ACT_=demo" target="_blank">
-                    <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
+                <v-divider vertical color="#bbb"></v-divider>
+                <v-btn text class="font-weight-bold" color="white" href="https://www.payple.kr/?ACT_=demo" target="_blank">
+                    DEMO
                 </v-btn>
-            </div>
+            </v-toolbar-items>
         </v-app-bar>
 
         <div
@@ -85,31 +76,8 @@
         </div>
 
         <v-navigation-drawer v-model="drawer" app clipped>
-            <template v-slot:prepend>
-                <div class="hidden-lg-and-up text-center">
-                    <v-row col="12" class="mo-navi--header">
-                        <v-col col="6" class="pa-0">
-                            <v-btn x-large tile depressed block class="white--text" color="deep-purple accent-2" href="https://www.payple.kr/" target="_blank">
-                                <v-icon class="mr-2">mdi-home-outline</v-icon> 홈
-                            </v-btn>
-                        </v-col>
-                        <v-col col="6" class="pa-0">
-                            <v-btn
-                                x-large
-                                tile
-                                depressed
-                                block
-                                class="white--text"
-                                color="deep-purple accent-2"
-                                href="https://www.payple.kr/?ACT_=demo"
-                                target="_blank"
-                            >
-                                <v-icon class="mr-2">mdi-file-code-outline</v-icon> 데모
-                            </v-btn>
-                        </v-col>
-                    </v-row>
-                </div>
-            </template>
+            
+
             <v-list dense>
                 <v-treeview :items="navi" openOnClick>
                     <template slot="label" slot-scope="props">
@@ -120,7 +88,30 @@
                     </template>
                 </v-treeview>
             </v-list>
-
+            
+            <template v-slot:append>
+                <div class="hidden-lg-and-up text-center">
+                    
+                    <v-btn x-large tile depressed width="50%" class="white--text" color="#5C539D" href="https://www.payple.kr/" target="_blank">
+                        HOME
+                    </v-btn>
+                
+                    <v-btn
+                        x-large
+                        tile
+                        depressed
+                        width="50%"
+                        class="white--text"
+                        color="#5C539D"
+                        href="https://www.payple.kr/?ACT_=demo"
+                        target="_blank"
+                    >   
+                        DEMO
+                    </v-btn>
+                    
+                </div>
+                
+            </template>
             <!-- <template>
                 <v-card class="mx-auto" width="300">
                     <v-list>
@@ -628,7 +619,7 @@ code {
     }
 }
 
-.mo-navi--header {
+/* .mo-navi--header {
     position: relative;
     background: #7c4dff !important;
 }
@@ -642,7 +633,7 @@ code {
     width: 3px;
     background: #512da8;
     border-radius: 4px;
-}
+} */
 .mo-res--tool-bar {
     width: 100%;
 }
@@ -656,19 +647,25 @@ code {
 .v-snack__content {
     padding: 0 !important;
     overflow: hidden;
-    margin-right:0 !important;
+    margin-right: 0 !important;
 }
 
 .v-ms-img {
-    margin:0;
-    padding:0;
-    border:none;
+    margin: 0;
+    padding: 0;
+    border: none;
     vertical-align: middle;
 }
 .v-application--is-ltr .v-banner--is-mobile .v-banner__content {
-    padding-right:0 !important;
+    padding-right: 0 !important;
 }
 .text-shadow-400 {
     text-shadow: -1px -1px 1px rgb(0 0 0 / 10%), 1px 1px 1px rgb(0 0 0 / 50%);
+}
+.v-toolbar__content {
+    padding: 4px 4px !important;
+}
+.v-navigation-drawer__append {
+    height:54px;
 }
 </style>
