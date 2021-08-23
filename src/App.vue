@@ -1,27 +1,5 @@
 <template>
     <v-app :dark="!!(isDark === 'dark')">
-        <!-- <v-banner single-line app sticky>
-            <v-img :src="require('./assets/bg-1.png')" cover height="70" class="d-flex align-center">
-                <div class="d-flex justify-center align-center flex-wrap px-8">
-                    <div class="text-body2 text-sm-h5 font-weight-bold white--text text-shadow-400">
-                        지금이 페이플 가입 찬스! WELCOME EVENT
-                    </div>
-                    <div class="ml-6">
-                        <a href="https://www.payple.kr/html/notice/202106-event.html" target="_blank">
-                            <v-img :src="require('./assets/banner-btn.svg')" width="100" class=""></v-img>
-                        </a>
-                    </div>
-                </div>
-            </v-img>
-            <template v-slot:actions="{ dismiss }">
-                <v-btn icon color="white" @click="dismiss">
-                    <v-icon dark>
-                        mdi-close-circle-outline
-                    </v-icon>
-                </v-btn>
-            </template>
-        </v-banner> -->
-        <!-- <v-app-bar app clipped-left :color="$vuetify.theme.dark ? 'grey darken-4' : 'white'"> -->
         <v-app-bar app clipped-left color="#5C539D">
             <v-toolbar-items
                 :class="{ 'justify-space-between mo-res--tool-bar pl-0': $vuetify.breakpoint.mdAndDown, 'pl-2': $vuetify.breakpoint.mdAndUp }"
@@ -76,8 +54,6 @@
         </div>
 
         <v-navigation-drawer v-model="drawer" app clipped>
-            
-
             <v-list dense>
                 <v-treeview :items="navi" openOnClick>
                     <template slot="label" slot-scope="props">
@@ -88,85 +64,47 @@
                     </template>
                 </v-treeview>
             </v-list>
-            
+
             <template v-slot:append>
                 <div class="hidden-lg-and-up text-center">
-                    
                     <v-btn x-large tile depressed width="50%" class="white--text" color="#5C539D" href="https://www.payple.kr/" target="_blank">
                         HOME
                     </v-btn>
-                
-                    <v-btn
-                        x-large
-                        tile
-                        depressed
-                        width="50%"
-                        class="white--text"
-                        color="#5C539D"
-                        href="https://www.payple.kr/?ACT_=demo"
-                        target="_blank"
-                    >   
+
+                    <v-btn x-large tile depressed width="50%" class="white--text" color="#5C539D" href="https://www.payple.kr/?ACT_=demo" target="_blank">
                         DEMO
                     </v-btn>
-                    
                 </div>
-                
             </template>
-            <!-- <template>
-                <v-card class="mx-auto" width="300">
-                    <v-list>
-                        <v-list-item>
-                            <v-list-item-icon>
-                                <v-icon>mdi-home</v-icon>
-                            </v-list-item-icon>
-
-                            <v-list-item-title>Home</v-list-item-title>
-                        </v-list-item>
-
-                        <v-list-group :value="true" prepend-icon="mdi-account-circle">
-                            <template v-slot:activator>
-                                <v-list-item-title>Users</v-list-item-title>
-                            </template>
-
-                            <v-list-group :value="true" no-action sub-group>
-                                <template v-slot:activator>
-                                    <v-list-item-content>
-                                        <v-list-item-title>Admin</v-list-item-title>
-                                    </v-list-item-content>
-                                </template>
-
-                                <v-list-item v-for="([title, icon], i) in admins" :key="i" link>
-                                    <v-list-item-title v-text="title"></v-list-item-title>
-
-                                    <v-list-item-icon>
-                                        <v-icon v-text="icon"></v-icon>
-                                    </v-list-item-icon>
-                                </v-list-item>
-                            </v-list-group>
-
-                            <v-list-group no-action sub-group>
-                                <template v-slot:activator>
-                                    <v-list-item-content>
-                                        <v-list-item-title>Actions</v-list-item-title>
-                                    </v-list-item-content>
-                                </template>
-
-                                <v-list-item v-for="([title, icon], i) in cruds" :key="i" link>
-                                    <v-list-item-title v-text="title"></v-list-item-title>
-
-                                    <v-list-item-icon>
-                                        <v-icon v-text="icon"></v-icon>
-                                    </v-list-item-icon>
-                                </v-list-item>
-                            </v-list-group>
-                        </v-list-group>
-                    </v-list>
-                </v-card>
-            </template> -->
         </v-navigation-drawer>
 
         <v-main>
             <v-container style="max-width:1000px;">
+                <v-card class="mt-6 ani-gradient-change">
+                    <div class="d-flex align-center justify-space-between flex-column flex-sm-row px-sm-6">
+                        <div>
+                            <v-card-title class="white--text font-weight-bold text-h5">
+                                New! Payple API 가이드!
+                            </v-card-title>
+                            <v-card-text class="white--text ">
+                                Payple API 가이드가 더욱 이해하기 쉽고 보기 편하도록 새롭게 바뀌었습니다.<br />
+                                새로운 API 가이드를 확인하시려면 <b>바로가기</b> 버튼을 클릭해주세요.
+                            </v-card-text>
+                        </div>
+
+                        <div>
+                            <v-card-actions>
+                                <v-spacer class="d-none d-md-block"></v-spacer>
+                                <v-btn large outlined class="white--text font-weight-bold " color="white" href="https://developer.payple.kr">
+                                    바로가기
+                                    <v-icon>
+                                        mdi-chevron-double-right
+                                    </v-icon>
+                                </v-btn>
+                            </v-card-actions>
+                        </div>
+                    </div>
+                </v-card>
                 <router-view></router-view>
                 <v-divider class="mb-6"></v-divider>
                 <v-row class="mb-12 pt-6">
@@ -229,37 +167,83 @@
         <v-footer app inset absolute align-center class="pa-4">
             &copy; Payple Inc. All rights reserved.
         </v-footer>
-        <!-- <v-snackbar :timeout="-1" :value="true">
-            
-                <img src="./assets/ev_210408-bg-pc.png" class="v-ms-img" alt="">
-            
 
-            <template v-slot:action="{ attrs }">
-                <v-btn color="red" text v-bind="attrs" @click="snackbar = false">
-                    Close
-                </v-btn>
-            </template>
-        </v-snackbar> -->
+        <v-dialog v-model="dialog" persistent max-width="600">
+            <v-card>
+                <v-card-actions class="align-center" style="background:#5C539D;">
+                    <p class="text-h6 mb-0 mr-2 white--text">
+                        신규 Payple API 가이드 출시!
+                    </p>
+                    <v-spacer></v-spacer>
+                    <v-icon
+                        large
+                        color="white"
+                        @click="
+                            setCookie();
+                            dialog = false;
+                        "
+                    >
+                        mdi-close-circle-outline
+                    </v-icon>
+                </v-card-actions>
+                <v-card-text class="text-center mt-6">
+                    <p class="text-h5 text--primary mb-0 mr-2 font-weight-bold">
+                        Payple API 가이드가 새롭게 바뀌었습니다!
+                    </p>
+                </v-card-text>
+                <v-card-text class="text-center mt-2">
+                    <p class="text-body-1" color="grey darken-4">
+                        아래 버튼을 클릭 하시면<br />
+                        New Payple API 가이드로 이동합니다.<br />
+                        <i class="font-weight-bold">(또는 5초 후 자동으로 이동합니다.)</i>
+                    </p>
+                </v-card-text>
+
+                <v-card-actions class="justify-space-around">
+                    <v-btn x-large color="deep-purple accent-3 white--text font-weight-black" href="https://developer.payple.kr">
+                        <span class="text-decoration-underline-ex text-capitalize">New Payple API 가이드</span>
+                        <v-icon right>
+                            mdi-open-in-new
+                        </v-icon>
+                    </v-btn>
+                </v-card-actions>
+                <v-card-actions class="justify-space-around mt-2">
+                    <v-btn
+                        text
+                        class="text-decoration-underline text-caption"
+                        color="grey lighten-1"
+                        @click="
+                            setCookie();
+                            dialog = false;
+                        "
+                        >아니요, 그냥 기존 가이드로 볼래요.</v-btn
+                    >
+                </v-card-actions>
+                <v-divider></v-divider>
+                <v-card-actions class="justify-end">
+                    <v-btn
+                        text
+                        @click="
+                            setCookie();
+                            dialog = false;
+                        "
+                    >
+                        <v-icon left>
+                            mdi-checkbox-blank-outline
+                        </v-icon>
+                        오늘 하루 창 닫기
+                    </v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
     </v-app>
 </template>
 
 <script>
+import VueCookies from "vue-cookies";
+
 export default {
     name: "App",
-    // metaInfo() {
-    //     return {
-    //         title: "Epiloge - Build your network in your field of interest",
-    //         meta: [
-    //             { name: 'description', content:  'Epiloge is about connecting in your field of interest. Our vision is to help people share their knowledge, work, projects, papers and ideas and build their network through what they do rather where they live, study or work.'},
-    //             { property: 'og:title', content: "Epiloge - Build your network in your field of interest"},
-    //             { property: 'og:site_name', content: 'Epiloge'},
-    //             {property: 'og:type', content: 'website'},
-    //             {name: 'robots', content: 'index,follow'}
-    //         ]
-    //     }
-    // },
-    name: "App",
-
     data: () => ({
         v0: true,
         // snackbar: true,
@@ -268,6 +252,7 @@ export default {
         drawer: null,
         group: null,
         hidden: false,
+        dialog: false,
         navi: [
             {
                 id: 6,
@@ -394,8 +379,16 @@ export default {
             return this.$vuetify.theme.dark ? "dark" : "light";
         },
     },
-
     watch: {
+        dialog(val) {
+            if (!val) {
+                clearTimeout(this.timeOut);
+            } else {
+                this.timeOut = setTimeout(() => {
+                    location.href='https://developer.payple.kr'
+                }, 7000);
+            }
+        },
         group() {
             this.drawer = false;
         },
@@ -411,6 +404,36 @@ export default {
         left(val) {
             this.right = !val;
         },
+    },
+    methods: {
+        getTest: () => {
+            if (VueCookies.isKey("test")) {
+                alert(VueCookies.get("test"));
+            } else {
+                alert("값 없음");
+            }
+        },
+        setCookie: () => {
+            VueCookies.set("guide", new Date());
+            // alert("셋팅");
+        },
+        resetCookie: () => {
+            VueCookies.remove("test");
+            alert("삭제됨");
+        },
+        dialogOn: function() {
+            this.dialog = true;
+        },
+        dialogOff: function() {
+            this.dialog = false;
+        },
+    },
+    mounted() {
+        if (VueCookies.isKey("guide")) {
+            this.dialogOff();
+        } else {
+            this.dialogOn();
+        }
     },
 };
 </script>
@@ -666,6 +689,38 @@ code {
     padding: 4px 4px !important;
 }
 .v-navigation-drawer__append {
-    height:54px;
+    height: 54px;
 }
+.ani-gradient-change {
+    /* filter: hue-rotate(0deg);
+    background: linear-gradient(43deg, #fff, #f7abee);
+    background-size: 400% 400%;
+    animation: hue 10000ms infinite linear; */
+    /* animation: AnimationName 59s ease infinite; */
+    background: linear-gradient(-45deg, #FFAB40, #FF80AB, #7C4DFF, #82B1FF);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+}
+@keyframes AnimationName {
+    0%{background-position:91% 0%}
+    50%{background-position:10% 100%}
+    100%{background-position:91% 0%}
+}
+@keyframes hue{
+  0%{filter: hue-rotate(0deg);}
+  100%{filter:hue-rotate(360deg);}
+  
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 </style>
