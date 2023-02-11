@@ -14,7 +14,7 @@
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.7.0",
     "esm": "^3.2.25",
-    "npm-check-updates": "^11.1.8",
+    "npm-check-updates": "^16.7.4",
     "prismjs": "^1.24.1",
     "vue": "^2.6.12",
     "vue-code-highlight": "^0.7.6",
